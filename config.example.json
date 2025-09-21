@@ -1,0 +1,26 @@
+{
+  "pts": [
+    {
+      "name": "Example PT",
+      "marketAddress": "0x...",
+      "chainId": 1,
+      "alertThreshold": 15.0,
+      "enabled": true
+    }
+  ],
+  "preferences": {
+    "outputFormat": "table",
+    "showHistorical": true,
+    "historicalDays": 7,
+    "sortBy": "impliedApy",
+    "sortOrder": "desc"
+  },
+  "alerts": {
+    "enabled": true,
+    "thresholds": {
+      "impliedApyMin": 10.0,
+      "impliedApyMax": 50.0,
+      "liquidityMin": 1000000
+    }
+  }
+}
