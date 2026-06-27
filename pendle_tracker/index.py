@@ -1,4 +1,4 @@
-"""Broad Ethereum Pendle market index and ranking helpers."""
+"""Broad multi-chain Pendle market index and ranking helpers."""
 
 import json
 import logging
@@ -12,7 +12,38 @@ from .collector import compute_yt_analytics, compute_lp_analytics
 
 logger = logging.getLogger(__name__)
 
-CHAIN_ID = 1
+# Config-driven chain list. Enabling a chain is a one-line change here.
+# Pendle numeric chain ids: 1=ethereum, 56=bnb, 42161=arbitrum.
+# Only enable chains that actually carry holdings/interest — every added chain
+# lengthens the (sequential) sweep against the global 60 rpm budget.
+CHAINS = [1, 56]
+# CHAINS = [1, 56, 42161]  # add Arbitrum when a holding lands there.
+DEFAULT_CHAIN = CHAINS[0]
+
+# Backwards-compatible alias: legacy callers / default args reference CHAIN_ID
+# as "the primary chain". The sweep itself iterates CHAINS, not CHAIN_ID.
+CHAIN_ID = DEFAULT_CHAIN
+
+# Chain-label normalization: feed/FarmTracker uses string labels, Pendle's API
+# uses numeric ids. Maps both string aliases and numeric forms to the canonical
+# numeric chain id.
+CHAIN_ALIASES = {
+    "eth": 1, "ethereum": 1, "mainnet": 1, "1": 1, 1: 1,
+    "bsc": 56, "bnb": 56, "bnbchain": 56, "binance": 56, "56": 56, 56: 56,
+    "arb": 42161, "arbitrum": 42161, "42161": 42161, 42161: 42161,
+}
+
+
+def normalize_chain(value):
+    """Map a chain label/id ('eth', 'bsc', '56', 56, ...) to its numeric id.
+
+    Returns None for unknown/missing values."""
+    if value is None:
+        return None
+    key = value.strip().lower() if isinstance(value, str) else value
+    return CHAIN_ALIASES.get(key)
+
+
 INDEX_PATH = os.path.join(db.DATA_DIR, "pendle_index_latest.json")
 MIN_CALL_INTERVAL_SEC = 1.05  # keep the broad sweep below Pendle's 60 rpm budget
 
@@ -106,7 +137,7 @@ class RateLimiter:
         self.calls += 1
 
 
-def build_index_record(active_entry, detail, data=None):
+def build_index_record(active_entry, detail, data=None, chain=DEFAULT_CHAIN):
     """Normalize one active market detail into the shared DB record shape."""
     data = data or {}
     pt = detail.get("pt") or {}
@@ -140,7 +171,7 @@ def build_index_record(active_entry, detail, data=None):
     record = {
         "key": name,
         "exposure": None,
-        "chain": detail.get("chainId") or CHAIN_ID,
+        "chain": detail.get("chainId") or chain,
         "market_address": detail.get("address") or active_entry["address"],
         "underlier": underlier,
         "maturity": expiry,
@@ -181,7 +212,7 @@ def build_index_record(active_entry, detail, data=None):
     return record
 
 
-def _latest_index_rows(chain=CHAIN_ID):
+def _latest_index_rows(chain=DEFAULT_CHAIN):
     conn = db.ensure_db()
     try:
         rows = conn.execute(
@@ -204,7 +235,23 @@ def _latest_index_rows(chain=CHAIN_ID):
         conn.close()
 
 
-def project_index(chain=CHAIN_ID):
+def _db_chains():
+    """Distinct chains present in the markets table (so the index projection is
+    always a complete reflection of the DB, regardless of which subset was last
+    swept)."""
+    conn = db.ensure_db()
+    try:
+        return [
+            r[0]
+            for r in conn.execute(
+                "SELECT DISTINCT chain FROM markets WHERE chain IS NOT NULL ORDER BY chain"
+            )
+        ]
+    finally:
+        conn.close()
+
+
+def _project_chain_markets(chain):
     rows = _latest_index_rows(chain=chain)
     markets = {}
     latest_ts = None
@@ -242,18 +289,34 @@ def project_index(chain=CHAIN_ID):
         }
         markets[address] = item
         latest_ts = max(latest_ts, row["ts"]) if latest_ts else row["ts"]
+    return markets, latest_ts
+
+
+def project_index(chains=None):
+    """Project the latest DB rows into the multi-chain index shape.
+
+    Defaults to every chain present in the DB so the written file is always a
+    complete projection (never drops a chain that wasn't part of the last
+    sweep)."""
+    if chains is None:
+        chains = _db_chains() or list(CHAINS)
+    elif isinstance(chains, int):
+        chains = [chains]
+    out_chains = {}
+    latest_ts = None
+    for chain in chains:
+        markets, chain_ts = _project_chain_markets(chain)
+        out_chains[str(chain)] = {"markets": markets}
+        if chain_ts:
+            latest_ts = max(latest_ts, chain_ts) if latest_ts else chain_ts
     return {
         "generated_at": latest_ts or db.utc_now(),
-        "chains": {
-            str(chain): {
-                "markets": markets,
-            }
-        },
+        "chains": out_chains,
     }
 
 
-def write_index_json(path=INDEX_PATH, chain=CHAIN_ID):
-    projection = project_index(chain=chain)
+def write_index_json(path=INDEX_PATH, chains=None):
+    projection = project_index(chains=chains)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     tmp = path + ".tmp"
     with open(tmp, "w") as f:
@@ -262,47 +325,70 @@ def write_index_json(path=INDEX_PATH, chain=CHAIN_ID):
     return projection
 
 
-def sweep_index(chain=CHAIN_ID, write=True):
-    """Sweep all active Ethereum markets into SQLite and regenerate the index feed."""
-    if chain != CHAIN_ID:
-        raise ValueError("P1-B only supports Ethereum mainnet chain=1")
-
-    client = PendleClient()
-    limiter = RateLimiter()
+def _sweep_one_chain(client, limiter, chain, errors):
+    """Fetch + normalize every active market for one chain. Shares the caller's
+    rate limiter so the throttle spans the whole multi-chain budget."""
     limiter.wait()
     active = client.active_markets(chain)
     records = []
-    errors = []
-
     for idx, market in enumerate(active, start=1):
         address = market.get("address")
         if not address:
-            errors.append({"market": None, "error": "active market missing address"})
+            errors.append({"chain": chain, "market": None, "error": "active market missing address"})
             continue
         try:
             limiter.wait()
             detail = client.market_detail(chain, address)
             limiter.wait()
             data = client.market_data(chain, address)
-            records.append(build_index_record(market, detail, data))
+            records.append(build_index_record(market, detail, data, chain=chain))
         except (PendleAPIError, KeyError, ValueError) as exc:
-            logger.error(f"[Pendle index] {address}: {exc}")
-            errors.append({"market": address, "error": str(exc)})
+            logger.error(f"[Pendle index] chain={chain} {address}: {exc}")
+            errors.append({"chain": chain, "market": address, "error": str(exc)})
         if idx % 10 == 0:
-            logger.info(f"[Pendle index] fetched {idx}/{len(active)} active markets")
+            logger.info(f"[Pendle index] chain={chain} fetched {idx}/{len(active)} active markets")
+    return active, records
+
+
+def sweep_index(chains=None, write=True):
+    """Sweep all active Pendle markets across the configured chains into SQLite
+    and regenerate the merged index feed.
+
+    Chains are swept SEQUENTIALLY behind a single shared RateLimiter — Pendle's
+    60 rpm budget is global, so parallel chains would recreate rate-contention.
+    """
+    if chains is None:
+        chains = list(CHAINS)
+    elif isinstance(chains, int):
+        chains = [chains]
+
+    client = PendleClient()
+    limiter = RateLimiter()  # one limiter shared across all chains
+    all_records = []
+    errors = []
+    per_chain = {}
+
+    for chain in chains:
+        active, records = _sweep_one_chain(client, limiter, chain, errors)
+        per_chain[chain] = {"active": len(active), "records": len(records)}
+        all_records.extend(records)
+        logger.info(f"[Pendle index] chain={chain} active={len(active)} records={len(records)}")
 
     projection = None
     if write:
-        db.write_records(records)
-        projection = write_index_json(chain=chain)
+        db.write_records(all_records)
+        projection = write_index_json(chains=None)  # project the full DB
 
     logger.info(
-        f"[Pendle index] active={len(active)} records={len(records)} "
-        f"errors={len(errors)} api_calls={limiter.calls} rate_interval={limiter.min_interval_sec}s"
+        f"[Pendle index] chains={chains} active={sum(c['active'] for c in per_chain.values())} "
+        f"records={len(all_records)} errors={len(errors)} api_calls={limiter.calls} "
+        f"rate_interval={limiter.min_interval_sec}s"
     )
     return {
-        "active_markets": len(active),
-        "records": len(records),
+        "chains": chains,
+        "per_chain": per_chain,
+        "active_markets": sum(c["active"] for c in per_chain.values()),
+        "records": len(all_records),
         "errors": errors,
         "api_calls": limiter.calls,
         "projection": projection,
@@ -314,17 +400,23 @@ def load_index(path=INDEX_PATH):
         return json.load(f)
 
 
-def top_markets(by, n=20, chain=CHAIN_ID):
+def top_markets(by, n=20, chain=None):
+    """Rank indexed markets by `by`. `chain=None` ranks across all chains;
+    pass a numeric chain id to scope to one chain."""
     if by not in RANK_FIELDS:
         raise ValueError(f"unsupported rank field {by!r}; expected one of {sorted(RANK_FIELDS)}")
     metric = RANK_FIELDS[by]
     data = load_index()
-    markets = data.get("chains", {}).get(str(chain), {}).get("markets", {})
+    all_chains = data.get("chains", {})
+    selected = list(all_chains.keys()) if chain is None else [str(chain)]
     rows = []
-    for address, item in markets.items():
-        value = item.get(metric)
-        if value is None:
-            continue
-        rows.append({"market_address": address, **item})
+    for chain_key in selected:
+        markets = all_chains.get(chain_key, {}).get("markets", {})
+        chain_id = int(chain_key) if chain_key.isdigit() else chain_key
+        for address, item in markets.items():
+            value = item.get(metric)
+            if value is None:
+                continue
+            rows.append({"market_address": address, "chain": chain_id, **item})
     rows.sort(key=lambda row: row.get(metric), reverse=True)
     return rows[:n]

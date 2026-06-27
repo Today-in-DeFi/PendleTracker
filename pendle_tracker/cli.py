@@ -42,11 +42,16 @@ def main(argv=None):
 
     sub.add_parser("snapshot", help="run watchlist, write DB + JSON projection")
     sub.add_parser("list", help="print latest records from snapshot")
-    sub.add_parser("index", help="sweep active ETH Pendle markets into DB + index projection")
+    sub.add_parser("index", help="sweep active Pendle markets (all configured chains) into DB + index projection")
 
     top = sub.add_parser("top", help="rank latest indexed markets")
     top.add_argument("--by", choices=sorted(market_index.RANK_FIELDS), required=True)
     top.add_argument("--n", type=int, default=20)
+    top.add_argument(
+        "--chain",
+        default=None,
+        help="filter by chain (e.g. eth, bsc, arbitrum, or a numeric id); default: all chains",
+    )
 
     q = sub.add_parser("query", help="look up one market")
     q.add_argument("--market", "-m", required=True)
@@ -73,7 +78,13 @@ def main(argv=None):
         return
 
     if args.cmd == "top":
-        print(json.dumps(market_index.top_markets(args.by, n=args.n), indent=2, default=str))
+        chain = None
+        if args.chain is not None:
+            chain = market_index.normalize_chain(args.chain)
+            if chain is None:
+                print(f"unknown chain {args.chain!r}", file=sys.stderr)
+                sys.exit(2)
+        print(json.dumps(market_index.top_markets(args.by, n=args.n, chain=chain), indent=2, default=str))
         return
 
     if args.cmd == "query":

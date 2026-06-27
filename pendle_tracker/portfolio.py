@@ -6,7 +6,7 @@ import os
 from datetime import datetime, timezone, timedelta
 
 from . import db
-from .index import INDEX_PATH
+from .index import INDEX_PATH, normalize_chain
 
 logger = logging.getLogger(__name__)
 
@@ -52,9 +52,9 @@ def _norm_addr(value):
 
 
 def _chain_id(value):
-    if value in (1, "1", "eth", "ethereum", "mainnet"):
-        return 1
-    return None
+    """Normalize a feed chain label/id ('eth', 'bsc', 56, ...) to a numeric
+    Pendle chain id; None if unknown/missing."""
+    return normalize_chain(value)
 
 
 def _expiry_date(maturity):
@@ -71,13 +71,23 @@ def _load_index_from_json(path=INDEX_PATH):
         logger.warning(f"[Pendle portfolio] could not read index projection {path}: {exc}")
         return {}
 
-    markets = data.get("chains", {}).get("1", {}).get("markets", {})
+    all_chains = data.get("chains", {})
     out = {}
-    for market_address, item in markets.items():
-        pt_address = _norm_addr(item.get("pt_address"))
-        if not pt_address:
+    for chain_key, chain_block in all_chains.items():
+        chain_id = normalize_chain(chain_key)
+        if chain_id is None:
             continue
-        out[pt_address] = {"market_address": market_address, **item}
+        for market_address, item in chain_block.get("markets", {}).items():
+            pt_address = _norm_addr(item.get("pt_address"))
+            if not pt_address:
+                continue
+            # Key on (chain, pt_address): PT token addresses are chain-scoped,
+            # never cross-match across chains.
+            out[(chain_id, pt_address)] = {
+                "market_address": market_address,
+                "chain": chain_id,
+                **item,
+            }
     return out
 
 
@@ -89,17 +99,19 @@ def _load_index_from_db():
             SELECT market_address, chain, name, underlier, pt_address, yt_address,
                    sy_address, underlying_address, maturity
             FROM markets
-            WHERE chain = 1 AND pt_address IS NOT NULL
+            WHERE pt_address IS NOT NULL
             """
         ).fetchall()
         out = {}
         for row in rows:
             item = dict(row)
             pt_address = _norm_addr(item.get("pt_address"))
-            if not pt_address:
+            chain_id = normalize_chain(item.get("chain"))
+            if not pt_address or chain_id is None:
                 continue
-            out[pt_address] = {
+            out[(chain_id, pt_address)] = {
                 "market_address": item["market_address"],
+                "chain": chain_id,
                 "name": item.get("name"),
                 "underlier": item.get("underlier"),
                 "maturity": item.get("maturity"),
@@ -123,7 +135,7 @@ def load_pt_index():
 def _market_record_from_index(item):
     return {
         "key": item.get("name"),
-        "chain": 1,
+        "chain": item.get("chain"),
         "market_address": item["market_address"],
         "underlier": item.get("underlier"),
         "maturity": item.get("maturity"),
@@ -233,14 +245,19 @@ def derive_direct_watchlist(
     by_market = {}
 
     for pos in feed.get("positions", []):
-        if _chain_id(pos.get("chain")) != 1:
-            logger.warning(f"[Pendle portfolio] skipping unsupported chain position: {pos.get('symbol')}")
+        chain_id = _chain_id(pos.get("chain"))
+        if chain_id is None:
+            logger.warning(
+                f"[Pendle portfolio] skipping position with unknown chain "
+                f"{pos.get('chain')!r}: {pos.get('symbol')}"
+            )
             continue
         pt_address = _norm_addr(pos.get("pt_token_address"))
-        item = index.get(pt_address)
+        # Match on (chain, pt_address) — PT token addresses are chain-scoped.
+        item = index.get((chain_id, pt_address))
         if not item:
             logger.warning(
-                f"[Pendle portfolio] skipping held PT not found in ETH index: "
+                f"[Pendle portfolio] skipping held PT not found in index for chain {chain_id}: "
                 f"{pos.get('symbol') or pos.get('position_name')} {pt_address}"
             )
             continue
@@ -259,7 +276,7 @@ def derive_direct_watchlist(
         current = by_market.setdefault(market_address, {
             "key": item.get("name") or pos.get("symbol") or pos.get("position_name"),
             "market": market_address,
-            "chain": 1,
+            "chain": chain_id,
             "underlier": item.get("underlier") or pos.get("underlying_slug"),
             "exposure": "direct",
             "our_notional_usd": 0,

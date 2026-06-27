@@ -6,7 +6,7 @@ Public API:
   - get_market(key)       latest record for one market (in-process analyzer use)
   - query(...)            ad-hoc lookups (CLI)
   - history(...)          time series from SQLite
-  - sweep_index()         broad ETH market index refresh
+  - sweep_index()         broad multi-chain market index refresh
 
 The outward contract is this module's public functions plus the published JSON
 files under data/.
