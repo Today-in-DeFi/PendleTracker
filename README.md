@@ -2,6 +2,9 @@
 
 Standalone Pendle PT/YT/LP watchlist producer. SQLite under `data/pendle.db` is
 the source of truth; `data/pendle_markets.json` is the committed feed projection.
+Direct PT holdings are derived from the riskAnalyst portfolio feed at
+`/home/danger/riskAnalyst/data/portfolio/pendle_positions.json`; collateral-only
+PT exposures remain curated in `pendle_tracker/watchlist.py`.
 
 ## Outputs
 

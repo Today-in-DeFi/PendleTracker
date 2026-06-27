@@ -273,15 +273,30 @@ def _latest_snapshot_row(conn, market_address):
     ).fetchone()
 
 
-def _latest_position_row(conn, market_address):
-    return conn.execute(
+def _latest_position_summary(conn, market_address):
+    latest = conn.execute(
         """
-        SELECT * FROM positions
+        SELECT ts FROM positions
         WHERE market_address = ?
         ORDER BY ts DESC, id DESC
         LIMIT 1
         """,
         (market_address,),
+    ).fetchone()
+    if not latest:
+        return None
+    return conn.execute(
+        """
+        SELECT ts, SUM(notional_usd) AS notional_usd, SUM(pt_balance) AS pt_balance,
+               CASE WHEN SUM(CASE WHEN exposure = 'direct' THEN 1 ELSE 0 END) > 0
+                    THEN 'direct'
+                    ELSE MAX(exposure)
+               END AS exposure
+        FROM positions
+        WHERE market_address = ? AND ts = ?
+        GROUP BY ts
+        """,
+        (market_address, latest["ts"]),
     ).fetchone()
 
 
@@ -292,19 +307,20 @@ def _market_row(conn, market_address):
     ).fetchone()
 
 
-def project_snapshot(errors=None, flag_func=None, db_path=DB_PATH):
+def project_snapshot(errors=None, flag_func=None, watchlist_entries=None, db_path=DB_PATH):
     """Build the published JSON feed from latest DB rows."""
     conn = ensure_db(db_path)
     try:
         markets = []
         latest_ts = None
-        for entry in wl.WATCHLIST:
+        entries = watchlist_entries if watchlist_entries is not None else wl.get_watchlist(write_positions=False)
+        for entry in entries:
             market_address = entry["market"]
             market = _market_row(conn, market_address)
             snap = _latest_snapshot_row(conn, market_address)
             if not market or not snap:
                 continue
-            pos = _latest_position_row(conn, market_address)
+            pos = _latest_position_summary(conn, market_address)
             notional = pos["notional_usd"] if pos and pos["notional_usd"] is not None else entry.get("our_notional_usd")
             exposure = pos["exposure"] if pos and pos["exposure"] is not None else entry.get("exposure")
             ladder = json.loads(snap["exit_slippage_ladder_json"] or "[]")
@@ -354,8 +370,13 @@ def project_snapshot(errors=None, flag_func=None, db_path=DB_PATH):
         conn.close()
 
 
-def write_snapshot_json(snapshot_path, errors=None, flag_func=None, db_path=DB_PATH):
-    snap = project_snapshot(errors=errors, flag_func=flag_func, db_path=db_path)
+def write_snapshot_json(snapshot_path, errors=None, flag_func=None, watchlist_entries=None, db_path=DB_PATH):
+    snap = project_snapshot(
+        errors=errors,
+        flag_func=flag_func,
+        watchlist_entries=watchlist_entries,
+        db_path=db_path,
+    )
     os.makedirs(os.path.dirname(snapshot_path), exist_ok=True)
     tmp = snapshot_path + ".tmp"
     with open(tmp, "w") as f:

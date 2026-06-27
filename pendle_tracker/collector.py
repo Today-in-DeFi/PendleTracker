@@ -167,8 +167,9 @@ def _flags(r):
 def snapshot(write=True):
     """Run the full watchlist; return the snapshot dict. Writes DB/JSON when write=True."""
     client = PendleClient()
+    entries = wl.get_watchlist(write_positions=write)
     records, errors = [], []
-    for entry in wl.WATCHLIST:
+    for entry in entries:
         try:
             records.append(build_market_record(entry, client))
         except (PendleAPIError, KeyError, ValueError) as exc:
@@ -188,7 +189,7 @@ def snapshot(write=True):
         if imported:
             logger.info(f"[Pendle] imported {imported} JSON history rows into SQLite")
         db.write_records(records)
-        snap = db.write_snapshot_json(SNAPSHOT_PATH, errors=errors, flag_func=_flags)
+        snap = db.write_snapshot_json(SNAPSHOT_PATH, errors=errors, flag_func=_flags, watchlist_entries=entries)
         logger.info(
             f"[Pendle] snapshot: {len(records)} markets, {len(errors)} errors; "
             f"JSON projection: {len(snap['markets'])} markets"
@@ -208,11 +209,11 @@ def _resolve_key(name):
     """Map a caller-supplied name to a watchlist key (exact, then case-insensitive)."""
     if not name:
         return None
-    for e in wl.WATCHLIST:
+    for e in wl.get_watchlist(write_positions=False):
         if e["key"] == name:
             return e["key"]
     low = name.lower()
-    for e in wl.WATCHLIST:
+    for e in wl.get_watchlist(write_positions=False):
         if e["key"].lower() == low:
             return e["key"]
     return None
