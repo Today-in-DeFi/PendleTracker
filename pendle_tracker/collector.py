@@ -46,6 +46,52 @@ def _days_to_maturity(expiry_iso):
     return round(delta.total_seconds() / 86400, 2)
 
 
+def compute_yt_analytics(yt_price_usd, underlying_apy, underlying_price_usd,
+                         days_to_maturity, yt_floating_apy):
+    """
+    Derived YT-leg metrics. YT is the leveraged-yield mirror of PT: it pays the
+    floating underlying yield until maturity, then its price decays to zero.
+
+    APYs are in percent (matching the rest of the record); prices in USD. Any
+    metric that can't be computed from the available inputs is returned as None.
+
+      - yt_breakeven_days   days of *underlying* yield needed to repay the YT's
+                            current price (compare to days_to_maturity).
+      - yt_underwater       breakeven exceeds days-to-maturity — the YT can't pay
+                            back its price before expiry at the current underlying rate.
+      - yt_implied_vs_realized  YT implied floating APY minus realized underlying
+                            APY (positive = YT-yield richer than underlying realized).
+      - yt_theoretical_decay_usd_per_day  linear amortization of the YT price to
+                            zero at maturity ($/day); the realized trajectory is a
+                            history() query, not a per-snapshot field.
+    """
+    out = {
+        "yt_breakeven_days": None,
+        "yt_underwater": None,
+        "yt_implied_vs_realized": None,
+        "yt_theoretical_decay_usd_per_day": None,
+    }
+
+    # USD yield accrued per day by 1 YT (≈ yield on 1 unit of underlying exposure)
+    daily_yield_usd = None
+    if underlying_apy is not None and underlying_price_usd is not None:
+        daily_yield_usd = underlying_price_usd * (underlying_apy / 100.0) / 365.0
+
+    if yt_price_usd is not None and daily_yield_usd and daily_yield_usd > 0:
+        out["yt_breakeven_days"] = round(yt_price_usd / daily_yield_usd, 2)
+
+    if out["yt_breakeven_days"] is not None and days_to_maturity is not None:
+        out["yt_underwater"] = out["yt_breakeven_days"] > days_to_maturity
+
+    if yt_floating_apy is not None and underlying_apy is not None:
+        out["yt_implied_vs_realized"] = round(yt_floating_apy - underlying_apy, 4)
+
+    if yt_price_usd is not None and days_to_maturity is not None and days_to_maturity > 0:
+        out["yt_theoretical_decay_usd_per_day"] = round(yt_price_usd / days_to_maturity, 8)
+
+    return out
+
+
 def _exit_slippage_ladder(client, entry, pt, underlying):
     """Simulate selling PT -> underlying at each notional; return list of rungs."""
     pt_addr = pt.get("address")
@@ -140,6 +186,13 @@ def build_market_record(entry, client=None):
 
         "fetched_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
+    record.update(compute_yt_analytics(
+        yt_price_usd=record["yt_price_usd"],
+        underlying_apy=record["underlying_apy"],
+        underlying_price_usd=record["underlying_price_usd"],
+        days_to_maturity=record["days_to_maturity"],
+        yt_floating_apy=record["yt_floating_apy"],
+    ))
     record["flags"] = _flags(record)
     return record
 
@@ -161,6 +214,11 @@ def _flags(r):
     if disc is not None and disc < 0:
         flags.append({"code": "discount_anomaly", "severity": "info",
                       "msg": f"PT trading above fair (discount {disc:.2f}%)"})
+    if r.get("yt_underwater"):
+        be = r.get("yt_breakeven_days")
+        dd = r.get("days_to_maturity")
+        flags.append({"code": "yt_underwater", "severity": "info",
+                      "msg": f"YT breakeven {be:.0f}d > {dd:.0f}d to maturity at current underlying yield"})
     return flags
 
 
@@ -294,6 +352,13 @@ def get_position_enrichment(position_name, live=False, max_age_hours=None):
         "fixed_apy": rec.get("pt_implied_apy"),          # YTM, Pendle-canonical (percent)
         "underlying_apy": rec.get("underlying_apy"),     # percent
         "spread_vs_underlying": rec.get("pt_vs_underlying_spread"),
+
+        # YT leg (percent / USD / days); additive — see compute_yt_analytics
+        "yt_floating_apy": rec.get("yt_floating_apy"),
+        "yt_price_usd": rec.get("yt_price_usd"),
+        "yt_breakeven_days": rec.get("yt_breakeven_days"),
+        "yt_underwater": rec.get("yt_underwater"),
+        "yt_implied_vs_realized": rec.get("yt_implied_vs_realized"),
 
         "pt_price_usd": rec.get("pt_price_usd"),
         "pt_discount": rec.get("pt_discount"),           # percent

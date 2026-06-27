@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 
 from .client import PendleClient, PendleAPIError
 from . import db
+from .collector import compute_yt_analytics
 
 logger = logging.getLogger(__name__)
 
@@ -27,9 +28,15 @@ INDEX_FIELDS = [
     "expired",
     "pt_implied_apy",
     "underlying_apy",
+    "yt_floating_apy",
     "aggregated_lp_apy",
     "pt_price_usd",
+    "yt_price_usd",
     "pt_discount",
+    "yt_breakeven_days",
+    "yt_underwater",
+    "yt_implied_vs_realized",
+    "yt_theoretical_decay_usd_per_day",
     "liquidity_usd",
     "total_tvl_usd",
     "trading_volume_usd",
@@ -37,6 +44,7 @@ INDEX_FIELDS = [
 
 RANK_FIELDS = {
     "implied_apy": "pt_implied_apy",
+    "yt_floating_apy": "yt_floating_apy",
     "liquidity_usd": "liquidity_usd",
     "pt_discount": "pt_discount",
     "days_to_maturity": "days_to_maturity",
@@ -118,7 +126,11 @@ def build_index_record(active_entry, detail, data=None):
     )
     pt_discount = data.get("ptDiscount", detail.get("ptDiscount"))
 
-    return {
+    yt_floating_apy = _pct(data.get("ytFloatingApy", detail.get("ytFloatingApy")))
+    yt_price_usd = _usd(yt.get("price"))
+    underlying_price_usd = _usd(underlying.get("price"))
+
+    record = {
         "key": name,
         "exposure": None,
         "chain": detail.get("chainId") or CHAIN_ID,
@@ -134,13 +146,13 @@ def build_index_record(active_entry, detail, data=None):
         "underlying_address": _asset_address(underlying) or _asset_address(active_entry.get("underlyingAsset")),
         "pt_implied_apy": pt_implied,
         "underlying_apy": underlying_apy,
-        "yt_floating_apy": _pct(data.get("ytFloatingApy", detail.get("ytFloatingApy"))),
+        "yt_floating_apy": yt_floating_apy,
         "pt_vs_underlying_spread": spread,
         "aggregated_lp_apy": _pct(data.get("aggregatedApy", detail.get("aggregatedApy"))),
         "pt_price_usd": _usd(pt.get("price")),
-        "yt_price_usd": _usd(yt.get("price")),
+        "yt_price_usd": yt_price_usd,
         "sy_price_usd": _usd(sy.get("price")),
-        "underlying_price_usd": _usd(underlying.get("price")),
+        "underlying_price_usd": underlying_price_usd,
         "pt_discount": round(pt_discount * 100, 4) if pt_discount is not None else None,
         "liquidity_usd": _usd(data.get("liquidity", detail.get("liquidity"))),
         "total_tvl_usd": _usd(data.get("totalTvl", detail.get("totalTvl"))),
@@ -151,6 +163,14 @@ def build_index_record(active_entry, detail, data=None):
         "exit_slippage_bps_at_notional": None,
         "fetched_at": db.utc_now(),
     }
+    record.update(compute_yt_analytics(
+        yt_price_usd=yt_price_usd,
+        underlying_apy=underlying_apy,
+        underlying_price_usd=underlying_price_usd,
+        days_to_maturity=days,
+        yt_floating_apy=yt_floating_apy,
+    ))
+    return record
 
 
 def _latest_index_rows(chain=CHAIN_ID):
@@ -194,9 +214,15 @@ def project_index(chain=CHAIN_ID):
             "expired": bool(row["expired"]),
             "pt_implied_apy": row["pt_implied_apy"],
             "underlying_apy": row["underlying_apy"],
+            "yt_floating_apy": row["yt_floating_apy"],
             "aggregated_lp_apy": row["aggregated_lp_apy"],
             "pt_price_usd": row["pt_price_usd"],
+            "yt_price_usd": row["yt_price_usd"],
             "pt_discount": row["pt_discount"],
+            "yt_breakeven_days": row["yt_breakeven_days"],
+            "yt_underwater": (None if row["yt_underwater"] is None else bool(row["yt_underwater"])),
+            "yt_implied_vs_realized": row["yt_implied_vs_realized"],
+            "yt_theoretical_decay_usd_per_day": row["yt_theoretical_decay_usd_per_day"],
             "liquidity_usd": row["liquidity_usd"],
             "total_tvl_usd": row["total_tvl_usd"],
             "trading_volume_usd": row["trading_volume_usd"],

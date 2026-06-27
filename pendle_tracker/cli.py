@@ -8,6 +8,7 @@ Ad-hoc Pendle queries.
   python -m pendle_tracker query --market PT-srUSDat-27AUG2026 --live
   python -m pendle_tracker index
   python -m pendle_tracker top --by implied_apy --n 20
+  python -m pendle_tracker top --by yt_floating_apy --n 10
 """
 
 import argparse

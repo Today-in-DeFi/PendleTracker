@@ -30,6 +30,21 @@ SNAPSHOT_COLUMNS = [
     "total_sy",
     "days_to_maturity",
     "exit_slippage_bps_at_notional",
+    # derived YT-leg analytics (P2-B)
+    "yt_breakeven_days",
+    "yt_underwater",
+    "yt_implied_vs_realized",
+    "yt_theoretical_decay_usd_per_day",
+]
+
+# Genuinely-new derived columns added after the original table shipped. Existing
+# DBs are migrated additively via ALTER TABLE (CREATE TABLE IF NOT EXISTS won't
+# alter an existing table). Fresh DBs get these from the CREATE below.
+DERIVED_SNAPSHOT_COLUMNS = [
+    ("yt_breakeven_days", "REAL"),
+    ("yt_underwater", "INTEGER"),
+    ("yt_implied_vs_realized", "REAL"),
+    ("yt_theoretical_decay_usd_per_day", "REAL"),
 ]
 
 HISTORY_IMPORT_FIELDS = [
@@ -80,6 +95,8 @@ def init_db(conn):
           total_pt REAL, total_sy REAL,
           days_to_maturity REAL, expired INTEGER,
           exit_slippage_bps_at_notional REAL,
+          yt_breakeven_days REAL, yt_underwater INTEGER,
+          yt_implied_vs_realized REAL, yt_theoretical_decay_usd_per_day REAL,
           price_source TEXT,
           exit_slippage_ladder_json TEXT
         );
@@ -100,9 +117,19 @@ def init_db(conn):
     )
 
 
+def _migrate_snapshot_columns(conn):
+    """Additively add derived columns to an existing market_snapshots table."""
+    existing = {row[1] for row in conn.execute("PRAGMA table_info(market_snapshots)")}
+    with conn:
+        for col, col_type in DERIVED_SNAPSHOT_COLUMNS:
+            if col not in existing:
+                conn.execute(f"ALTER TABLE market_snapshots ADD COLUMN {col} {col_type}")
+
+
 def ensure_db(db_path=DB_PATH):
     conn = connect(db_path)
     init_db(conn)
+    _migrate_snapshot_columns(conn)
     return conn
 
 
@@ -343,6 +370,10 @@ def project_snapshot(errors=None, flag_func=None, watchlist_entries=None, db_pat
                 "yt_floating_apy": snap["yt_floating_apy"],
                 "pt_vs_underlying_spread": snap["pt_vs_underlying_spread"],
                 "aggregated_lp_apy": snap["aggregated_lp_apy"],
+                "yt_breakeven_days": snap["yt_breakeven_days"],
+                "yt_underwater": (None if snap["yt_underwater"] is None else bool(snap["yt_underwater"])),
+                "yt_implied_vs_realized": snap["yt_implied_vs_realized"],
+                "yt_theoretical_decay_usd_per_day": snap["yt_theoretical_decay_usd_per_day"],
                 "pt_price_usd": snap["pt_price_usd"],
                 "yt_price_usd": snap["yt_price_usd"],
                 "sy_price_usd": snap["sy_price_usd"],
