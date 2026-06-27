@@ -45,6 +45,7 @@ logs/
 data/*.db
 data/*.db-wal
 data/*.db-shm
+data/pendle_alert_state.json
 
 # Temporary files
 debug_*.py

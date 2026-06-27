@@ -309,11 +309,11 @@ def project_snapshot(errors=None, flag_func=None, db_path=DB_PATH):
             exposure = pos["exposure"] if pos and pos["exposure"] is not None else entry.get("exposure")
             ladder = json.loads(snap["exit_slippage_ladder_json"] or "[]")
             rec = {
-                "key": market["name"],
+                "key": entry["key"],
                 "exposure": exposure,
                 "chain": market["chain"],
                 "market_address": market["market_address"],
-                "underlier": market["underlier"],
+                "underlier": entry.get("underlier") or market["underlier"],
                 "maturity": market["maturity"],
                 "days_to_maturity": snap["days_to_maturity"],
                 "expired": bool(snap["expired"]),

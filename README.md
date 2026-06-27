@@ -7,6 +7,7 @@ the source of truth; `data/pendle_markets.json` is the committed feed projection
 
 - `data/pendle.db` - local SQLite market/time-series store, ignored by git
 - `data/pendle_markets.json` - latest watchlist snapshot projection, committed
+- `data/pendle_index_latest.json` - latest ETH active-market index projection, committed
 - `data/pendle_alert_state.json` - local alerter state
 
 The P0 schema is compatible with PegTracker's former `data/pendle_markets.json`
@@ -47,6 +48,18 @@ Run the risk alerter without sending Telegram messages:
 python3 pendle_risk_alerter.py --dry-run
 ```
 
+Refresh the broad Ethereum active-market index:
+
+```bash
+python3 -m pendle_tracker index
+```
+
+Rank indexed markets:
+
+```bash
+python3 -m pendle_tracker top --by implied_apy --n 20
+```
+
 ## Cron
 
 `cron_pendle_tracker.sh` runs the standalone producer flow:
@@ -68,3 +81,6 @@ longer the active runtime path.
 `data/pendle.db` is ignored because it grows on every run. A clean git tree only
 means the committed projection is clean; verify DB state directly with `sqlite3`
 when checking runtime correctness.
+
+The broad index sweep is meant for a lower cadence than the hourly watchlist
+snapshot. Installing that cadence is a host crontab change outside this repo.

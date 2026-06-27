@@ -6,6 +6,8 @@ Ad-hoc Pendle queries.
   python -m pendle_tracker query --market PT-srUSDat-27AUG2026
   python -m pendle_tracker query --market PT-srUSDat-27AUG2026 --field pt_implied_apy
   python -m pendle_tracker query --market PT-srUSDat-27AUG2026 --live
+  python -m pendle_tracker index
+  python -m pendle_tracker top --by implied_apy --n 20
 """
 
 import argparse
@@ -14,6 +16,7 @@ import logging
 import sys
 
 from . import collector
+from . import index as market_index
 
 
 def _find_key(partial):
@@ -38,6 +41,11 @@ def main(argv=None):
 
     sub.add_parser("snapshot", help="run watchlist, write DB + JSON projection")
     sub.add_parser("list", help="print latest records from snapshot")
+    sub.add_parser("index", help="sweep active ETH Pendle markets into DB + index projection")
+
+    top = sub.add_parser("top", help="rank latest indexed markets")
+    top.add_argument("--by", choices=sorted(market_index.RANK_FIELDS), required=True)
+    top.add_argument("--n", type=int, default=20)
 
     q = sub.add_parser("query", help="look up one market")
     q.add_argument("--market", "-m", required=True)
@@ -53,6 +61,18 @@ def main(argv=None):
 
     if args.cmd == "list":
         print(json.dumps(collector.query(), indent=2, default=str))
+        return
+
+    if args.cmd == "index":
+        out = market_index.sweep_index(write=True)
+        print(
+            f"{out['records']} indexed markets, {len(out['errors'])} errors, "
+            f"{out['api_calls']} API calls"
+        )
+        return
+
+    if args.cmd == "top":
+        print(json.dumps(market_index.top_markets(args.by, n=args.n), indent=2, default=str))
         return
 
     if args.cmd == "query":
