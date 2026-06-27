@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T07:10:47Z",
+  "generated_at": "2026-06-27T07:35:24Z",
   "chain": 1,
   "markets": [
     {
@@ -9,7 +9,7 @@
       "market_address": "0x4237a8acbd0b5a2dec4aa83b1fd83f20162d02b8",
       "underlier": "srUSDat",
       "maturity": "2026-08-27T00:00:00.000Z",
-      "days_to_maturity": 60.7,
+      "days_to_maturity": 60.68,
       "expired": false,
       "our_notional_usd": 52906.96447545956,
       "pt_address": "0x2d433b943fb8c015ae409444b7f960ed288082b4",
@@ -17,44 +17,44 @@
       "sy_address": "0x9d0fc59f88acb85520a8cfb74c7fe141d8563185",
       "underlying_address": "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066",
       "pt_implied_apy": 11.847,
-      "underlying_apy": 7.826,
-      "yt_floating_apy": -92.5437,
-      "pt_vs_underlying_spread": 4.021,
-      "aggregated_lp_apy": 13.2491,
-      "pt_price_usd": 0.9810609843997986,
-      "yt_price_usd": 0.018438178530642953,
-      "sy_price_usd": 1.0112722635705993,
-      "underlying_price_usd": 1.0112723212911714,
-      "pt_discount": 1.8448,
-      "liquidity_usd": 1051801.98798943,
-      "total_tvl_usd": 5496214.946682967,
-      "trading_volume_usd": 1501670.0137215534,
-      "total_pt": 951867.996981,
-      "total_sy": 116646.37994302648,
+      "underlying_apy": 7.8259,
+      "yt_floating_apy": -92.5499,
+      "pt_vs_underlying_spread": 4.0211,
+      "aggregated_lp_apy": 13.2505,
+      "pt_price_usd": 0.981067039231414,
+      "yt_price_usd": 0.018433148565676676,
+      "sy_price_usd": 1.011276299009716,
+      "underlying_price_usd": 1.0112763567309484,
+      "pt_discount": 1.8443,
+      "liquidity_usd": 1051388.1988295696,
+      "total_tvl_usd": 5495956.07904931,
+      "trading_volume_usd": 1495203.568927465,
+      "total_pt": 951464.568337,
+      "total_sy": 116592.4895439579,
       "exit_slippage_ladder": [
         {
           "notional_usd": 10000,
           "is_our_notional": false,
-          "price_impact_bps": 1.726
+          "price_impact_bps": 2.02
         },
         {
           "notional_usd": 50000,
           "is_our_notional": false,
-          "price_impact_bps": 1.727
+          "price_impact_bps": 2.021
         },
         {
           "notional_usd": 52906.96447545956,
           "is_our_notional": true,
-          "price_impact_bps": 1.727
+          "price_impact_bps": 2.021
         },
         {
           "notional_usd": 100000,
           "is_our_notional": false,
-          "price_impact_bps": 1.729
+          "price_impact_bps": 2.022
         }
       ],
-      "exit_slippage_bps_at_notional": 1.727,
-      "fetched_at": "2026-06-27T07:10:30Z",
+      "exit_slippage_bps_at_notional": 2.021,
+      "fetched_at": "2026-06-27T07:35:09Z",
       "flags": []
     },
     {
@@ -64,7 +64,7 @@
       "market_address": "0xaf0349fb9b1ba07d34381870c59b560b31412660",
       "underlier": "apxUSD",
       "maturity": "2026-11-05T00:00:00.000Z",
-      "days_to_maturity": 130.7,
+      "days_to_maturity": 130.68,
       "expired": false,
       "our_notional_usd": 31300.18932411525,
       "pt_address": "0xaf687b5ecb525ccea96115088999b4ed80c388b6",
@@ -75,41 +75,41 @@
       "underlying_apy": 0.0,
       "yt_floating_apy": -100.0,
       "pt_vs_underlying_spread": 10.9412,
-      "aggregated_lp_apy": 6.6132,
-      "pt_price_usd": 0.7203605446293114,
-      "yt_price_usd": 0.027287276570688596,
-      "sy_price_usd": 0.7476478212000001,
-      "underlying_price_usd": 0.7476478212000001,
-      "pt_discount": 3.6498,
-      "liquidity_usd": 2981508.389688606,
-      "total_tvl_usd": 15884000.518047603,
-      "trading_volume_usd": 86234.01339731831,
+      "aggregated_lp_apy": 6.6358,
+      "pt_price_usd": 0.7130600721631623,
+      "yt_price_usd": 0.027007138011077774,
+      "sy_price_usd": 0.74006721017424,
+      "underlying_price_usd": 0.74006721017424,
+      "pt_discount": 3.6493,
+      "liquidity_usd": 2951368.9849971617,
+      "total_tvl_usd": 15723479.37295064,
+      "trading_volume_usd": 85989.71830534647,
       "total_pt": 1075869.8173060734,
       "total_sy": 2951248.5643639425,
       "exit_slippage_ladder": [
         {
           "notional_usd": 10000,
           "is_our_notional": false,
-          "price_impact_bps": 10.017
+          "price_impact_bps": 10.335
         },
         {
           "notional_usd": 31300.18932411525,
           "is_our_notional": true,
-          "price_impact_bps": 15.114
+          "price_impact_bps": 15.482
         },
         {
           "notional_usd": 50000,
           "is_our_notional": false,
-          "price_impact_bps": 19.516
+          "price_impact_bps": 19.47
         },
         {
           "notional_usd": 100000,
           "is_our_notional": false,
-          "price_impact_bps": 29.958
+          "price_impact_bps": 29.9
         }
       ],
-      "exit_slippage_bps_at_notional": 15.114,
-      "fetched_at": "2026-06-27T07:10:36Z",
+      "exit_slippage_bps_at_notional": 15.482,
+      "fetched_at": "2026-06-27T07:35:14Z",
       "flags": []
     },
     {
@@ -119,7 +119,7 @@
       "market_address": "0x177768caf9d0e036725a51d3f60d7e20f2d4d194",
       "underlier": "sUSDe",
       "maturity": "2026-08-13T00:00:00.000Z",
-      "days_to_maturity": 46.7,
+      "days_to_maturity": 46.68,
       "expired": false,
       "our_notional_usd": null,
       "pt_address": "0x5a19fa369f2895dcd8d2cee62e4ceae58ef92bbb",
@@ -127,17 +127,17 @@
       "sy_address": "0xbf98480425a29197e5d99d003017f63a1e595d02",
       "underlying_address": "0x9d39a5de30e57443bff2a8307a4256c8797a3497",
       "pt_implied_apy": 4.2945,
-      "underlying_apy": 3.572,
-      "yt_floating_apy": -83.0479,
-      "pt_vs_underlying_spread": 0.7225,
-      "aggregated_lp_apy": 3.9473,
-      "pt_price_usd": 0.992680749978753,
-      "yt_price_usd": 0.005355097297779671,
+      "underlying_apy": 3.5726,
+      "yt_floating_apy": -83.0377,
+      "pt_vs_underlying_spread": 0.7219,
+      "aggregated_lp_apy": 3.9478,
+      "pt_price_usd": 0.9926809794953608,
+      "yt_price_usd": 0.0053531343730591225,
       "sy_price_usd": 1.23454011,
       "underlying_price_usd": 1.23454011,
-      "pt_discount": 0.5366,
-      "liquidity_usd": 9353360.440791337,
-      "total_tvl_usd": 38124401.99886974,
+      "pt_discount": 0.5364,
+      "liquidity_usd": 9353360.846912146,
+      "total_tvl_usd": 38124409.16535722,
       "trading_volume_usd": 76309.93460474529,
       "total_pt": 1741129.1384919134,
       "total_sy": 6176368.86461448,
@@ -155,11 +155,11 @@
         {
           "notional_usd": 100000,
           "is_our_notional": false,
-          "price_impact_bps": 1.483
+          "price_impact_bps": 1.482
         }
       ],
-      "exit_slippage_bps_at_notional": 1.483,
-      "fetched_at": "2026-06-27T07:10:42Z",
+      "exit_slippage_bps_at_notional": 1.482,
+      "fetched_at": "2026-06-27T07:35:18Z",
       "flags": []
     },
     {
@@ -169,7 +169,7 @@
       "market_address": "0x43c97094da0e894d3af2fda6f507d59a29888251",
       "underlier": "USDe",
       "maturity": "2026-08-13T00:00:00.000Z",
-      "days_to_maturity": 46.7,
+      "days_to_maturity": 46.68,
       "expired": false,
       "our_notional_usd": null,
       "pt_address": "0x3ec43f4158d51df0928979c09eaf33cad287065c",
@@ -181,13 +181,13 @@
       "yt_floating_apy": -100.0,
       "pt_vs_underlying_spread": 5.494,
       "aggregated_lp_apy": 2.3581,
-      "pt_price_usd": 0.9912167575581131,
-      "yt_price_usd": 0.006806322441886817,
+      "pt_price_usd": 0.9912192186337334,
+      "yt_price_usd": 0.006803861366266514,
       "sy_price_usd": 0.99802308,
       "underlying_price_usd": 0.99802308,
-      "pt_discount": 0.682,
-      "liquidity_usd": 445346.893235439,
-      "total_tvl_usd": 892641.106190667,
+      "pt_discount": 0.6818,
+      "liquidity_usd": 445347.32807551144,
+      "total_tvl_usd": 892642.6789194733,
       "trading_volume_usd": 1932.9570201961938,
       "total_pt": 172446.55053983192,
       "total_sy": 274958.5954483783,
@@ -195,21 +195,21 @@
         {
           "notional_usd": 10000,
           "is_our_notional": false,
-          "price_impact_bps": 3.426
+          "price_impact_bps": 3.424
         },
         {
           "notional_usd": 50000,
           "is_our_notional": false,
-          "price_impact_bps": 12.391
+          "price_impact_bps": 12.387
         },
         {
           "notional_usd": 100000,
           "is_our_notional": false,
-          "price_impact_bps": 23.752
+          "price_impact_bps": 23.743
         }
       ],
-      "exit_slippage_bps_at_notional": 23.752,
-      "fetched_at": "2026-06-27T07:10:47Z",
+      "exit_slippage_bps_at_notional": 23.743,
+      "fetched_at": "2026-06-27T07:35:24Z",
       "flags": []
     }
   ],
