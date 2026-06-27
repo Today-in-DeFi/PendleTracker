@@ -28,6 +28,9 @@ HISTORY_PATH = os.path.join(DATA_DIR, "pendle_markets_history.json")
 # Flag thresholds
 NEAR_MATURITY_DAYS = 14
 LOW_LIQUIDITY_SLIPPAGE_BPS = 50.0   # exit slippage at our notional (or top rung)
+# Relative PT/SY composition move (over db.COMPOSITION_DRIFT_WINDOW_DAYS) that
+# trips the composition_drift flag. 0.15 = ±15% shift in the ratio.
+COMPOSITION_DRIFT_FLAG_THRESHOLD = 0.15
 
 
 def _pct(x):
@@ -90,6 +93,51 @@ def compute_yt_analytics(yt_price_usd, underlying_apy, underlying_price_usd,
         out["yt_theoretical_decay_usd_per_day"] = round(yt_price_usd / days_to_maturity, 8)
 
     return out
+
+
+def compute_lp_analytics(data, total_pt, total_sy):
+    """
+    LP-leg analytics derived from the Pendle /v2 market `data` payload.
+
+    APY decomposition — what the API genuinely exposes (all raw fractions):
+      swapFeeApy                trading-fee yield to LPs
+      pendleApy/arbApy/
+      lpRewardApy/voterApy      named incentive/reward streams
+      maxBoostedApy             aggregated APY for a max-vePENDLE-boosted LP
+    The API does NOT expose a clean linear decomposition of `aggregatedApy` (the
+    blended LP total): aggregatedApy also embeds the organic PT-fixed + SY-
+    underlying yield earned across the two LP legs and is not a documented sum of
+    the named components (verified 2026-06-27: underlyingApy+swapFeeApy+pendleApy
+    left a ~3.6pp residual vs aggregatedApy). We therefore persist the genuine
+    component streams and do NOT synthesise a residual "base" split — read the
+    organic base from underlying_apy / pt_implied_apy + the PT/SY composition.
+
+      - lp_swap_fee_apy    trading-fee component (percent)
+      - lp_incentive_apy   sum of the named reward streams pendle+arb+lpReward+voter (percent)
+      - lp_max_boosted_apy aggregated APY for a max-boosted LP (percent)
+      - pt_sy_ratio        total_pt / total_sy — token-amount composition of the pool
+                           (units differ across legs; a composition proxy, not a USD ratio)
+    """
+    data = data or {}
+
+    swap_fee = _pct(data.get("swapFeeApy"))
+    incentive_parts = [data.get(k) for k in ("pendleApy", "arbApy", "lpRewardApy", "voterApy")]
+    incentive_parts = [p for p in incentive_parts if p is not None]
+    incentive = _pct(sum(incentive_parts)) if incentive_parts else None
+    max_boosted = _pct(data.get("maxBoostedApy"))
+
+    pt_sy_ratio = None
+    if total_pt is not None and total_sy not in (None, 0):
+        pt_sy_ratio = round(total_pt / total_sy, 6)
+
+    return {
+        "lp_swap_fee_apy": swap_fee,
+        "lp_incentive_apy": incentive,
+        "lp_max_boosted_apy": max_boosted,
+        "pt_sy_ratio": pt_sy_ratio,
+        # composition_drift is filled in db.write_records (needs prior history)
+        "composition_drift": None,
+    }
 
 
 def _exit_slippage_ladder(client, entry, pt, underlying):
@@ -193,6 +241,7 @@ def build_market_record(entry, client=None):
         days_to_maturity=record["days_to_maturity"],
         yt_floating_apy=record["yt_floating_apy"],
     ))
+    record.update(compute_lp_analytics(data, record["total_pt"], record["total_sy"]))
     record["flags"] = _flags(record)
     return record
 
@@ -219,6 +268,11 @@ def _flags(r):
         dd = r.get("days_to_maturity")
         flags.append({"code": "yt_underwater", "severity": "info",
                       "msg": f"YT breakeven {be:.0f}d > {dd:.0f}d to maturity at current underlying yield"})
+    drift = r.get("composition_drift")
+    if drift is not None and abs(drift) > COMPOSITION_DRIFT_FLAG_THRESHOLD:
+        flags.append({"code": "composition_drift", "severity": "info",
+                      "msg": f"PT/SY ratio moved {drift*100:+.0f}% over {db.COMPOSITION_DRIFT_WINDOW_DAYS}d "
+                             f"(>{COMPOSITION_DRIFT_FLAG_THRESHOLD*100:.0f}%) — LP leg-exposure shifting"})
     return flags
 
 

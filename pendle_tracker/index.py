@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 
 from .client import PendleClient, PendleAPIError
 from . import db
-from .collector import compute_yt_analytics
+from .collector import compute_yt_analytics, compute_lp_analytics
 
 logger = logging.getLogger(__name__)
 
@@ -37,6 +37,11 @@ INDEX_FIELDS = [
     "yt_underwater",
     "yt_implied_vs_realized",
     "yt_theoretical_decay_usd_per_day",
+    "lp_swap_fee_apy",
+    "lp_incentive_apy",
+    "lp_max_boosted_apy",
+    "pt_sy_ratio",
+    "composition_drift",
     "liquidity_usd",
     "total_tvl_usd",
     "trading_volume_usd",
@@ -45,6 +50,8 @@ INDEX_FIELDS = [
 RANK_FIELDS = {
     "implied_apy": "pt_implied_apy",
     "yt_floating_apy": "yt_floating_apy",
+    "aggregated_lp_apy": "aggregated_lp_apy",
+    "lp_max_boosted_apy": "lp_max_boosted_apy",
     "liquidity_usd": "liquidity_usd",
     "pt_discount": "pt_discount",
     "days_to_maturity": "days_to_maturity",
@@ -170,6 +177,7 @@ def build_index_record(active_entry, detail, data=None):
         days_to_maturity=days,
         yt_floating_apy=yt_floating_apy,
     ))
+    record.update(compute_lp_analytics(data, record["total_pt"], record["total_sy"]))
     return record
 
 
@@ -223,6 +231,11 @@ def project_index(chain=CHAIN_ID):
             "yt_underwater": (None if row["yt_underwater"] is None else bool(row["yt_underwater"])),
             "yt_implied_vs_realized": row["yt_implied_vs_realized"],
             "yt_theoretical_decay_usd_per_day": row["yt_theoretical_decay_usd_per_day"],
+            "lp_swap_fee_apy": row["lp_swap_fee_apy"],
+            "lp_incentive_apy": row["lp_incentive_apy"],
+            "lp_max_boosted_apy": row["lp_max_boosted_apy"],
+            "pt_sy_ratio": row["pt_sy_ratio"],
+            "composition_drift": row["composition_drift"],
             "liquidity_usd": row["liquidity_usd"],
             "total_tvl_usd": row["total_tvl_usd"],
             "trading_volume_usd": row["trading_volume_usd"],

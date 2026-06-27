@@ -35,6 +35,12 @@ SNAPSHOT_COLUMNS = [
     "yt_underwater",
     "yt_implied_vs_realized",
     "yt_theoretical_decay_usd_per_day",
+    # derived LP-leg analytics (P2-C)
+    "lp_swap_fee_apy",
+    "lp_incentive_apy",
+    "lp_max_boosted_apy",
+    "pt_sy_ratio",
+    "composition_drift",
 ]
 
 # Genuinely-new derived columns added after the original table shipped. Existing
@@ -45,7 +51,18 @@ DERIVED_SNAPSHOT_COLUMNS = [
     ("yt_underwater", "INTEGER"),
     ("yt_implied_vs_realized", "REAL"),
     ("yt_theoretical_decay_usd_per_day", "REAL"),
+    # P2-C LP analytics
+    ("lp_swap_fee_apy", "REAL"),
+    ("lp_incentive_apy", "REAL"),
+    ("lp_max_boosted_apy", "REAL"),
+    ("pt_sy_ratio", "REAL"),
+    ("composition_drift", "REAL"),
 ]
+
+# Window (days) over which PT/SY composition drift is measured. A drifting
+# PT/SY ratio signals the AMM repricing toward/away from maturity and shifting
+# LP exposure between the PT and SY legs.
+COMPOSITION_DRIFT_WINDOW_DAYS = 7
 
 HISTORY_IMPORT_FIELDS = [
     "pt_price_usd",
@@ -97,6 +114,8 @@ def init_db(conn):
           exit_slippage_bps_at_notional REAL,
           yt_breakeven_days REAL, yt_underwater INTEGER,
           yt_implied_vs_realized REAL, yt_theoretical_decay_usd_per_day REAL,
+          lp_swap_fee_apy REAL, lp_incentive_apy REAL, lp_max_boosted_apy REAL,
+          pt_sy_ratio REAL, composition_drift REAL,
           price_source TEXT,
           exit_slippage_ladder_json TEXT
         );
@@ -208,12 +227,60 @@ def insert_market_snapshot(conn, record, price_source="pendle_api"):
     )
 
 
+def _prior_pt_sy_ratio(conn, market_address, window_days):
+    """Return the PT/SY ratio from the snapshot nearest the window cutoff.
+
+    Prefers the most recent snapshot at least `window_days` old; if no snapshot
+    is that old yet (young DB), falls back to the earliest available so drift
+    still surfaces a signal as history accumulates. Returns None if there is no
+    prior ratio at all (e.g. the market's first snapshot)."""
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=window_days)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    row = conn.execute(
+        """
+        SELECT pt_sy_ratio FROM market_snapshots
+        WHERE market_address = ? AND ts <= ? AND pt_sy_ratio IS NOT NULL
+        ORDER BY ts DESC, id DESC LIMIT 1
+        """,
+        (market_address, cutoff),
+    ).fetchone()
+    if row is None:
+        row = conn.execute(
+            """
+            SELECT pt_sy_ratio FROM market_snapshots
+            WHERE market_address = ? AND pt_sy_ratio IS NOT NULL
+            ORDER BY ts ASC, id ASC LIMIT 1
+            """,
+            (market_address,),
+        ).fetchone()
+    return row[0] if row and row[0] is not None else None
+
+
+def compute_composition_drift(conn, market_address, current_ratio,
+                              window_days=COMPOSITION_DRIFT_WINDOW_DAYS):
+    """Relative change in the PT/SY composition ratio over `window_days`.
+
+    Returned as a signed fraction ((current - prior) / prior), e.g. 0.20 = +20%.
+    Must be called BEFORE the current snapshot is inserted so only prior rows are
+    seen. Returns None when there is no comparable prior ratio."""
+    if current_ratio is None:
+        return None
+    prior = _prior_pt_sy_ratio(conn, market_address, window_days)
+    if prior in (None, 0):
+        return None
+    return round((current_ratio - prior) / prior, 6)
+
+
 def write_records(records, db_path=DB_PATH):
     conn = ensure_db(db_path)
     try:
         with conn:
             for record in records:
                 upsert_market(conn, record)
+                # Composition drift needs prior history; compute against rows
+                # already in the DB, before inserting this snapshot.
+                record["composition_drift"] = compute_composition_drift(
+                    conn, record["market_address"], record.get("pt_sy_ratio")
+                )
                 insert_market_snapshot(conn, record)
     finally:
         conn.close()
@@ -374,6 +441,11 @@ def project_snapshot(errors=None, flag_func=None, watchlist_entries=None, db_pat
                 "yt_underwater": (None if snap["yt_underwater"] is None else bool(snap["yt_underwater"])),
                 "yt_implied_vs_realized": snap["yt_implied_vs_realized"],
                 "yt_theoretical_decay_usd_per_day": snap["yt_theoretical_decay_usd_per_day"],
+                "lp_swap_fee_apy": snap["lp_swap_fee_apy"],
+                "lp_incentive_apy": snap["lp_incentive_apy"],
+                "lp_max_boosted_apy": snap["lp_max_boosted_apy"],
+                "pt_sy_ratio": snap["pt_sy_ratio"],
+                "composition_drift": snap["composition_drift"],
                 "pt_price_usd": snap["pt_price_usd"],
                 "yt_price_usd": snap["yt_price_usd"],
                 "sy_price_usd": snap["sy_price_usd"],
