@@ -1,12 +1,12 @@
 # PendleTracker
 
-Standalone Pendle PT/YT/LP watchlist producer. The active implementation is the
-extracted PegTracker Pendle package under `pendle_tracker/`.
+Standalone Pendle PT/YT/LP watchlist producer. SQLite under `data/pendle.db` is
+the source of truth; `data/pendle_markets.json` is the committed feed projection.
 
 ## Outputs
 
-- `data/pendle_markets.json` - latest watchlist snapshot
-- `data/pendle_markets_history.json` - rolling per-market history
+- `data/pendle.db` - local SQLite market/time-series store, ignored by git
+- `data/pendle_markets.json` - latest watchlist snapshot projection, committed
 - `data/pendle_alert_state.json` - local alerter state
 
 The P0 schema is compatible with PegTracker's former `data/pendle_markets.json`
@@ -23,7 +23,7 @@ Telegram alerts use `telegram_config.json`, matching the copied
 
 ## Usage
 
-Write a fresh snapshot and append history:
+Write a fresh snapshot, append SQLite history, and regenerate the JSON feed:
 
 ```bash
 python3 -m pendle_tracker snapshot
@@ -62,3 +62,9 @@ Install it hourly with the scheduler used on the host.
 
 The old Google Sheets implementation is archived under `_legacy/`. It is no
 longer the active runtime path.
+
+## Storage Notes
+
+`data/pendle.db` is ignored because it grows on every run. A clean git tree only
+means the committed projection is clean; verify DB state directly with `sqlite3`
+when checking runtime correctness.

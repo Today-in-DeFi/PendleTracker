@@ -41,6 +41,11 @@ Thumbs.db
 logs/
 *.log
 
+# SQLite state (JSON projections under data/ remain committed)
+data/*.db
+data/*.db-wal
+data/*.db-shm
+
 # Temporary files
 debug_*.py
 test_*.py

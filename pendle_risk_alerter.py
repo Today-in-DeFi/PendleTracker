@@ -52,7 +52,6 @@ DATA_DIR = os.path.join(PROJECT_DIR, "data")
 STATE_PATH = os.path.join(DATA_DIR, "pendle_alert_state.json")
 TELEGRAM_CONFIG = os.path.join(PROJECT_DIR, "telegram_config.json")
 SNAPSHOT_PATH = os.path.join(DATA_DIR, "pendle_markets.json")
-HISTORY_PATH = os.path.join(DATA_DIR, "pendle_markets_history.json")
 
 FETCH_TIMEOUT = 15
 SNAPSHOT_MAX_AGE_HOURS = 6   # don't fire on a stale snapshot
@@ -141,11 +140,27 @@ def read_snapshot():
 
 
 def read_history():
-    try:
-        with open(HISTORY_PATH) as f:
-            return json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
+    snap = read_snapshot()
+    if not snap:
         return {"markets": {}}
+    try:
+        from pendle_tracker import history as db_history
+    except ImportError as exc:
+        print(f"WARN: could not import Pendle DB history API: {exc}", file=sys.stderr)
+        return {"markets": {}}
+
+    markets = {}
+    for market in snap.get("markets", []):
+        key = market.get("key")
+        if not key:
+            continue
+        entries = []
+        for row in db_history(key, days=LIQ_BASELINE_LOOKBACK_DAYS + 1):
+            item = dict(row)
+            item.setdefault("timestamp", item.get("ts"))
+            entries.append(item)
+        markets[key] = {"entries": entries}
+    return {"markets": markets}
 
 
 def liquidity_baseline(history, key, now):

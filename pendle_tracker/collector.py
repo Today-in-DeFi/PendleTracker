@@ -1,9 +1,9 @@
 """
-Pendle collector — builds normalized per-market records, writes the published
-snapshot, and appends history.
+Pendle collector — builds normalized per-market records, writes SQLite history,
+and regenerates the published JSON projection.
 
 Public entry points are re-exported from pendle_tracker/__init__.py:
-  - snapshot()            run the full watchlist, write snapshot + history
+  - snapshot()            run the full watchlist, write DB + JSON projection
   - get_market(key)       latest record for one market (for in-process analyzer use)
   - query(...)            ad-hoc lookups (used by the CLI)
 """
@@ -14,8 +14,8 @@ import os
 from datetime import datetime, timezone
 
 from .client import PendleClient, PendleAPIError
+from . import db
 from . import watchlist as wl
-from .store import PendleHistoryStore
 
 logger = logging.getLogger(__name__)
 
@@ -165,7 +165,7 @@ def _flags(r):
 
 
 def snapshot(write=True):
-    """Run the full watchlist; return the snapshot dict. Writes files when write=True."""
+    """Run the full watchlist; return the snapshot dict. Writes DB/JSON when write=True."""
     client = PendleClient()
     records, errors = [], []
     for entry in wl.WATCHLIST:
@@ -184,16 +184,15 @@ def snapshot(write=True):
 
     if write:
         os.makedirs(DATA_DIR, exist_ok=True)
-        tmp = SNAPSHOT_PATH + ".tmp"
-        with open(tmp, "w") as f:
-            json.dump(snap, f, indent=2)
-        os.replace(tmp, SNAPSHOT_PATH)
-
-        store = PendleHistoryStore(HISTORY_PATH)
-        for r in records:
-            store.append(r["key"], {**r, "timestamp": r["fetched_at"]})
-        store.save()
-        logger.info(f"[Pendle] snapshot: {len(records)} markets, {len(errors)} errors")
+        imported = db.import_history_json(HISTORY_PATH, SNAPSHOT_PATH)
+        if imported:
+            logger.info(f"[Pendle] imported {imported} JSON history rows into SQLite")
+        db.write_records(records)
+        snap = db.write_snapshot_json(SNAPSHOT_PATH, errors=errors, flag_func=_flags)
+        logger.info(
+            f"[Pendle] snapshot: {len(records)} markets, {len(errors)} errors; "
+            f"JSON projection: {len(snap['markets'])} markets"
+        )
 
     return snap
 

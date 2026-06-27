@@ -1,7 +1,7 @@
 """
 Ad-hoc Pendle queries.
 
-  python -m pendle_tracker snapshot             # run + write snapshot/history
+  python -m pendle_tracker snapshot             # run + write DB + JSON projection
   python -m pendle_tracker list                 # latest records (from snapshot)
   python -m pendle_tracker query --market PT-srUSDat-27AUG2026
   python -m pendle_tracker query --market PT-srUSDat-27AUG2026 --field pt_implied_apy
@@ -36,7 +36,7 @@ def main(argv=None):
     p = argparse.ArgumentParser(prog="pendle_tracker")
     sub = p.add_subparsers(dest="cmd", required=True)
 
-    sub.add_parser("snapshot", help="run watchlist, write snapshot + history")
+    sub.add_parser("snapshot", help="run watchlist, write DB + JSON projection")
     sub.add_parser("list", help="print latest records from snapshot")
 
     q = sub.add_parser("query", help="look up one market")
