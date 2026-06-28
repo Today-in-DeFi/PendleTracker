@@ -57,4 +57,5 @@ Google\ Credentials.json
 
 # Config files with sensitive data
 config.json
+telegram_config.json
 my_pts.json
