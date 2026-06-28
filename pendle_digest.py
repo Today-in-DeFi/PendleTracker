@@ -71,9 +71,12 @@ def _parse_ts(ts):
     if not ts:
         return None
     try:
-        return datetime.fromisoformat(str(ts).replace("Z", "+00:00"))
+        dt = datetime.fromisoformat(str(ts).replace("Z", "+00:00"))
     except (ValueError, AttributeError):
         return None
+    if dt.tzinfo is None:           # bare dates (entry_date) -> assume UTC
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt
 
 
 def _age_hours(ts_str, now):
@@ -132,11 +135,14 @@ def fmt_usd(v):
     if v is None:
         return "$?"
     a = abs(v)
+    sign = "-" if v < 0 else ""
     if a >= 1_000_000:
-        return f"${v/1_000_000:.2f}M"
-    if a >= 1_000:
-        return f"${v/1_000:.1f}K"
-    return f"${v:,.0f}"
+        s = f"{a/1_000_000:.2f}M".replace(".00M", "M")
+    elif a >= 1_000:
+        s = f"{a/1_000:.1f}K".replace(".0K", "K")
+    else:
+        return f"{sign}${a:,.0f}"
+    return f"{sign}${s}"
 
 
 def fmt_pct(v):
@@ -157,7 +163,43 @@ FLAG_LABEL = {
 }
 
 
-def build_position(pos, market_index):
+def _sane(v, floor=-99.0):
+    """The Pendle API returns 0/-100 sentinels when an underlying/YT feed is
+    missing; treat those as 'no data' so we don't render garbage yields."""
+    return v is not None and v > floor
+
+
+def apy_trend(market_key, entry_date, current_apy, now):
+    """Reference implied APY for context: the value at (nearest to) entry when
+    our DB history brackets entry_date, else the oldest tracked point with an
+    honest horizon label. Returns {ref_apy, label, delta_pp} or None."""
+    try:
+        from pendle_tracker import history
+        rows = history(market_key)
+    except Exception:                                   # noqa: BLE001 - never break the digest
+        return None
+    pts = []
+    for r in rows:
+        a, t = r.get("pt_implied_apy"), _parse_ts(r.get("ts") or r.get("timestamp"))
+        if a is not None and t is not None:
+            pts.append((t, a))
+    if not pts:
+        return None
+    pts.sort()
+    entry_dt = _parse_ts(entry_date)
+    oldest_t = pts[0][0]
+    if entry_dt and oldest_t <= entry_dt <= now:
+        ref_a = min(pts, key=lambda p: abs((p[0] - entry_dt).total_seconds()))[1]
+        label = "entry"
+    else:
+        ref_a = pts[0][1]
+        d = max(0, (now - oldest_t).days)
+        label = f"{d}d ago" if d > 0 else "since tracked"
+    delta = (current_apy - ref_a) if current_apy is not None else None
+    return {"ref_apy": ref_a, "label": label, "delta_pp": delta}
+
+
+def build_position(pos, market_index, now):
     """Merge a feed position with its snapshot record into a flat render dict."""
     cid = _chain_id(pos.get("chain"))
     pt = _norm_addr(pos.get("pt_token_address"))
@@ -169,29 +211,56 @@ def build_position(pos, market_index):
         fixed = pos["pt_implied_apy"] * 100.0
 
     name = rec.get("key") or pos.get("symbol") or pos.get("position_name") or "?"
-    tag = CHAIN_TAG.get(cid)
-
     flags = [f.get("code") for f in rec.get("flags", []) if f.get("code")]
+
+    value_usd = pos.get("value_usd") or 0.0
+    entry_value = pos.get("entry_value")
+    pnl_usd = (value_usd - entry_value) if entry_value else None
+    pnl_pct = (pnl_usd / entry_value * 100) if entry_value else None
+
+    # deepest ladder rung (largest notional) as an exit-depth indicator
+    ladder = rec.get("exit_slippage_ladder") or []
+    deep = max(ladder, key=lambda r: r.get("notional_usd") or 0, default=None)
+
+    trend = apy_trend(name, pos.get("entry_date"), fixed, now) if rec else None
 
     return {
         "name": name,
-        "chain_tag": tag,
-        "value_usd": pos.get("value_usd") or 0.0,
+        "chain_tag": CHAIN_TAG.get(cid),
+        "value_usd": value_usd,
         "fixed_apy": fixed,
+        "apy_trend": trend,
         "days_to_maturity": rec.get("days_to_maturity"),
-        "pt_discount": rec.get("pt_discount"),
-        "exit_bps": rec.get("exit_slippage_bps_at_notional"),
         "days_held": pos.get("days_held"),
+        # mark-to-market
+        "pt_price_usd": rec.get("pt_price_usd"),
+        "underlying_price_usd": rec.get("underlying_price_usd"),
+        "pt_discount": rec.get("pt_discount"),
+        "pnl_usd": pnl_usd,
+        "pnl_pct": pnl_pct,
+        # pool / exit liquidity
+        "liquidity_usd": rec.get("liquidity_usd"),
+        "total_tvl_usd": rec.get("total_tvl_usd"),
+        "pt_sy_ratio": rec.get("pt_sy_ratio"),
+        "aggregated_lp_apy": rec.get("aggregated_lp_apy"),
+        "exit_bps": rec.get("exit_slippage_bps_at_notional"),
+        "exit_deep_bps": (deep or {}).get("price_impact_bps") if deep else None,
+        "exit_deep_usd": (deep or {}).get("notional_usd") if deep else None,
+        # yield decomposition (PT vs underlying vs YT)
+        "underlying_apy": rec.get("underlying_apy"),
+        "yt_floating_apy": rec.get("yt_floating_apy"),
+        "yt_price_usd": rec.get("yt_price_usd"),
+        "pt_vs_underlying_spread": rec.get("pt_vs_underlying_spread"),
         "flags": flags,
         "matched": bool(rec),
     }
 
 
-def group_by_wallet(feed, market_index):
+def group_by_wallet(feed, market_index, now):
     wallets = {}
     for pos in feed.get("positions", []):
         label = pos.get("wallet_label") or pos.get("wallet") or "Unknown"
-        wallets.setdefault(label, []).append(build_position(pos, market_index))
+        wallets.setdefault(label, []).append(build_position(pos, market_index, now))
     # sort positions within each wallet by value desc
     for label in wallets:
         wallets[label].sort(key=lambda p: p["value_usd"], reverse=True)
@@ -213,41 +282,100 @@ def wavg_fixed(positions):
 # render
 # --------------------------------------------------------------------------- #
 
+def _signed_pp(v):
+    return f"{'+' if v >= 0 else '−'}{abs(v):.1f}pp"
+
+
 def render_position_line(idx, p):
     name = _esc(p["name"])
     if p["chain_tag"]:
         name += f" <i>({p['chain_tag']})</i>"
-    head = f"{idx}. {name}  <b>{fmt_usd(p['value_usd'])}</b>"
+    lines = [f"{idx}. {name}  <b>{fmt_usd(p['value_usd'])}</b>"]
 
-    detail = []
+    if not p["matched"]:
+        # feed-only fallback: no market intel to enrich with
+        bits = []
+        if p["fixed_apy"] is not None:
+            bits.append(f"fixed {fmt_pct(p['fixed_apy'])}")
+        bits.append("<i>(no market intel — feed only)</i>")
+        lines.append("   " + " · ".join(bits))
+        return "\n".join(lines)
+
+    # line 1 — rate & maturity, with entry/trend context
+    rate = []
     if p["fixed_apy"] is not None:
-        detail.append(f"fixed {fmt_pct(p['fixed_apy'])}")
+        rate.append(f"fixed {fmt_pct(p['fixed_apy'])}")
+    tr = p["apy_trend"]
+    if tr and tr["delta_pp"] is not None:
+        dpp = tr["delta_pp"]
+        arrow = "▲" if dpp > 0.05 else "▼" if dpp < -0.05 else "→"
+        rate.append(f"{tr['label']} {fmt_pct(tr['ref_apy'])} {arrow}{abs(dpp):.1f}pp")
     d = p["days_to_maturity"]
     if d is not None:
         warn = " ⚠️" if "near_maturity" in p["flags"] else ""
-        detail.append(f"{d:.0f}d to mat{warn}")
-    if p["pt_discount"] is not None:
-        detail.append(f"disc {fmt_pct(p['pt_discount'])}")
-    if p["exit_bps"] is not None:
-        detail.append(f"exit ~{p['exit_bps']:.0f}bps")
+        rate.append(f"{d:.0f}d to mat{warn}")
     if p.get("days_held") == 0:
-        detail.append("new")
+        rate.append("new")
+    if rate:
+        lines.append("   " + " · ".join(rate))
 
-    lines = [head]
-    if detail:
-        lines.append("   " + " · ".join(detail))
+    # line 2 — mark-to-market
+    mtm = []
+    if p["pt_price_usd"] is not None:
+        mtm.append(f"PT ${p['pt_price_usd']:.4f}")
+    if p["pt_discount"] is not None:
+        mtm.append(f"disc {fmt_pct(p['pt_discount'])}")
+    if p["underlying_price_usd"] is not None:
+        mtm.append(f"underl ${p['underlying_price_usd']:.4f}")
+    if p["pnl_usd"] is not None:
+        if abs(p["pnl_pct"]) < 0.5:
+            mtm.append("P&L flat")
+        else:
+            sign = "+" if p["pnl_usd"] >= 0 else "−"
+            mtm.append(f"P&L {sign}{fmt_usd(abs(p['pnl_usd']))} ({sign}{abs(p['pnl_pct']):.0f}%)")
+    if mtm:
+        lines.append("   MTM: " + " · ".join(mtm))
 
-    # surface any non-maturity flags explicitly (maturity already inlined above)
-    extra = [FLAG_LABEL.get(c, c) for c in p["flags"] if c != "near_maturity"]
+    # line 3 — pool depth / exit liquidity
+    pool = []
+    if p["liquidity_usd"] is not None:
+        pool.append(f"liq {fmt_usd(p['liquidity_usd'])}")
+    if p["total_tvl_usd"] is not None:
+        pool.append(f"TVL {fmt_usd(p['total_tvl_usd'])}")
+    if p["pt_sy_ratio"] is not None:
+        drift = " ↔" if "composition_drift" in p["flags"] else ""
+        pool.append(f"PT/SY {p['pt_sy_ratio']:.2f}{drift}")
+    if p["exit_bps"] is not None:
+        ex = f"exit ~{p['exit_bps']:.0f}bps"
+        if p["exit_deep_bps"] is not None and p["exit_deep_usd"]:
+            ex += f" (→{p['exit_deep_bps']:.0f} @{fmt_usd(p['exit_deep_usd'])})"
+        pool.append(ex)
+    if pool:
+        lines.append("   pool: " + " · ".join(pool))
+
+    # line 4 — yield split: PT fixed vs underlying spot yield (the spread tells you
+    # if you locked above/below spot), plus the YT leg's mark. Guarded against the
+    # API's 0/-100 sentinels when an underlying-yield feed is missing.
+    yld = []
+    if _sane(p["underlying_apy"], 0.0):
+        yld.append(f"spot {fmt_pct(p['underlying_apy'])}")
+        if p["pt_vs_underlying_spread"] is not None:
+            yld.append(f"PT vs spot {_signed_pp(p['pt_vs_underlying_spread'])}")
+    if p["yt_price_usd"] is not None:
+        yld.append(f"YT ${p['yt_price_usd']:.4f}")
+    if yld:
+        lines.append("   yield: " + " · ".join(yld))
+
+    # any remaining flags not already inlined
+    inlined = {"near_maturity", "composition_drift"}
+    extra = [FLAG_LABEL.get(c, c) for c in p["flags"] if c not in inlined]
     if extra:
         lines.append("   " + " · ".join(extra))
-    if not p["matched"]:
-        lines.append("   <i>(no market intel — feed only)</i>")
     return "\n".join(lines)
 
 
 def render_digest(feed, market_index, now, snapshot_age_h, feed_age_h):
-    wallets = group_by_wallet(feed, market_index)
+    wallets = group_by_wallet(feed, market_index, now)
 
     total_value = sum(p["value_usd"] for _, ps in wallets for p in ps)
     total_positions = sum(len(ps) for _, ps in wallets)
