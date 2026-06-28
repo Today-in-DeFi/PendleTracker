@@ -222,7 +222,16 @@ def build_position(pos, market_index, now):
     ladder = rec.get("exit_slippage_ladder") or []
     deep = max(ladder, key=lambda r: r.get("notional_usd") or 0, default=None)
 
-    trend = apy_trend(name, pos.get("entry_date"), fixed, now) if rec else None
+    # entry-vs-current rate context. Prefer FarmTracker's captured locked entry
+    # APY (carried on the feed); fall back to our own DB history for positions
+    # that predate entry_apy capture.
+    trend = None
+    entry_apy_frac = pos.get("entry_apy")
+    if entry_apy_frac is not None and fixed is not None:
+        entry_apy = entry_apy_frac * 100.0
+        trend = {"ref_apy": entry_apy, "label": "entry", "delta_pp": fixed - entry_apy}
+    elif rec:
+        trend = apy_trend(name, pos.get("entry_date"), fixed, now)
 
     return {
         "name": name,
