@@ -281,12 +281,6 @@ def group_by_wallet(feed, market_index, now):
     )
 
 
-def wavg_fixed(positions):
-    num = sum((p["fixed_apy"] or 0) * p["value_usd"] for p in positions if p["fixed_apy"] is not None)
-    den = sum(p["value_usd"] for p in positions if p["fixed_apy"] is not None)
-    return (num / den) if den else None
-
-
 # --------------------------------------------------------------------------- #
 # render
 # --------------------------------------------------------------------------- #
@@ -295,111 +289,123 @@ def _signed_pp(v):
     return f"{'+' if v >= 0 else '−'}{abs(v):.1f}pp"
 
 
-def render_position_line(idx, p):
+def _status_emoji(p):
+    if "expired" in p["flags"]:
+        return "🔴"
+    return "⚠️" if p["flags"] else "🟢"
+
+
+def render_glance(p):
+    """The always-visible triage layer: ONE readable line per position —
+    name · size · fixed APY (with a direction arrow vs entry) · days · P&L%.
+    Everything else lives in the per-wallet expandable detail block."""
     name = _esc(p["name"])
     if p["chain_tag"]:
         name += f" <i>({p['chain_tag']})</i>"
-    lines = [f"{idx}. {name}  <b>{fmt_usd(p['value_usd'])}</b>"]
+    parts = [f"{_status_emoji(p)} <b>{name}</b>", fmt_usd(p["value_usd"])]
 
-    if not p["matched"]:
-        # feed-only fallback: no market intel to enrich with
-        bits = []
-        if p["fixed_apy"] is not None:
-            bits.append(f"fixed {fmt_pct(p['fixed_apy'])}")
-        bits.append("<i>(no market intel — feed only)</i>")
-        lines.append("   " + " · ".join(bits))
-        return "\n".join(lines)
-
-    # line 1 — rate & maturity, with entry/trend context
-    rate = []
     if p["fixed_apy"] is not None:
-        rate.append(f"fixed {fmt_pct(p['fixed_apy'])}")
-    tr = p["apy_trend"]
-    if tr and tr["delta_pp"] is not None:
-        dpp = tr["delta_pp"]
-        arrow = "▲" if dpp > 0.05 else "▼" if dpp < -0.05 else "→"
-        rate.append(f"{tr['label']} {fmt_pct(tr['ref_apy'])} {arrow}{abs(dpp):.1f}pp")
-    d = p["days_to_maturity"]
-    if d is not None:
+        arrow = ""
+        tr = p["apy_trend"]
+        if tr and tr["delta_pp"] is not None:
+            arrow = "▲" if tr["delta_pp"] > 0.05 else "▼" if tr["delta_pp"] < -0.05 else ""
+        parts.append(f"{fmt_pct(p['fixed_apy'])}{arrow}")
+    if p["days_to_maturity"] is not None:
         warn = " ⚠️" if "near_maturity" in p["flags"] else ""
-        rate.append(f"{d:.0f}d to mat{warn}")
-    if p.get("days_held") == 0:
-        rate.append("new")
-    if rate:
-        lines.append("   " + " · ".join(rate))
+        parts.append(f"{p['days_to_maturity']:.0f}d{warn}")
+    if not p["matched"]:
+        parts.append("<i>feed only</i>")
+    elif p["pnl_usd"] is not None and abs(p["pnl_pct"]) >= 0.5:
+        s = "+" if p["pnl_usd"] >= 0 else "−"
+        parts.append(f"P&L {s}{abs(p['pnl_pct']):.0f}%")
+    return " · ".join(parts)
 
-    # line 2 — mark-to-market
-    mtm = []
-    if p["pt_price_usd"] is not None:
-        mtm.append(f"PT ${p['pt_price_usd']:.4f}")
-    if p["pt_discount"] is not None:
-        mtm.append(f"disc {fmt_pct(p['pt_discount'])}")
-    if p["underlying_price_usd"] is not None:
-        mtm.append(f"underl ${p['underlying_price_usd']:.4f}")
+
+def render_detail(p, show_name):
+    """The diligence layer (inside the per-wallet expandable block): the rate
+    move vs entry, P&L, exit liquidity, pool depth, marks, and yield split."""
+    if not p["matched"]:
+        return []
+    rows = []
+
+    # rate now vs entry — the headline detail
+    if p["fixed_apy"] is not None:
+        s = f"rate {fmt_pct(p['fixed_apy'])} now"
+        tr = p["apy_trend"]
+        if tr and tr["ref_apy"] is not None and tr["delta_pp"] is not None:
+            arrow = "▲" if tr["delta_pp"] > 0.05 else "▼" if tr["delta_pp"] < -0.05 else "→"
+            s += f" · {fmt_pct(tr['ref_apy'])} at {tr['label']} ({arrow}{abs(tr['delta_pp']):.1f}pp)"
+        rows.append(s)
+
+    # money: P&L vs entry + underlying price
+    money = []
     if p["pnl_usd"] is not None:
         if abs(p["pnl_pct"]) < 0.5:
-            mtm.append("P&L flat")
+            money.append("P&L flat")
         else:
-            sign = "+" if p["pnl_usd"] >= 0 else "−"
-            mtm.append(f"P&L {sign}{fmt_usd(abs(p['pnl_usd']))} ({sign}{abs(p['pnl_pct']):.0f}%)")
-    if mtm:
-        lines.append("   MTM: " + " · ".join(mtm))
+            s = "+" if p["pnl_usd"] >= 0 else "−"
+            money.append(f"P&L {s}{fmt_usd(abs(p['pnl_usd']))} ({s}{abs(p['pnl_pct']):.0f}%)")
+    if p["underlying_price_usd"] is not None:
+        money.append(f"underlying ${p['underlying_price_usd']:.3f}")
+    if money:
+        rows.append(" · ".join(money))
 
-    # line 3 — pool depth / exit liquidity
-    pool = []
+    # exit liquidity (how trapped we are, at our size)
+    exit_line = []
+    if p["exit_bps"] is not None:
+        e = f"exit ~{p['exit_bps']:.0f}bps at our size"
+        if p["exit_deep_bps"] is not None and p["exit_deep_usd"]:
+            e += f" (→{p['exit_deep_bps']:.0f}bps @{fmt_usd(p['exit_deep_usd'])})"
+        exit_line.append(e)
     if p["liquidity_usd"] is not None:
-        pool.append(f"liq {fmt_usd(p['liquidity_usd'])}")
+        exit_line.append(f"liq {fmt_usd(p['liquidity_usd'])}")
+    if exit_line:
+        rows.append(" · ".join(exit_line))
+
+    # pool depth / composition (its own line)
+    pool = []
     if p["total_tvl_usd"] is not None:
         pool.append(f"TVL {fmt_usd(p['total_tvl_usd'])}")
     if p["pt_sy_ratio"] is not None:
-        drift = " ↔" if "composition_drift" in p["flags"] else ""
+        drift = " ↔drift" if "composition_drift" in p["flags"] else ""
         pool.append(f"PT/SY {p['pt_sy_ratio']:.2f}{drift}")
-    if p["exit_bps"] is not None:
-        ex = f"exit ~{p['exit_bps']:.0f}bps"
-        if p["exit_deep_bps"] is not None and p["exit_deep_usd"]:
-            ex += f" (→{p['exit_deep_bps']:.0f} @{fmt_usd(p['exit_deep_usd'])})"
-        pool.append(ex)
     if pool:
-        lines.append("   pool: " + " · ".join(pool))
+        rows.append(" · ".join(pool))
 
-    # line 4 — yield split: PT fixed vs underlying spot yield (the spread tells you
-    # if you locked above/below spot), plus the YT leg's mark. Guarded against the
-    # API's 0/-100 sentinels when an underlying-yield feed is missing.
-    yld = []
-    if _sane(p["underlying_apy"], 0.0):
-        yld.append(f"spot {fmt_pct(p['underlying_apy'])}")
-        if p["pt_vs_underlying_spread"] is not None:
-            yld.append(f"PT vs spot {_signed_pp(p['pt_vs_underlying_spread'])}")
+    # marks + yield split
+    mk = []
+    if p["pt_price_usd"] is not None:
+        mk.append(f"PT ${p['pt_price_usd']:.4f}")
     if p["yt_price_usd"] is not None:
-        yld.append(f"YT ${p['yt_price_usd']:.4f}")
-    if yld:
-        lines.append("   yield: " + " · ".join(yld))
+        mk.append(f"YT ${p['yt_price_usd']:.4f}")
+    if p["pt_discount"] is not None:
+        mk.append(f"disc {fmt_pct(p['pt_discount'])}")
+    if _sane(p["underlying_apy"], 0.0):
+        mk.append(f"spot {fmt_pct(p['underlying_apy'])}")
+        if p["pt_vs_underlying_spread"] is not None:
+            mk.append(f"PT vs spot {_signed_pp(p['pt_vs_underlying_spread'])}")
+    if mk:
+        rows.append(" · ".join(mk))
 
-    # any remaining flags not already inlined
-    inlined = {"near_maturity", "composition_drift"}
-    extra = [FLAG_LABEL.get(c, c) for c in p["flags"] if c not in inlined]
+    extra = [FLAG_LABEL.get(c, c) for c in p["flags"]
+             if c not in {"near_maturity", "composition_drift"}]
     if extra:
-        lines.append("   " + " · ".join(extra))
-    return "\n".join(lines)
+        rows.append(" · ".join(extra))
+
+    if not rows:
+        return []
+    # Only label the block with the PT name when a wallet has >1 position (where
+    # it disambiguates); for a single position it just repeats the glance line.
+    if show_name:
+        return [f"<b>{_esc(p['name'])}</b>"] + [f"  {r}" for r in rows]
+    return rows
 
 
 def render_digest(feed, market_index, now, snapshot_age_h, feed_age_h):
     wallets = group_by_wallet(feed, market_index, now)
 
-    total_value = sum(p["value_usd"] for _, ps in wallets for p in ps)
-    total_positions = sum(len(ps) for _, ps in wallets)
-    flagged = sum(1 for _, ps in wallets for p in ps if p["flags"])
-
     date_str = now.strftime("%Y-%m-%d")
     lines = [f"🟣 <b>TID Pendle Digest</b> — {date_str}"]
-
-    summary = (
-        f"💰 {total_positions} position{'s' if total_positions != 1 else ''} · "
-        f"{len(wallets)} wallet{'s' if len(wallets) != 1 else ''} · "
-        f"{fmt_usd(total_value)}"
-    )
-    summary += f" · ⚠️ {flagged} flagged" if flagged else " · ✅ all clear"
-    lines.append(summary)
 
     # freshness banners
     if snapshot_age_h is not None and snapshot_age_h > SNAPSHOT_STALE_HOURS:
@@ -408,14 +414,17 @@ def render_digest(feed, market_index, now, snapshot_age_h, feed_age_h):
         lines.append(f"⚠️ <i>holdings feed {feed_age_h:.0f}h stale</i>")
 
     for label, positions in wallets:
-        subtotal = sum(p["value_usd"] for p in positions)
-        avg = wavg_fixed(positions)
-        header = f"\n<b>{_esc(label)}</b> — {fmt_usd(subtotal)}"
-        if avg is not None:
-            header += f" · avg fixed {fmt_pct(avg)}"
-        lines.append(header)
-        for i, p in enumerate(positions, 1):
-            lines.append(render_position_line(i, p))
+        lines.append(f"\n👛 <b>{_esc(label)}</b>")
+        for p in positions:
+            lines.append(render_glance(p))
+        # collapsed diligence block for this wallet (tap to expand). Name each
+        # position only when the wallet holds more than one.
+        multi = len(positions) > 1
+        detail = []
+        for p in positions:
+            detail.extend(render_detail(p, show_name=multi))
+        if detail:
+            lines.append("<blockquote expandable>" + "\n".join(detail) + "</blockquote>")
 
     lines.append(f"\n<i>source: pendle_markets.json + riskAnalyst feed</i>")
     return "\n".join(lines)
