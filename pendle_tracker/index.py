@@ -13,10 +13,11 @@ from .collector import compute_yt_analytics, compute_lp_analytics
 logger = logging.getLogger(__name__)
 
 # Config-driven chain list. Enabling a chain is a one-line change here.
-# Pendle numeric chain ids: 1=ethereum, 56=bnb, 42161=arbitrum.
+# Pendle numeric chain ids: 1=ethereum, 56=bnb, 143=monad, 42161=arbitrum.
 # Only enable chains that actually carry holdings/interest — every added chain
 # lengthens the (sequential) sweep against the global 60 rpm budget.
-CHAINS = [1, 56]
+# Monad (143) carries 8 active markets — the cheapest of the enabled chains.
+CHAINS = [1, 56, 143]
 # CHAINS = [1, 56, 42161]  # add Arbitrum when a holding lands there.
 DEFAULT_CHAIN = CHAINS[0]
 
@@ -30,6 +31,7 @@ CHAIN_ID = DEFAULT_CHAIN
 CHAIN_ALIASES = {
     "eth": 1, "ethereum": 1, "mainnet": 1, "1": 1, 1: 1,
     "bsc": 56, "bnb": 56, "bnbchain": 56, "binance": 56, "56": 56, 56: 56,
+    "monad": 143, "143": 143, 143: 143,
     "arb": 42161, "arbitrum": 42161, "42161": 42161, 42161: 42161,
 }
 
