@@ -215,8 +215,15 @@ def build_position(pos, market_index, now):
 
     value_usd = pos.get("value_usd") or 0.0
     entry_value = pos.get("entry_value")
-    pnl_usd = (value_usd - entry_value) if entry_value else None
-    pnl_pct = (pnl_usd / entry_value * 100) if entry_value else None
+    # entry_value is denominated in the wallet accounting asset, not always USD.
+    denomination = (pos.get("denomination") or "usd").lower()
+    value_native = value_usd if denomination == "usd" else pos.get("value_native")
+    pnl_native = (value_native - entry_value) if entry_value and value_native is not None else None
+    pnl_pct = (pnl_native / entry_value * 100) if pnl_native is not None else None
+    # USD equivalent of the native return at the current mark; this excludes
+    # changes in ETH/USD from the ETH-denominated strategy return.
+    native_usd = (value_usd / value_native) if value_native else None
+    pnl_usd = pnl_native * native_usd if pnl_native is not None and native_usd is not None else None
 
     # deepest ladder rung (largest notional) as an exit-depth indicator
     ladder = rec.get("exit_slippage_ladder") or []
@@ -245,6 +252,9 @@ def build_position(pos, market_index, now):
         "pt_price_usd": rec.get("pt_price_usd"),
         "underlying_price_usd": rec.get("underlying_price_usd"),
         "pt_discount": rec.get("pt_discount"),
+        "entry_value": entry_value,
+        "denomination": denomination,
+        "pnl_native": pnl_native,
         "pnl_usd": pnl_usd,
         "pnl_pct": pnl_pct,
         # pool / exit liquidity
@@ -339,8 +349,13 @@ def render_detail(p, show_name):
 
     # money: P&L vs entry + underlying price
     money = []
+    if p.get("denomination") == "eth" and p.get("entry_value") is not None:
+        money.append(f"basis {p['entry_value']:.6f} ETH")
     if p["pnl_usd"] is not None:
-        if abs(p["pnl_pct"]) < 0.5:
+        if p.get("denomination") == "eth":
+            s = "+" if p["pnl_native"] >= 0 else "−"
+            money.append(f"P&L {s}{abs(p['pnl_native']):.6f} ETH ({s}{abs(p['pnl_pct']):.2f}%)")
+        elif abs(p["pnl_pct"]) < 0.5:
             money.append("P&L flat")
         else:
             s = "+" if p["pnl_usd"] >= 0 else "−"
