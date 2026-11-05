@@ -1,0 +1,570 @@
+{
+  "requested_at": "2026-11-05T03:22:14.670508+00:00",
+  "method": "GET",
+  "url": "https://api-v2.pendle.finance/core/v1/1/markets/0x9df10b8c99dc1a48dd7048a9a524bff9b54a0a30",
+  "params": null,
+  "body": null,
+  "received_at": "2026-11-05T03:22:14.780785+00:00",
+  "http_status": 200,
+  "rate_headers": {
+    "x-computing-unit": "1",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "193",
+    "x-ratelimit-reset": "1793848980",
+    "x-ratelimit-weekly-limit": "200000",
+    "x-ratelimit-weekly-remaining": "199595",
+    "x-ratelimit-weekly-reset": "1794441600"
+  },
+  "response": {
+    "id": "1-0x9df10b8c99dc1a48dd7048a9a524bff9b54a0a30",
+    "chainId": 1,
+    "address": "0x9df10b8c99dc1a48dd7048a9a524bff9b54a0a30",
+    "symbol": "PENDLE-LPT",
+    "expiry": "2027-04-29T00:00:00.000Z",
+    "pt": {
+      "id": "1-0xc1ea9419dd1dab4dd54aa13b13a766e4de22ebc3",
+      "chainId": 1,
+      "address": "0xc1ea9419dd1dab4dd54aa13b13a766e4de22ebc3",
+      "symbol": "PT-fxSAVE-29APR2027",
+      "decimals": 18,
+      "expiry": "2027-04-29T00:00:00.000Z",
+      "price": {
+        "usd": 0.9751496460115603
+      },
+      "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+      "name": "PT-fxSAVE-29APR2027",
+      "baseType": "PT",
+      "types": [
+        "PT"
+      ],
+      "proSymbol": "PT fxSAVE (fxSP)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/78b3b590-3ff1-42d3-b26e-1fe25b23cabe.svg",
+      "zappable": false,
+      "simpleName": "PT fxSAVE (fxSP)",
+      "simpleSymbol": "PT fxSAVE (fxSP)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/78b3b590-3ff1-42d3-b26e-1fe25b23cabe.svg",
+      "proName": "PT fxSAVE (fxSP)"
+    },
+    "yt": {
+      "id": "1-0x8d71fe7195de73ea534b7ad95e6db384d7cb8d07",
+      "chainId": 1,
+      "address": "0x8d71fe7195de73ea534b7ad95e6db384d7cb8d07",
+      "symbol": "YT-fxSAVE-29APR2027",
+      "decimals": 18,
+      "expiry": "2027-04-29T00:00:00.000Z",
+      "price": {
+        "usd": 0.03502523678579797
+      },
+      "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+      "name": "YT-fxSAVE-29APR2027",
+      "baseType": "YT",
+      "types": [
+        "YT"
+      ],
+      "proSymbol": "YT fxSAVE (fxSP)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e1d8ffa7-3c8b-4237-b86b-8d7a540c1498.svg",
+      "zappable": false,
+      "simpleName": "YT fxSAVE (fxSP)",
+      "simpleSymbol": "YT fxSAVE (fxSP)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e1d8ffa7-3c8b-4237-b86b-8d7a540c1498.svg",
+      "proName": "YT fxSAVE (fxSP)"
+    },
+    "sy": {
+      "id": "1-0x7ca334286e9519de99703ab49d4eff6e5559499f",
+      "chainId": 1,
+      "address": "0x7ca334286e9519de99703ab49d4eff6e5559499f",
+      "symbol": "SY-fxSAVE",
+      "decimals": 18,
+      "expiry": null,
+      "price": {
+        "usd": 1.1283705215332416
+      },
+      "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+      "name": "SY-fxSAVE",
+      "baseType": "SY",
+      "types": [
+        "SY"
+      ],
+      "proSymbol": "fxSAVE",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/cc4d0094-cf49-41a7-a61a-a4171775df1e.svg",
+      "zappable": false,
+      "simpleName": "fxSAVE",
+      "simpleSymbol": "fxSAVE",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/cc4d0094-cf49-41a7-a61a-a4171775df1e.svg",
+      "proName": "fxSAVE"
+    },
+    "lp": {
+      "id": "1-0x9df10b8c99dc1a48dd7048a9a524bff9b54a0a30",
+      "chainId": 1,
+      "address": "0x9df10b8c99dc1a48dd7048a9a524bff9b54a0a30",
+      "symbol": "PLP-fxSAVE-29APR2027",
+      "decimals": 18,
+      "expiry": "2027-04-29T00:00:00.000Z",
+      "price": {
+        "usd": 2.1078653113492294
+      },
+      "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+      "name": "PLP-fxSAVE-29APR2027",
+      "baseType": "PENDLE_LP",
+      "types": [
+        "PENDLE_LP"
+      ],
+      "proSymbol": "LP fxSAVE (fxSP)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/ac5a9013-03e7-40dc-897b-9d301db14b12.svg",
+      "zappable": false,
+      "simpleName": "LP fxSAVE (fxSP)",
+      "simpleSymbol": "LP fxSAVE (fxSP)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/ac5a9013-03e7-40dc-897b-9d301db14b12.svg",
+      "proName": "LP fxSAVE (fxSP)"
+    },
+    "accountingAsset": {
+      "id": "1-0x65c9a641afceb9c0e6034e558a319488fa0fa3be",
+      "chainId": 1,
+      "address": "0x65c9a641afceb9c0e6034e558a319488fa0fa3be",
+      "symbol": "fxSP",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "",
+      "price": {
+        "usd": 1.0101748827973582
+      },
+      "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+      "name": "fxSP",
+      "baseType": "GENERIC",
+      "types": [
+        "GENERIC"
+      ],
+      "proSymbol": "fxSP",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5793310a-5a91-4912-bd12-4e8ce31cb293.svg",
+      "zappable": false,
+      "simpleName": "fxSP",
+      "simpleSymbol": "fxSP",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5793310a-5a91-4912-bd12-4e8ce31cb293.svg",
+      "proName": "fxSP"
+    },
+    "underlyingAsset": {
+      "id": "1-0x7743e50f534a7f9f1791dde7dcd89f7783eefc39",
+      "chainId": 1,
+      "address": "0x7743e50f534a7f9f1791dde7dcd89f7783eefc39",
+      "symbol": "fxSAVE",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "",
+      "price": {
+        "usd": 1.1283705215332416
+      },
+      "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+      "name": "fxSAVE",
+      "baseType": "IB",
+      "types": [
+        "IB"
+      ],
+      "proSymbol": "fxSAVE",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/97f3f08d-6408-47e6-869f-7fbd4abb9b7d.svg",
+      "zappable": true,
+      "simpleName": "fxSAVE",
+      "simpleSymbol": "fxSAVE",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/97f3f08d-6408-47e6-869f-7fbd4abb9b7d.svg",
+      "proName": "fxSAVE"
+    },
+    "basePricingAsset": {
+      "id": "1-0x65c9a641afceb9c0e6034e558a319488fa0fa3be",
+      "chainId": 1,
+      "address": "0x65c9a641afceb9c0e6034e558a319488fa0fa3be",
+      "symbol": "fxSP",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "",
+      "price": {
+        "usd": 1.0101748827973582
+      },
+      "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+      "name": "fxSP",
+      "baseType": "GENERIC",
+      "types": [
+        "GENERIC"
+      ],
+      "proSymbol": "fxSP",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5793310a-5a91-4912-bd12-4e8ce31cb293.svg",
+      "zappable": false,
+      "simpleName": "fxSP",
+      "simpleSymbol": "fxSP",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5793310a-5a91-4912-bd12-4e8ce31cb293.svg",
+      "proName": "fxSP"
+    },
+    "rewardTokens": [
+      {
+        "id": "1-0x808507121b80c02388fad14726482e061b8da827",
+        "chainId": 1,
+        "address": "0x808507121b80c02388fad14726482e061b8da827",
+        "symbol": "PENDLE",
+        "decimals": 18,
+        "accentColor": null,
+        "price": {
+          "usd": 1.81359488
+        },
+        "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+        "name": "PENDLE",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "protocol": "Pendle",
+        "proSymbol": "PENDLE",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ea33e392-1876-46a5-b7ce-c8434b5a7e71.svg",
+        "zappable": true,
+        "simpleName": "PENDLE",
+        "simpleSymbol": "PENDLE",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ea33e392-1876-46a5-b7ce-c8434b5a7e71.svg",
+        "proName": "PENDLE"
+      }
+    ],
+    "inputTokens": [
+      {
+        "id": "1-0x65c9a641afceb9c0e6034e558a319488fa0fa3be",
+        "chainId": 1,
+        "address": "0x65c9a641afceb9c0e6034e558a319488fa0fa3be",
+        "symbol": "fxSP",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 1.0101748827973582
+        },
+        "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+        "name": "fxSP",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "proSymbol": "fxSP",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5793310a-5a91-4912-bd12-4e8ce31cb293.svg",
+        "zappable": false,
+        "simpleName": "fxSP",
+        "simpleSymbol": "fxSP",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5793310a-5a91-4912-bd12-4e8ce31cb293.svg",
+        "proName": "fxSP"
+      },
+      {
+        "id": "1-0x7743e50f534a7f9f1791dde7dcd89f7783eefc39",
+        "chainId": 1,
+        "address": "0x7743e50f534a7f9f1791dde7dcd89f7783eefc39",
+        "symbol": "fxSAVE",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 1.1283705215332416
+        },
+        "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+        "name": "fxSAVE",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "fxSAVE",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/97f3f08d-6408-47e6-869f-7fbd4abb9b7d.svg",
+        "zappable": true,
+        "simpleName": "fxSAVE",
+        "simpleSymbol": "fxSAVE",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/97f3f08d-6408-47e6-869f-7fbd4abb9b7d.svg",
+        "proName": "fxSAVE"
+      },
+      {
+        "id": "1-0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "chainId": 1,
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "symbol": "USDC",
+        "decimals": 6,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 0.99984905
+        },
+        "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+        "name": "USDC",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "protocol": "",
+        "proSymbol": "USDC",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ff696349-5cfc-4117-9e98-cce61d626f56.svg",
+        "zappable": true,
+        "simpleName": "USDC",
+        "simpleSymbol": "USDC",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ff696349-5cfc-4117-9e98-cce61d626f56.svg",
+        "proName": "USDC"
+      },
+      {
+        "id": "1-0x085780639cc2cacd35e474e71f4d000e2405d8f6",
+        "chainId": 1,
+        "address": "0x085780639cc2cacd35e474e71f4d000e2405d8f6",
+        "symbol": "fxUSD",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 0.9989499032324263
+        },
+        "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+        "name": "fxUSD",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "proSymbol": "fxUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/39f7d3e4-f64f-4894-9fd9-2f5036fb7147.svg",
+        "zappable": true,
+        "simpleName": "fxUSD",
+        "simpleSymbol": "fxUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/39f7d3e4-f64f-4894-9fd9-2f5036fb7147.svg",
+        "proName": "fxUSD"
+      }
+    ],
+    "outputTokens": [
+      {
+        "id": "1-0x7743e50f534a7f9f1791dde7dcd89f7783eefc39",
+        "chainId": 1,
+        "address": "0x7743e50f534a7f9f1791dde7dcd89f7783eefc39",
+        "symbol": "fxSAVE",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 1.1283705215332416
+        },
+        "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+        "name": "fxSAVE",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "fxSAVE",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/97f3f08d-6408-47e6-869f-7fbd4abb9b7d.svg",
+        "zappable": true,
+        "simpleName": "fxSAVE",
+        "simpleSymbol": "fxSAVE",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/97f3f08d-6408-47e6-869f-7fbd4abb9b7d.svg",
+        "proName": "fxSAVE"
+      },
+      {
+        "id": "1-0x65c9a641afceb9c0e6034e558a319488fa0fa3be",
+        "chainId": 1,
+        "address": "0x65c9a641afceb9c0e6034e558a319488fa0fa3be",
+        "symbol": "fxSP",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 1.0101748827973582
+        },
+        "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+        "name": "fxSP",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "proSymbol": "fxSP",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5793310a-5a91-4912-bd12-4e8ce31cb293.svg",
+        "zappable": false,
+        "simpleName": "fxSP",
+        "simpleSymbol": "fxSP",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5793310a-5a91-4912-bd12-4e8ce31cb293.svg",
+        "proName": "fxSP"
+      },
+      {
+        "id": "1-0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "chainId": 1,
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "symbol": "USDC",
+        "decimals": 6,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 0.99984905
+        },
+        "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+        "name": "USDC",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "protocol": "",
+        "proSymbol": "USDC",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ff696349-5cfc-4117-9e98-cce61d626f56.svg",
+        "zappable": true,
+        "simpleName": "USDC",
+        "simpleSymbol": "USDC",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ff696349-5cfc-4117-9e98-cce61d626f56.svg",
+        "proName": "USDC"
+      },
+      {
+        "id": "1-0x085780639cc2cacd35e474e71f4d000e2405d8f6",
+        "chainId": 1,
+        "address": "0x085780639cc2cacd35e474e71f4d000e2405d8f6",
+        "symbol": "fxUSD",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 0.9989499032324263
+        },
+        "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+        "name": "fxUSD",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "proSymbol": "fxUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/39f7d3e4-f64f-4894-9fd9-2f5036fb7147.svg",
+        "zappable": true,
+        "simpleName": "fxUSD",
+        "simpleSymbol": "fxUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/39f7d3e4-f64f-4894-9fd9-2f5036fb7147.svg",
+        "proName": "fxUSD"
+      }
+    ],
+    "protocol": "f(x) Protocol",
+    "proSymbol": "fxSAVE",
+    "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/a48da773-1aff-4551-b2ee-29a30994c9ca.svg",
+    "assetRepresentation": "fxSP",
+    "isWhitelistedPro": true,
+    "isWhitelistedSimple": false,
+    "votable": false,
+    "isActive": true,
+    "isWhitelistedLimitOrder": true,
+    "accentColor": "#187F49",
+    "totalPt": 834911.4050948474,
+    "totalSy": 691106.9910805376,
+    "totalLp": 756209.7580465281,
+    "totalActiveSupply": 756209.7580465281,
+    "liquidity": {
+      "usd": 1593988.0432520316,
+      "acc": 1577932.7623331798
+    },
+    "tradingVolume": {
+      "usd": 36513.207272652304
+    },
+    "underlyingInterestApy": 0.08091345339791123,
+    "underlyingRewardApy": 0,
+    "underlyingRewardApyBreakdown": [
+      {
+        "asset": {
+          "id": "1-0x365accfca291e7d3914637abf1f7635db165bb09",
+          "chainId": 1,
+          "address": "0x365accfca291e7d3914637abf1f7635db165bb09",
+          "symbol": "FXN",
+          "decimals": 18,
+          "price": {
+            "usd": 19.929053499068488
+          },
+          "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+          "name": "FXN"
+        },
+        "absoluteApy": 0.04071958360118598,
+        "relativeApy": 1,
+        "ytExclusive": false,
+        "lpExclusive": true,
+        "source": "PORTAL_INCENTIVE"
+      },
+      {
+        "asset": {
+          "id": "1-0x365accfca291e7d3914637abf1f7635db165bb09",
+          "chainId": 1,
+          "address": "0x365accfca291e7d3914637abf1f7635db165bb09",
+          "symbol": "FXN",
+          "decimals": 18,
+          "price": {
+            "usd": 19.929053499068488
+          },
+          "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+          "name": "FXN"
+        },
+        "absoluteApy": 0.03799880334743251,
+        "relativeApy": 1,
+        "ytExclusive": true,
+        "lpExclusive": false,
+        "source": "PORTAL_INCENTIVE"
+      }
+    ],
+    "underlyingApy": 0.08091345339791123,
+    "impliedApy": 0.07643981774299191,
+    "ytFloatingApy": 1.5490272939021477,
+    "ptDiscount": 0.03467277336509533,
+    "swapFeeApy": 0.003762626492889609,
+    "pendleApy": 0.006980029850571988,
+    "aggregatedApy": 0.13009068836677484,
+    "maxBoostedApy": 0.20164010854441178,
+    "lpRewardApy": 0.04071958360118598,
+    "voterApy": 0,
+    "ytRoi": 0.5656010234810074,
+    "ptRoi": 0.035917748933756544,
+    "estimatedDailyPoolRewards": [
+      {
+        "asset": {
+          "id": "1-0x808507121b80c02388fad14726482e061b8da827",
+          "chainId": 1,
+          "address": "0x808507121b80c02388fad14726482e061b8da827",
+          "symbol": "PENDLE",
+          "decimals": 18,
+          "accentColor": null,
+          "price": {
+            "usd": 1.81359488
+          },
+          "priceUpdatedAt": "2026-11-05T03:21:45.024Z",
+          "name": "PENDLE"
+        },
+        "amount": 16.84007504450715
+      }
+    ],
+    "dataUpdatedAt": "2026-11-05T03:19:00.000Z",
+    "liquidityChange24h": 0.12212888807466836,
+    "tradingVolumeChange24h": -0.7505119023128963,
+    "underlyingInterestApyChange24h": -0.02488917276452524,
+    "underlyingApyChange24h": -0.04343905134075586,
+    "impliedApyChange24h": -0.0051069333081608746,
+    "ytFloatingApyChange24h": -0.11855246729731779,
+    "ptDiscountChange24h": -0.010242498666286046,
+    "swapFeeApyChange24h": -0.11154410087632383,
+    "pendleApyChange24h": 0.328468525515876,
+    "aggregatedApyChange24h": -0.00693773123083427,
+    "lpRewardApyChange24h": -0.023387401048561633,
+    "categoryIds": [
+      "stables"
+    ],
+    "timestamp": "2026-10-13T02:00:11.000Z",
+    "scalarRoot": 41.28219973068306,
+    "initialAnchor": 1.0396558753075338,
+    "extendedInfo": {
+      "floatingPt": 854670.6464006734,
+      "floatingSy": 1635.1881099217571,
+      "pyUnit": "fxSP staked in f(x) Protocol",
+      "ptEqualsPyUnit": false,
+      "underlyingAssetWorthMore": "fxSAVE",
+      "nativeWithdrawalURL": "https://fx.aladdin.club/v2/fxsave/",
+      "feeRate": 0.001503032893345635,
+      "yieldRange": {
+        "min": 0.02,
+        "max": 0.12999999999999998
+      }
+    },
+    "isPopular": false,
+    "tvlThresholdTimestamp": "2026-10-16T04:29:00.000Z",
+    "whitelistedProAt": "2026-10-14T10:00:09.121Z",
+    "isNew": false,
+    "name": "PENDLE-LPT",
+    "simpleName": "fxSAVE",
+    "simpleSymbol": "fxSAVE",
+    "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/a48da773-1aff-4551-b2ee-29a30994c9ca.svg",
+    "proName": "fxSAVE",
+    "farmName": "fxSAVE",
+    "farmSymbol": "fxSAVE",
+    "farmSimpleName": "fxSAVE",
+    "farmSimpleSymbol": "fxSAVE",
+    "farmSimpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/a48da773-1aff-4551-b2ee-29a30994c9ca.svg",
+    "farmProName": "fxSAVE",
+    "farmProSymbol": "fxSAVE",
+    "farmProIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/a48da773-1aff-4551-b2ee-29a30994c9ca.svg"
+  }
+}

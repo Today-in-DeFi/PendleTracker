@@ -1,0 +1,20 @@
+{
+  "requested_at": "2026-11-05T03:22:23.675621+00:00",
+  "method": "POST",
+  "url": "https://ethereum-rpc.publicnode.com",
+  "params": null,
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "eth_chainId",
+    "params": []
+  },
+  "received_at": "2026-11-05T03:22:24.168120+00:00",
+  "http_status": 200,
+  "rate_headers": {},
+  "response": {
+    "jsonrpc": "2.0",
+    "result": "0x1",
+    "id": 1
+  }
+}

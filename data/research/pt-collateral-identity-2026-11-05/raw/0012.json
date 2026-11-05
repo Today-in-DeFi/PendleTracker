@@ -1,0 +1,403 @@
+{
+  "requested_at": "2026-11-05T03:22:17.671598+00:00",
+  "method": "GET",
+  "url": "https://api-v2.pendle.finance/core/v1/999/markets/0x31104779b2a07a273d6c662419377773083d0b2e",
+  "params": null,
+  "body": null,
+  "received_at": "2026-11-05T03:22:17.970782+00:00",
+  "http_status": 200,
+  "rate_headers": {
+    "x-computing-unit": "1",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "192",
+    "x-ratelimit-reset": "1793848980",
+    "x-ratelimit-weekly-limit": "200000",
+    "x-ratelimit-weekly-remaining": "199594",
+    "x-ratelimit-weekly-reset": "1794441600"
+  },
+  "response": {
+    "id": "999-0x31104779b2a07a273d6c662419377773083d0b2e",
+    "chainId": 999,
+    "address": "0x31104779b2a07a273d6c662419377773083d0b2e",
+    "symbol": "PENDLE-LPT",
+    "expiry": "2026-03-19T00:00:00.000Z",
+    "pt": {
+      "id": "999-0xea84ca9849d9e76a78b91f221f84e9ca065fc9f5",
+      "chainId": 999,
+      "address": "0xea84ca9849d9e76a78b91f221f84e9ca065fc9f5",
+      "symbol": "PT-kHYPE-19MAR2026",
+      "decimals": 18,
+      "expiry": "2026-03-19T00:00:00.000Z",
+      "price": {
+        "usd": 84.236913813052
+      },
+      "priceUpdatedAt": "2026-11-05T03:22:15.024Z",
+      "name": "PT-kHYPE-19MAR2026",
+      "baseType": "PT",
+      "types": [
+        "PT"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "PT kHYPE (HYPE)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/fcc09b6e-e47d-4e95-a1be-0dddfe76725e.svg",
+      "zappable": false,
+      "simpleName": "PT kHYPE (HYPE)",
+      "simpleSymbol": "PT kHYPE (HYPE)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/fcc09b6e-e47d-4e95-a1be-0dddfe76725e.svg",
+      "proName": "PT kHYPE (HYPE)"
+    },
+    "yt": {
+      "id": "999-0x8e8df024cf6d3e916be0821ff3177db6981fcad2",
+      "chainId": 999,
+      "address": "0x8e8df024cf6d3e916be0821ff3177db6981fcad2",
+      "symbol": "YT-kHYPE-19MAR2026",
+      "decimals": 18,
+      "expiry": "2026-03-19T00:00:00.000Z",
+      "price": {
+        "usd": 0
+      },
+      "priceUpdatedAt": "2026-11-04T22:33:00.000Z",
+      "name": "YT-kHYPE-19MAR2026",
+      "baseType": "YT",
+      "types": [
+        "YT"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "YT kHYPE (HYPE)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/93cdd6bf-9c2f-4f7e-87f9-8b2cf5d006e7.svg",
+      "zappable": false,
+      "simpleName": "YT kHYPE (HYPE)",
+      "simpleSymbol": "YT kHYPE (HYPE)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/93cdd6bf-9c2f-4f7e-87f9-8b2cf5d006e7.svg",
+      "proName": "YT kHYPE (HYPE)"
+    },
+    "sy": {
+      "id": "999-0x57fc55dff8ceca86ee94a6bf255af2f0ed90eb9e",
+      "chainId": 999,
+      "address": "0x57fc55dff8ceca86ee94a6bf255af2f0ed90eb9e",
+      "symbol": "SY-kHYPE",
+      "decimals": 18,
+      "expiry": null,
+      "price": {
+        "usd": 86.56104243
+      },
+      "priceUpdatedAt": "2026-11-05T03:22:15.024Z",
+      "name": "SY-kHYPE",
+      "baseType": "SY",
+      "types": [
+        "SY"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "kHYPE",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/4881d453-d6ec-49f1-9aff-bf4627402b1d.svg",
+      "zappable": false,
+      "simpleName": "kHYPE",
+      "simpleSymbol": "kHYPE",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/4881d453-d6ec-49f1-9aff-bf4627402b1d.svg",
+      "proName": "kHYPE"
+    },
+    "lp": {
+      "id": "999-0x31104779b2a07a273d6c662419377773083d0b2e",
+      "chainId": 999,
+      "address": "0x31104779b2a07a273d6c662419377773083d0b2e",
+      "symbol": "PLP-kHYPE-19MAR2026",
+      "decimals": 18,
+      "expiry": "2026-03-19T00:00:00.000Z",
+      "price": {
+        "usd": 214.27431814020923
+      },
+      "priceUpdatedAt": "2026-11-05T03:22:15.024Z",
+      "name": "PLP-kHYPE-19MAR2026",
+      "baseType": "PENDLE_LP",
+      "types": [
+        "PENDLE_LP"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "LP kHYPE (HYPE)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e1279466-498d-4e54-97d0-5a3a1c196733.svg",
+      "zappable": false,
+      "simpleName": "LP kHYPE (HYPE)",
+      "simpleSymbol": "LP kHYPE (HYPE)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e1279466-498d-4e54-97d0-5a3a1c196733.svg",
+      "proName": "LP kHYPE (HYPE)"
+    },
+    "accountingAsset": {
+      "id": "999-0x0000000000000000000000000000000000000000",
+      "chainId": 999,
+      "address": "0x0000000000000000000000000000000000000000",
+      "symbol": "HYPE",
+      "decimals": 18,
+      "accentColor": "",
+      "price": {
+        "usd": 84.28727149
+      },
+      "priceUpdatedAt": "2026-11-05T03:22:15.024Z",
+      "name": "HYPE",
+      "baseType": "NATIVE",
+      "types": [
+        "NATIVE"
+      ],
+      "proSymbol": "HYPE",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/998438e8-7cd5-483b-8302-1f81c74cc0b2.png",
+      "zappable": true,
+      "simpleName": "HYPE",
+      "simpleSymbol": "HYPE",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/998438e8-7cd5-483b-8302-1f81c74cc0b2.png",
+      "proName": "HYPE"
+    },
+    "underlyingAsset": {
+      "id": "999-0xfd739d4e423301ce9385c1fb8850539d657c296d",
+      "chainId": 999,
+      "address": "0xfd739d4e423301ce9385c1fb8850539d657c296d",
+      "symbol": "kHYPE",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "",
+      "price": {
+        "usd": 86.56104243
+      },
+      "priceUpdatedAt": "2026-11-05T03:22:15.024Z",
+      "name": "kHYPE",
+      "baseType": "IB",
+      "types": [
+        "IB"
+      ],
+      "proSymbol": "kHYPE",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f514023e-f303-4682-8a9e-232a9a6becd6.svg",
+      "zappable": true,
+      "simpleName": "kHYPE",
+      "simpleSymbol": "kHYPE",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f514023e-f303-4682-8a9e-232a9a6becd6.svg",
+      "proName": "kHYPE"
+    },
+    "basePricingAsset": {
+      "id": "999-0x0000000000000000000000000000000000000000",
+      "chainId": 999,
+      "address": "0x0000000000000000000000000000000000000000",
+      "symbol": "HYPE",
+      "decimals": 18,
+      "accentColor": "",
+      "price": {
+        "usd": 84.28727149
+      },
+      "priceUpdatedAt": "2026-11-05T03:22:15.024Z",
+      "name": "HYPE",
+      "baseType": "NATIVE",
+      "types": [
+        "NATIVE"
+      ],
+      "proSymbol": "HYPE",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/998438e8-7cd5-483b-8302-1f81c74cc0b2.png",
+      "zappable": true,
+      "simpleName": "HYPE",
+      "simpleSymbol": "HYPE",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/998438e8-7cd5-483b-8302-1f81c74cc0b2.png",
+      "proName": "HYPE"
+    },
+    "rewardTokens": [
+      {
+        "id": "999-0xd6eb81136884713e843936843e286fd2a85a205a",
+        "chainId": 999,
+        "address": "0xd6eb81136884713e843936843e286fd2a85a205a",
+        "symbol": "PENDLE",
+        "decimals": 18,
+        "price": {
+          "usd": 1.81422863
+        },
+        "priceUpdatedAt": "2026-11-05T03:22:15.024Z",
+        "name": "PENDLE",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "proSymbol": "PENDLE",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ea33e392-1876-46a5-b7ce-c8434b5a7e71.svg",
+        "zappable": false,
+        "simpleName": "PENDLE",
+        "simpleSymbol": "PENDLE",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ea33e392-1876-46a5-b7ce-c8434b5a7e71.svg",
+        "proName": "PENDLE"
+      }
+    ],
+    "inputTokens": [
+      {
+        "id": "999-0x0000000000000000000000000000000000000000",
+        "chainId": 999,
+        "address": "0x0000000000000000000000000000000000000000",
+        "symbol": "HYPE",
+        "decimals": 18,
+        "accentColor": "",
+        "price": {
+          "usd": 84.28727149
+        },
+        "priceUpdatedAt": "2026-11-05T03:22:15.024Z",
+        "name": "HYPE",
+        "baseType": "NATIVE",
+        "types": [
+          "NATIVE"
+        ],
+        "proSymbol": "HYPE",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/998438e8-7cd5-483b-8302-1f81c74cc0b2.png",
+        "zappable": true,
+        "simpleName": "HYPE",
+        "simpleSymbol": "HYPE",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/998438e8-7cd5-483b-8302-1f81c74cc0b2.png",
+        "proName": "HYPE"
+      },
+      {
+        "id": "999-0xfd739d4e423301ce9385c1fb8850539d657c296d",
+        "chainId": 999,
+        "address": "0xfd739d4e423301ce9385c1fb8850539d657c296d",
+        "symbol": "kHYPE",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 86.56104243
+        },
+        "priceUpdatedAt": "2026-11-05T03:22:15.024Z",
+        "name": "kHYPE",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "kHYPE",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f514023e-f303-4682-8a9e-232a9a6becd6.svg",
+        "zappable": true,
+        "simpleName": "kHYPE",
+        "simpleSymbol": "kHYPE",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f514023e-f303-4682-8a9e-232a9a6becd6.svg",
+        "proName": "kHYPE"
+      }
+    ],
+    "outputTokens": [
+      {
+        "id": "999-0xfd739d4e423301ce9385c1fb8850539d657c296d",
+        "chainId": 999,
+        "address": "0xfd739d4e423301ce9385c1fb8850539d657c296d",
+        "symbol": "kHYPE",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 86.56104243
+        },
+        "priceUpdatedAt": "2026-11-05T03:22:15.024Z",
+        "name": "kHYPE",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "kHYPE",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f514023e-f303-4682-8a9e-232a9a6becd6.svg",
+        "zappable": true,
+        "simpleName": "kHYPE",
+        "simpleSymbol": "kHYPE",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f514023e-f303-4682-8a9e-232a9a6becd6.svg",
+        "proName": "kHYPE"
+      }
+    ],
+    "protocol": "Kinetiq",
+    "underlyingPool": "",
+    "proSymbol": "kHYPE",
+    "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/92dcc91a-012c-46f9-b48e-6777321f5455.svg",
+    "assetRepresentation": "HYPER",
+    "isWhitelistedPro": true,
+    "isWhitelistedSimple": false,
+    "votable": true,
+    "isActive": false,
+    "isWhitelistedLimitOrder": true,
+    "accentColor": "#49AAC8",
+    "totalPt": 212267.1991172618,
+    "totalSy": 182094.5100639001,
+    "totalLp": 157009.13045153607,
+    "totalActiveSupply": 67886.69796682453,
+    "liquidity": {
+      "usd": 23051.35474233449,
+      "acc": 275.5281670272228
+    },
+    "tradingVolume": {
+      "usd": 0
+    },
+    "underlyingInterestApy": 0.021893406060382592,
+    "underlyingRewardApy": 0,
+    "underlyingRewardApyBreakdown": [],
+    "underlyingApy": 0.021893406060382592,
+    "impliedApy": 0,
+    "ytFloatingApy": 0,
+    "ptDiscount": 7.907088565017872e-07,
+    "swapFeeApy": 0.00014393136130386175,
+    "pendleApy": 0.001776385790942119,
+    "aggregatedApy": 0.012109125162026526,
+    "maxBoostedApy": 0.014773703848439703,
+    "lpRewardApy": 0,
+    "voterApy": 0.004235621083788472,
+    "ytRoi": -1,
+    "ptRoi": 0,
+    "estimatedDailyPoolRewards": [
+      {
+        "asset": {
+          "id": "999-0xd6eb81136884713e843936843e286fd2a85a205a",
+          "chainId": 999,
+          "address": "0xd6eb81136884713e843936843e286fd2a85a205a",
+          "symbol": "PENDLE",
+          "decimals": 18,
+          "price": {
+            "usd": 1.81422863
+          },
+          "priceUpdatedAt": "2026-11-05T03:22:15.024Z",
+          "name": "PENDLE"
+        },
+        "amount": 64.28571428571428
+      }
+    ],
+    "dataUpdatedAt": "2026-11-04T22:33:00.000Z",
+    "liquidityChange24h": 0.022302065934457913,
+    "tradingVolumeChange24h": 10.411311305838154,
+    "underlyingInterestApyChange24h": -0.012113174521901918,
+    "underlyingApyChange24h": -0.012113174521901918,
+    "impliedApyChange24h": 2.1518892885704837,
+    "ytFloatingApyChange24h": 0,
+    "ptDiscountChange24h": -0.9915712457810986,
+    "swapFeeApyChange24h": 0.140478038657994,
+    "pendleApyChange24h": -0.2281433255734479,
+    "aggregatedApyChange24h": 1.679654532024517,
+    "voterApyChange24h": 0.11396705317752943,
+    "categoryIds": [
+      "hype"
+    ],
+    "timestamp": "2025-11-10T05:32:00.000Z",
+    "scalarRoot": 27.546233380319563,
+    "initialAnchor": 1.0351512130802765,
+    "extendedInfo": {
+      "floatingPt": 354.6231109059117,
+      "floatingSy": 31824.275686204666,
+      "pyUnit": "HYPE staked in Kinetiq",
+      "ptEqualsPyUnit": false,
+      "underlyingAssetWorthMore": "kHYPE",
+      "defaultMigratePool": "999-0xcc681585a2763fb1624d42135509fc5427a92d49",
+      "feeRate": 0.0007195421904500066,
+      "yieldRange": {
+        "min": 0.020000000000000007,
+        "max": 0.18999999999999997
+      }
+    },
+    "isPopular": false,
+    "tvlThresholdTimestamp": "2025-11-11T22:36:00.000Z",
+    "whitelistedProAt": "2025-11-12T13:00:00.000Z",
+    "isNew": false,
+    "name": "PENDLE-LPT",
+    "simpleName": "kHYPE",
+    "simpleSymbol": "kHYPE",
+    "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/92dcc91a-012c-46f9-b48e-6777321f5455.svg",
+    "proName": "kHYPE",
+    "farmName": "kHYPE",
+    "farmSymbol": "kHYPE",
+    "farmSimpleName": "kHYPE",
+    "farmSimpleSymbol": "kHYPE",
+    "farmSimpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/92dcc91a-012c-46f9-b48e-6777321f5455.svg",
+    "farmProName": "kHYPE",
+    "farmProSymbol": "kHYPE",
+    "farmProIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/92dcc91a-012c-46f9-b48e-6777321f5455.svg"
+  }
+}

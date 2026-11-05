@@ -1,0 +1,81 @@
+{
+  "requested_at": "2026-11-05T03:22:38.683590+00:00",
+  "method": "POST",
+  "url": "https://ethereum-rpc.publicnode.com",
+  "params": null,
+  "body": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x9df10b8c99dc1a48dd7048a9a524bff9b54a0a30",
+          "data": "0x2c8ce6bc"
+        },
+        "0x19201b5"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xc1ea9419dd1dab4dd54aa13b13a766e4de22ebc3",
+          "data": "0xe184c9be"
+        },
+        "0x19201b5"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x7ca334286e9519de99703ab49d4eff6e5559499f",
+          "data": "0x76d5de85"
+        },
+        "0x19201b5"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x7ca334286e9519de99703ab49d4eff6e5559499f",
+          "data": "0xa40bee50"
+        },
+        "0x19201b5"
+      ]
+    }
+  ],
+  "received_at": "2026-11-05T03:22:38.918566+00:00",
+  "http_status": 200,
+  "rate_headers": {},
+  "response": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": "0x0000000000000000000000007ca334286e9519de99703ab49d4eff6e5559499f000000000000000000000000c1ea9419dd1dab4dd54aa13b13a766e4de22ebc30000000000000000000000008d71fe7195de73ea534b7ad95e6db384d7cb8d07"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "result": "0x000000000000000000000000000000000000000000000000000000006bd27d80"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "result": "0x0000000000000000000000007743e50f534a7f9f1791dde7dcd89f7783eefc39"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "result": "0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000065c9a641afceb9c0e6034e558a319488fa0fa3be0000000000000000000000000000000000000000000000000000000000000012"
+    }
+  ]
+}

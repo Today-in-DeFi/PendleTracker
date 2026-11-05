@@ -1,0 +1,110 @@
+{
+  "requested_at": "2026-11-05T03:22:50.691521+00:00",
+  "method": "POST",
+  "url": "https://rpc.monad.xyz",
+  "params": null,
+  "body": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xea492a66e98a46426f03f5c3505ee89d96520813",
+          "data": "0x2c8ce6bc"
+        },
+        "0x71f7bf3"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xbb0dcdd5f0159c3d51d8bce7d84f1b9fa390ef09",
+          "data": "0xe184c9be"
+        },
+        "0x71f7bf3"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x8c0ee449b8babc933047541249952d5084a7d99d",
+          "data": "0x76d5de85"
+        },
+        "0x71f7bf3"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x8c0ee449b8babc933047541249952d5084a7d99d",
+          "data": "0xa40bee50"
+        },
+        "0x71f7bf3"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 5,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x88c5d8a908834e44b421cb67aec9a931782f9538",
+          "data": "0x2c8ce6bc"
+        },
+        "0x71f7bf3"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 6,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xa08a69ab9dd3b04d0992bc7afb2c0b907bbdc147",
+          "data": "0xe184c9be"
+        },
+        "0x71f7bf3"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 7,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0898c3346275e79db4892feb1c18875ec154f274",
+          "data": "0x76d5de85"
+        },
+        "0x71f7bf3"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 8,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0898c3346275e79db4892feb1c18875ec154f274",
+          "data": "0xa40bee50"
+        },
+        "0x71f7bf3"
+      ]
+    }
+  ],
+  "received_at": "2026-11-05T03:22:50.769154+00:00",
+  "http_status": 403,
+  "rate_headers": {},
+  "response": {
+    "unparsed_text": "Restricted JSON RPC method\n"
+  }
+}

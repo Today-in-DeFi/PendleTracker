@@ -1,0 +1,349 @@
+{
+  "requested_at": "2026-11-05T03:24:50.559674+00:00",
+  "method": "POST",
+  "url": "https://api.morpho.org/graphql",
+  "params": null,
+  "body": {
+    "query": "query($a:String!,$c:Int!){vaultV2ByAddress(address:$a,chainId:$c){adapters(first:20){pageInfo{countTotal} items{address type assetsUsd\n... on MorphoMarketV1Adapter{positions(first:50){pageInfo{countTotal} items{state{supplyAssetsUsd} market{marketId chain{id} collateralAsset{address symbol} loanAsset{address symbol}}}}}\n... on MetaMorphoAdapter{metaMorpho{address state{allocation{supplyAssetsUsd withdrawQueueIndex market{marketId chain{id} collateralAsset{address symbol} loanAsset{address symbol}}}}}}\n}}}}",
+    "variables": {
+      "a": "0xb885f6d448da7e2c642ec31190b629e40e87b069",
+      "c": 1
+    }
+  },
+  "received_at": "2026-11-05T03:24:51.810890+00:00",
+  "http_status": 200,
+  "rate_headers": {},
+  "response": {
+    "data": {
+      "vaultV2ByAddress": {
+        "adapters": {
+          "pageInfo": {
+            "countTotal": 1
+          },
+          "items": [
+            {
+              "address": "0xBA77D947E23710a397Dd777A47254E1c2bd612C1",
+              "type": "MorphoMarketV1",
+              "assetsUsd": 2861035.277426767,
+              "positions": {
+                "pageInfo": {
+                  "countTotal": 16
+                },
+                "items": [
+                  {
+                    "state": {
+                      "supplyAssetsUsd": 0
+                    },
+                    "market": {
+                      "marketId": "0xeb17955ea422baeddbfb0b8d8c9086c5be7a9cfdefb292119a102e981a30062e",
+                      "chain": {
+                        "id": 1
+                      },
+                      "collateralAsset": {
+                        "address": "0x88887bE419578051FF9F4eb6C858A951921D8888",
+                        "symbol": "stcUSD"
+                      },
+                      "loanAsset": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "symbol": "USDC"
+                      }
+                    }
+                  },
+                  {
+                    "state": {
+                      "supplyAssetsUsd": 0
+                    },
+                    "market": {
+                      "marketId": "0xe4cfbee9af4ad713b41bf79f009ca02b17c001a0c0e7bd2e6a89b1111b3d3f08",
+                      "chain": {
+                        "id": 1
+                      },
+                      "collateralAsset": {
+                        "address": "0x18084fbA666a33d37592fA2633fD49a74DD93a88",
+                        "symbol": "tBTC"
+                      },
+                      "loanAsset": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "symbol": "USDC"
+                      }
+                    }
+                  },
+                  {
+                    "state": {
+                      "supplyAssetsUsd": 0
+                    },
+                    "market": {
+                      "marketId": "0xe3df58f9d3011b7481ff36b939fa5f8da642f34ea5792d25d3958dbf1efa26d7",
+                      "chain": {
+                        "id": 1
+                      },
+                      "collateralAsset": {
+                        "address": "0x056B269Eb1f75477a8666ae8C7fE01b64dD55eCc",
+                        "symbol": "USD3"
+                      },
+                      "loanAsset": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "symbol": "USDC"
+                      }
+                    }
+                  },
+                  {
+                    "state": {
+                      "supplyAssetsUsd": 486408.76888571883
+                    },
+                    "market": {
+                      "marketId": "0x64d65c9a2d91c36d56fbc42d69e979335320169b3df63bf92789e2c8883fcc64",
+                      "chain": {
+                        "id": 1
+                      },
+                      "collateralAsset": {
+                        "address": "0xcbB7C0000aB88B473b1f5aFd9ef808440eed33Bf",
+                        "symbol": "cbBTC"
+                      },
+                      "loanAsset": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "symbol": "USDC"
+                      }
+                    }
+                  },
+                  {
+                    "state": {
+                      "supplyAssetsUsd": 188804.16668775378
+                    },
+                    "market": {
+                      "marketId": "0x0c93c623fd2a78a2ffa36b019f74c400c3f3d81fcb22851c88e0c96e510f9689",
+                      "chain": {
+                        "id": 1
+                      },
+                      "collateralAsset": {
+                        "address": "0x76543ac61Ba84C6FEeeE76C6a918127Bf0cA5Fd1",
+                        "symbol": "PT-siUSD-7JAN2027"
+                      },
+                      "loanAsset": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "symbol": "USDC"
+                      }
+                    }
+                  },
+                  {
+                    "state": {
+                      "supplyAssetsUsd": 0
+                    },
+                    "market": {
+                      "marketId": "0xdf034d0351a4c0af947e1a37ecd5ccbce60d72eac90de6fcad48c74e2869d14c",
+                      "chain": {
+                        "id": 1
+                      },
+                      "collateralAsset": {
+                        "address": "0x5DbF246B37E1b9ac5D08bb38233d71322AE7D166",
+                        "symbol": "PT-iUSD-25JUN2026"
+                      },
+                      "loanAsset": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "symbol": "USDC"
+                      }
+                    }
+                  },
+                  {
+                    "state": {
+                      "supplyAssetsUsd": 0
+                    },
+                    "market": {
+                      "marketId": "0x61765602144e91e5ac9f9e98b8584eae308f9951596fd7f5e0f59f21cd2bf664",
+                      "chain": {
+                        "id": 1
+                      },
+                      "collateralAsset": {
+                        "address": "0xCd5fE23C85820F7B72D0926FC9b05b43E359b7ee",
+                        "symbol": "weETH"
+                      },
+                      "loanAsset": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "symbol": "USDC"
+                      }
+                    }
+                  },
+                  {
+                    "state": {
+                      "supplyAssetsUsd": 9.99829076e-07
+                    },
+                    "market": {
+                      "marketId": "0x702b7ec7628de2622e51e1bb34a7e6ad9e95f3a25a2ed361e4ce621f23f5e642",
+                      "chain": {
+                        "id": 1
+                      },
+                      "collateralAsset": {
+                        "address": "0x928FB6ED39100a92B2480f5cbB93453f98D9F4cE",
+                        "symbol": "PT-cUSD-23JUL2026"
+                      },
+                      "loanAsset": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "symbol": "USDC"
+                      }
+                    }
+                  },
+                  {
+                    "state": {
+                      "supplyAssetsUsd": 0
+                    },
+                    "market": {
+                      "marketId": "0x729badf297ee9f2f6b3f717b96fd355fc6ec00422284ce1968e76647b258cf44",
+                      "chain": {
+                        "id": 1
+                      },
+                      "collateralAsset": {
+                        "address": "0x80ac24aA929eaF5013f6436cdA2a7ba190f5Cc0b",
+                        "symbol": "syrupUSDC"
+                      },
+                      "loanAsset": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "symbol": "USDC"
+                      }
+                    }
+                  },
+                  {
+                    "state": {
+                      "supplyAssetsUsd": 778105.4827892112
+                    },
+                    "market": {
+                      "marketId": "0xbbf7ce1b40d32d3e3048f5cf27eeaa6de8cb27b80194690aab191a63381d8c99",
+                      "chain": {
+                        "id": 1
+                      },
+                      "collateralAsset": {
+                        "address": "0xDBDC1Ef57537E34680B898E1FEBD3D68c7389bCB",
+                        "symbol": "siUSD"
+                      },
+                      "loanAsset": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "symbol": "USDC"
+                      }
+                    }
+                  },
+                  {
+                    "state": {
+                      "supplyAssetsUsd": 606365.1106608319
+                    },
+                    "market": {
+                      "marketId": "0xb8fef900b383db2dbbf4458c7f46acf5b140f26d603a6d1829963f241b82510e",
+                      "chain": {
+                        "id": 1
+                      },
+                      "collateralAsset": {
+                        "address": "0x856c4Efb76C1D1AE02e20CEB03A2A6a08b0b8dC3",
+                        "symbol": "OETH"
+                      },
+                      "loanAsset": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "symbol": "USDC"
+                      }
+                    }
+                  },
+                  {
+                    "state": {
+                      "supplyAssetsUsd": 801351.7484022515
+                    },
+                    "market": {
+                      "marketId": "0xf8c5aa31ea6b2a068a9eddb46dd110cae57bf0f12be9583a3f9a818effecba89",
+                      "chain": {
+                        "id": 1
+                      },
+                      "collateralAsset": {
+                        "address": "0x7f47c3e6b2c00fC4eB4d5Ae50d0Ab0Ab6888Eb4D",
+                        "symbol": "PT-USD3-17DEC2026"
+                      },
+                      "loanAsset": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "symbol": "USDC"
+                      }
+                    }
+                  },
+                  {
+                    "state": {
+                      "supplyAssetsUsd": 0
+                    },
+                    "market": {
+                      "marketId": "0xbf02d6c6852fa0b8247d5514d0c91e6c1fbde9a168ac3fd2033028b5ee5ce6d0",
+                      "chain": {
+                        "id": 1
+                      },
+                      "collateralAsset": {
+                        "address": "0x8236a87084f8B84306f72007F36F2618A5634494",
+                        "symbol": "LBTC"
+                      },
+                      "loanAsset": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "symbol": "USDC"
+                      }
+                    }
+                  },
+                  {
+                    "state": {
+                      "supplyAssetsUsd": 0
+                    },
+                    "market": {
+                      "marketId": "0x973e9dd45799efe8775417bcc420a3ab84a583587b2108985746e2fe201d0c83",
+                      "chain": {
+                        "id": 1
+                      },
+                      "collateralAsset": {
+                        "address": "0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e",
+                        "symbol": "YFI"
+                      },
+                      "loanAsset": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "symbol": "USDC"
+                      }
+                    }
+                  },
+                  {
+                    "state": {
+                      "supplyAssetsUsd": 0
+                    },
+                    "market": {
+                      "marketId": "0xad656d430bb3d8c1469bf45c8ad4ebae1b04be04757c69fa424eec78d7b3f4dc",
+                      "chain": {
+                        "id": 1
+                      },
+                      "collateralAsset": {
+                        "address": "0xD2af830E8CBdFed6CC11Bab697bB25496ed6FA62",
+                        "symbol": "WOUSD"
+                      },
+                      "loanAsset": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "symbol": "USDC"
+                      }
+                    }
+                  },
+                  {
+                    "state": {
+                      "supplyAssetsUsd": 0
+                    },
+                    "market": {
+                      "marketId": "0x2fb3713487c7812e7309935b034f40228841666f6b048faf31fd2110ae674f20",
+                      "chain": {
+                        "id": 1
+                      },
+                      "collateralAsset": {
+                        "address": "0x2d3C279E5FcDF5b793c0a75ed90738D7369B0b83",
+                        "symbol": "PT-stcUSD-23JUL2026"
+                      },
+                      "loanAsset": {
+                        "address": "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+                        "symbol": "USDC"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "extensions": {
+      "complexity": 156310,
+      "maximumComplexity": 1000000
+    }
+  }
+}

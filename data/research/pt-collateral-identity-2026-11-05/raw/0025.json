@@ -1,0 +1,20 @@
+{
+  "requested_at": "2026-11-05T03:22:56.694618+00:00",
+  "method": "POST",
+  "url": "https://rpc.hyperliquid.xyz/evm",
+  "params": null,
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "eth_blockNumber",
+    "params": []
+  },
+  "received_at": "2026-11-05T03:22:56.739623+00:00",
+  "http_status": 200,
+  "rate_headers": {},
+  "response": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x301542e"
+  }
+}

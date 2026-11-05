@@ -1,0 +1,149 @@
+{
+  "requested_at": "2026-11-05T03:23:02.696109+00:00",
+  "method": "POST",
+  "url": "https://rpc.hyperliquid.xyz/evm",
+  "params": null,
+  "body": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x31104779b2a07a273d6c662419377773083d0b2e",
+          "data": "0x2c8ce6bc"
+        },
+        "latest"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xea84ca9849d9e76a78b91f221f84e9ca065fc9f5",
+          "data": "0xe184c9be"
+        },
+        "latest"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x57fc55dff8ceca86ee94a6bf255af2f0ed90eb9e",
+          "data": "0x76d5de85"
+        },
+        "latest"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x57fc55dff8ceca86ee94a6bf255af2f0ed90eb9e",
+          "data": "0xa40bee50"
+        },
+        "latest"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 5,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xb48b0c95b2ddc464484305b7363fad5bd5b7a683",
+          "data": "0x2c8ce6bc"
+        },
+        "latest"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 6,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x50fc4edc6346f36993bb30fe60e932504ed17391",
+          "data": "0xe184c9be"
+        },
+        "latest"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 7,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x57fc55dff8ceca86ee94a6bf255af2f0ed90eb9e",
+          "data": "0x76d5de85"
+        },
+        "latest"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 8,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x57fc55dff8ceca86ee94a6bf255af2f0ed90eb9e",
+          "data": "0xa40bee50"
+        },
+        "latest"
+      ]
+    }
+  ],
+  "received_at": "2026-11-05T03:23:02.749401+00:00",
+  "http_status": 200,
+  "rate_headers": {},
+  "response": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": "0x00000000000000000000000057fc55dff8ceca86ee94a6bf255af2f0ed90eb9e000000000000000000000000ea84ca9849d9e76a78b91f221f84e9ca065fc9f50000000000000000000000008e8df024cf6d3e916be0821ff3177db6981fcad2"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "result": "0x0000000000000000000000000000000000000000000000000000000069bb3c80"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "result": "0x000000000000000000000000fd739d4e423301ce9385c1fb8850539d657c296d"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "result": "0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 5,
+      "result": "0x00000000000000000000000057fc55dff8ceca86ee94a6bf255af2f0ed90eb9e00000000000000000000000050fc4edc6346f36993bb30fe60e932504ed17391000000000000000000000000e45162d03e0475dab556ef1cccefeea2ec27ade2"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 6,
+      "result": "0x000000000000000000000000000000000000000000000000000000006ab46800"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 7,
+      "result": "0x000000000000000000000000fd739d4e423301ce9385c1fb8850539d657c296d"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 8,
+      "result": "0x000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012"
+    }
+  ]
+}
