@@ -1,0 +1,773 @@
+[
+  {
+    "chain_id": 1,
+    "market_address": "0x313826e7029fdf742f3076741ed220e0e7b4968d",
+    "block": "0x191f23c",
+    "token_metadata": {
+      "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f23c",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0001.json",
+          "sha256": "8fa8e4a1d1b021d63c9a3263f41a1d948be67adacacabdd1e94753c4afd4a74a",
+          "requested_at": "2026-11-04T14:18:20.776643+00:00",
+          "received_at": "2026-11-04T14:18:21.254730+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0x60b1e75ede859e496c281d308bc94b6965ac4847": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f23c",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0001.json",
+          "sha256": "8fa8e4a1d1b021d63c9a3263f41a1d948be67adacacabdd1e94753c4afd4a74a",
+          "requested_at": "2026-11-04T14:18:20.776643+00:00",
+          "received_at": "2026-11-04T14:18:21.254730+00:00"
+        },
+        "batch_response_id": 2
+      },
+      "0x98a878b1cd98131b271883b390f68d2c90674665": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f23c",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0001.json",
+          "sha256": "8fa8e4a1d1b021d63c9a3263f41a1d948be67adacacabdd1e94753c4afd4a74a",
+          "requested_at": "2026-11-04T14:18:20.776643+00:00",
+          "received_at": "2026-11-04T14:18:21.254730+00:00"
+        },
+        "batch_response_id": 3
+      }
+    },
+    "preview_deposit_one_token": {
+      "0x98a878b1cd98131b271883b390f68d2c90674665": {
+        "status": "read",
+        "value": "688290369291238415",
+        "block": "0x191f23c",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0002.json",
+          "sha256": "1ef94ccb75786797786209a5c4855271c340c451fdc20e33b262ebacf8efca90",
+          "requested_at": "2026-11-04T14:18:23.778138+00:00",
+          "received_at": "2026-11-04T14:18:24.019170+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a": {
+        "status": "read",
+        "value": "1000000000000000000",
+        "block": "0x191f23c",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0002.json",
+          "sha256": "1ef94ccb75786797786209a5c4855271c340c451fdc20e33b262ebacf8efca90",
+          "requested_at": "2026-11-04T14:18:23.778138+00:00",
+          "received_at": "2026-11-04T14:18:24.019170+00:00"
+        },
+        "batch_response_id": 2
+      }
+    }
+  },
+  {
+    "chain_id": 143,
+    "market_address": "0xea492a66e98a46426f03f5c3505ee89d96520813",
+    "block": "0x71d15f0",
+    "token_metadata": {
+      "0xbb0dcdd5f0159c3d51d8bce7d84f1b9fa390ef09": {
+        "status": "read",
+        "value": "6",
+        "block": "0x71d15f0",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0003.json",
+          "sha256": "4309eba79dd9b03ff76408febc59d07150f5a465cffea305b982cf6c85a5a950",
+          "requested_at": "2026-11-04T14:18:26.779664+00:00",
+          "received_at": "2026-11-04T14:18:27.018724+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0xd25f563e12ff616262f8c947fec108db934f8059": {
+        "status": "read",
+        "value": "18",
+        "block": "0x71d15f0",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0003.json",
+          "sha256": "4309eba79dd9b03ff76408febc59d07150f5a465cffea305b982cf6c85a5a950",
+          "requested_at": "2026-11-04T14:18:26.779664+00:00",
+          "received_at": "2026-11-04T14:18:27.018724+00:00"
+        },
+        "batch_response_id": 2
+      }
+    },
+    "preview_deposit_one_token": {
+      "0xd25f563e12ff616262f8c947fec108db934f8059": {
+        "status": "read",
+        "value": "1000000000000000000",
+        "block": "0x71d15f0",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0004.json",
+          "sha256": "4831c94fb5abdabc7d3bd7db26a3026a97746d5b7932e61a69d92809feb9855d",
+          "requested_at": "2026-11-04T14:18:29.782598+00:00",
+          "received_at": "2026-11-04T14:18:29.848382+00:00"
+        },
+        "batch_response_id": 1
+      }
+    }
+  },
+  {
+    "chain_id": 1,
+    "market_address": "0x13285bcbc27f92b47b4edb99d744c07b48c977c0",
+    "block": "0x191f245",
+    "token_metadata": {
+      "0x5086bf358635b81d8c47c66d1c8b9e567db70c72": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f245",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0005.json",
+          "sha256": "48a5e98411af6a39f2794e2ef0ceabd9f04ce4c5736f2216fcc7b339140a39cd",
+          "requested_at": "2026-11-04T14:18:32.783640+00:00",
+          "received_at": "2026-11-04T14:18:33.139278+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0xecfafdc7741323a945a163ed068b5a3c43483957": {
+        "status": "read",
+        "value": "6",
+        "block": "0x191f245",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0005.json",
+          "sha256": "48a5e98411af6a39f2794e2ef0ceabd9f04ce4c5736f2216fcc7b339140a39cd",
+          "requested_at": "2026-11-04T14:18:32.783640+00:00",
+          "received_at": "2026-11-04T14:18:33.139278+00:00"
+        },
+        "batch_response_id": 2
+      }
+    },
+    "preview_deposit_one_token": {
+      "0x5086bf358635b81d8c47c66d1c8b9e567db70c72": {
+        "status": "read",
+        "value": "1000000000000000000",
+        "block": "0x191f245",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0006.json",
+          "sha256": "70eebd38ef5a938ae4749520c3a8152f223a70863ebb7af240cd59cafa9095fb",
+          "requested_at": "2026-11-04T14:18:35.786419+00:00",
+          "received_at": "2026-11-04T14:18:36.048798+00:00"
+        },
+        "batch_response_id": 1
+      }
+    }
+  },
+  {
+    "chain_id": 42161,
+    "market_address": "0xf86119a39f8654f38acbbd5488bd83f3f51983c8",
+    "block": "0x1f10cf79",
+    "token_metadata": {
+      "0x0a1a1a107e45b7ced86833863f482bc5f4ed82ef": {
+        "status": "read",
+        "value": "18",
+        "block": "0x1f10cf79",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0001.json",
+          "sha256": "83c88d4f18726ec55042d02288eb2a33f84a7a994b7eecb8d9e35c47a00f4f16",
+          "requested_at": "2026-11-04T14:19:53.351554+00:00",
+          "received_at": "2026-11-04T14:19:53.829391+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0x0b2b2b2076d95dda7817e785989fe353fe955ef9": {
+        "status": "read",
+        "value": "18",
+        "block": "0x1f10cf79",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0001.json",
+          "sha256": "83c88d4f18726ec55042d02288eb2a33f84a7a994b7eecb8d9e35c47a00f4f16",
+          "requested_at": "2026-11-04T14:19:53.351554+00:00",
+          "received_at": "2026-11-04T14:19:53.829391+00:00"
+        },
+        "batch_response_id": 2
+      },
+      "0x46850ad61c2b7d64d08c9c754f45254596696984": {
+        "status": "read",
+        "value": "6",
+        "block": "0x1f10cf79",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0001.json",
+          "sha256": "83c88d4f18726ec55042d02288eb2a33f84a7a994b7eecb8d9e35c47a00f4f16",
+          "requested_at": "2026-11-04T14:19:53.351554+00:00",
+          "received_at": "2026-11-04T14:19:53.829391+00:00"
+        },
+        "batch_response_id": 3
+      },
+      "0xe9d07c2a3588b9a25edd55664be44ecfe5f92fce": {
+        "status": "read",
+        "value": "18",
+        "block": "0x1f10cf79",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0001.json",
+          "sha256": "83c88d4f18726ec55042d02288eb2a33f84a7a994b7eecb8d9e35c47a00f4f16",
+          "requested_at": "2026-11-04T14:19:53.351554+00:00",
+          "received_at": "2026-11-04T14:19:53.829391+00:00"
+        },
+        "batch_response_id": 4
+      }
+    },
+    "preview_deposit_one_token": {
+      "0x0a1a1a107e45b7ced86833863f482bc5f4ed82ef": {
+        "status": "read",
+        "value": "889851193456498188",
+        "block": "0x1f10cf79",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0002.json",
+          "sha256": "dc611172513a4cf16765b488dd37934983020802173b09389ae50770eb4a7df1",
+          "requested_at": "2026-11-04T14:19:56.351682+00:00",
+          "received_at": "2026-11-04T14:19:56.679783+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0x0b2b2b2076d95dda7817e785989fe353fe955ef9": {
+        "status": "read",
+        "value": "1000000000000000000",
+        "block": "0x1f10cf79",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0002.json",
+          "sha256": "dc611172513a4cf16765b488dd37934983020802173b09389ae50770eb4a7df1",
+          "requested_at": "2026-11-04T14:19:56.351682+00:00",
+          "received_at": "2026-11-04T14:19:56.679783+00:00"
+        },
+        "batch_response_id": 2
+      },
+      "0x46850ad61c2b7d64d08c9c754f45254596696984": {
+        "status": "read",
+        "value": "889851193456498188",
+        "block": "0x1f10cf79",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0002.json",
+          "sha256": "dc611172513a4cf16765b488dd37934983020802173b09389ae50770eb4a7df1",
+          "requested_at": "2026-11-04T14:19:56.351682+00:00",
+          "received_at": "2026-11-04T14:19:56.679783+00:00"
+        },
+        "batch_response_id": 3
+      }
+    }
+  },
+  {
+    "chain_id": 1,
+    "market_address": "0xd44f2630260ff3805d7cb317d4f6740b0044c408",
+    "block": "0x191f24e",
+    "token_metadata": {
+      "0x48f9e38f3070ad8945dfeae3fa70987722e3d89c": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f24e",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0003.json",
+          "sha256": "2dffbd9c041d6b75e020fd67d90da34009d265235338bd96caac24101cfd9202",
+          "requested_at": "2026-11-04T14:19:59.354481+00:00",
+          "received_at": "2026-11-04T14:19:59.758257+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0x76543ac61ba84c6feeee76c6a918127bf0ca5fd1": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f24e",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0003.json",
+          "sha256": "2dffbd9c041d6b75e020fd67d90da34009d265235338bd96caac24101cfd9202",
+          "requested_at": "2026-11-04T14:19:59.354481+00:00",
+          "received_at": "2026-11-04T14:19:59.758257+00:00"
+        },
+        "batch_response_id": 2
+      },
+      "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48": {
+        "status": "read",
+        "value": "6",
+        "block": "0x191f24e",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0003.json",
+          "sha256": "2dffbd9c041d6b75e020fd67d90da34009d265235338bd96caac24101cfd9202",
+          "requested_at": "2026-11-04T14:19:59.354481+00:00",
+          "received_at": "2026-11-04T14:19:59.758257+00:00"
+        },
+        "batch_response_id": 3
+      },
+      "0xdbdc1ef57537e34680b898e1febd3d68c7389bcb": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f24e",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0003.json",
+          "sha256": "2dffbd9c041d6b75e020fd67d90da34009d265235338bd96caac24101cfd9202",
+          "requested_at": "2026-11-04T14:19:59.354481+00:00",
+          "received_at": "2026-11-04T14:19:59.758257+00:00"
+        },
+        "batch_response_id": 4
+      }
+    },
+    "preview_deposit_one_token": {
+      "0x48f9e38f3070ad8945dfeae3fa70987722e3d89c": {
+        "status": "read",
+        "value": "910208967656955747",
+        "block": "0x191f24e",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0004.json",
+          "sha256": "6dc6c2e41c834071eb58330dd10997470db7306d7e3f3c14a745a82889608064",
+          "requested_at": "2026-11-04T14:20:02.355670+00:00",
+          "received_at": "2026-11-04T14:20:02.593771+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0xdbdc1ef57537e34680b898e1febd3d68c7389bcb": {
+        "status": "read",
+        "value": "1000000000000000000",
+        "block": "0x191f24e",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0004.json",
+          "sha256": "6dc6c2e41c834071eb58330dd10997470db7306d7e3f3c14a745a82889608064",
+          "requested_at": "2026-11-04T14:20:02.355670+00:00",
+          "received_at": "2026-11-04T14:20:02.593771+00:00"
+        },
+        "batch_response_id": 2
+      },
+      "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48": {
+        "status": "read",
+        "value": "910208967656955747",
+        "block": "0x191f24e",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0004.json",
+          "sha256": "6dc6c2e41c834071eb58330dd10997470db7306d7e3f3c14a745a82889608064",
+          "requested_at": "2026-11-04T14:20:02.355670+00:00",
+          "received_at": "2026-11-04T14:20:02.593771+00:00"
+        },
+        "batch_response_id": 3
+      }
+    }
+  },
+  {
+    "chain_id": 1,
+    "market_address": "0x16d3126ee82ee36816499fb9db6f647c6addd09c",
+    "block": "0x191f252",
+    "token_metadata": {
+      "0x6a0efc272e8dd4fc5affea17376dcf107cbcbc0f": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f252",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0005.json",
+          "sha256": "a36dc27f779ac73df3d687e769e71f2fdba28cefc3f529fdb055c25613b47ee5",
+          "requested_at": "2026-11-04T14:20:05.358451+00:00",
+          "received_at": "2026-11-04T14:20:05.599001+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0xda67b4284609d2d48e5d10cfac411572727dc1ed": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f252",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0005.json",
+          "sha256": "a36dc27f779ac73df3d687e769e71f2fdba28cefc3f529fdb055c25613b47ee5",
+          "requested_at": "2026-11-04T14:20:05.358451+00:00",
+          "received_at": "2026-11-04T14:20:05.599001+00:00"
+        },
+        "batch_response_id": 2
+      },
+      "0xe24a3dc889621612422a64e6388927901608b91d": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f252",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0005.json",
+          "sha256": "a36dc27f779ac73df3d687e769e71f2fdba28cefc3f529fdb055c25613b47ee5",
+          "requested_at": "2026-11-04T14:20:05.358451+00:00",
+          "received_at": "2026-11-04T14:20:05.599001+00:00"
+        },
+        "batch_response_id": 3
+      }
+    },
+    "preview_deposit_one_token": {
+      "0xda67b4284609d2d48e5d10cfac411572727dc1ed": {
+        "status": "read",
+        "value": "810147290566198689",
+        "block": "0x191f252",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0006.json",
+          "sha256": "11b6aa55ef882a039c219b0a0302bad8c40ee5ba2e3586ecfea20eca1ff64834",
+          "requested_at": "2026-11-04T14:20:08.359531+00:00",
+          "received_at": "2026-11-04T14:20:08.618560+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0xe24a3dc889621612422a64e6388927901608b91d": {
+        "status": "read",
+        "value": "1000000000000000000",
+        "block": "0x191f252",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0006.json",
+          "sha256": "11b6aa55ef882a039c219b0a0302bad8c40ee5ba2e3586ecfea20eca1ff64834",
+          "requested_at": "2026-11-04T14:20:08.359531+00:00",
+          "received_at": "2026-11-04T14:20:08.618560+00:00"
+        },
+        "batch_response_id": 2
+      }
+    }
+  },
+  {
+    "chain_id": 143,
+    "market_address": "0x88c5d8a908834e44b421cb67aec9a931782f9538",
+    "block": "0x71d1949",
+    "token_metadata": {
+      "0x0bb150dfa86ea5d7742f07fefcd8e8eda81d64ef": {
+        "status": "read",
+        "value": "6",
+        "block": "0x71d1949",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0007.json",
+          "sha256": "11a74e4173b02e5d619abf6dc155ad2c713190270801ae862cf69f2710fbb1e5",
+          "requested_at": "2026-11-04T14:20:11.359663+00:00",
+          "received_at": "2026-11-04T14:20:11.789015+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0xa08a69ab9dd3b04d0992bc7afb2c0b907bbdc147": {
+        "status": "read",
+        "value": "6",
+        "block": "0x71d1949",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0007.json",
+          "sha256": "11a74e4173b02e5d619abf6dc155ad2c713190270801ae862cf69f2710fbb1e5",
+          "requested_at": "2026-11-04T14:20:11.359663+00:00",
+          "received_at": "2026-11-04T14:20:11.789015+00:00"
+        },
+        "batch_response_id": 2
+      }
+    },
+    "preview_deposit_one_token": {
+      "0x0bb150dfa86ea5d7742f07fefcd8e8eda81d64ef": {
+        "status": "read",
+        "value": "1000000",
+        "block": "0x71d1949",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0008.json",
+          "sha256": "5c0ba8663b51fd59799e45d57bba829e77f2df9fd6b4ccb5d71efbfb650dec61",
+          "requested_at": "2026-11-04T14:20:14.362253+00:00",
+          "received_at": "2026-11-04T14:20:14.490736+00:00"
+        },
+        "batch_response_id": 1
+      }
+    }
+  },
+  {
+    "chain_id": 42161,
+    "market_address": "0x46f545683d8494ef4c54b7ea40ca762c620846ef",
+    "block": "0x1f10d229",
+    "token_metadata": {
+      "0x0a1a1a107e45b7ced86833863f482bc5f4ed82ef": {
+        "status": "read",
+        "value": "18",
+        "block": "0x1f10d229",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0009.json",
+          "sha256": "b7d04f181f1706b6b872cf5efee6b232428967540671990292f955a4b40815a1",
+          "requested_at": "2026-11-04T14:20:17.363659+00:00",
+          "received_at": "2026-11-04T14:20:17.678668+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0x46850ad61c2b7d64d08c9c754f45254596696984": {
+        "status": "read",
+        "value": "6",
+        "block": "0x1f10d229",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0009.json",
+          "sha256": "b7d04f181f1706b6b872cf5efee6b232428967540671990292f955a4b40815a1",
+          "requested_at": "2026-11-04T14:20:17.363659+00:00",
+          "received_at": "2026-11-04T14:20:17.678668+00:00"
+        },
+        "batch_response_id": 2
+      },
+      "0xfaf260b16d3fa1609c74799089ad3cedfcd703fc": {
+        "status": "read",
+        "value": "18",
+        "block": "0x1f10d229",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0009.json",
+          "sha256": "b7d04f181f1706b6b872cf5efee6b232428967540671990292f955a4b40815a1",
+          "requested_at": "2026-11-04T14:20:17.363659+00:00",
+          "received_at": "2026-11-04T14:20:17.678668+00:00"
+        },
+        "batch_response_id": 3
+      }
+    },
+    "preview_deposit_one_token": {
+      "0x0a1a1a107e45b7ced86833863f482bc5f4ed82ef": {
+        "status": "read",
+        "value": "1000000000000000000",
+        "block": "0x1f10d229",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0010.json",
+          "sha256": "bce30a2195621816be3dc58e0ae9ff904e875eb5a09b1763356ebb7d11fc8ac3",
+          "requested_at": "2026-11-04T14:20:20.366515+00:00",
+          "received_at": "2026-11-04T14:20:20.689049+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0x46850ad61c2b7d64d08c9c754f45254596696984": {
+        "status": "read",
+        "value": "1000000000000000000",
+        "block": "0x1f10d229",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0010.json",
+          "sha256": "bce30a2195621816be3dc58e0ae9ff904e875eb5a09b1763356ebb7d11fc8ac3",
+          "requested_at": "2026-11-04T14:20:20.366515+00:00",
+          "received_at": "2026-11-04T14:20:20.689049+00:00"
+        },
+        "batch_response_id": 2
+      }
+    }
+  },
+  {
+    "chain_id": 1,
+    "market_address": "0x4ccf6deb3d1895373f604b418ff55d8adae8b846",
+    "block": "0x191f25d",
+    "token_metadata": {
+      "0x23238f20b894f29041f48d88ee91131c395aaa71": {
+        "status": "read",
+        "value": "6",
+        "block": "0x191f25d",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0011.json",
+          "sha256": "1831fba88974800aeadaa990ffe3053c5201310904167d78c36f487c14f2020d",
+          "requested_at": "2026-11-04T14:20:23.367575+00:00",
+          "received_at": "2026-11-04T14:20:24.109416+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0xba96292ee7673e3b546cc90db6d97111cd9a314f": {
+        "status": "read",
+        "value": "6",
+        "block": "0x191f25d",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0011.json",
+          "sha256": "1831fba88974800aeadaa990ffe3053c5201310904167d78c36f487c14f2020d",
+          "requested_at": "2026-11-04T14:20:23.367575+00:00",
+          "received_at": "2026-11-04T14:20:24.109416+00:00"
+        },
+        "batch_response_id": 2
+      }
+    },
+    "preview_deposit_one_token": {
+      "0x23238f20b894f29041f48d88ee91131c395aaa71": {
+        "status": "read",
+        "value": "1000000",
+        "block": "0x191f25d",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0012.json",
+          "sha256": "e1535b64bfef4f12be083578cfbf42b17734b01e41008a7c438c331da41b3328",
+          "requested_at": "2026-11-04T14:20:26.369967+00:00",
+          "received_at": "2026-11-04T14:20:26.613967+00:00"
+        },
+        "batch_response_id": 1
+      }
+    }
+  },
+  {
+    "chain_id": 1,
+    "market_address": "0x9df10b8c99dc1a48dd7048a9a524bff9b54a0a30",
+    "block": "0x191f261",
+    "token_metadata": {
+      "0x085780639cc2cacd35e474e71f4d000e2405d8f6": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f261",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0013.json",
+          "sha256": "e5a2aea194cb07fa8dc17ce6dd367e8f9e56787551400f122acb96ea097f10bc",
+          "requested_at": "2026-11-04T14:20:29.371670+00:00",
+          "received_at": "2026-11-04T14:20:29.621437+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0x65c9a641afceb9c0e6034e558a319488fa0fa3be": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f261",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0013.json",
+          "sha256": "e5a2aea194cb07fa8dc17ce6dd367e8f9e56787551400f122acb96ea097f10bc",
+          "requested_at": "2026-11-04T14:20:29.371670+00:00",
+          "received_at": "2026-11-04T14:20:29.621437+00:00"
+        },
+        "batch_response_id": 2
+      },
+      "0x7743e50f534a7f9f1791dde7dcd89f7783eefc39": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f261",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0013.json",
+          "sha256": "e5a2aea194cb07fa8dc17ce6dd367e8f9e56787551400f122acb96ea097f10bc",
+          "requested_at": "2026-11-04T14:20:29.371670+00:00",
+          "received_at": "2026-11-04T14:20:29.621437+00:00"
+        },
+        "batch_response_id": 3
+      },
+      "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48": {
+        "status": "read",
+        "value": "6",
+        "block": "0x191f261",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0013.json",
+          "sha256": "e5a2aea194cb07fa8dc17ce6dd367e8f9e56787551400f122acb96ea097f10bc",
+          "requested_at": "2026-11-04T14:20:29.371670+00:00",
+          "received_at": "2026-11-04T14:20:29.621437+00:00"
+        },
+        "batch_response_id": 4
+      },
+      "0xc1ea9419dd1dab4dd54aa13b13a766e4de22ebc3": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f261",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0013.json",
+          "sha256": "e5a2aea194cb07fa8dc17ce6dd367e8f9e56787551400f122acb96ea097f10bc",
+          "requested_at": "2026-11-04T14:20:29.371670+00:00",
+          "received_at": "2026-11-04T14:20:29.621437+00:00"
+        },
+        "batch_response_id": 5
+      }
+    },
+    "preview_deposit_one_token": {
+      "0x65c9a641afceb9c0e6034e558a319488fa0fa3be": {
+        "status": "read",
+        "value": "895332342675274129",
+        "block": "0x191f261",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0014.json",
+          "sha256": "1530e844c52193517f3810f7ea520d96d6eda5c95388b1abb6e85faae9ada560",
+          "requested_at": "2026-11-04T14:20:32.374442+00:00",
+          "received_at": "2026-11-04T14:20:32.613123+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0x7743e50f534a7f9f1791dde7dcd89f7783eefc39": {
+        "status": "read",
+        "value": "1000000000000000000",
+        "block": "0x191f261",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0014.json",
+          "sha256": "1530e844c52193517f3810f7ea520d96d6eda5c95388b1abb6e85faae9ada560",
+          "requested_at": "2026-11-04T14:20:32.374442+00:00",
+          "received_at": "2026-11-04T14:20:32.613123+00:00"
+        },
+        "batch_response_id": 2
+      },
+      "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48": {
+        "status": "read",
+        "value": "886180410444571227",
+        "block": "0x191f261",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0014.json",
+          "sha256": "1530e844c52193517f3810f7ea520d96d6eda5c95388b1abb6e85faae9ada560",
+          "requested_at": "2026-11-04T14:20:32.374442+00:00",
+          "received_at": "2026-11-04T14:20:32.613123+00:00"
+        },
+        "batch_response_id": 3
+      },
+      "0x085780639cc2cacd35e474e71f4d000e2405d8f6": {
+        "status": "read",
+        "value": "886231944832163218",
+        "block": "0x191f261",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0014.json",
+          "sha256": "1530e844c52193517f3810f7ea520d96d6eda5c95388b1abb6e85faae9ada560",
+          "requested_at": "2026-11-04T14:20:32.374442+00:00",
+          "received_at": "2026-11-04T14:20:32.613123+00:00"
+        },
+        "batch_response_id": 4
+      }
+    }
+  },
+  {
+    "chain_id": 1,
+    "market_address": "0xdf2e3e0250f679d6284a39a0c1a16a850a9d7aa6",
+    "block": "0x191f266",
+    "token_metadata": {
+      "0x23238f20b894f29041f48d88ee91131c395aaa71": {
+        "status": "read",
+        "value": "6",
+        "block": "0x191f266",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0015.json",
+          "sha256": "9ebab0f47781addd763d83ef558ef0104fc7a9d65436439c9687963ad56fb8b8",
+          "requested_at": "2026-11-04T14:20:35.375637+00:00",
+          "received_at": "2026-11-04T14:20:35.611007+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062": {
+        "status": "read",
+        "value": "6",
+        "block": "0x191f266",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0015.json",
+          "sha256": "9ebab0f47781addd763d83ef558ef0104fc7a9d65436439c9687963ad56fb8b8",
+          "requested_at": "2026-11-04T14:20:35.375637+00:00",
+          "received_at": "2026-11-04T14:20:35.611007+00:00"
+        },
+        "batch_response_id": 2
+      },
+      "0xd166337499e176bbc38a1fbd113ab144e5bd2df7": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f266",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0015.json",
+          "sha256": "9ebab0f47781addd763d83ef558ef0104fc7a9d65436439c9687963ad56fb8b8",
+          "requested_at": "2026-11-04T14:20:35.375637+00:00",
+          "received_at": "2026-11-04T14:20:35.611007+00:00"
+        },
+        "batch_response_id": 3
+      },
+      "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f266",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0015.json",
+          "sha256": "9ebab0f47781addd763d83ef558ef0104fc7a9d65436439c9687963ad56fb8b8",
+          "requested_at": "2026-11-04T14:20:35.375637+00:00",
+          "received_at": "2026-11-04T14:20:35.611007+00:00"
+        },
+        "batch_response_id": 4
+      }
+    },
+    "preview_deposit_one_token": {
+      "0x23238f20b894f29041f48d88ee91131c395aaa71": {
+        "status": "read",
+        "value": "959076955308988293",
+        "block": "0x191f266",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0016.json",
+          "sha256": "72063dc4a5818e418a94d03c8b5d8cf04b387ae0a5cb1a25df0605567e3896a1",
+          "requested_at": "2026-11-04T14:20:38.378486+00:00",
+          "received_at": "2026-11-04T14:20:38.620247+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066": {
+        "status": "read",
+        "value": "1000000000000000000",
+        "block": "0x191f266",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-retry-raw/0016.json",
+          "sha256": "72063dc4a5818e418a94d03c8b5d8cf04b387ae0a5cb1a25df0605567e3896a1",
+          "requested_at": "2026-11-04T14:20:38.378486+00:00",
+          "received_at": "2026-11-04T14:20:38.620247+00:00"
+        },
+        "batch_response_id": 2
+      }
+    }
+  }
+]

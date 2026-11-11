@@ -1,0 +1,39 @@
+{
+  "requested_at": "2026-11-04T14:17:44.337925+00:00",
+  "method": "POST",
+  "url": "https://api-v2.pendle.finance/core/v3/sdk/1/convert",
+  "params": null,
+  "body": {
+    "receiver": "0x000000000000000000000000000000000000dead",
+    "slippage": 0.01,
+    "inputs": [
+      {
+        "token": "0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062",
+        "amount": "102146528124"
+      }
+    ],
+    "outputs": [
+      "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+    ],
+    "enableAggregator": true,
+    "aggregators": [
+      "kyberswap"
+    ],
+    "useLimitOrder": false
+  },
+  "received_at": "2026-11-04T14:17:44.520884+00:00",
+  "http_status": 400,
+  "rate_headers": {
+    "x-computing-unit": "6",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "165",
+    "x-ratelimit-reset": "1793801880",
+    "x-ratelimit-weekly-limit": "200000",
+    "x-ratelimit-weekly-remaining": "191181",
+    "x-ratelimit-weekly-reset": "1793836800"
+  },
+  "response": {
+    "message": "MarketProportionTooHigh. Market liquidity is likely insufficient, please consider placing limit order or try again later.",
+    "error": "Bad Request"
+  }
+}

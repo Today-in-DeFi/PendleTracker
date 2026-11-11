@@ -15,8 +15,8 @@ Two inputs, joined on (chain, pt_address):
 
   2. INTEL     — our own data/pendle_markets.json (written by `pendle_tracker
      snapshot`): fixed APY, PT discount, exit-slippage bps at our notional, and
-     risk flags (near_maturity, low_liquidity, composition_drift, yt_underwater,
-     expired).
+     PT risk flags (near_maturity, low_liquidity, expired). YT/LP signals
+     remain available in the market snapshot but do not flag held PT positions.
 
 The feed drives grouping; the snapshot enriches each line. If a held PT has no
 matching snapshot record we still show it from feed fields alone.
@@ -55,10 +55,11 @@ SNAPSHOT_STALE_HOURS = 6     # data/pendle_markets.json cadence is hourly
 FEED_STALE_HOURS = 48        # riskAnalyst sync cadence
 
 # chain id -> short tag shown after a position name (ETH stays implicit)
-CHAIN_TAG = {56: "BNB", 42161: "ARB", 137: "POLY", 10: "OP", 8453: "BASE"}
+CHAIN_TAG = {56: "BNB", 42161: "ARB", 137: "POLY", 10: "OP", 8453: "BASE", 143: "MONAD"}
 CHAIN_ALIASES = {
     "eth": 1, "ethereum": 1, "mainnet": 1, "1": 1,
     "bsc": 56, "bnb": 56, "binance": 56, "56": 56,
+    "monad": 143, "143": 143,
     "arbitrum": 42161, "arb": 42161, "42161": 42161,
 }
 
@@ -211,7 +212,9 @@ def build_position(pos, market_index, now):
         fixed = pos["pt_implied_apy"] * 100.0
 
     name = rec.get("key") or pos.get("symbol") or pos.get("position_name") or "?"
-    flags = [f.get("code") for f in rec.get("flags", []) if f.get("code")]
+    # YT profitability and LP composition are separate exposures, not PT warnings.
+    market_flags = [f.get("code") for f in rec.get("flags", []) if f.get("code")]
+    flags = [code for code in market_flags if code not in {"yt_underwater", "composition_drift"}]
 
     value_usd = pos.get("value_usd") or 0.0
     entry_value = pos.get("entry_value")
@@ -271,6 +274,7 @@ def build_position(pos, market_index, now):
         "yt_price_usd": rec.get("yt_price_usd"),
         "pt_vs_underlying_spread": rec.get("pt_vs_underlying_spread"),
         "flags": flags,
+        "market_context_flags": [code for code in market_flags if code not in flags],
         "matched": bool(rec),
     }
 
@@ -422,6 +426,21 @@ def render_digest(feed, market_index, now, snapshot_age_h, feed_age_h):
     date_str = now.strftime("%Y-%m-%d")
     lines = [f"🟣 <b>TID Pendle Digest</b> — {date_str}"]
 
+    from zoneinfo import ZoneInfo
+    source_time = _parse_ts(feed.get("upstream_generated_at"))
+    local_zone = ZoneInfo("Asia/Taipei")
+    if source_time is None or source_time.astimezone(local_zone).date() != now.astimezone(local_zone).date():
+        lines.append("⚠️ <i>same-day holdings handoff not verified</i>")
+    coverage = ("upstream_generated_at", "generated_at")
+    for clock in coverage:
+        age = _age_hours(feed.get(clock), now)
+        if age is None or age < -5 / 60 or age > FEED_STALE_HOURS:
+            lines.append(f"⚠️ <i>holdings coverage: {_esc(clock)} missing, future or stale</i>")
+    if feed.get("skipped_stale"):
+        lines.append("⚠️ <i>holdings coverage incomplete: upstream skipped stale wallets</i>")
+    lines.append(f"<i>holdings observed: {_esc(feed.get('upstream_generated_at'))}; synced: {_esc(feed.get('generated_at'))}</i>")
+    if snapshot_age_h is None or snapshot_age_h < -5 / 60:
+        lines.append("⚠️ <i>market snapshot clock missing or future</i>")
     # freshness banners
     if snapshot_age_h is not None and snapshot_age_h > SNAPSHOT_STALE_HOURS:
         lines.append(f"⚠️ <i>market intel {snapshot_age_h:.0f}h stale</i>")
@@ -441,6 +460,10 @@ def render_digest(feed, market_index, now, snapshot_age_h, feed_age_h):
         if detail:
             lines.append("<blockquote expandable>" + "\n".join(detail) + "</blockquote>")
 
+    if not feed.get("positions"):
+        lines.append("No direct PT positions reported; verify holdings coverage above.")
+    lines.append("<i>Maturity: owner review; redemption uses market PY-index/SY conversion, with no universal 1 PT = 1 vault share or USDC assumption.</i>")
+    lines.append("<i>PT-srUSDat sale quotes pay srUSDat. Conversion to USDat remains unestablished here; Saturn queues, conditional bridge/redemption and USDat pool depth are separate stages.</i>")
     lines.append(f"\n<i>source: pendle_markets.json + riskAnalyst feed</i>")
     return "\n".join(lines)
 
@@ -509,9 +532,9 @@ def main():
     now = datetime.now(timezone.utc)
 
     feed = load_json(FEED_PATH)
-    if not feed or not feed.get("positions"):
-        print("No Pendle holdings feed / no positions; nothing to send.", file=sys.stderr)
-        return 0
+    if not feed or not isinstance(feed.get("positions"), list):
+        print("Holdings feed unavailable or malformed; coverage failure.", file=sys.stderr)
+        return 1
 
     snapshot = load_json(SNAPSHOT_PATH)
     market_index = index_markets(snapshot)

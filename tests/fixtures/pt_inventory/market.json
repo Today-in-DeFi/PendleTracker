@@ -1,0 +1,567 @@
+{
+  "directory_market": {
+    "name": "NGI+",
+    "protocol": "Asseto",
+    "icon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/6cf7b875-a744-4217-8d28-615dee5732f2.svg",
+    "address": "0x03005432d0f02c46d48ccd859d677d261640e5e1",
+    "expiry": "2026-12-10T00:00:00.000Z",
+    "pt": "1-0x47f4d6505e39998bbabf325def4c4861695ac8f5",
+    "yt": "1-0x7a3d12d8262b0246f4bbf8da354272e73a831a4b",
+    "sy": "1-0xcad69479358c1ef3560f29f278966df772abf42f",
+    "underlyingAsset": "1-0xf252c5bd43907a6cab079e990845a37a7c5730d9",
+    "accountingAsset": "1-0xae8fc9288685516d2eca717056ca69303b348752",
+    "rewardTokens": [
+      "1-0x808507121b80c02388fad14726482e061b8da827"
+    ],
+    "inputTokens": [
+      "1-0xf252c5bd43907a6cab079e990845a37a7c5730d9"
+    ],
+    "outputTokens": [
+      "1-0xf252c5bd43907a6cab079e990845a37a7c5730d9"
+    ],
+    "details": {
+      "liquidity": 769861.5460476149,
+      "totalTvl": 1230225.8133505245,
+      "tradingVolume": 219344.06275298208,
+      "underlyingApy": 0.1512627333682137,
+      "swapFeeApy": 0.00605371951907685,
+      "pendleApy": 0.0038277538194559637,
+      "ytFloatingApy": 323.0411771902133,
+      "impliedApy": 0.08002000000000042,
+      "feeRate": 0.0016241244380246211,
+      "yieldRange": {
+        "min": 0.09,
+        "max": 0.28
+      },
+      "aggregatedApy": 0.15542394479254568,
+      "maxBoostedApy": 0.1611655755217296,
+      "totalPt": 62293.31441933571,
+      "totalSy": 708201.2216230988,
+      "totalSupply": 381960.133719501,
+      "totalActiveSupply": 381960.133719501,
+      "ytRoi": 0.7569026376460888,
+      "ptRoi": 0.0075326372400967845
+    },
+    "isNew": false,
+    "isPrime": false,
+    "timestamp": "2026-09-08T02:09:23.000Z",
+    "categoryIds": [
+      "rwa"
+    ],
+    "isVolatile": false,
+    "marketType": "discrete_yield",
+    "underlyingRewardApyBreakdown": [],
+    "lpRewardApyBreakdown": [],
+    "ytApyBreakdown": {
+      "categories": [
+        {
+          "label": "Protocol Yield",
+          "apy": 0.1512627333682137,
+          "items": [
+            {
+              "id": "1-0xae8fc9288685516d2eca717056ca69303b348752",
+              "apy": 0.1512627333682137,
+              "tags": [
+                "INTEREST",
+                "AUTO"
+              ],
+              "source": "CONTRACT_DISCRETE"
+            }
+          ]
+        }
+      ]
+    },
+    "lpApyBreakdown": {
+      "categories": [
+        {
+          "label": "Underlying Yield",
+          "apy": 0.1391174643640962,
+          "items": [
+            {
+              "id": "1-0xae8fc9288685516d2eca717056ca69303b348752",
+              "apy": 0.1391174643640962,
+              "tags": [
+                "INTEREST",
+                "AUTO"
+              ],
+              "source": "CONTRACT_DISCRETE"
+            }
+          ]
+        },
+        {
+          "label": "PT Fixed Yield",
+          "apy": 0.006425009016224175,
+          "items": [
+            {
+              "id": "1-0xae8fc9288685516d2eca717056ca69303b348752",
+              "apy": 0.006425009016224175,
+              "tags": [
+                "FIXED_YIELD",
+                "AUTO"
+              ]
+            }
+          ]
+        },
+        {
+          "label": "LP Rewards",
+          "apy": 0.009881473338532815,
+          "items": [
+            {
+              "id": "1-0x03005432d0f02c46d48ccd859d677d261640e5e1",
+              "apy": 0.00605371951907685,
+              "tags": [
+                "SWAP_FEE",
+                "AUTO"
+              ]
+            },
+            {
+              "id": "PENDLE",
+              "apy": 0.0038277538194559637,
+              "tags": [
+                "INCENTIVE",
+                "BOOSTABLE"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "chainId": 1,
+    "points": [
+      {
+        "key": "Asseto - Reale Points",
+        "type": "multiplier",
+        "pendleAsset": "basic",
+        "value": 40,
+        "perDollarLp": null
+      },
+      {
+        "key": "Asseto - Reale Points",
+        "type": "multiplier",
+        "pendleAsset": "lp",
+        "value": 40,
+        "perDollarLp": false
+      }
+    ],
+    "limitOrderIncentive": {
+      "amountPerSec": 1.8748216763516734e-05,
+      "impliedApy": 0.08002000000000042,
+      "buyYtApr": 0.4227668789711093,
+      "sellPtApr": 0.0031866504658306007,
+      "sellYtApr": 1,
+      "buyPtApr": 1,
+      "long": {
+        "mode": "RELATIVE",
+        "amountPerSec": 1.3888401326438555e-05,
+        "minApy": 0.07721930000000041,
+        "maxApy": 0.08282070000000044
+      },
+      "short": {
+        "mode": "RELATIVE",
+        "amountPerSec": 4.85981543707818e-06,
+        "minApy": 0.07602000000000042,
+        "maxApy": 0.08402000000000043
+      }
+    },
+    "pendleEmission": {
+      "totalIncentive": 42.77466191979735,
+      "tvlIncentive": 13.678497572756388,
+      "feeIncentive": 17.757242848466042,
+      "discretionaryIncentive": 0,
+      "cobribingIncentive": 0,
+      "limitOrderIncentive": 11.338921498574921
+    },
+    "marketInfo": {
+      "assetDescription": "<p>NGI+ is a tokenized interest in a private infrastructure equity fund linked to Partners Group Next Generation Infrastructure.</p>\n<ul>\n<li><strong>Manager:</strong> Partners Group, a Swiss-listed private-markets manager (~USD 185B AUM).</li>\n<li><strong>Value:</strong> Tracks the fund's monthly NAV per share, net of fees. Grows through NAV appreciation, not on-chain distributions.</li>\n<li><strong>Points:</strong> NGI+ positions on Pendle earn <a href=\"https://reale.finance/points\">Reale Points</a>.</li>\n<li><strong>Underlying APY:</strong> Annualised change in NGI+ NAV (USDC per NGI+) over the trailing 90 days. The fund updates NAV about monthly, so the figure moves in steps. Historical, not a forecast. Can be negative if NAV falls.</li>\n<li><strong>YT yield:</strong> Paid only when NAV rises above its previous high (high-water mark). After a NAV drop, realised YT yield can be lower than the displayed APY until NAV recovers.</li>\n</ul>\n",
+      "riskInvolved": "<ul>\n<li>Backed by a private markets fund. NAV updates monthly and can rise or fall.</li>\n<li>Fund redemptions have periodic limits and can be restricted or suspended.</li>\n</ul>\n\n<p><strong>(From Underlying Protocol)</strong></p>",
+      "importantQuirks": "<p>Two ways to trade NGI+:</p>\n<ul>\n<li><strong>Instant Router (recommended):</strong> Settles on-chain immediately. No KYC, no minimum. Routed to AMM pools or RFQ market makers, so size depends on on-chain liquidity.</li>\n<li><strong>Primary Market:</strong> KYC required. Min 100,000 USDC or equivalent. Monthly dealing cycle: - Subscribe by T-10, tokens delivered by T+23</li>\n<li>Redeem by T-45, proceeds paid by T+26</li>\n</ul>\n\n<p>Best for tickets larger than on-chain liquidity.</p>",
+      "initiatedBy": "Asseto",
+      "auditedUrl": "",
+      "conversionRate": {
+        "rate": 1,
+        "fromUnit": "NGI+",
+        "toUnit": "USDC staked on NGI+"
+      },
+      "utilizedProtocols": [
+        {
+          "id": "asseto",
+          "url": "https://reale.finance/distribution/NGIPlus_ETH",
+          "name": "Asseto",
+          "imageUrl": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/1a17b71b-be0c-490d-8657-ad6fab250404.svg"
+        }
+      ],
+      "deposit": {
+        "url": "https://asseto.finance/distribution/NGIPlus_ETH",
+        "description": "Buy with USDC on Asseto Instant Router. Large orders: primary market, see Important Quirks."
+      },
+      "withdrawal": {
+        "url": "https://asseto.finance/distribution/NGIPlus_ETH",
+        "description": "Sell for USDC on Asseto Instant Router. Large orders: primary market, see Important Quirks."
+      }
+    }
+  },
+  "detail": {
+    "id": "1-0x03005432d0f02c46d48ccd859d677d261640e5e1",
+    "chainId": 1,
+    "address": "0x03005432d0f02c46d48ccd859d677d261640e5e1",
+    "symbol": "PENDLE-LPT",
+    "expiry": "2026-12-10T00:00:00.000Z",
+    "pt": {
+      "id": "1-0x47f4d6505e39998bbabf325def4c4861695ac8f5",
+      "chainId": 1,
+      "address": "0x47f4d6505e39998bbabf325def4c4861695ac8f5",
+      "symbol": "PT-NGI+-10DEC2026",
+      "decimals": 18,
+      "expiry": "2026-12-10T00:00:00.000Z",
+      "price": {
+        "usd": 0.9923130000686324
+      },
+      "priceUpdatedAt": "2026-11-04T10:02:30.095Z",
+      "name": "PT-NGI+-10DEC2026",
+      "baseType": "PT",
+      "types": [
+        "PT"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "PT NGI+ (USDC)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/33b51426-e7dc-4c6a-a4de-b1cd0030e904.svg",
+      "zappable": false,
+      "simpleName": "PT NGI+ (USDC)",
+      "simpleSymbol": "PT NGI+ (USDC)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/33b51426-e7dc-4c6a-a4de-b1cd0030e904.svg",
+      "proName": "PT NGI+ (USDC)"
+    },
+    "yt": {
+      "id": "1-0x7a3d12d8262b0246f4bbf8da354272e73a831a4b",
+      "chainId": 1,
+      "address": "0x7a3d12d8262b0246f4bbf8da354272e73a831a4b",
+      "symbol": "YT-NGI+-10DEC2026",
+      "decimals": 18,
+      "expiry": "2026-12-10T00:00:00.000Z",
+      "price": {
+        "usd": 0.007475099931367474
+      },
+      "priceUpdatedAt": "2026-11-04T10:02:30.095Z",
+      "name": "YT-NGI+-10DEC2026",
+      "baseType": "YT",
+      "types": [
+        "YT"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "YT NGI+ (USDC)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/ff432c2b-ca9f-4a52-bf43-49d37dcdac18.svg",
+      "zappable": false,
+      "simpleName": "YT NGI+ (USDC)",
+      "simpleSymbol": "YT NGI+ (USDC)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/ff432c2b-ca9f-4a52-bf43-49d37dcdac18.svg",
+      "proName": "YT NGI+ (USDC)"
+    },
+    "sy": {
+      "id": "1-0xcad69479358c1ef3560f29f278966df772abf42f",
+      "chainId": 1,
+      "address": "0xcad69479358c1ef3560f29f278966df772abf42f",
+      "symbol": "SY-NGI+",
+      "decimals": 18,
+      "expiry": null,
+      "price": {
+        "usd": 0.9997881
+      },
+      "priceUpdatedAt": "2026-11-04T10:02:30.095Z",
+      "name": "SY-NGI+",
+      "baseType": "SY",
+      "types": [
+        "SY"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "NGI+",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/9e77e045-23bc-4eed-aa8e-6d7783cae949.svg",
+      "zappable": false,
+      "simpleName": "NGI+",
+      "simpleSymbol": "NGI+",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/9e77e045-23bc-4eed-aa8e-6d7783cae949.svg",
+      "proName": "NGI+"
+    },
+    "lp": {
+      "id": "1-0x03005432d0f02c46d48ccd859d677d261640e5e1",
+      "chainId": 1,
+      "address": "0x03005432d0f02c46d48ccd859d677d261640e5e1",
+      "symbol": "PLP-NGI+-10DEC2026",
+      "decimals": 18,
+      "expiry": "2026-12-10T00:00:00.000Z",
+      "price": {
+        "usd": 2.015565373283879
+      },
+      "priceUpdatedAt": "2026-11-04T10:02:30.095Z",
+      "name": "PLP-NGI+-10DEC2026",
+      "baseType": "PENDLE_LP",
+      "types": [
+        "PENDLE_LP"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "LP NGI+ (USDC)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/ba3eb54c-ee33-4b33-9e47-f2666aef1643.svg",
+      "zappable": false,
+      "simpleName": "LP NGI+ (USDC)",
+      "simpleSymbol": "LP NGI+ (USDC)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/ba3eb54c-ee33-4b33-9e47-f2666aef1643.svg",
+      "proName": "LP NGI+ (USDC)"
+    },
+    "accountingAsset": {
+      "id": "1-0xae8fc9288685516d2eca717056ca69303b348752",
+      "chainId": 1,
+      "address": "0xae8fc9288685516d2eca717056ca69303b348752",
+      "symbol": "USDC-scaled18",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "",
+      "price": {
+        "usd": 0.9997881
+      },
+      "priceUpdatedAt": "2026-11-04T10:02:30.095Z",
+      "name": "USDC-scaled18",
+      "baseType": "GENERIC",
+      "types": [
+        "GENERIC"
+      ],
+      "proSymbol": "USDC",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/b5078ed7-66b0-437d-b27c-4aadf9c9e323.svg",
+      "zappable": false,
+      "simpleName": "USDC",
+      "simpleSymbol": "USDC",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/b5078ed7-66b0-437d-b27c-4aadf9c9e323.svg",
+      "proName": "USDC"
+    },
+    "underlyingAsset": {
+      "id": "1-0xf252c5bd43907a6cab079e990845a37a7c5730d9",
+      "chainId": 1,
+      "address": "0xf252c5bd43907a6cab079e990845a37a7c5730d9",
+      "symbol": "NGI+",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "",
+      "price": {
+        "usd": 1388.16758494458
+      },
+      "priceUpdatedAt": "2026-11-04T10:02:30.095Z",
+      "name": "NGI+",
+      "baseType": "IB",
+      "types": [
+        "IB"
+      ],
+      "proSymbol": "NGI+",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/9bbf9cbc-493d-47ec-a23d-a730d08cd788.svg",
+      "zappable": false,
+      "simpleName": "NGI+",
+      "simpleSymbol": "NGI+",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/9bbf9cbc-493d-47ec-a23d-a730d08cd788.svg",
+      "proName": "NGI+"
+    },
+    "basePricingAsset": {
+      "id": "1-0xae8fc9288685516d2eca717056ca69303b348752",
+      "chainId": 1,
+      "address": "0xae8fc9288685516d2eca717056ca69303b348752",
+      "symbol": "USDC-scaled18",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "",
+      "price": {
+        "usd": 0.9997881
+      },
+      "priceUpdatedAt": "2026-11-04T10:02:30.095Z",
+      "name": "USDC-scaled18",
+      "baseType": "GENERIC",
+      "types": [
+        "GENERIC"
+      ],
+      "proSymbol": "USDC",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/b5078ed7-66b0-437d-b27c-4aadf9c9e323.svg",
+      "zappable": false,
+      "simpleName": "USDC",
+      "simpleSymbol": "USDC",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/b5078ed7-66b0-437d-b27c-4aadf9c9e323.svg",
+      "proName": "USDC"
+    },
+    "rewardTokens": [
+      {
+        "id": "1-0x808507121b80c02388fad14726482e061b8da827",
+        "chainId": 1,
+        "address": "0x808507121b80c02388fad14726482e061b8da827",
+        "symbol": "PENDLE",
+        "decimals": 18,
+        "accentColor": null,
+        "price": {
+          "usd": 1.79582803
+        },
+        "priceUpdatedAt": "2026-11-04T10:02:30.095Z",
+        "name": "PENDLE",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "protocol": "Pendle",
+        "proSymbol": "PENDLE",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ea33e392-1876-46a5-b7ce-c8434b5a7e71.svg",
+        "zappable": true,
+        "simpleName": "PENDLE",
+        "simpleSymbol": "PENDLE",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ea33e392-1876-46a5-b7ce-c8434b5a7e71.svg",
+        "proName": "PENDLE"
+      }
+    ],
+    "inputTokens": [
+      {
+        "id": "1-0xf252c5bd43907a6cab079e990845a37a7c5730d9",
+        "chainId": 1,
+        "address": "0xf252c5bd43907a6cab079e990845a37a7c5730d9",
+        "symbol": "NGI+",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 1388.16758494458
+        },
+        "priceUpdatedAt": "2026-11-04T10:02:30.095Z",
+        "name": "NGI+",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "NGI+",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/9bbf9cbc-493d-47ec-a23d-a730d08cd788.svg",
+        "zappable": false,
+        "simpleName": "NGI+",
+        "simpleSymbol": "NGI+",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/9bbf9cbc-493d-47ec-a23d-a730d08cd788.svg",
+        "proName": "NGI+"
+      }
+    ],
+    "outputTokens": [
+      {
+        "id": "1-0xf252c5bd43907a6cab079e990845a37a7c5730d9",
+        "chainId": 1,
+        "address": "0xf252c5bd43907a6cab079e990845a37a7c5730d9",
+        "symbol": "NGI+",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 1388.16758494458
+        },
+        "priceUpdatedAt": "2026-11-04T10:02:30.095Z",
+        "name": "NGI+",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "NGI+",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/9bbf9cbc-493d-47ec-a23d-a730d08cd788.svg",
+        "zappable": false,
+        "simpleName": "NGI+",
+        "simpleSymbol": "NGI+",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/9bbf9cbc-493d-47ec-a23d-a730d08cd788.svg",
+        "proName": "NGI+"
+      }
+    ],
+    "protocol": "Asseto",
+    "underlyingPool": "",
+    "proSymbol": "NGI+",
+    "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/6cf7b875-a744-4217-8d28-615dee5732f2.svg",
+    "assetRepresentation": "USDC-scaled18",
+    "isWhitelistedPro": true,
+    "isWhitelistedSimple": false,
+    "votable": false,
+    "isActive": true,
+    "isWhitelistedLimitOrder": true,
+    "accentColor": "#050505",
+    "totalPt": 62293.31441933571,
+    "totalSy": 708201.2216230988,
+    "totalLp": 381960.133719501,
+    "totalActiveSupply": 381960.133719501,
+    "liquidity": {
+      "usd": 769861.5460476149,
+      "acc": 770028.7886002109
+    },
+    "tradingVolume": {
+      "usd": 219344.06275298208
+    },
+    "underlyingInterestApy": 0.1512627333682137,
+    "underlyingRewardApy": 0,
+    "underlyingRewardApyBreakdown": [],
+    "underlyingApy": 0.1512627333682137,
+    "impliedApy": 0.08002000000000109,
+    "ytFloatingApy": 323.07704956535366,
+    "ptDiscount": 0.007476684240758091,
+    "swapFeeApy": 0.00605371951907685,
+    "pendleApy": 0.0038277538194559637,
+    "aggregatedApy": 0.15542394402202256,
+    "maxBoostedApy": 0.1611655747512065,
+    "lpRewardApy": 0,
+    "voterApy": 0,
+    "ytRoi": 0.7569022731874164,
+    "ptRoi": 0.007532489676525866,
+    "estimatedDailyPoolRewards": [
+      {
+        "asset": {
+          "id": "1-0x808507121b80c02388fad14726482e061b8da827",
+          "chainId": 1,
+          "address": "0x808507121b80c02388fad14726482e061b8da827",
+          "symbol": "PENDLE",
+          "decimals": 18,
+          "accentColor": null,
+          "price": {
+            "usd": 1.79582803
+          },
+          "priceUpdatedAt": "2026-11-04T10:02:30.095Z",
+          "name": "PENDLE"
+        },
+        "amount": 4.490820060174547
+      }
+    ],
+    "dataUpdatedAt": "2026-11-04T09:59:00.000Z",
+    "liquidityChange24h": 0.22034511576178048,
+    "tradingVolumeChange24h": 62.043290583457775,
+    "underlyingInterestApyChange24h": 0,
+    "underlyingApyChange24h": 0,
+    "impliedApyChange24h": -0.18777461666644785,
+    "ytFloatingApyChange24h": 7.662408279582787,
+    "ptDiscountChange24h": -0.20238096710250497,
+    "swapFeeApyChange24h": -0.36329166948357405,
+    "pendleApyChange24h": -0.15418874761691656,
+    "aggregatedApyChange24h": -0.02151662681641844,
+    "categoryIds": [
+      "rwa"
+    ],
+    "timestamp": "2026-09-08T02:09:23.000Z",
+    "scalarRoot": 26.21183489272739,
+    "initialAnchor": 1.043516448836913,
+    "extendedInfo": {
+      "floatingPt": 463932.95575799805,
+      "floatingSy": 111.37693012901582,
+      "pyUnit": "USDC staked on NGI+",
+      "ptEqualsPyUnit": false,
+      "underlyingAssetWorthMore": "NGI+",
+      "feeRate": 0.0016241244380246211,
+      "yieldRange": {
+        "min": 0.09,
+        "max": 0.28
+      }
+    },
+    "isPopular": false,
+    "tvlThresholdTimestamp": "2026-09-21T07:21:00.000Z",
+    "whitelistedProAt": "2026-09-17T11:00:00.000Z",
+    "isNew": false,
+    "name": "PENDLE-LPT",
+    "simpleName": "NGI+",
+    "simpleSymbol": "NGI+",
+    "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/6cf7b875-a744-4217-8d28-615dee5732f2.svg",
+    "proName": "NGI+",
+    "farmName": "NGI+",
+    "farmSymbol": "NGI+",
+    "farmSimpleName": "NGI+",
+    "farmSimpleSymbol": "NGI+",
+    "farmSimpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/6cf7b875-a744-4217-8d28-615dee5732f2.svg",
+    "farmProName": "NGI+",
+    "farmProSymbol": "NGI+",
+    "farmProIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/6cf7b875-a744-4217-8d28-615dee5732f2.svg"
+  }
+}

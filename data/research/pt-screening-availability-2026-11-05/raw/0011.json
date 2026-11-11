@@ -1,0 +1,425 @@
+{
+  "requested_at": "2026-11-05T10:29:55.486796+00:00",
+  "method": "GET",
+  "url": "https://api-v2.pendle.finance/core/v1/1/markets/0xeb603c5a42d49d3b2e078191c23bf3f5d25bc219",
+  "params": null,
+  "body": null,
+  "received_at": "2026-11-05T10:29:55.577875+00:00",
+  "http_status": 200,
+  "rate_headers": {
+    "x-computing-unit": "1",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "184",
+    "x-ratelimit-reset": "1793874600",
+    "x-ratelimit-weekly-limit": "200000",
+    "x-ratelimit-weekly-remaining": "189974",
+    "x-ratelimit-weekly-reset": "1794441600"
+  },
+  "response": {
+    "id": "1-0xeb603c5a42d49d3b2e078191c23bf3f5d25bc219",
+    "chainId": 1,
+    "address": "0xeb603c5a42d49d3b2e078191c23bf3f5d25bc219",
+    "symbol": "PENDLE-LPT",
+    "expiry": "2027-02-04T00:00:00.000Z",
+    "pt": {
+      "id": "1-0x2a21f68b60156860615bd27ac958df817df45aa3",
+      "chainId": 1,
+      "address": "0x2a21f68b60156860615bd27ac958df817df45aa3",
+      "symbol": "PT-sBOLD-4FEB2027",
+      "decimals": 18,
+      "expiry": "2027-02-04T00:00:00.000Z",
+      "price": {
+        "usd": 0.9835612853221921
+      },
+      "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+      "name": "PT-sBOLD-4FEB2027",
+      "baseType": "PT",
+      "types": [
+        "PT"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "PT sBOLD (BOLD)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/a3750f13-9723-4202-ab4b-0b12fd8fbd00.svg",
+      "zappable": false,
+      "simpleName": "PT sBOLD (BOLD)",
+      "simpleSymbol": "PT sBOLD (BOLD)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/a3750f13-9723-4202-ab4b-0b12fd8fbd00.svg",
+      "proName": "PT sBOLD (BOLD)"
+    },
+    "yt": {
+      "id": "1-0xc802c127ac01e06610a6a5c12ce5b70ce93924e4",
+      "chainId": 1,
+      "address": "0xc802c127ac01e06610a6a5c12ce5b70ce93924e4",
+      "symbol": "YT-sBOLD-4FEB2027",
+      "decimals": 18,
+      "expiry": "2027-02-04T00:00:00.000Z",
+      "price": {
+        "usd": 0.013897293659588436
+      },
+      "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+      "name": "YT-sBOLD-4FEB2027",
+      "baseType": "YT",
+      "types": [
+        "YT"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "YT sBOLD (BOLD)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/df5c1dfe-a68c-47b2-a2fc-46928f4b2200.svg",
+      "zappable": false,
+      "simpleName": "YT sBOLD (BOLD)",
+      "simpleSymbol": "YT sBOLD (BOLD)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/df5c1dfe-a68c-47b2-a2fc-46928f4b2200.svg",
+      "proName": "YT sBOLD (BOLD)"
+    },
+    "sy": {
+      "id": "1-0xa73fb4f3a3f3889e41387973afc542fa06785981",
+      "chainId": 1,
+      "address": "0xa73fb4f3a3f3889e41387973afc542fa06785981",
+      "symbol": "SY-sBOLD",
+      "decimals": 18,
+      "expiry": null,
+      "price": {
+        "usd": 1.0905120896313534
+      },
+      "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+      "name": "SY-sBOLD",
+      "baseType": "SY",
+      "types": [
+        "SY"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "sBOLD",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/4dc04cd3-5e02-43ed-b80a-91c5e40f1d3b.svg",
+      "zappable": false,
+      "simpleName": "sBOLD",
+      "simpleSymbol": "sBOLD",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/4dc04cd3-5e02-43ed-b80a-91c5e40f1d3b.svg",
+      "proName": "sBOLD"
+    },
+    "lp": {
+      "id": "1-0xeb603c5a42d49d3b2e078191c23bf3f5d25bc219",
+      "chainId": 1,
+      "address": "0xeb603c5a42d49d3b2e078191c23bf3f5d25bc219",
+      "symbol": "PLP-sBOLD-4FEB2027",
+      "decimals": 18,
+      "expiry": "2027-02-04T00:00:00.000Z",
+      "price": {
+        "usd": 2.3482757786521384
+      },
+      "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+      "name": "PLP-sBOLD-4FEB2027",
+      "baseType": "PENDLE_LP",
+      "types": [
+        "PENDLE_LP"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "LP sBOLD (BOLD)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e92ea357-6caf-4ce6-86a9-be81b6f6196c.svg",
+      "zappable": false,
+      "simpleName": "LP sBOLD (BOLD)",
+      "simpleSymbol": "LP sBOLD (BOLD)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e92ea357-6caf-4ce6-86a9-be81b6f6196c.svg",
+      "proName": "LP sBOLD (BOLD)"
+    },
+    "accountingAsset": {
+      "id": "1-0x6440f144b7e50d6a8439336510312d2f54beb01d",
+      "chainId": 1,
+      "address": "0x6440f144b7e50d6a8439336510312d2f54beb01d",
+      "symbol": "BOLD",
+      "decimals": 18,
+      "accentColor": "",
+      "price": {
+        "usd": 0.99745864
+      },
+      "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+      "name": "BOLD",
+      "baseType": "GENERIC",
+      "types": [
+        "GENERIC"
+      ],
+      "proSymbol": "BOLD",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/63fa10c2-9441-46be-8a96-ca1e980e73b1.svg",
+      "zappable": true,
+      "simpleName": "BOLD",
+      "simpleSymbol": "BOLD",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/63fa10c2-9441-46be-8a96-ca1e980e73b1.svg",
+      "proName": "BOLD"
+    },
+    "underlyingAsset": {
+      "id": "1-0x50bd66d59911f5e086ec87ae43c811e0d059dd11",
+      "chainId": 1,
+      "address": "0x50bd66d59911f5e086ec87ae43c811e0d059dd11",
+      "symbol": "sBOLD",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "",
+      "price": {
+        "usd": 1.0905120896313534
+      },
+      "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+      "name": "sBOLD",
+      "baseType": "IB",
+      "types": [
+        "IB"
+      ],
+      "proSymbol": "sBOLD",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/91b86405-2a6f-4da7-91b6-6a72df462a9e.svg",
+      "zappable": true,
+      "simpleName": "sBOLD",
+      "simpleSymbol": "sBOLD",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/91b86405-2a6f-4da7-91b6-6a72df462a9e.svg",
+      "proName": "sBOLD"
+    },
+    "basePricingAsset": {
+      "id": "1-0x6440f144b7e50d6a8439336510312d2f54beb01d",
+      "chainId": 1,
+      "address": "0x6440f144b7e50d6a8439336510312d2f54beb01d",
+      "symbol": "BOLD",
+      "decimals": 18,
+      "accentColor": "",
+      "price": {
+        "usd": 0.99745864
+      },
+      "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+      "name": "BOLD",
+      "baseType": "GENERIC",
+      "types": [
+        "GENERIC"
+      ],
+      "proSymbol": "BOLD",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/63fa10c2-9441-46be-8a96-ca1e980e73b1.svg",
+      "zappable": true,
+      "simpleName": "BOLD",
+      "simpleSymbol": "BOLD",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/63fa10c2-9441-46be-8a96-ca1e980e73b1.svg",
+      "proName": "BOLD"
+    },
+    "rewardTokens": [
+      {
+        "id": "1-0x808507121b80c02388fad14726482e061b8da827",
+        "chainId": 1,
+        "address": "0x808507121b80c02388fad14726482e061b8da827",
+        "symbol": "PENDLE",
+        "decimals": 18,
+        "accentColor": null,
+        "price": {
+          "usd": 1.77606361
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "PENDLE",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "protocol": "Pendle",
+        "proSymbol": "PENDLE",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ea33e392-1876-46a5-b7ce-c8434b5a7e71.svg",
+        "zappable": true,
+        "simpleName": "PENDLE",
+        "simpleSymbol": "PENDLE",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ea33e392-1876-46a5-b7ce-c8434b5a7e71.svg",
+        "proName": "PENDLE"
+      }
+    ],
+    "inputTokens": [
+      {
+        "id": "1-0x6440f144b7e50d6a8439336510312d2f54beb01d",
+        "chainId": 1,
+        "address": "0x6440f144b7e50d6a8439336510312d2f54beb01d",
+        "symbol": "BOLD",
+        "decimals": 18,
+        "accentColor": "",
+        "price": {
+          "usd": 0.99745864
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "BOLD",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "proSymbol": "BOLD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/63fa10c2-9441-46be-8a96-ca1e980e73b1.svg",
+        "zappable": true,
+        "simpleName": "BOLD",
+        "simpleSymbol": "BOLD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/63fa10c2-9441-46be-8a96-ca1e980e73b1.svg",
+        "proName": "BOLD"
+      },
+      {
+        "id": "1-0x50bd66d59911f5e086ec87ae43c811e0d059dd11",
+        "chainId": 1,
+        "address": "0x50bd66d59911f5e086ec87ae43c811e0d059dd11",
+        "symbol": "sBOLD",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 1.0905120896313534
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "sBOLD",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "sBOLD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/91b86405-2a6f-4da7-91b6-6a72df462a9e.svg",
+        "zappable": true,
+        "simpleName": "sBOLD",
+        "simpleSymbol": "sBOLD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/91b86405-2a6f-4da7-91b6-6a72df462a9e.svg",
+        "proName": "sBOLD"
+      }
+    ],
+    "outputTokens": [
+      {
+        "id": "1-0x6440f144b7e50d6a8439336510312d2f54beb01d",
+        "chainId": 1,
+        "address": "0x6440f144b7e50d6a8439336510312d2f54beb01d",
+        "symbol": "BOLD",
+        "decimals": 18,
+        "accentColor": "",
+        "price": {
+          "usd": 0.99745864
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "BOLD",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "proSymbol": "BOLD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/63fa10c2-9441-46be-8a96-ca1e980e73b1.svg",
+        "zappable": true,
+        "simpleName": "BOLD",
+        "simpleSymbol": "BOLD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/63fa10c2-9441-46be-8a96-ca1e980e73b1.svg",
+        "proName": "BOLD"
+      },
+      {
+        "id": "1-0x50bd66d59911f5e086ec87ae43c811e0d059dd11",
+        "chainId": 1,
+        "address": "0x50bd66d59911f5e086ec87ae43c811e0d059dd11",
+        "symbol": "sBOLD",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 1.0905120896313534
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "sBOLD",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "sBOLD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/91b86405-2a6f-4da7-91b6-6a72df462a9e.svg",
+        "zappable": true,
+        "simpleName": "sBOLD",
+        "simpleSymbol": "sBOLD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/91b86405-2a6f-4da7-91b6-6a72df462a9e.svg",
+        "proName": "sBOLD"
+      }
+    ],
+    "protocol": "Liquity",
+    "proSymbol": "sBOLD",
+    "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/42a5f4bf-ccb3-4218-9f2e-d8ad82e7bc23.svg",
+    "assetRepresentation": "BOLD",
+    "isWhitelistedPro": true,
+    "isWhitelistedSimple": false,
+    "votable": false,
+    "isActive": true,
+    "isWhitelistedLimitOrder": true,
+    "accentColor": "#F0DA5B",
+    "totalPt": 79305.86349546327,
+    "totalSy": 177600.21665080573,
+    "totalLp": 115692.27212656112,
+    "totalActiveSupply": 115692.27212656112,
+    "liquidity": {
+      "usd": 271673.00181331014,
+      "acc": 272369.46845597477
+    },
+    "tradingVolume": {
+      "usd": 0
+    },
+    "underlyingInterestApy": 0.0632050614606201,
+    "underlyingRewardApy": 0,
+    "underlyingRewardApyBreakdown": [],
+    "underlyingApy": 0.0632050614606201,
+    "impliedApy": 0.05817787531905427,
+    "ytFloatingApy": 0.19313185777724406,
+    "ptDiscount": 0.013933148096774706,
+    "swapFeeApy": 0.002987148252126426,
+    "pendleApy": 0,
+    "aggregatedApy": 0.06474883782287534,
+    "maxBoostedApy": 0.06474883782287534,
+    "lpRewardApy": 0,
+    "voterApy": 0,
+    "ytRoi": 0.04478694196174615,
+    "ptRoi": 0.014129543734635153,
+    "estimatedDailyPoolRewards": [
+      {
+        "asset": {
+          "id": "1-0x808507121b80c02388fad14726482e061b8da827",
+          "chainId": 1,
+          "address": "0x808507121b80c02388fad14726482e061b8da827",
+          "symbol": "PENDLE",
+          "decimals": 18,
+          "accentColor": null,
+          "price": {
+            "usd": 1.77606361
+          },
+          "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+          "name": "PENDLE"
+        },
+        "amount": 0
+      }
+    ],
+    "dataUpdatedAt": "2026-11-05T10:25:00.000Z",
+    "liquidityChange24h": 0.00043941542577351016,
+    "underlyingInterestApyChange24h": -0.02771874946166228,
+    "underlyingApyChange24h": -0.02771874946166228,
+    "impliedApyChange24h": 1.8277071360575862e-08,
+    "ytFloatingApyChange24h": -0.41395184906211263,
+    "ptDiscountChange24h": -0.01062111617167883,
+    "swapFeeApyChange24h": -1.1599471992603147e-05,
+    "aggregatedApyChange24h": -0.019454525710202453,
+    "categoryIds": [
+      "stables"
+    ],
+    "timestamp": "2026-08-04T08:45:59.000Z",
+    "scalarRoot": 35.186197370148946,
+    "initialAnchor": 1.0414296261397116,
+    "extendedInfo": {
+      "floatingPt": 158992.75548630452,
+      "floatingSy": 60.32600089817424,
+      "pyUnit": "BOLD staked in Liquity",
+      "ptEqualsPyUnit": false,
+      "underlyingAssetWorthMore": "sBOLD",
+      "feeRate": 0.0016978889673533448,
+      "yieldRange": {
+        "min": 0.02,
+        "max": 0.15
+      }
+    },
+    "isPopular": false,
+    "tvlThresholdTimestamp": "2026-08-06T14:22:00.000Z",
+    "whitelistedProAt": "2026-08-05T02:46:28.230Z",
+    "isNew": false,
+    "name": "PENDLE-LPT",
+    "simpleName": "sBOLD",
+    "simpleSymbol": "sBOLD",
+    "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/42a5f4bf-ccb3-4218-9f2e-d8ad82e7bc23.svg",
+    "proName": "sBOLD",
+    "farmName": "sBOLD",
+    "farmSymbol": "sBOLD",
+    "farmSimpleName": "sBOLD",
+    "farmSimpleSymbol": "sBOLD",
+    "farmSimpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/42a5f4bf-ccb3-4218-9f2e-d8ad82e7bc23.svg",
+    "farmProName": "sBOLD",
+    "farmProSymbol": "sBOLD",
+    "farmProIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/42a5f4bf-ccb3-4218-9f2e-d8ad82e7bc23.svg"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "handoffs": [
+    "/home/danger/riskAnalyst/specs/handoffs/pt-screening-availability-pendletracker-2026-11-05.md",
+    "/home/danger/riskAnalyst/specs/handoffs/pt-underlying-screening-owners-2026-11-05.md"
+  ],
+  "delivery_status": "send_message_to_thread accepted for all three recipients",
+  "recipients": {
+    "DeFiAnalyst": "01a19cd3-e479-7971-bd80-831993516a2c",
+    "BM": "01a19a30-50e1-7bb0-b3cf-6bb2481f3835",
+    "SecurityAnalyst": "01a1911f-0fce-7a73-a48c-00879f9cd0f9"
+  },
+  "scope": "Underlying/wrapper screening only; no routes/quotes/simulations/jobs/publication; no inherited grades. PendleTracker owns mapping and availability.",
+  "mapping_handback_delivery_status": "Follow-up result paths and resolved Monad strUSD wrapper identity accepted by send_message_to_thread for all three recipients."
+}

@@ -1,0 +1,28 @@
+{
+  "requested_at": "2026-11-04T14:08:51.951672+00:00",
+  "method": "GET",
+  "url": "https://api-v2.pendle.finance/core/v1/prices/assets",
+  "params": {
+    "ids": "1-0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48,1-0x60b1e75ede859e496c281d308bc94b6965ac4847"
+  },
+  "body": null,
+  "received_at": "2026-11-04T14:08:52.067940+00:00",
+  "http_status": 200,
+  "rate_headers": {
+    "x-computing-unit": "1",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "196",
+    "x-ratelimit-reset": "1793801340",
+    "x-ratelimit-weekly-limit": "200000",
+    "x-ratelimit-weekly-remaining": "191648",
+    "x-ratelimit-weekly-reset": "1793836800"
+  },
+  "response": {
+    "prices": {
+      "1-0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48": 0.99979358,
+      "1-0x60b1e75ede859e496c281d308bc94b6965ac4847": 0.9360394859465654
+    },
+    "total": 2,
+    "skip": 0
+  }
+}

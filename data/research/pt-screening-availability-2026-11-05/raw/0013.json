@@ -1,0 +1,430 @@
+{
+  "requested_at": "2026-11-05T10:30:01.490508+00:00",
+  "method": "GET",
+  "url": "https://api-v2.pendle.finance/core/v1/1/markets/0x384509537ce5daa5740baeb6d1ee0eb2847ea8a8",
+  "params": null,
+  "body": null,
+  "received_at": "2026-11-05T10:30:01.588810+00:00",
+  "http_status": 200,
+  "rate_headers": {
+    "x-computing-unit": "1",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "190",
+    "x-ratelimit-reset": "1793874600",
+    "x-ratelimit-weekly-limit": "200000",
+    "x-ratelimit-weekly-remaining": "189980",
+    "x-ratelimit-weekly-reset": "1794441600"
+  },
+  "response": {
+    "id": "1-0x384509537ce5daa5740baeb6d1ee0eb2847ea8a8",
+    "chainId": 1,
+    "address": "0x384509537ce5daa5740baeb6d1ee0eb2847ea8a8",
+    "symbol": "PENDLE-LPT",
+    "expiry": "2026-11-26T00:00:00.000Z",
+    "pt": {
+      "id": "1-0x1cfaed2df5ee27b078e96fafa10709c5548fc1b7",
+      "chainId": 1,
+      "address": "0x1cfaed2df5ee27b078e96fafa10709c5548fc1b7",
+      "symbol": "PT-superWETH-26NOV2026",
+      "decimals": 18,
+      "expiry": "2026-11-26T00:00:00.000Z",
+      "price": {
+        "usd": 2411.2630829196232
+      },
+      "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+      "name": "PT-superWETH-26NOV2026",
+      "baseType": "PT",
+      "types": [
+        "PT"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "PT superWETH (WETH)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f6e2ca58-f555-4596-9885-77fee12bf5c7.svg",
+      "zappable": false,
+      "simpleName": "PT superWETH (WETH)",
+      "simpleSymbol": "PT superWETH (WETH)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f6e2ca58-f555-4596-9885-77fee12bf5c7.svg",
+      "proName": "PT superWETH (WETH)"
+    },
+    "yt": {
+      "id": "1-0x775f0f7690c2ceed13d20f9a302d1e8069d56b3b",
+      "chainId": 1,
+      "address": "0x775f0f7690c2ceed13d20f9a302d1e8069d56b3b",
+      "symbol": "YT-superWETH-26NOV2026",
+      "decimals": 18,
+      "expiry": "2026-11-26T00:00:00.000Z",
+      "price": {
+        "usd": 6.2846887003764405
+      },
+      "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+      "name": "YT-superWETH-26NOV2026",
+      "baseType": "YT",
+      "types": [
+        "YT"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "YT superWETH (WETH)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/85afeb36-1fc6-4215-afcb-8c1cbeb8fc3a.svg",
+      "zappable": false,
+      "simpleName": "YT superWETH (WETH)",
+      "simpleSymbol": "YT superWETH (WETH)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/85afeb36-1fc6-4215-afcb-8c1cbeb8fc3a.svg",
+      "proName": "YT superWETH (WETH)"
+    },
+    "sy": {
+      "id": "1-0x3aecaedfb92efbbac95e5c458c56e94070cb9179",
+      "chainId": 1,
+      "address": "0x3aecaedfb92efbbac95e5c458c56e94070cb9179",
+      "symbol": "SY-superWETH",
+      "decimals": 18,
+      "expiry": null,
+      "price": {
+        "usd": 2455.332775509503
+      },
+      "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+      "name": "SY-superWETH",
+      "baseType": "SY",
+      "types": [
+        "SY"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "superWETH",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/26f23759-cf49-4a0c-a810-f0f7098a4860.svg",
+      "zappable": false,
+      "simpleName": "superWETH",
+      "simpleSymbol": "superWETH",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/26f23759-cf49-4a0c-a810-f0f7098a4860.svg",
+      "proName": "superWETH"
+    },
+    "lp": {
+      "id": "1-0x384509537ce5daa5740baeb6d1ee0eb2847ea8a8",
+      "chainId": 1,
+      "address": "0x384509537ce5daa5740baeb6d1ee0eb2847ea8a8",
+      "symbol": "PLP-superWETH-26NOV2026",
+      "decimals": 18,
+      "expiry": "2026-11-26T00:00:00.000Z",
+      "price": {
+        "usd": 4878.540960536935
+      },
+      "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+      "name": "PLP-superWETH-26NOV2026",
+      "baseType": "PENDLE_LP",
+      "types": [
+        "PENDLE_LP"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "LP superWETH (WETH)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5cebc1a1-7484-43d4-abcc-98d0c4011a55.svg",
+      "zappable": false,
+      "simpleName": "LP superWETH (WETH)",
+      "simpleSymbol": "LP superWETH (WETH)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5cebc1a1-7484-43d4-abcc-98d0c4011a55.svg",
+      "proName": "LP superWETH (WETH)"
+    },
+    "accountingAsset": {
+      "id": "1-0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "chainId": 1,
+      "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "symbol": "WETH",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "#4f4f4f",
+      "price": {
+        "usd": 2417.54777162
+      },
+      "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+      "name": "WETH",
+      "baseType": "GENERIC",
+      "types": [
+        "GENERIC"
+      ],
+      "protocol": "",
+      "proSymbol": "WETH",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/0aeac9d4-535e-4652-9625-82c7fbcfead7.png",
+      "zappable": true,
+      "simpleName": "WETH",
+      "simpleSymbol": "WETH",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/0aeac9d4-535e-4652-9625-82c7fbcfead7.png",
+      "proName": "WETH"
+    },
+    "underlyingAsset": {
+      "id": "1-0xa036823b9a24f63c32553367bf181ee04229c3ac",
+      "chainId": 1,
+      "address": "0xa036823b9a24f63c32553367bf181ee04229c3ac",
+      "symbol": "superWETH",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "",
+      "price": {
+        "usd": 2455.332775509503
+      },
+      "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+      "name": "superWETH",
+      "baseType": "IB",
+      "types": [
+        "IB"
+      ],
+      "proSymbol": "superWETH",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/ae60ef93-aea0-4a0b-90cf-17f354335982.svg",
+      "zappable": false,
+      "simpleName": "superWETH",
+      "simpleSymbol": "superWETH",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/ae60ef93-aea0-4a0b-90cf-17f354335982.svg",
+      "proName": "superWETH"
+    },
+    "basePricingAsset": {
+      "id": "1-0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "chainId": 1,
+      "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+      "symbol": "WETH",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "#4f4f4f",
+      "price": {
+        "usd": 2417.54777162
+      },
+      "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+      "name": "WETH",
+      "baseType": "GENERIC",
+      "types": [
+        "GENERIC"
+      ],
+      "protocol": "",
+      "proSymbol": "WETH",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/0aeac9d4-535e-4652-9625-82c7fbcfead7.png",
+      "zappable": true,
+      "simpleName": "WETH",
+      "simpleSymbol": "WETH",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/0aeac9d4-535e-4652-9625-82c7fbcfead7.png",
+      "proName": "WETH"
+    },
+    "rewardTokens": [
+      {
+        "id": "1-0x808507121b80c02388fad14726482e061b8da827",
+        "chainId": 1,
+        "address": "0x808507121b80c02388fad14726482e061b8da827",
+        "symbol": "PENDLE",
+        "decimals": 18,
+        "accentColor": null,
+        "price": {
+          "usd": 1.77606361
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "PENDLE",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "protocol": "Pendle",
+        "proSymbol": "PENDLE",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ea33e392-1876-46a5-b7ce-c8434b5a7e71.svg",
+        "zappable": true,
+        "simpleName": "PENDLE",
+        "simpleSymbol": "PENDLE",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ea33e392-1876-46a5-b7ce-c8434b5a7e71.svg",
+        "proName": "PENDLE"
+      }
+    ],
+    "inputTokens": [
+      {
+        "id": "1-0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "chainId": 1,
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "symbol": "WETH",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "#4f4f4f",
+        "price": {
+          "usd": 2417.54777162
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "WETH",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "protocol": "",
+        "proSymbol": "WETH",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/0aeac9d4-535e-4652-9625-82c7fbcfead7.png",
+        "zappable": true,
+        "simpleName": "WETH",
+        "simpleSymbol": "WETH",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/0aeac9d4-535e-4652-9625-82c7fbcfead7.png",
+        "proName": "WETH"
+      },
+      {
+        "id": "1-0xa036823b9a24f63c32553367bf181ee04229c3ac",
+        "chainId": 1,
+        "address": "0xa036823b9a24f63c32553367bf181ee04229c3ac",
+        "symbol": "superWETH",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 2455.332775509503
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "superWETH",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "superWETH",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/ae60ef93-aea0-4a0b-90cf-17f354335982.svg",
+        "zappable": false,
+        "simpleName": "superWETH",
+        "simpleSymbol": "superWETH",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/ae60ef93-aea0-4a0b-90cf-17f354335982.svg",
+        "proName": "superWETH"
+      }
+    ],
+    "outputTokens": [
+      {
+        "id": "1-0xa036823b9a24f63c32553367bf181ee04229c3ac",
+        "chainId": 1,
+        "address": "0xa036823b9a24f63c32553367bf181ee04229c3ac",
+        "symbol": "superWETH",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 2455.332775509503
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "superWETH",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "superWETH",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/ae60ef93-aea0-4a0b-90cf-17f354335982.svg",
+        "zappable": false,
+        "simpleName": "superWETH",
+        "simpleSymbol": "superWETH",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/ae60ef93-aea0-4a0b-90cf-17f354335982.svg",
+        "proName": "superWETH"
+      }
+    ],
+    "protocol": "Superform",
+    "proSymbol": "superWETH",
+    "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e7c67b4e-29c7-4c05-b5ed-d32f5e580236.svg",
+    "assetRepresentation": "WETH",
+    "isWhitelistedPro": true,
+    "isWhitelistedSimple": false,
+    "votable": false,
+    "isActive": true,
+    "isWhitelistedLimitOrder": true,
+    "accentColor": "#c9E500",
+    "totalPt": 34.680919213638624,
+    "totalSy": 102.44141468588052,
+    "totalLp": 68.69934801008222,
+    "totalActiveSupply": 68.69934801008222,
+    "liquidity": {
+      "usd": 335152.5817591363,
+      "acc": 138.63328191217101
+    },
+    "tradingVolume": {
+      "usd": 0
+    },
+    "underlyingInterestApy": 0.020036660979089627,
+    "underlyingRewardApy": 0.013116848903798096,
+    "underlyingRewardApyBreakdown": [
+      {
+        "asset": {
+          "id": "8453-0x2c71f70e2ec720ae061ae7e0316fc9654d94f417",
+          "chainId": 8453,
+          "address": "0x2c71f70e2ec720ae061ae7e0316fc9654d94f417",
+          "symbol": "sUP",
+          "decimals": 18,
+          "price": {
+            "usd": 0.08101296992018125
+          },
+          "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+          "name": "sUP"
+        },
+        "absoluteApy": 0.013116848903798096,
+        "relativeApy": 1,
+        "ytExclusive": false,
+        "lpExclusive": false,
+        "source": "EXTERNAL_REWARD"
+      }
+    ],
+    "underlyingApy": 0.03315350988288772,
+    "impliedApy": 0.047288138911789845,
+    "ytFloatingApy": -0.9989713606552638,
+    "ptDiscount": 0.0025996305707980394,
+    "swapFeeApy": 0,
+    "pendleApy": 0,
+    "aggregatedApy": 0.03668027913849613,
+    "maxBoostedApy": 0.05144632219004615,
+    "lpRewardApy": 0.009844028701033344,
+    "voterApy": 0,
+    "ytRoi": -0.3212948266587856,
+    "ptRoi": 0.0026063710099948345,
+    "estimatedDailyPoolRewards": [
+      {
+        "asset": {
+          "id": "1-0x808507121b80c02388fad14726482e061b8da827",
+          "chainId": 1,
+          "address": "0x808507121b80c02388fad14726482e061b8da827",
+          "symbol": "PENDLE",
+          "decimals": 18,
+          "accentColor": null,
+          "price": {
+            "usd": 1.77606361
+          },
+          "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+          "name": "PENDLE"
+        },
+        "amount": 0
+      }
+    ],
+    "dataUpdatedAt": "2026-11-05T10:29:00.000Z",
+    "liquidityChange24h": 0.04005507788978049,
+    "underlyingInterestApyChange24h": 0.02367737580911752,
+    "underlyingRewardApyChange24h": 0,
+    "underlyingApyChange24h": 0.014176858210839086,
+    "impliedApyChange24h": 3.403248811606908e-07,
+    "ytFloatingApyChange24h": 8.417192598722555e-05,
+    "ptDiscountChange24h": -0.04539363002756427,
+    "swapFeeApyChange24h": -1,
+    "aggregatedApyChange24h": -0.025297124879414098,
+    "lpRewardApyChange24h": -2.0818026959585944e-05,
+    "categoryIds": [
+      "points",
+      "eth"
+    ],
+    "timestamp": "2026-04-27T20:59:47.000Z",
+    "scalarRoot": 41.16745576257096,
+    "initialAnchor": 1.0425934918404314,
+    "extendedInfo": {
+      "floatingPt": 139.28561515632768,
+      "floatingSy": 0.03598267810477296,
+      "pyUnit": "WETH staked in Superform",
+      "ptEqualsPyUnit": false,
+      "underlyingAssetWorthMore": "superWETH",
+      "feeRate": 0.0013870692183526323,
+      "yieldRange": {
+        "min": 0.02,
+        "max": 0.12999999999999998
+      }
+    },
+    "isPopular": false,
+    "tvlThresholdTimestamp": "2026-05-01T13:05:00.000Z",
+    "whitelistedProAt": "2026-05-01T02:59:10.490Z",
+    "isNew": false,
+    "name": "PENDLE-LPT",
+    "simpleName": "superWETH",
+    "simpleSymbol": "superWETH",
+    "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e7c67b4e-29c7-4c05-b5ed-d32f5e580236.svg",
+    "proName": "superWETH",
+    "farmName": "superWETH",
+    "farmSymbol": "superWETH",
+    "farmSimpleName": "superWETH",
+    "farmSimpleSymbol": "superWETH",
+    "farmSimpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e7c67b4e-29c7-4c05-b5ed-d32f5e580236.svg",
+    "farmProName": "superWETH",
+    "farmProSymbol": "superWETH",
+    "farmProIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e7c67b4e-29c7-4c05-b5ed-d32f5e580236.svg"
+  }
+}

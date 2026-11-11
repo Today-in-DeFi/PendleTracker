@@ -1,0 +1,167 @@
+PendleTracker PT route quote handback — 2026-11-04
+
+{"markets": 11, "collected": 11, "benchmark_quotes_success": 58, "native_quotes_success": 6, "failed_quotes": 10}
+Collection observations (UTC): {'first_request': '2026-11-04T14:08:54.954711+00:00', 'last_response': '2026-11-04T14:17:47.539293+00:00'}
+
+All 11 requested identities are distinct chain+market+PT+SY records. Monad srUSDat remains excluded. No holdings, live DB, scheduler, alerts, signer or transaction submission used.
+Each ladder means entry AND early exit at $10k/$50k/$100k input valuations, with native units preserved. USDC is the benchmark; native fallbacks remain separately labelled.
+Quotes are historical observations, not live executable promises. Refresh before any action. SDK gas-returned status and actual token outputs are retained per route; gas USD and net yield are unknown. Market liquidity is only a dust screen.
+SY reads are block-pinned; SDK quote block is not provided. Quote HTTP times are retained separately. Registry proxy/source evidence is observed at retrieval and is not pinned to the quote block.
+
+Market results:
+
+PT-apyUSD-11FEB2027 | chain 1 | market 0x313826e7029fdf742f3076741ed220e0e7b4968d
+USDC quotes 6/6; native fallback quotes 0; status collected
+Onchain SY accounting asset: {'asset_type': 0, 'address': '0x98a878b1cd98131b271883b390f68d2c90674665', 'decimals': 18}
+Current redemption output addresses: ['0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a']
+Source finding: SY holds ERC4626 shares. Share deposits transfer 1:1; accounting-asset deposits call vault.deposit; adapter inputs are optional and owner-configurable. Redemption transfers yieldToken shares 1:1, not the accounting asset. Rate uses vault.convertToAssets(1e18). Wrapper pause and downstream vault/adapter conditions remain separate.
+  entry $10,000 same_chain_USDC_benchmark: in 10002.064626 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 10607.275583891547285773 (0x60b1e75ede859e496c281d308bc94b6965ac4847); impact -0.007117121498178615; SDK fee USD 8.0475011240759; SDK simulation gas returned; 2026-11-04T14:08:55.965840+00:00
+  early_exit $10,000 same_chain_USDC_benchmark: in 10683.309999350666705198 (0x60b1e75ede859e496c281d308bc94b6965ac4847) -> out 10004.748284 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact 0.000268262714029212; SDK fee USD 8.093573305725302; SDK simulation gas returned; 2026-11-04T14:08:58.958217+00:00
+  entry $50,000 same_chain_USDC_benchmark: in 50010.32313 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 52947.420559646502385886 (0x60b1e75ede859e496c281d308bc94b6965ac4847); impact -0.008782473525185915; SDK fee USD 40.21868625459797; SDK simulation gas returned; 2026-11-04T14:09:02.550562+00:00
+  early_exit $50,000 same_chain_USDC_benchmark: in 53416.549996753333525992 (0x60b1e75ede859e496c281d308bc94b6965ac4847) -> out 49931.811925 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.0015698999923511293; SDK fee USD 40.41674828036582; SDK simulation gas returned; 2026-11-04T14:09:05.138610+00:00
+  entry $100,000 same_chain_USDC_benchmark: in 100020.646261 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 105720.557312315893177349 (0x60b1e75ede859e496c281d308bc94b6965ac4847); impact -0.010413838786025642; SDK fee USD 80.42522193529136; SDK simulation gas returned; 2026-11-04T14:09:08.069224+00:00
+  early_exit $100,000 same_chain_USDC_benchmark: in 106833.099993506667051984 (0x60b1e75ede859e496c281d308bc94b6965ac4847) -> out 99677.627259 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.0034295294638467984; SDK fee USD 80.6978282411547; SDK simulation gas returned; 2026-11-04T14:09:11.259176+00:00
+
+PT-reUSD-10DEC2026 | chain 143 | market 0xea492a66e98a46426f03f5c3505ee89d96520813
+USDC quotes 0/6; native fallback quotes 6; status collected
+Onchain SY accounting asset: {'asset_type': 0, 'address': '0x754704bc059f8c67012fed69bc8a327a5aafb603', 'decimals': 6}
+Current redemption output addresses: ['0xd25f563e12ff616262f8c947fec108db934f8059']
+Source finding: No class-specific conversion, issuer access or bridge inference from another chain.
+  entry $10,000 FAILED same_chain_USDC_benchmark: {'message': 'This token cannot be swapped. Please select a different token.', 'error': 'Bad Request'}
+  entry $10,000 native_underlying_fallback; not benchmark conversion: in 9007.482503404944059836 (0xd25f563e12ff616262f8c947fec108db934f8059) -> out 10120.035715 (0xbb0dcdd5f0159c3d51d8bce7d84f1b9fa390ef09); impact -0.00037687618445958996; SDK fee USD 2.1995877136622437; SDK simulation gas returned; 2026-11-04T14:09:43.216730+00:00
+  early_exit $10,000 FAILED same_chain_USDC_benchmark: {'message': 'This token cannot be swapped. Please select a different token.', 'error': 'Bad Request'}
+  early_exit $10,000 native_underlying_fallback; not benchmark conversion: in 10123.870089 (0xbb0dcdd5f0159c3d51d8bce7d84f1b9fa390ef09) -> out 9004.07984940729316448 (0xd25f563e12ff616262f8c947fec108db934f8059); impact -0.0003796282873671213; SDK fee USD 2.1992370787553615; SDK simulation gas returned; 2026-11-04T14:09:49.265233+00:00
+  entry $50,000 FAILED same_chain_USDC_benchmark: {'message': 'This token cannot be swapped. Please select a different token.', 'error': 'Bad Request'}
+  entry $50,000 native_underlying_fallback; not benchmark conversion: in 45037.412517024720299184 (0xd25f563e12ff616262f8c947fec108db934f8059) -> out 50569.501889 (0xbb0dcdd5f0159c3d51d8bce7d84f1b9fa390ef09); impact -0.0009829041778622644; SDK fee USD 10.997833677527108; SDK simulation gas returned; 2026-11-04T14:09:55.216023+00:00
+  early_exit $50,000 FAILED same_chain_USDC_benchmark: {'message': 'This token cannot be swapped. Please select a different token.', 'error': 'Bad Request'}
+  early_exit $50,000 native_underlying_fallback; not benchmark conversion: in 50619.350445 (0xbb0dcdd5f0159c3d51d8bce7d84f1b9fa390ef09) -> out 44989.378575631983673792 (0xd25f563e12ff616262f8c947fec108db934f8059); impact -0.001068435730135834; SDK fee USD 10.988473583168604; SDK simulation gas returned; 2026-11-04T14:10:02.076442+00:00
+  entry $100,000 FAILED same_chain_USDC_benchmark: {'message': 'This token cannot be swapped. Please select a different token.', 'error': 'Bad Request'}
+  entry $100,000 native_underlying_fallback; not benchmark conversion: in 90074.825034049440598369 (0xd25f563e12ff616262f8c947fec108db934f8059) -> out 101066.339368 (0xbb0dcdd5f0159c3d51d8bce7d84f1b9fa390ef09); impact -0.001700625706724078; SDK fee USD 21.995516670859253; SDK simulation gas returned; 2026-11-04T14:10:07.666149+00:00
+  early_exit $100,000 FAILED same_chain_USDC_benchmark: {'message': 'This token cannot be swapped. Please select a different token.', 'error': 'Bad Request'}
+  early_exit $100,000 native_underlying_fallback; not benchmark conversion: in 101238.70089 (0xbb0dcdd5f0159c3d51d8bce7d84f1b9fa390ef09) -> out 89883.334706148062432626 (0xd25f563e12ff616262f8c947fec108db934f8059); impact -0.0021278023560366514; SDK fee USD 21.953555724200022; SDK simulation gas returned; 2026-11-04T14:10:13.256987+00:00
+
+PT-reUSD-10DEC2026 | chain 1 | market 0x13285bcbc27f92b47b4edb99d744c07b48c977c0
+USDC quotes 6/6; native fallback quotes 0; status collected
+Onchain SY accounting asset: {'asset_type': 0, 'address': '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48', 'decimals': 6}
+Current redemption output addresses: ['0x5086bf358635b81d8c47c66d1c8b9e567db70c72']
+Source finding: SY wraps reUSD; accounting denomination is 6-decimal USDC. exchangeRate reads an owner-configurable oracle and divides its 18-decimal rate by 1e12. Base ERC20 wrapper transfers reUSD for deposits/redemptions. Accounting in USDC does not itself provide USDC redemption.
+  entry $10,000 same_chain_USDC_benchmark: in 10002.274517 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 10113.615705 (0xecfafdc7741323a945a163ed068b5a3c43483957); impact -0.0006239017521251219; SDK fee USD 2.1438269041756386; SDK simulation gas returned; 2026-11-04T14:10:44.068952+00:00
+  early_exit $10,000 same_chain_USDC_benchmark: in 10119.929115 (0xecfafdc7741323a945a163ed068b5a3c43483957) -> out 10000.928712 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.00013450723626446783; SDK fee USD 2.1446700169103856; SDK simulation gas returned; 2026-11-04T14:10:46.907839+00:00
+  entry $50,000 same_chain_USDC_benchmark: in 50011.372586 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 50565.904251 (0xecfafdc7741323a945a163ed068b5a3c43483957); impact -0.0006668293145251742; SDK fee USD 10.71901539542405; SDK simulation gas returned; 2026-11-04T14:10:49.914392+00:00
+  early_exit $50,000 same_chain_USDC_benchmark: in 50599.645578 (0xecfafdc7741323a945a163ed068b5a3c43483957) -> out 49999.309767 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.00024120151877452618; SDK fee USD 10.7229692266981; SDK simulation gas returned; 2026-11-04T14:10:53.396888+00:00
+  entry $100,000 same_chain_USDC_benchmark: in 100022.745172 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 101125.118387 (0xecfafdc7741323a945a163ed068b5a3c43483957); impact -0.0007329376333046381; SDK fee USD 21.437512337479923; SDK simulation gas returned; 2026-11-04T14:10:56.244564+00:00
+  early_exit $100,000 same_chain_USDC_benchmark: in 101199.291156 (0xecfafdc7741323a945a163ed068b5a3c43483957) -> out 99993.591326 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.00029151477925762565; SDK fee USD 21.444254242050167; SDK simulation gas returned; 2026-11-04T14:10:58.966692+00:00
+
+PT-srUSDat-14JAN2027 | chain 1 | market 0xdf2e3e0250f679d6284a39a0c1a16a850a9d7aa6
+USDC quotes 5/6; native fallback quotes 0; status collected
+Onchain SY accounting asset: {'asset_type': 0, 'address': '0x23238f20b894f29041f48d88ee91131c395aaa71', 'decimals': 6}
+Current redemption output addresses: ['0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066', '0xd166337499e176bbc38a1fbd113ab144e5bd2df7']
+Source finding: No class-specific conversion, issuer access or bridge inference from another chain.
+SDK/onchain token-list discrepancy: [{"field": "tokensMintSy", "onchain": ["0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066", "0x23238f20b894f29041f48d88ee91131c395aaa71", "0xd166337499e176bbc38a1fbd113ab144e5bd2df7"], "sdk": ["0x23238f20b894f29041f48d88ee91131c395aaa71", "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066"]}]
+  entry $10,000 same_chain_USDC_benchmark: in 10002.257009 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 10175.416914 (0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062); impact -0.0038411386894622425; SDK fee USD 3.805930038364603; SDK simulation gas returned; 2026-11-04T14:17:30.160830+00:00
+  early_exit $10,000 same_chain_USDC_benchmark: in 10214.652812 (0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062) -> out 9892.34235 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.010988985664807103; SDK fee USD 3.813574951802044; SDK simulation gas returned; 2026-11-04T14:17:33.148980+00:00
+  entry $50,000 same_chain_USDC_benchmark: in 50011.285046 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 50720.109074 (0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062); impact -0.006914674323056863; SDK fee USD 19.026820814555002; SDK simulation gas returned; 2026-11-04T14:17:37.229637+00:00
+  early_exit $50,000 same_chain_USDC_benchmark: in 51073.264062 (0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062) -> out 42234.625462 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.15549812946168237; SDK fee USD 18.9981806853597; SDK simulation gas returned; 2026-11-04T14:17:39.885637+00:00
+  entry $100,000 same_chain_USDC_benchmark: in 100022.570092 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 100829.921212 (0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062); impact -0.012889355078838047; SDK fee USD 38.04734487455261; SDK simulation gas returned; 2026-11-04T14:17:42.217252+00:00
+  early_exit $100,000 FAILED same_chain_USDC_benchmark: {'message': 'MarketProportionTooHigh. Market liquidity is likely insufficient, please consider placing limit order or try again later.', 'error': 'Bad Request'}
+  early_exit $100,000 FAILED native_underlying_fallback; not benchmark conversion: {'message': 'MarketProportionTooHigh. Market liquidity is likely insufficient, please consider placing limit order or try again later.', 'error': 'Bad Request', 'computingUnit': 0}
+
+PT-sUSDai-25FEB2027 | chain 42161 | market 0xf86119a39f8654f38acbbd5488bd83f3f51983c8
+USDC quotes 6/6; native fallback quotes 0; status collected
+Onchain SY accounting asset: {'asset_type': 0, 'address': '0x0a1a1a107e45b7ced86833863f482bc5f4ed82ef', 'decimals': 18}
+Current redemption output addresses: ['0x0b2b2b2076d95dda7817e785989fe353fe955ef9']
+Source finding: SY holds ERC4626 shares. Share deposits transfer 1:1; accounting-asset deposits call vault.deposit; adapter inputs are optional and owner-configurable. Redemption transfers yieldToken shares 1:1, not the accounting asset. Rate uses vault.convertToAssets(1e18). Wrapper pause and downstream vault/adapter conditions remain separate.
+  entry $10,000 same_chain_USDC_benchmark: in 10002.297427 (0xaf88d065e77c8cc2239327c5edb3a432268e5831) -> out 10308.219527222323358751 (0xe9d07c2a3588b9a25edd55664be44ecfe5f92fce); impact 0.0019010318121822636; SDK fee USD 6.051162424888545; SDK simulation gas returned; 2026-11-04T14:11:47.065537+00:00
+  early_exit $10,000 same_chain_USDC_benchmark: in 10288.660457106082316701 (0xe9d07c2a3588b9a25edd55664be44ecfe5f92fce) -> out 9967.007661 (0xaf88d065e77c8cc2239327c5edb3a432268e5831); impact -0.003528166098965448; SDK fee USD 6.035364264803688; SDK simulation gas returned; 2026-11-04T14:11:49.945953+00:00
+  entry $50,000 same_chain_USDC_benchmark: in 50011.487138 (0xaf88d065e77c8cc2239327c5edb3a432268e5831) -> out 51526.846207040531441169 (0xe9d07c2a3588b9a25edd55664be44ecfe5f92fce); impact 0.0016239999823850376; SDK fee USD 30.254112182493852; SDK simulation gas returned; 2026-11-04T14:11:52.797360+00:00
+  early_exit $50,000 same_chain_USDC_benchmark: in 51443.302285530411583508 (0xe9d07c2a3588b9a25edd55664be44ecfe5f92fce) -> out 49822.959104 (0xaf88d065e77c8cc2239327c5edb3a432268e5831); impact -0.0037696946295320234; SDK fee USD 30.17003942923036; SDK simulation gas returned; 2026-11-04T14:11:55.519152+00:00
+  entry $100,000 same_chain_USDC_benchmark: in 100022.974276 (0xaf88d065e77c8cc2239327c5edb3a432268e5831) -> out 103023.560804392436396312 (0xe9d07c2a3588b9a25edd55664be44ecfe5f92fce); impact 0.0013312732390089379; SDK fee USD 60.50691285423707; SDK simulation gas returned; 2026-11-04T14:11:59.328441+00:00
+  early_exit $100,000 same_chain_USDC_benchmark: in 102886.604571060823167016 (0xe9d07c2a3588b9a25edd55664be44ecfe5f92fce) -> out 99616.299682 (0xaf88d065e77c8cc2239327c5edb3a432268e5831); impact -0.004065946704398536; SDK fee USD 60.3228353908878; SDK simulation gas returned; 2026-11-04T14:12:02.071303+00:00
+
+PT-siUSD-7JAN2027 | chain 1 | market 0xd44f2630260ff3805d7cb317d4f6740b0044c408
+USDC quotes 6/6; native fallback quotes 0; status collected
+Onchain SY accounting asset: {'asset_type': 0, 'address': '0x48f9e38f3070ad8945dfeae3fa70987722e3d89c', 'decimals': 18}
+Current redemption output addresses: ['0x48f9e38f3070ad8945dfeae3fa70987722e3d89c', '0xdbdc1ef57537e34680b898e1febd3d68c7389bcb', '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48']
+Source finding: siUSD accounting uses iUSD with vested-yield-aware totalAssets/totalSupply conversion. iUSD entry/exit uses gateway stake/unstake; USDC entry uses mintAndStake; USDC exit unstake then gateway redeem, using redeemController conversion. siUSD transfers 1:1. Gateway/controller permissions, liquidity and settlement conditions are downstream dependencies.
+  entry $10,000 same_chain_USDC_benchmark: in 10002.406879 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 10155.067240580019586339 (0x76543ac61ba84c6feeee76c6a918127bf0ca5fd1); impact -0.0003172917467351329; SDK fee USD 3.0455429998009436; SDK simulation gas returned; 2026-11-04T14:12:32.077399+00:00
+  early_exit $10,000 same_chain_USDC_benchmark: in 10158.290382449199322498 (0x76543ac61ba84c6feeee76c6a918127bf0ca5fd1) -> out 9999.295506 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.0003110624477609235; SDK fee USD 3.045537130239213; SDK simulation gas returned; 2026-11-04T14:12:35.441559+00:00
+  entry $50,000 same_chain_USDC_benchmark: in 50012.034395 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 50773.731238670704598138 (0x76543ac61ba84c6feeee76c6a918127bf0ca5fd1); impact -0.00034889084794225485; SDK fee USD 15.22768059868814; SDK simulation gas returned; 2026-11-04T14:12:38.887589+00:00
+  early_exit $50,000 same_chain_USDC_benchmark: in 50791.451912245996612492 (0x76543ac61ba84c6feeee76c6a918127bf0ca5fd1) -> out 49995.011797 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.0003403794674576719; SDK fee USD 15.22717281565236; SDK simulation gas returned; 2026-11-04T14:12:41.499694+00:00
+  entry $100,000 same_chain_USDC_benchmark: in 100024.068791 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 101543.793881266468357212 (0x76543ac61ba84c6feeee76c6a918127bf0ca5fd1); impact -0.00038499575069159863; SDK fee USD 30.45524667923303; SDK simulation gas returned; 2026-11-04T14:12:43.957138+00:00
+  early_exit $100,000 same_chain_USDC_benchmark: in 101582.903824491993224985 (0x76543ac61ba84c6feeee76c6a918127bf0ca5fd1) -> out 99986.366689 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.00037693971750288026; SDK fee USD 30.453230776902274; SDK simulation gas returned; 2026-11-04T14:12:47.248334+00:00
+
+PT-sUSN-22JUL2027 | chain 1 | market 0x16d3126ee82ee36816499fb9db6f647c6addd09c
+USDC quotes 6/6; native fallback quotes 0; status collected
+Onchain SY accounting asset: {'asset_type': 0, 'address': '0xda67b4284609d2d48e5d10cfac411572727dc1ed', 'decimals': 18}
+Current redemption output addresses: ['0xe24a3dc889621612422a64e6388927901608b91d']
+Source finding: SY accepts underlying vault shares or the ERC4626 accounting asset. Asset entry uses vault.deposit; shares transfer 1:1. Redemption only transfers vault shares, not the ERC4626 accounting asset. exchangeRate uses convertToAssets(1e18).
+  entry $10,000 same_chain_USDC_benchmark: in 10002.497923 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 10598.814003069334470848 (0x6a0efc272e8dd4fc5affea17376dcf107cbcbc0f); impact -0.0021727259111252555; SDK fee USD 11.748414023091492; SDK simulation gas returned; 2026-11-04T14:13:18.252196+00:00
+  early_exit $10,000 same_chain_USDC_benchmark: in 10621.892464907617763835 (0x6a0efc272e8dd4fc5affea17376dcf107cbcbc0f) -> out 9980.173847 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.002231850181481059; SDK fee USD 11.747643850754372; SDK simulation gas returned; 2026-11-04T14:13:20.307245+00:00
+  entry $50,000 same_chain_USDC_benchmark: in 50012.489619 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 52842.743922394099154928 (0x6a0efc272e8dd4fc5affea17376dcf107cbcbc0f); impact -0.005022050505420988; SDK fee USD 58.70044785557077; SDK simulation gas returned; 2026-11-04T14:13:23.171173+00:00
+  early_exit $50,000 same_chain_USDC_benchmark: in 53109.462324538088819177 (0x6a0efc272e8dd4fc5affea17376dcf107cbcbc0f) -> out 49728.099788 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.005686376207201102; SDK fee USD 58.61423109375609; SDK simulation gas returned; 2026-11-04T14:13:26.448804+00:00
+  entry $100,000 same_chain_USDC_benchmark: in 100024.979238 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 105301.27965543422653848 (0x6a0efc272e8dd4fc5affea17376dcf107cbcbc0f); impact -0.008639185499242252; SDK fee USD 117.29734783974794; SDK simulation gas returned; 2026-11-04T14:13:29.121545+00:00
+  early_exit $100,000 same_chain_USDC_benchmark: in 106218.924649076177638355 (0x6a0efc272e8dd4fc5affea17376dcf107cbcbc0f) -> out 99028.363772 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.009943476053633141; SDK fee USD 116.9177698097222; SDK simulation gas returned; 2026-11-04T14:13:32.670130+00:00
+
+PT-USDat-14JAN2027 | chain 143 | market 0x88c5d8a908834e44b421cb67aec9a931782f9538
+USDC quotes 6/6; native fallback quotes 0; status collected
+Onchain SY accounting asset: {'asset_type': 0, 'address': '0x0bb150dfa86ea5d7742f07fefcd8e8eda81d64ef', 'decimals': 6}
+Current redemption output addresses: ['0x0bb150dfa86ea5d7742f07fefcd8e8eda81d64ef']
+Source finding: No class-specific conversion, issuer access or bridge inference from another chain.
+  entry $10,000 same_chain_USDC_benchmark: in 10002.455902 (0x754704bc059f8c67012fed69bc8a327a5aafb603) -> out 10155.041706 (0xa08a69ab9dd3b04d0992bc7afb2c0b907bbdc147); impact -0.0006336389230763446; SDK fee USD 2.9294372706578673; SDK simulation gas returned; 2026-11-04T14:14:01.518299+00:00
+  early_exit $10,000 same_chain_USDC_benchmark: in 10161.480416 (0xa08a69ab9dd3b04d0992bc7afb2c0b907bbdc147) -> out 9997.581042 (0x754704bc059f8c67012fed69bc8a327a5aafb603); impact -0.0004873663560702686; SDK fee USD 2.9295801350457484; SDK simulation gas returned; 2026-11-04T14:14:04.787890+00:00
+  entry $50,000 same_chain_USDC_benchmark: in 50012.279514 (0x754704bc059f8c67012fed69bc8a327a5aafb603) -> out 50740.290559 (0xa08a69ab9dd3b04d0992bc7afb2c0b907bbdc147); impact -0.0013209004958081; SDK fee USD 14.646011468533056; SDK simulation gas returned; 2026-11-04T14:14:07.648615+00:00
+  early_exit $50,000 same_chain_USDC_benchmark: in 50807.402082 (0xa08a69ab9dd3b04d0992bc7afb2c0b907bbdc147) -> out 49955.815864 (0x754704bc059f8c67012fed69bc8a327a5aafb603); impact -0.0011289957374804999; SDK fee USD 14.639677480986437; SDK simulation gas returned; 2026-11-04T14:14:10.916990+00:00
+  entry $100,000 same_chain_USDC_benchmark: in 100024.559029 (0x754704bc059f8c67012fed69bc8a327a5aafb603) -> out 101387.97261 (0xa08a69ab9dd3b04d0992bc7afb2c0b907bbdc147); impact -0.002232268773061381; SDK fee USD 29.289379446364478; SDK simulation gas returned; 2026-11-04T14:14:13.858089+00:00
+  early_exit $100,000 same_chain_USDC_benchmark: in 101614.804165 (0xa08a69ab9dd3b04d0992bc7afb2c0b907bbdc147) -> out 99834.037503 (0x754704bc059f8c67012fed69bc8a327a5aafb603); impact -0.0019134720530966027; SDK fee USD 29.260064710059265; SDK simulation gas returned; 2026-11-04T14:14:19.008027+00:00
+
+PT-USDai-25FEB2027 | chain 42161 | market 0x46f545683d8494ef4c54b7ea40ca762c620846ef
+USDC quotes 5/6; native fallback quotes 0; status collected
+Onchain SY accounting asset: {'asset_type': 0, 'address': '0x0a1a1a107e45b7ced86833863f482bc5f4ed82ef', 'decimals': 18}
+Current redemption output addresses: ['0x0a1a1a107e45b7ced86833863f482bc5f4ed82ef', '0x46850ad61c2b7d64d08c9c754f45254596696984']
+Source finding: Yield token entry/exit transfers 1:1; other tokens route through owner-configurable adapter.convertToDeposit/convertToRedeem. exchangeRate is 1e18 and accounting asset is yieldToken. Additional redemption outputs depend on current adapter support and downstream conditions.
+  entry $10,000 same_chain_USDC_benchmark: in 10002.480014 (0xaf88d065e77c8cc2239327c5edb3a432268e5831) -> out 10217.979379625301277056 (0xfaf260b16d3fa1609c74799089ad3cedfcd703fc); impact -0.002749413534030337; SDK fee USD 4.660244897103339; SDK simulation gas returned; 2026-11-04T14:14:47.448869+00:00
+  early_exit $10,000 same_chain_USDC_benchmark: in 10246.150284804224484256 (0xfaf260b16d3fa1609c74799089ad3cedfcd703fc) -> out 9976.665032 (0xaf88d065e77c8cc2239327c5edb3a432268e5831); impact -0.002580858232803439; SDK fee USD 4.653281099217061; SDK simulation gas returned; 2026-11-04T14:14:49.598647+00:00
+  entry $50,000 same_chain_USDC_benchmark: in 50012.400074 (0xaf88d065e77c8cc2239327c5edb3a432268e5831) -> out 50536.062314850134474952 (0xfaf260b16d3fa1609c74799089ad3cedfcd703fc); impact -0.01356000233027677; SDK fee USD 23.289570024174395; SDK simulation gas returned; 2026-11-04T14:14:52.767634+00:00
+  early_exit $50,000 same_chain_USDC_benchmark: in 51230.75142402112242128 (0xfaf260b16d3fa1609c74799089ad3cedfcd703fc) -> out 49465.70339 (0xaf88d065e77c8cc2239327c5edb3a432268e5831); impact -0.010931222729970321; SDK fee USD 23.08885102396954; SDK simulation gas returned; 2026-11-04T14:14:55.848716+00:00
+  entry $100,000 same_chain_USDC_benchmark: in 100024.800148 (0xaf88d065e77c8cc2239327c5edb3a432268e5831) -> out 66245.992363983668180284 (0xfaf260b16d3fa1609c74799089ad3cedfcd703fc); impact -0.35345480474886565; SDK fee USD 30.82226662287326; SDK simulation gas returned; 2026-11-04T14:14:59.339447+00:00
+  early_exit $100,000 FAILED same_chain_USDC_benchmark: {'message': 'MarketProportionTooHigh. Market liquidity is likely insufficient, please consider placing limit order or try again later.', 'error': 'Bad Request'}
+  early_exit $100,000 FAILED native_underlying_fallback; not benchmark conversion: {'message': 'MarketProportionTooHigh. Market liquidity is likely insufficient, please consider placing limit order or try again later.', 'error': 'Bad Request', 'computingUnit': 0}
+
+PT-USDat-14JAN2027 | chain 1 | market 0x4ccf6deb3d1895373f604b418ff55d8adae8b846
+USDC quotes 6/6; native fallback quotes 0; status collected
+Onchain SY accounting asset: {'asset_type': 0, 'address': '0x23238f20b894f29041f48d88ee91131c395aaa71', 'decimals': 6}
+Current redemption output addresses: ['0x23238f20b894f29041f48d88ee91131c395aaa71']
+Source finding: No class-specific conversion, issuer access or bridge inference from another chain.
+  entry $10,000 same_chain_USDC_benchmark: in 10002.126352 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 10148.677889 (0xba96292ee7673e3b546cc90db6d97111cd9a314f); impact -0.0006373407818259558; SDK fee USD 2.814099136383727; SDK simulation gas returned; 2026-11-04T14:15:35.000265+00:00
+  early_exit $10,000 same_chain_USDC_benchmark: in 10155.15018 (0xba96292ee7673e3b546cc90db6d97111cd9a314f) -> out 9997.858928 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.0004266516438423003; SDK fee USD 2.8145017682670144; SDK simulation gas returned; 2026-11-04T14:15:39.108808+00:00
+  entry $50,000 same_chain_USDC_benchmark: in 50010.63176 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 50714.225611 (0xba96292ee7673e3b546cc90db6d97111cd9a314f); impact -0.0012117061724316275; SDK fee USD 14.068533475916709; SDK simulation gas returned; 2026-11-04T14:15:41.529649+00:00
+  early_exit $50,000 same_chain_USDC_benchmark: in 50775.750901 (0xba96292ee7673e3b546cc90db6d97111cd9a314f) -> out 49959.621249 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.0010199933182160302; SDK fee USD 14.066470362172321; SDK simulation gas returned; 2026-11-04T14:15:44.028679+00:00
+  entry $100,000 same_chain_USDC_benchmark: in 100021.26352 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 101358.27274 (0xba96292ee7673e3b546cc90db6d97111cd9a314f); impact -0.0019027691380562952; SDK fee USD 28.13309358458817; SDK simulation gas returned; 2026-11-04T14:15:47.038651+00:00
+  early_exit $100,000 same_chain_USDC_benchmark: in 101551.501803 (0xba96292ee7673e3b546cc90db6d97111cd9a314f) -> out 99842.546059 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.0017868231863859137; SDK fee USD 28.11783915734329; SDK simulation gas returned; 2026-11-04T14:15:50.067730+00:00
+
+PT-fxSAVE-29APR2027 | chain 1 | market 0x9df10b8c99dc1a48dd7048a9a524bff9b54a0a30
+USDC quotes 6/6; native fallback quotes 0; status collected
+Onchain SY accounting asset: {'asset_type': 0, 'address': '0x65c9a641afceb9c0e6034e558a319488fa0fa3be', 'decimals': 18}
+Current redemption output addresses: ['0x65c9a641afceb9c0e6034e558a319488fa0fa3be', '0x7743e50f534a7f9f1791dde7dcd89f7783eefc39', '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48', '0x085780639cc2cacd35e474e71f4d000e2405d8f6']
+Source finding: SY wraps fxSAVE ERC4626 shares. USDC/fxUSD entry converts through the fxUSD base pool then vault deposit. Output may be fxSAVE shares, base pool asset, USDC or fxUSD. Cash-like output redeems vault, calls instantRedeem and swaps the other pool leg through Curve. Preview applies instantRedeemFeeRatio; runtime can revert on insufficient assets. Owner-set supplyCap limits minting. Pool liquidity/fees and vault strategy remain dependencies.
+  entry $10,000 same_chain_USDC_benchmark: in 10002.381366 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 10248.194140364578007298 (0xc1ea9419dd1dab4dd54aa13b13a766e4de22ebc3); impact -0.0008546989470820375; SDK fee USD 7.216134198171601; SDK simulation gas returned; 2026-11-04T14:16:20.068243+00:00
+  early_exit $10,000 same_chain_USDC_benchmark: in 10256.960754901389121612 (0xc1ea9419dd1dab4dd54aa13b13a766e4de22ebc3) -> out 9978.889052 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.002348756102096394; SDK fee USD 7.212825287390892; SDK simulation gas returned; 2026-11-04T14:16:23.610456+00:00
+  entry $50,000 same_chain_USDC_benchmark: in 50011.906834 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 51179.779035102507151279 (0xc1ea9419dd1dab4dd54aa13b13a766e4de22ebc3); impact -0.0020477885492887985; SDK fee USD 36.079292408971604; SDK simulation gas returned; 2026-11-04T14:16:26.330577+00:00
+  early_exit $50,000 same_chain_USDC_benchmark: in 51284.80377450694560806 (0xc1ea9419dd1dab4dd54aa13b13a766e4de22ebc3) -> out 49700.233487 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.006232066476696378; SDK fee USD 36.0218566902488; SDK simulation gas returned; 2026-11-04T14:16:29.368248+00:00
+  entry $100,000 same_chain_USDC_benchmark: in 100023.813669 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48) -> out 102206.535631643275578787 (0xc1ea9419dd1dab4dd54aa13b13a766e4de22ebc3); impact -0.003539677385691132; SDK fee USD 72.15596487479468; SDK simulation gas returned; 2026-11-04T14:16:32.098390+00:00
+  early_exit $100,000 same_chain_USDC_benchmark: in 102569.607549013891216121 (0xc1ea9419dd1dab4dd54aa13b13a766e4de22ebc3) -> out 99066.496736 (0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48); impact -0.009570973459521381; SDK fee USD 71.93695120048416; SDK simulation gas returned; 2026-11-04T14:16:35.169022+00:00
+
+Maturity findings are separate from early-exit quotes. Current SY outputs and previews establish current conversion options only; no future post-expiry cash amount, USDC liquidity, investor access or settlement time is guaranteed. Underlying issuer/queue/bridge/backing dependencies remain explicit gaps unless supported by the attached class-specific evidence.
+Access: wrapper pause state is recorded. Public previews and SDK simulation do not establish investor-specific permissions, approvals or issuer redemption rights. Source findings identify owner-configurable adapters/oracles, supply caps and gateway dependencies where visible.
+Validation: all saved request evidence hashes verified. Regression suite: 48 tests pass, including 11 new route tests for precision, identities, expiry, bad/missing data, native units, response validation, pinned batch decoding and RPC submission prohibition.
+
+Changed source paths: export_pt_route_quotes.py; pendle_tracker/route_quotes.py; tests/test_route_quotes.py; specs/pt-routes/{README.txt,candidates-2026-11-04.json,collect_sy_sources.py,enrich_units.py,build_report.py}.
+Machine export: data/pendle_pt_route_quotes_latest.json
+Raw/source evidence: data/research/pt-routes-2026-11-04/
+No changes made to existing inventory, holdings or live monitoring code by this handoff.
+
+Methodology sources:
+https://docs.pendle.finance/pendle-v2-dev/Backend/ApiOverview
+https://api-v2.pendle.finance/core/docs
+https://developers.circle.com/stablecoins/usdc-contract-addresses
+https://github.com/pendle-finance/pendle-core-v2-public/blob/87685c89d05087535e9b9647eeda0e3d297d1f06/contracts/core/YieldContracts/PendleYieldToken.sol

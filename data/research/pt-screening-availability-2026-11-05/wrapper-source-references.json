@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/pendle-finance/Pendle-SY-Public/73676d931102a369a978a713abfd0b48e3e34361/contracts/interfaces/IPDecimalsWrapper.sol",
+    "path": "data/research/pt-screening-availability-2026-11-05/IPDecimalsWrapper.sol",
+    "sha256": "8c2b58a1661f668b85f55a112c0d7c58dbe1d6e64b36a537d102c5dc4c9eb7c7",
+    "scope": "Official wrapper interface/source reference; no independent build/runtime/audit equivalence claim"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/pendle-finance/Pendle-SY-Public/73676d931102a369a978a713abfd0b48e3e34361/contracts/core/misc/PendleDecimalsWrapper.sol",
+    "path": "data/research/pt-screening-availability-2026-11-05/PendleDecimalsWrapper.sol",
+    "sha256": "a0b2c8cdcd7c2bff302bee3597717750c34a691f17b4984215b710979fa7725a",
+    "scope": "Official wrapper interface/source reference; no independent build/runtime/audit equivalence claim"
+  }
+]

@@ -1,0 +1,81 @@
+{
+  "requested_at": "2026-11-04T14:19:59.354481+00:00",
+  "method": "POST",
+  "url": "https://ethereum-rpc.publicnode.com",
+  "params": null,
+  "body": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x48f9e38f3070ad8945dfeae3fa70987722e3d89c",
+          "data": "0x313ce567"
+        },
+        "0x191f24e"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x76543ac61ba84c6feeee76c6a918127bf0ca5fd1",
+          "data": "0x313ce567"
+        },
+        "0x191f24e"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "data": "0x313ce567"
+        },
+        "0x191f24e"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xdbdc1ef57537e34680b898e1febd3d68c7389bcb",
+          "data": "0x313ce567"
+        },
+        "0x191f24e"
+      ]
+    }
+  ],
+  "received_at": "2026-11-04T14:19:59.758257+00:00",
+  "http_status": 200,
+  "rate_headers": {},
+  "response": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000012"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000012"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000012"
+    }
+  ]
+}

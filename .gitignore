@@ -59,3 +59,7 @@ Google\ Credentials.json
 config.json
 telegram_config.json
 my_pts.json
+
+# Monitoring regression tests are source, unlike root scratch tests.
+!tests/test_*.py
+data/direct_holdings_cache.json

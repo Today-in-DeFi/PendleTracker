@@ -1,0 +1,2833 @@
+{
+  "schema_version": 1,
+  "collection_started_at": "2026-11-05T10:29:25.463776+00:00",
+  "scope": "Screening availability and exact identities; no recommendation, route, simulation or score",
+  "inputs": {
+    "riskAnalyst_discovery": {
+      "path": "/home/danger/riskAnalyst/data/reviews/pt-screening-coverage-2026-11-05/availability.json",
+      "sha256": "59ce985b0d1aecdd537e85388545431d6f1be2a198eefcf03856fb942debb0d1"
+    },
+    "prior_inventory": {
+      "path": "data/pendle_pt_inventory_latest.json",
+      "sha256": "5273e1b08db09a23aba2e664a7ee7e3ca0a43d20221a7b39794a413820c49af8"
+    }
+  },
+  "policy": {
+    "risk_grades": "RiskAnalyst owned; no parent/wrapper/chain/PT grade inheritance",
+    "operational_availability": "Directory/future expiry/listing flags do not establish enabled trading, permissions, redemption availability or executable liquidity",
+    "retired": "Expired-by-time classification only; no delisting, closure or exposure-removal inference",
+    "rates": "Not collected or used for prioritization"
+  },
+  "directory": {
+    "source": "https://api-v2.pendle.finance/core/v2/markets/all",
+    "pages": [
+      {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0001.json",
+        "sha256": "d80fb6789bf6c04ac70810f80be694cdf25235a86a7fce8e12a42d952be5b36e",
+        "requested_at": "2026-11-05T10:29:25.467542+00:00",
+        "received_at": "2026-11-05T10:29:26.127134+00:00"
+      },
+      {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0002.json",
+        "sha256": "0ba6541926c184b73e89154b8e5209a7f10e2c8c87a5aef224853ee2d3f0a16c",
+        "requested_at": "2026-11-05T10:29:28.467676+00:00",
+        "received_at": "2026-11-05T10:29:28.622094+00:00"
+      },
+      {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0003.json",
+        "sha256": "431f299f9e2af66f116e13f7329edc057ad5bb16b93d5e8205cac3e902aed79b",
+        "requested_at": "2026-11-05T10:29:31.470635+00:00",
+        "received_at": "2026-11-05T10:29:31.655973+00:00"
+      },
+      {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0004.json",
+        "sha256": "b579da39b0e7559d8eeaea19f42459959e9927c44cca40c82f4526b844364765",
+        "requested_at": "2026-11-05T10:29:34.471599+00:00",
+        "received_at": "2026-11-05T10:29:34.780526+00:00"
+      },
+      {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0005.json",
+        "sha256": "8e5018f4d8e01774dbdc2400100d14db6a4d20e128a5e85ff9a6e5db4bd9d33c",
+        "requested_at": "2026-11-05T10:29:37.474340+00:00",
+        "received_at": "2026-11-05T10:29:37.799191+00:00"
+      },
+      {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0006.json",
+        "sha256": "ebb280b794ac3f3d0c07137ad8e7d6baa1c77e9e9560d1c325eaf8e55af4f5f8",
+        "requested_at": "2026-11-05T10:29:40.475663+00:00",
+        "received_at": "2026-11-05T10:29:40.748723+00:00"
+      },
+      {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0007.json",
+        "sha256": "80b45f488c4a1feb83ad47b2f10084da084b0c5525fed7fe8633168bceefe39e",
+        "requested_at": "2026-11-05T10:29:43.478506+00:00",
+        "received_at": "2026-11-05T10:29:43.677233+00:00"
+      },
+      {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0008.json",
+        "sha256": "6e912874a82fdeaf33118ad801bf3d56be617e6e8ca114e16d26a21cd71ebc49",
+        "requested_at": "2026-11-05T10:29:46.479698+00:00",
+        "received_at": "2026-11-05T10:29:46.658039+00:00"
+      },
+      {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0009.json",
+        "sha256": "5b3f805e3cf1ebd8ff5901784b08d29e1945957144128277652fcc15c2180b75",
+        "requested_at": "2026-11-05T10:29:49.482632+00:00",
+        "received_at": "2026-11-05T10:29:49.597537+00:00"
+      }
+    ],
+    "total": 836,
+    "returned": 836,
+    "completed_at": "2026-11-05T10:29:49.608852+00:00"
+  },
+  "markets": [
+    {
+      "chain_id": 1,
+      "market_address": "0x384509537ce5daa5740baeb6d1ee0eb2847ea8a8",
+      "family_label": "superWETH",
+      "is_requested_lead": true,
+      "pt": {
+        "chain_id": 1,
+        "address": "0x1cfaed2df5ee27b078e96fafa10709c5548fc1b7"
+      },
+      "yt": {
+        "chain_id": 1,
+        "address": "0x775f0f7690c2ceed13d20f9a302d1e8069d56b3b"
+      },
+      "sy": {
+        "chain_id": 1,
+        "address": "0x3aecaedfb92efbbac95e5c458c56e94070cb9179"
+      },
+      "directory_underlying": {
+        "chain_id": 1,
+        "address": "0xa036823b9a24f63c32553367bf181ee04229c3ac"
+      },
+      "accounting_reference": {
+        "chain_id": 1,
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+      },
+      "maturity": "2026-11-26T00:00:00+00:00",
+      "expiry_evaluated_at": "2026-11-05T10:29:49.610790+00:00",
+      "expired": false,
+      "availability": "unexpired_directory_listing_operational_status_unverified",
+      "directory_flags": {
+        "isActive": null,
+        "isExpired": null,
+        "isWhitelistedPro": null,
+        "isWhitelistedSimple": null
+      },
+      "directory_page_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0002.json",
+        "sha256": "0ba6541926c184b73e89154b8e5209a7f10e2c8c87a5aef224853ee2d3f0a16c",
+        "requested_at": "2026-11-05T10:29:28.467676+00:00",
+        "received_at": "2026-11-05T10:29:28.622094+00:00"
+      },
+      "prior_inventory_identity": {
+        "id": "pendle_pt:1:0x384509537ce5daa5740baeb6d1ee0eb2847ea8a8",
+        "fetched_at": "2026-11-04T10:06:38.538720+00:00"
+      },
+      "riskAnalyst_discovery_identity_matches": true,
+      "listing_is_trading_enabled": null,
+      "executable_capacity": null,
+      "risk_score": null,
+      "live_detail_status": "exact_identity_verified",
+      "live_detail_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0013.json",
+        "sha256": "b1aa3277ffc5b8763e8d0943978c551c5173b74877173bf314a4dc98f0d7e7f4",
+        "requested_at": "2026-11-05T10:30:01.490508+00:00",
+        "received_at": "2026-11-05T10:30:01.588810+00:00"
+      },
+      "pt_metadata": {
+        "id": "1-0x1cfaed2df5ee27b078e96fafa10709c5548fc1b7",
+        "chainId": 1,
+        "address": "0x1cfaed2df5ee27b078e96fafa10709c5548fc1b7",
+        "symbol": "PT-superWETH-26NOV2026",
+        "decimals": 18,
+        "expiry": "2026-11-26T00:00:00.000Z",
+        "price": {
+          "usd": 2411.2630829196232
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "PT-superWETH-26NOV2026",
+        "baseType": "PT",
+        "types": [
+          "PT"
+        ],
+        "underlyingPool": "",
+        "proSymbol": "PT superWETH (WETH)",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f6e2ca58-f555-4596-9885-77fee12bf5c7.svg",
+        "zappable": false,
+        "simpleName": "PT superWETH (WETH)",
+        "simpleSymbol": "PT superWETH (WETH)",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f6e2ca58-f555-4596-9885-77fee12bf5c7.svg",
+        "proName": "PT superWETH (WETH)"
+      },
+      "sy_metadata": {
+        "id": "1-0x3aecaedfb92efbbac95e5c458c56e94070cb9179",
+        "chainId": 1,
+        "address": "0x3aecaedfb92efbbac95e5c458c56e94070cb9179",
+        "symbol": "SY-superWETH",
+        "decimals": 18,
+        "expiry": null,
+        "price": {
+          "usd": 2455.332775509503
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "SY-superWETH",
+        "baseType": "SY",
+        "types": [
+          "SY"
+        ],
+        "underlyingPool": "",
+        "proSymbol": "superWETH",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/26f23759-cf49-4a0c-a810-f0f7098a4860.svg",
+        "zappable": false,
+        "simpleName": "superWETH",
+        "simpleSymbol": "superWETH",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/26f23759-cf49-4a0c-a810-f0f7098a4860.svg",
+        "proName": "superWETH"
+      },
+      "underlying_metadata": {
+        "id": "1-0xa036823b9a24f63c32553367bf181ee04229c3ac",
+        "chainId": 1,
+        "address": "0xa036823b9a24f63c32553367bf181ee04229c3ac",
+        "symbol": "superWETH",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 2455.332775509503
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "superWETH",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "superWETH",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/ae60ef93-aea0-4a0b-90cf-17f354335982.svg",
+        "zappable": false,
+        "simpleName": "superWETH",
+        "simpleSymbol": "superWETH",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/ae60ef93-aea0-4a0b-90cf-17f354335982.svg",
+        "proName": "superWETH"
+      },
+      "accounting_metadata": {
+        "id": "1-0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "chainId": 1,
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "symbol": "WETH",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "#4f4f4f",
+        "price": {
+          "usd": 2417.54777162
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "WETH",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "protocol": "",
+        "proSymbol": "WETH",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/0aeac9d4-535e-4652-9625-82c7fbcfead7.png",
+        "zappable": true,
+        "simpleName": "WETH",
+        "simpleSymbol": "WETH",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/0aeac9d4-535e-4652-9625-82c7fbcfead7.png",
+        "proName": "WETH"
+      },
+      "listing_flags": {
+        "isActive": true,
+        "isWhitelistedPro": true,
+        "isWhitelistedSimple": false,
+        "isWhitelistedLimitOrder": true
+      },
+      "source_market_data_as_of": "2026-11-05T10:29:00.000Z",
+      "identity_observed_at": "2026-11-05T10:30:01.588810+00:00",
+      "onchain": {
+        "status": "exact_pt_sy_maturity_verified",
+        "block": "0x1920a0b",
+        "block_hash": "0x11cdda654caf0d395d97c7929b916fabd852997c8d45bf2c6de806841581d6f3",
+        "block_timestamp": 1793874611,
+        "chain_evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0018.json",
+          "sha256": "6a0512f524d42cd5877a981980668012ffc8157436b2e888b8e2c94df8978be5",
+          "requested_at": "2026-11-05T10:30:16.496598+00:00",
+          "received_at": "2026-11-05T10:30:16.898538+00:00"
+        },
+        "header_evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0020.json",
+          "sha256": "c79b922d1d22b86d62c8e59f5394b52ef482f48efc04ccfb3ca198711a054684",
+          "requested_at": "2026-11-05T10:30:22.499575+00:00",
+          "received_at": "2026-11-05T10:30:22.759089+00:00"
+        },
+        "reads": {
+          "market_tokens": {
+            "status": "read",
+            "value": [
+              "0x3aecaedfb92efbbac95e5c458c56e94070cb9179",
+              "0x1cfaed2df5ee27b078e96fafa10709c5548fc1b7",
+              "0x775f0f7690c2ceed13d20f9a302d1e8069d56b3b"
+            ],
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0023.json",
+              "sha256": "07c736c451e4fbc75064deab1405254d1662d9ff9500b44547b96aa6431a25a8",
+              "requested_at": "2026-11-05T10:30:31.502635+00:00",
+              "received_at": "2026-11-05T10:30:31.747430+00:00"
+            },
+            "batch_response_id": 1
+          },
+          "pt_expiry": {
+            "status": "read",
+            "value": "1795651200",
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0023.json",
+              "sha256": "07c736c451e4fbc75064deab1405254d1662d9ff9500b44547b96aa6431a25a8",
+              "requested_at": "2026-11-05T10:30:31.502635+00:00",
+              "received_at": "2026-11-05T10:30:31.747430+00:00"
+            },
+            "batch_response_id": 2
+          },
+          "sy_yieldToken": {
+            "status": "read",
+            "value": "0xa036823b9a24f63c32553367bf181ee04229c3ac",
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0023.json",
+              "sha256": "07c736c451e4fbc75064deab1405254d1662d9ff9500b44547b96aa6431a25a8",
+              "requested_at": "2026-11-05T10:30:31.502635+00:00",
+              "received_at": "2026-11-05T10:30:31.747430+00:00"
+            },
+            "batch_response_id": 3
+          },
+          "sy_assetInfo": {
+            "status": "read",
+            "value": {
+              "asset_type": 0,
+              "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+              "decimals": 18
+            },
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0023.json",
+              "sha256": "07c736c451e4fbc75064deab1405254d1662d9ff9500b44547b96aa6431a25a8",
+              "requested_at": "2026-11-05T10:30:31.502635+00:00",
+              "received_at": "2026-11-05T10:30:31.747430+00:00"
+            },
+            "batch_response_id": 4
+          },
+          "sy_tokensIn": {
+            "status": "read",
+            "value": [
+              "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+              "0xa036823b9a24f63c32553367bf181ee04229c3ac"
+            ],
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0023.json",
+              "sha256": "07c736c451e4fbc75064deab1405254d1662d9ff9500b44547b96aa6431a25a8",
+              "requested_at": "2026-11-05T10:30:31.502635+00:00",
+              "received_at": "2026-11-05T10:30:31.747430+00:00"
+            },
+            "batch_response_id": 5
+          },
+          "sy_tokensOut": {
+            "status": "read",
+            "value": [
+              "0xa036823b9a24f63c32553367bf181ee04229c3ac"
+            ],
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0023.json",
+              "sha256": "07c736c451e4fbc75064deab1405254d1662d9ff9500b44547b96aa6431a25a8",
+              "requested_at": "2026-11-05T10:30:31.502635+00:00",
+              "received_at": "2026-11-05T10:30:31.747430+00:00"
+            },
+            "batch_response_id": 6
+          }
+        }
+      },
+      "retirement_status": "not_established; expired is a time classification and does not prove deactivation, closure or absence of exposure",
+      "sy_actual_yield_token": "0xa036823b9a24f63c32553367bf181ee04229c3ac",
+      "sy_accounting_observation": {
+        "asset_type": 0,
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "decimals": 18
+      },
+      "onchain_deposit_token_identities": [
+        "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+        "0xa036823b9a24f63c32553367bf181ee04229c3ac"
+      ],
+      "onchain_output_token_identities": [
+        "0xa036823b9a24f63c32553367bf181ee04229c3ac"
+      ],
+      "risk_assessment_status": "not_assigned; exact risk scope remains RiskAnalyst-owned"
+    },
+    {
+      "chain_id": 1,
+      "market_address": "0x3d83a85e0b0fe9cc116a4efc61bb29cb29c3cb9a",
+      "family_label": "superUSDC",
+      "is_requested_lead": false,
+      "pt": {
+        "chain_id": 1,
+        "address": "0x5d99ff7bcd32c432cbc07fbb0a593ef4cc9d019d"
+      },
+      "yt": {
+        "chain_id": 1,
+        "address": "0xb34c5b00c62dc45bfc63d640bf4e80fcf2ececeb"
+      },
+      "sy": {
+        "chain_id": 1,
+        "address": "0x4d654f255d54637112844bd8802b716170904fee"
+      },
+      "directory_underlying": {
+        "chain_id": 1,
+        "address": "0xf6ebea08a0dfd44825f67fa9963911c81be2a947"
+      },
+      "accounting_reference": {
+        "chain_id": 1,
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+      },
+      "maturity": "2026-04-30T00:00:00+00:00",
+      "expiry_evaluated_at": "2026-11-05T10:29:49.610813+00:00",
+      "expired": true,
+      "availability": "expired_by_time_not_delisted_or_closed",
+      "directory_flags": {
+        "isActive": null,
+        "isExpired": null,
+        "isWhitelistedPro": null,
+        "isWhitelistedSimple": null
+      },
+      "directory_page_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0002.json",
+        "sha256": "0ba6541926c184b73e89154b8e5209a7f10e2c8c87a5aef224853ee2d3f0a16c",
+        "requested_at": "2026-11-05T10:29:28.467676+00:00",
+        "received_at": "2026-11-05T10:29:28.622094+00:00"
+      },
+      "prior_inventory_identity": {
+        "id": "pendle_pt:1:0x3d83a85e0b0fe9cc116a4efc61bb29cb29c3cb9a",
+        "fetched_at": "2026-11-04T10:06:20.665612+00:00"
+      },
+      "riskAnalyst_discovery_identity_matches": true,
+      "listing_is_trading_enabled": null,
+      "executable_capacity": null,
+      "risk_score": null,
+      "retirement_status": "not_established; expired is a time classification and does not prove deactivation, closure or absence of exposure",
+      "risk_assessment_status": "not_assigned; exact risk scope remains RiskAnalyst-owned"
+    },
+    {
+      "chain_id": 1,
+      "market_address": "0x61703e1ea2887fffd4b5f777bafd6abd7122bcf9",
+      "family_label": "superUSDC",
+      "is_requested_lead": true,
+      "pt": {
+        "chain_id": 1,
+        "address": "0xd4e6ea03d2e8bfeb5fa5c03ae9352514b1829218"
+      },
+      "yt": {
+        "chain_id": 1,
+        "address": "0x6316ebb9ef25bd9bb0432b291ee737066560138b"
+      },
+      "sy": {
+        "chain_id": 1,
+        "address": "0x4d654f255d54637112844bd8802b716170904fee"
+      },
+      "directory_underlying": {
+        "chain_id": 1,
+        "address": "0xf6ebea08a0dfd44825f67fa9963911c81be2a947"
+      },
+      "accounting_reference": {
+        "chain_id": 1,
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+      },
+      "maturity": "2026-11-26T00:00:00+00:00",
+      "expiry_evaluated_at": "2026-11-05T10:29:49.610830+00:00",
+      "expired": false,
+      "availability": "unexpired_directory_listing_operational_status_unverified",
+      "directory_flags": {
+        "isActive": null,
+        "isExpired": null,
+        "isWhitelistedPro": null,
+        "isWhitelistedSimple": null
+      },
+      "directory_page_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0002.json",
+        "sha256": "0ba6541926c184b73e89154b8e5209a7f10e2c8c87a5aef224853ee2d3f0a16c",
+        "requested_at": "2026-11-05T10:29:28.467676+00:00",
+        "received_at": "2026-11-05T10:29:28.622094+00:00"
+      },
+      "prior_inventory_identity": {
+        "id": "pendle_pt:1:0x61703e1ea2887fffd4b5f777bafd6abd7122bcf9",
+        "fetched_at": "2026-11-04T10:06:48.478282+00:00"
+      },
+      "riskAnalyst_discovery_identity_matches": true,
+      "listing_is_trading_enabled": null,
+      "executable_capacity": null,
+      "risk_score": null,
+      "live_detail_status": "exact_identity_verified",
+      "live_detail_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0012.json",
+        "sha256": "82dd6d14e8c8e6055bd73d09372ccebb82707ff372a3c0b8681da12781d04112",
+        "requested_at": "2026-11-05T10:29:58.487550+00:00",
+        "received_at": "2026-11-05T10:29:58.577738+00:00"
+      },
+      "pt_metadata": {
+        "id": "1-0xd4e6ea03d2e8bfeb5fa5c03ae9352514b1829218",
+        "chainId": 1,
+        "address": "0xd4e6ea03d2e8bfeb5fa5c03ae9352514b1829218",
+        "symbol": "PT-superUSDC-26NOV2026",
+        "decimals": 6,
+        "expiry": "2026-11-26T00:00:00.000Z",
+        "price": {
+          "usd": 0.9950416303664412
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "PT-superUSDC-26NOV2026",
+        "baseType": "PT",
+        "types": [
+          "PT"
+        ],
+        "underlyingPool": "",
+        "proSymbol": "PT superUSDC (USDC)",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/24156245-f118-4da6-bc8a-a2002ca2c129.svg",
+        "zappable": false,
+        "simpleName": "PT superUSDC (USDC)",
+        "simpleSymbol": "PT superUSDC (USDC)",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/24156245-f118-4da6-bc8a-a2002ca2c129.svg",
+        "proName": "PT superUSDC (USDC)"
+      },
+      "sy_metadata": {
+        "id": "1-0x4d654f255d54637112844bd8802b716170904fee",
+        "chainId": 1,
+        "address": "0x4d654f255d54637112844bd8802b716170904fee",
+        "symbol": "SY-superUSDC",
+        "decimals": 6,
+        "expiry": null,
+        "price": {
+          "usd": 1.03707057080994
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "SY-superUSDC",
+        "baseType": "SY",
+        "types": [
+          "SY"
+        ],
+        "underlyingPool": "",
+        "proSymbol": "superUSDC",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/89c461a7-fdd9-443d-a8fa-b460edce855a.svg",
+        "zappable": false,
+        "simpleName": "superUSDC",
+        "simpleSymbol": "superUSDC",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/89c461a7-fdd9-443d-a8fa-b460edce855a.svg",
+        "proName": "superUSDC"
+      },
+      "underlying_metadata": {
+        "id": "1-0xf6ebea08a0dfd44825f67fa9963911c81be2a947",
+        "chainId": 1,
+        "address": "0xf6ebea08a0dfd44825f67fa9963911c81be2a947",
+        "symbol": "superUSDC",
+        "decimals": 6,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 1.03707057080994
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "superUSDC",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "superUSDC",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e280787e-3b2d-4950-819a-128726952e08.svg",
+        "zappable": false,
+        "simpleName": "superUSDC",
+        "simpleSymbol": "superUSDC",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e280787e-3b2d-4950-819a-128726952e08.svg",
+        "proName": "superUSDC"
+      },
+      "accounting_metadata": {
+        "id": "1-0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "chainId": 1,
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "symbol": "USDC",
+        "decimals": 6,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 0.99979617
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "USDC",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "protocol": "",
+        "proSymbol": "USDC",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ff696349-5cfc-4117-9e98-cce61d626f56.svg",
+        "zappable": true,
+        "simpleName": "USDC",
+        "simpleSymbol": "USDC",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ff696349-5cfc-4117-9e98-cce61d626f56.svg",
+        "proName": "USDC"
+      },
+      "listing_flags": {
+        "isActive": true,
+        "isWhitelistedPro": true,
+        "isWhitelistedSimple": false,
+        "isWhitelistedLimitOrder": true
+      },
+      "source_market_data_as_of": "2026-11-05T10:29:00.000Z",
+      "identity_observed_at": "2026-11-05T10:29:58.577738+00:00",
+      "onchain": {
+        "status": "exact_pt_sy_maturity_verified",
+        "block": "0x1920a0b",
+        "block_hash": "0x11cdda654caf0d395d97c7929b916fabd852997c8d45bf2c6de806841581d6f3",
+        "block_timestamp": 1793874611,
+        "chain_evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0018.json",
+          "sha256": "6a0512f524d42cd5877a981980668012ffc8157436b2e888b8e2c94df8978be5",
+          "requested_at": "2026-11-05T10:30:16.496598+00:00",
+          "received_at": "2026-11-05T10:30:16.898538+00:00"
+        },
+        "header_evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0020.json",
+          "sha256": "c79b922d1d22b86d62c8e59f5394b52ef482f48efc04ccfb3ca198711a054684",
+          "requested_at": "2026-11-05T10:30:22.499575+00:00",
+          "received_at": "2026-11-05T10:30:22.759089+00:00"
+        },
+        "reads": {
+          "market_tokens": {
+            "status": "read",
+            "value": [
+              "0x4d654f255d54637112844bd8802b716170904fee",
+              "0xd4e6ea03d2e8bfeb5fa5c03ae9352514b1829218",
+              "0x6316ebb9ef25bd9bb0432b291ee737066560138b"
+            ],
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0022.json",
+              "sha256": "994671939c284392a593be06b3daa326cbc3a6405f970216e132b2461bae9642",
+              "requested_at": "2026-11-05T10:30:28.499757+00:00",
+              "received_at": "2026-11-05T10:30:28.757671+00:00"
+            },
+            "batch_response_id": 1
+          },
+          "pt_expiry": {
+            "status": "read",
+            "value": "1795651200",
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0022.json",
+              "sha256": "994671939c284392a593be06b3daa326cbc3a6405f970216e132b2461bae9642",
+              "requested_at": "2026-11-05T10:30:28.499757+00:00",
+              "received_at": "2026-11-05T10:30:28.757671+00:00"
+            },
+            "batch_response_id": 2
+          },
+          "sy_yieldToken": {
+            "status": "read",
+            "value": "0xf6ebea08a0dfd44825f67fa9963911c81be2a947",
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0022.json",
+              "sha256": "994671939c284392a593be06b3daa326cbc3a6405f970216e132b2461bae9642",
+              "requested_at": "2026-11-05T10:30:28.499757+00:00",
+              "received_at": "2026-11-05T10:30:28.757671+00:00"
+            },
+            "batch_response_id": 3
+          },
+          "sy_assetInfo": {
+            "status": "read",
+            "value": {
+              "asset_type": 0,
+              "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              "decimals": 6
+            },
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0022.json",
+              "sha256": "994671939c284392a593be06b3daa326cbc3a6405f970216e132b2461bae9642",
+              "requested_at": "2026-11-05T10:30:28.499757+00:00",
+              "received_at": "2026-11-05T10:30:28.757671+00:00"
+            },
+            "batch_response_id": 4
+          },
+          "sy_tokensIn": {
+            "status": "read",
+            "value": [
+              "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+              "0xf6ebea08a0dfd44825f67fa9963911c81be2a947"
+            ],
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0022.json",
+              "sha256": "994671939c284392a593be06b3daa326cbc3a6405f970216e132b2461bae9642",
+              "requested_at": "2026-11-05T10:30:28.499757+00:00",
+              "received_at": "2026-11-05T10:30:28.757671+00:00"
+            },
+            "batch_response_id": 5
+          },
+          "sy_tokensOut": {
+            "status": "read",
+            "value": [
+              "0xf6ebea08a0dfd44825f67fa9963911c81be2a947"
+            ],
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0022.json",
+              "sha256": "994671939c284392a593be06b3daa326cbc3a6405f970216e132b2461bae9642",
+              "requested_at": "2026-11-05T10:30:28.499757+00:00",
+              "received_at": "2026-11-05T10:30:28.757671+00:00"
+            },
+            "batch_response_id": 6
+          }
+        }
+      },
+      "retirement_status": "not_established; expired is a time classification and does not prove deactivation, closure or absence of exposure",
+      "sy_actual_yield_token": "0xf6ebea08a0dfd44825f67fa9963911c81be2a947",
+      "sy_accounting_observation": {
+        "asset_type": 0,
+        "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "decimals": 6
+      },
+      "onchain_deposit_token_identities": [
+        "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "0xf6ebea08a0dfd44825f67fa9963911c81be2a947"
+      ],
+      "onchain_output_token_identities": [
+        "0xf6ebea08a0dfd44825f67fa9963911c81be2a947"
+      ],
+      "risk_assessment_status": "not_assigned; exact risk scope remains RiskAnalyst-owned"
+    },
+    {
+      "chain_id": 1,
+      "market_address": "0x90d7eb710d021e243f60fbb32e95aaa83f5bbaea",
+      "family_label": "superWETH",
+      "is_requested_lead": false,
+      "pt": {
+        "chain_id": 1,
+        "address": "0x3ae763d13becd4f96ced845660a672e414556ce8"
+      },
+      "yt": {
+        "chain_id": 1,
+        "address": "0x27c996b728712e80fad047ef7226534ab38402f9"
+      },
+      "sy": {
+        "chain_id": 1,
+        "address": "0x3aecaedfb92efbbac95e5c458c56e94070cb9179"
+      },
+      "directory_underlying": {
+        "chain_id": 1,
+        "address": "0xa036823b9a24f63c32553367bf181ee04229c3ac"
+      },
+      "accounting_reference": {
+        "chain_id": 1,
+        "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+      },
+      "maturity": "2026-04-30T00:00:00+00:00",
+      "expiry_evaluated_at": "2026-11-05T10:29:49.610847+00:00",
+      "expired": true,
+      "availability": "expired_by_time_not_delisted_or_closed",
+      "directory_flags": {
+        "isActive": null,
+        "isExpired": null,
+        "isWhitelistedPro": null,
+        "isWhitelistedSimple": null
+      },
+      "directory_page_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0003.json",
+        "sha256": "431f299f9e2af66f116e13f7329edc057ad5bb16b93d5e8205cac3e902aed79b",
+        "requested_at": "2026-11-05T10:29:31.470635+00:00",
+        "received_at": "2026-11-05T10:29:31.655973+00:00"
+      },
+      "prior_inventory_identity": {
+        "id": "pendle_pt:1:0x90d7eb710d021e243f60fbb32e95aaa83f5bbaea",
+        "fetched_at": "2026-11-04T10:06:21.302678+00:00"
+      },
+      "riskAnalyst_discovery_identity_matches": true,
+      "listing_is_trading_enabled": null,
+      "executable_capacity": null,
+      "risk_score": null,
+      "retirement_status": "not_established; expired is a time classification and does not prove deactivation, closure or absence of exposure",
+      "risk_assessment_status": "not_assigned; exact risk scope remains RiskAnalyst-owned"
+    },
+    {
+      "chain_id": 1,
+      "market_address": "0x926fac5b12544c2e7bfa8ce3dd83a4c8ed988da8",
+      "family_label": "sBOLD",
+      "is_requested_lead": false,
+      "pt": {
+        "chain_id": 1,
+        "address": "0xd7baa983d2a44409b4b8f23fc1152368bc5f10ad"
+      },
+      "yt": {
+        "chain_id": 1,
+        "address": "0xdb36f6a79e74777726e244f433ed53cb7d4da2f3"
+      },
+      "sy": {
+        "chain_id": 1,
+        "address": "0xa73fb4f3a3f3889e41387973afc542fa06785981"
+      },
+      "directory_underlying": {
+        "chain_id": 1,
+        "address": "0x50bd66d59911f5e086ec87ae43c811e0d059dd11"
+      },
+      "accounting_reference": {
+        "chain_id": 1,
+        "address": "0x6440f144b7e50d6a8439336510312d2f54beb01d"
+      },
+      "maturity": "2026-06-25T00:00:00+00:00",
+      "expiry_evaluated_at": "2026-11-05T10:29:49.610881+00:00",
+      "expired": true,
+      "availability": "expired_by_time_not_delisted_or_closed",
+      "directory_flags": {
+        "isActive": null,
+        "isExpired": null,
+        "isWhitelistedPro": null,
+        "isWhitelistedSimple": null
+      },
+      "directory_page_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0003.json",
+        "sha256": "431f299f9e2af66f116e13f7329edc057ad5bb16b93d5e8205cac3e902aed79b",
+        "requested_at": "2026-11-05T10:29:31.470635+00:00",
+        "received_at": "2026-11-05T10:29:31.655973+00:00"
+      },
+      "prior_inventory_identity": {
+        "id": "pendle_pt:1:0x926fac5b12544c2e7bfa8ce3dd83a4c8ed988da8",
+        "fetched_at": "2026-11-04T10:06:21.302678+00:00"
+      },
+      "riskAnalyst_discovery_identity_matches": true,
+      "listing_is_trading_enabled": null,
+      "executable_capacity": null,
+      "risk_score": null,
+      "retirement_status": "not_established; expired is a time classification and does not prove deactivation, closure or absence of exposure",
+      "risk_assessment_status": "not_assigned; exact risk scope remains RiskAnalyst-owned"
+    },
+    {
+      "chain_id": 1,
+      "market_address": "0xac028348c46d3455899a2b9b50077c11960eaddb",
+      "family_label": "strUSD",
+      "is_requested_lead": true,
+      "pt": {
+        "chain_id": 1,
+        "address": "0x74299580811e1c3c1a2831db079ba0a8f513998f"
+      },
+      "yt": {
+        "chain_id": 1,
+        "address": "0xc4bb3ec6588ff14d7676445a40f2716e690a3203"
+      },
+      "sy": {
+        "chain_id": 1,
+        "address": "0x7e8a16e87fa6b0f2e657db47f3dbfe2e981ef211"
+      },
+      "directory_underlying": {
+        "chain_id": 1,
+        "address": "0x280839980a7ed0d7717f64125fe241012e5f5815"
+      },
+      "accounting_reference": {
+        "chain_id": 1,
+        "address": "0xd0580192e98ea6ceb9c7b6191ed2e27560911697"
+      },
+      "maturity": "2026-11-26T00:00:00+00:00",
+      "expiry_evaluated_at": "2026-11-05T10:29:49.610908+00:00",
+      "expired": false,
+      "availability": "unexpired_directory_listing_operational_status_unverified",
+      "directory_flags": {
+        "isActive": null,
+        "isExpired": null,
+        "isWhitelistedPro": null,
+        "isWhitelistedSimple": null
+      },
+      "directory_page_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0004.json",
+        "sha256": "b579da39b0e7559d8eeaea19f42459959e9927c44cca40c82f4526b844364765",
+        "requested_at": "2026-11-05T10:29:34.471599+00:00",
+        "received_at": "2026-11-05T10:29:34.780526+00:00"
+      },
+      "prior_inventory_identity": {
+        "id": "pendle_pt:1:0xac028348c46d3455899a2b9b50077c11960eaddb",
+        "fetched_at": "2026-11-04T10:07:02.268926+00:00"
+      },
+      "riskAnalyst_discovery_identity_matches": true,
+      "listing_is_trading_enabled": null,
+      "executable_capacity": null,
+      "risk_score": null,
+      "live_detail_status": "exact_identity_verified",
+      "live_detail_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0015.json",
+        "sha256": "f74505c19734bd217d08bea738f5929900e1a1b6f01a5303e93c0e071ff4a0ec",
+        "requested_at": "2026-11-05T10:30:07.494496+00:00",
+        "received_at": "2026-11-05T10:30:07.878618+00:00"
+      },
+      "pt_metadata": {
+        "id": "1-0x74299580811e1c3c1a2831db079ba0a8f513998f",
+        "chainId": 1,
+        "address": "0x74299580811e1c3c1a2831db079ba0a8f513998f",
+        "symbol": "PT-strUSD-26NOV2026",
+        "decimals": 18,
+        "expiry": "2026-11-26T00:00:00.000Z",
+        "price": {
+          "usd": 0.9932196400805398
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:45.026Z",
+        "name": "PT-strUSD-26NOV2026",
+        "baseType": "PT",
+        "types": [
+          "PT"
+        ],
+        "underlyingPool": "",
+        "proSymbol": "PT strUSD (trUSD)",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/ad04e6d4-e061-49fb-90fd-405fb2e7fbcf.svg",
+        "zappable": false,
+        "simpleName": "PT strUSD (trUSD)",
+        "simpleSymbol": "PT strUSD (trUSD)",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/ad04e6d4-e061-49fb-90fd-405fb2e7fbcf.svg",
+        "proName": "PT strUSD (trUSD)"
+      },
+      "sy_metadata": {
+        "id": "1-0x7e8a16e87fa6b0f2e657db47f3dbfe2e981ef211",
+        "chainId": 1,
+        "address": "0x7e8a16e87fa6b0f2e657db47f3dbfe2e981ef211",
+        "symbol": "SY-strUSD",
+        "decimals": 18,
+        "expiry": null,
+        "price": {
+          "usd": 1.0364271090125068
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:45.026Z",
+        "name": "SY-strUSD",
+        "baseType": "SY",
+        "types": [
+          "SY"
+        ],
+        "underlyingPool": "",
+        "proSymbol": "strUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/18a8bf24-a2da-4b85-8668-2cf8ed82e258.svg",
+        "zappable": false,
+        "simpleName": "strUSD",
+        "simpleSymbol": "strUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/18a8bf24-a2da-4b85-8668-2cf8ed82e258.svg",
+        "proName": "strUSD"
+      },
+      "underlying_metadata": {
+        "id": "1-0x280839980a7ed0d7717f64125fe241012e5f5815",
+        "chainId": 1,
+        "address": "0x280839980a7ed0d7717f64125fe241012e5f5815",
+        "symbol": "strUSD",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 1.0364271090125068
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:45.026Z",
+        "name": "strUSD",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "strUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/a9acd418-7b5a-46d2-bad6-2afd9ec017c2.svg",
+        "zappable": true,
+        "simpleName": "strUSD",
+        "simpleSymbol": "strUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/a9acd418-7b5a-46d2-bad6-2afd9ec017c2.svg",
+        "proName": "strUSD"
+      },
+      "accounting_metadata": {
+        "id": "1-0xd0580192e98ea6ceb9c7b6191ed2e27560911697",
+        "chainId": 1,
+        "address": "0xd0580192e98ea6ceb9c7b6191ed2e27560911697",
+        "symbol": "trUSD",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 0.99979432
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:45.026Z",
+        "name": "trUSD",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "trUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f9c57ab0-d75f-4d37-a705-2caa60a6176c.svg",
+        "zappable": true,
+        "simpleName": "trUSD",
+        "simpleSymbol": "trUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f9c57ab0-d75f-4d37-a705-2caa60a6176c.svg",
+        "proName": "trUSD"
+      },
+      "listing_flags": {
+        "isActive": true,
+        "isWhitelistedPro": true,
+        "isWhitelistedSimple": false,
+        "isWhitelistedLimitOrder": true
+      },
+      "source_market_data_as_of": "2026-11-05T10:29:00.000Z",
+      "identity_observed_at": "2026-11-05T10:30:07.878618+00:00",
+      "onchain": {
+        "status": "exact_pt_sy_maturity_verified",
+        "block": "0x1920a0b",
+        "block_hash": "0x11cdda654caf0d395d97c7929b916fabd852997c8d45bf2c6de806841581d6f3",
+        "block_timestamp": 1793874611,
+        "chain_evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0018.json",
+          "sha256": "6a0512f524d42cd5877a981980668012ffc8157436b2e888b8e2c94df8978be5",
+          "requested_at": "2026-11-05T10:30:16.496598+00:00",
+          "received_at": "2026-11-05T10:30:16.898538+00:00"
+        },
+        "header_evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0020.json",
+          "sha256": "c79b922d1d22b86d62c8e59f5394b52ef482f48efc04ccfb3ca198711a054684",
+          "requested_at": "2026-11-05T10:30:22.499575+00:00",
+          "received_at": "2026-11-05T10:30:22.759089+00:00"
+        },
+        "reads": {
+          "market_tokens": {
+            "status": "read",
+            "value": [
+              "0x7e8a16e87fa6b0f2e657db47f3dbfe2e981ef211",
+              "0x74299580811e1c3c1a2831db079ba0a8f513998f",
+              "0xc4bb3ec6588ff14d7676445a40f2716e690a3203"
+            ],
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0025.json",
+              "sha256": "f8c99a0141b735de9d21d1d6e2b636c3849341a6c0db0b20245b1667c130b1bd",
+              "requested_at": "2026-11-05T10:30:37.506521+00:00",
+              "received_at": "2026-11-05T10:30:37.747715+00:00"
+            },
+            "batch_response_id": 1
+          },
+          "pt_expiry": {
+            "status": "read",
+            "value": "1795651200",
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0025.json",
+              "sha256": "f8c99a0141b735de9d21d1d6e2b636c3849341a6c0db0b20245b1667c130b1bd",
+              "requested_at": "2026-11-05T10:30:37.506521+00:00",
+              "received_at": "2026-11-05T10:30:37.747715+00:00"
+            },
+            "batch_response_id": 2
+          },
+          "sy_yieldToken": {
+            "status": "read",
+            "value": "0x280839980a7ed0d7717f64125fe241012e5f5815",
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0025.json",
+              "sha256": "f8c99a0141b735de9d21d1d6e2b636c3849341a6c0db0b20245b1667c130b1bd",
+              "requested_at": "2026-11-05T10:30:37.506521+00:00",
+              "received_at": "2026-11-05T10:30:37.747715+00:00"
+            },
+            "batch_response_id": 3
+          },
+          "sy_assetInfo": {
+            "status": "read",
+            "value": {
+              "asset_type": 0,
+              "address": "0xd0580192e98ea6ceb9c7b6191ed2e27560911697",
+              "decimals": 18
+            },
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0025.json",
+              "sha256": "f8c99a0141b735de9d21d1d6e2b636c3849341a6c0db0b20245b1667c130b1bd",
+              "requested_at": "2026-11-05T10:30:37.506521+00:00",
+              "received_at": "2026-11-05T10:30:37.747715+00:00"
+            },
+            "batch_response_id": 4
+          },
+          "sy_tokensIn": {
+            "status": "read",
+            "value": [
+              "0xd0580192e98ea6ceb9c7b6191ed2e27560911697",
+              "0x280839980a7ed0d7717f64125fe241012e5f5815"
+            ],
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0025.json",
+              "sha256": "f8c99a0141b735de9d21d1d6e2b636c3849341a6c0db0b20245b1667c130b1bd",
+              "requested_at": "2026-11-05T10:30:37.506521+00:00",
+              "received_at": "2026-11-05T10:30:37.747715+00:00"
+            },
+            "batch_response_id": 5
+          },
+          "sy_tokensOut": {
+            "status": "read",
+            "value": [
+              "0xd0580192e98ea6ceb9c7b6191ed2e27560911697",
+              "0x280839980a7ed0d7717f64125fe241012e5f5815"
+            ],
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0025.json",
+              "sha256": "f8c99a0141b735de9d21d1d6e2b636c3849341a6c0db0b20245b1667c130b1bd",
+              "requested_at": "2026-11-05T10:30:37.506521+00:00",
+              "received_at": "2026-11-05T10:30:37.747715+00:00"
+            },
+            "batch_response_id": 6
+          }
+        }
+      },
+      "retirement_status": "not_established; expired is a time classification and does not prove deactivation, closure or absence of exposure",
+      "sy_actual_yield_token": "0x280839980a7ed0d7717f64125fe241012e5f5815",
+      "sy_accounting_observation": {
+        "asset_type": 0,
+        "address": "0xd0580192e98ea6ceb9c7b6191ed2e27560911697",
+        "decimals": 18
+      },
+      "onchain_deposit_token_identities": [
+        "0xd0580192e98ea6ceb9c7b6191ed2e27560911697",
+        "0x280839980a7ed0d7717f64125fe241012e5f5815"
+      ],
+      "onchain_output_token_identities": [
+        "0xd0580192e98ea6ceb9c7b6191ed2e27560911697",
+        "0x280839980a7ed0d7717f64125fe241012e5f5815"
+      ],
+      "risk_assessment_status": "not_assigned; exact risk scope remains RiskAnalyst-owned"
+    },
+    {
+      "chain_id": 1,
+      "market_address": "0xe467c5c54748f0125d729280f90ded77c4e720a4",
+      "family_label": "sBOLD",
+      "is_requested_lead": false,
+      "pt": {
+        "chain_id": 1,
+        "address": "0x66526197a4baf496d97e1004e43c2c374fb7d2e7"
+      },
+      "yt": {
+        "chain_id": 1,
+        "address": "0x2d2d86af3eae41a3741151d5a5d5221e98dd1e07"
+      },
+      "sy": {
+        "chain_id": 1,
+        "address": "0xce133401b2214ada39cacb23add4c9984f562293"
+      },
+      "directory_underlying": {
+        "chain_id": 1,
+        "address": "0x50bd66d59911f5e086ec87ae43c811e0d059dd11"
+      },
+      "accounting_reference": {
+        "chain_id": 1,
+        "address": "0x6440f144b7e50d6a8439336510312d2f54beb01d"
+      },
+      "maturity": "2025-11-27T00:00:00+00:00",
+      "expiry_evaluated_at": "2026-11-05T10:29:49.610926+00:00",
+      "expired": true,
+      "availability": "expired_by_time_not_delisted_or_closed",
+      "directory_flags": {
+        "isActive": null,
+        "isExpired": null,
+        "isWhitelistedPro": null,
+        "isWhitelistedSimple": null
+      },
+      "directory_page_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0005.json",
+        "sha256": "8e5018f4d8e01774dbdc2400100d14db6a4d20e128a5e85ff9a6e5db4bd9d33c",
+        "requested_at": "2026-11-05T10:29:37.474340+00:00",
+        "received_at": "2026-11-05T10:29:37.799191+00:00"
+      },
+      "prior_inventory_identity": {
+        "id": "pendle_pt:1:0xe467c5c54748f0125d729280f90ded77c4e720a4",
+        "fetched_at": "2026-11-04T10:06:23.393527+00:00"
+      },
+      "riskAnalyst_discovery_identity_matches": true,
+      "listing_is_trading_enabled": null,
+      "executable_capacity": null,
+      "risk_score": null,
+      "retirement_status": "not_established; expired is a time classification and does not prove deactivation, closure or absence of exposure",
+      "risk_assessment_status": "not_assigned; exact risk scope remains RiskAnalyst-owned"
+    },
+    {
+      "chain_id": 1,
+      "market_address": "0xeb603c5a42d49d3b2e078191c23bf3f5d25bc219",
+      "family_label": "sBOLD",
+      "is_requested_lead": true,
+      "pt": {
+        "chain_id": 1,
+        "address": "0x2a21f68b60156860615bd27ac958df817df45aa3"
+      },
+      "yt": {
+        "chain_id": 1,
+        "address": "0xc802c127ac01e06610a6a5c12ce5b70ce93924e4"
+      },
+      "sy": {
+        "chain_id": 1,
+        "address": "0xa73fb4f3a3f3889e41387973afc542fa06785981"
+      },
+      "directory_underlying": {
+        "chain_id": 1,
+        "address": "0x50bd66d59911f5e086ec87ae43c811e0d059dd11"
+      },
+      "accounting_reference": {
+        "chain_id": 1,
+        "address": "0x6440f144b7e50d6a8439336510312d2f54beb01d"
+      },
+      "maturity": "2027-02-04T00:00:00+00:00",
+      "expiry_evaluated_at": "2026-11-05T10:29:49.610950+00:00",
+      "expired": false,
+      "availability": "unexpired_directory_listing_operational_status_unverified",
+      "directory_flags": {
+        "isActive": null,
+        "isExpired": null,
+        "isWhitelistedPro": null,
+        "isWhitelistedSimple": null
+      },
+      "directory_page_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0005.json",
+        "sha256": "8e5018f4d8e01774dbdc2400100d14db6a4d20e128a5e85ff9a6e5db4bd9d33c",
+        "requested_at": "2026-11-05T10:29:37.474340+00:00",
+        "received_at": "2026-11-05T10:29:37.799191+00:00"
+      },
+      "prior_inventory_identity": {
+        "id": "pendle_pt:1:0xeb603c5a42d49d3b2e078191c23bf3f5d25bc219",
+        "fetched_at": "2026-11-04T10:07:13.766859+00:00"
+      },
+      "riskAnalyst_discovery_identity_matches": true,
+      "listing_is_trading_enabled": null,
+      "executable_capacity": null,
+      "risk_score": null,
+      "live_detail_status": "exact_identity_verified",
+      "live_detail_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0011.json",
+        "sha256": "f163cf88e5bf16cffe10e6d5ca86e885989a50f3b99ac50bad77b3c753b623af",
+        "requested_at": "2026-11-05T10:29:55.486796+00:00",
+        "received_at": "2026-11-05T10:29:55.577875+00:00"
+      },
+      "pt_metadata": {
+        "id": "1-0x2a21f68b60156860615bd27ac958df817df45aa3",
+        "chainId": 1,
+        "address": "0x2a21f68b60156860615bd27ac958df817df45aa3",
+        "symbol": "PT-sBOLD-4FEB2027",
+        "decimals": 18,
+        "expiry": "2027-02-04T00:00:00.000Z",
+        "price": {
+          "usd": 0.9835612853221921
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "PT-sBOLD-4FEB2027",
+        "baseType": "PT",
+        "types": [
+          "PT"
+        ],
+        "underlyingPool": "",
+        "proSymbol": "PT sBOLD (BOLD)",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/a3750f13-9723-4202-ab4b-0b12fd8fbd00.svg",
+        "zappable": false,
+        "simpleName": "PT sBOLD (BOLD)",
+        "simpleSymbol": "PT sBOLD (BOLD)",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/a3750f13-9723-4202-ab4b-0b12fd8fbd00.svg",
+        "proName": "PT sBOLD (BOLD)"
+      },
+      "sy_metadata": {
+        "id": "1-0xa73fb4f3a3f3889e41387973afc542fa06785981",
+        "chainId": 1,
+        "address": "0xa73fb4f3a3f3889e41387973afc542fa06785981",
+        "symbol": "SY-sBOLD",
+        "decimals": 18,
+        "expiry": null,
+        "price": {
+          "usd": 1.0905120896313534
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "SY-sBOLD",
+        "baseType": "SY",
+        "types": [
+          "SY"
+        ],
+        "underlyingPool": "",
+        "proSymbol": "sBOLD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/4dc04cd3-5e02-43ed-b80a-91c5e40f1d3b.svg",
+        "zappable": false,
+        "simpleName": "sBOLD",
+        "simpleSymbol": "sBOLD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/4dc04cd3-5e02-43ed-b80a-91c5e40f1d3b.svg",
+        "proName": "sBOLD"
+      },
+      "underlying_metadata": {
+        "id": "1-0x50bd66d59911f5e086ec87ae43c811e0d059dd11",
+        "chainId": 1,
+        "address": "0x50bd66d59911f5e086ec87ae43c811e0d059dd11",
+        "symbol": "sBOLD",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 1.0905120896313534
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "sBOLD",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "sBOLD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/91b86405-2a6f-4da7-91b6-6a72df462a9e.svg",
+        "zappable": true,
+        "simpleName": "sBOLD",
+        "simpleSymbol": "sBOLD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/91b86405-2a6f-4da7-91b6-6a72df462a9e.svg",
+        "proName": "sBOLD"
+      },
+      "accounting_metadata": {
+        "id": "1-0x6440f144b7e50d6a8439336510312d2f54beb01d",
+        "chainId": 1,
+        "address": "0x6440f144b7e50d6a8439336510312d2f54beb01d",
+        "symbol": "BOLD",
+        "decimals": 18,
+        "accentColor": "",
+        "price": {
+          "usd": 0.99745864
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "BOLD",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "proSymbol": "BOLD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/63fa10c2-9441-46be-8a96-ca1e980e73b1.svg",
+        "zappable": true,
+        "simpleName": "BOLD",
+        "simpleSymbol": "BOLD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/63fa10c2-9441-46be-8a96-ca1e980e73b1.svg",
+        "proName": "BOLD"
+      },
+      "listing_flags": {
+        "isActive": true,
+        "isWhitelistedPro": true,
+        "isWhitelistedSimple": false,
+        "isWhitelistedLimitOrder": true
+      },
+      "source_market_data_as_of": "2026-11-05T10:25:00.000Z",
+      "identity_observed_at": "2026-11-05T10:29:55.577875+00:00",
+      "onchain": {
+        "status": "exact_pt_sy_maturity_verified",
+        "block": "0x1920a0b",
+        "block_hash": "0x11cdda654caf0d395d97c7929b916fabd852997c8d45bf2c6de806841581d6f3",
+        "block_timestamp": 1793874611,
+        "chain_evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0018.json",
+          "sha256": "6a0512f524d42cd5877a981980668012ffc8157436b2e888b8e2c94df8978be5",
+          "requested_at": "2026-11-05T10:30:16.496598+00:00",
+          "received_at": "2026-11-05T10:30:16.898538+00:00"
+        },
+        "header_evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0020.json",
+          "sha256": "c79b922d1d22b86d62c8e59f5394b52ef482f48efc04ccfb3ca198711a054684",
+          "requested_at": "2026-11-05T10:30:22.499575+00:00",
+          "received_at": "2026-11-05T10:30:22.759089+00:00"
+        },
+        "reads": {
+          "market_tokens": {
+            "status": "read",
+            "value": [
+              "0xa73fb4f3a3f3889e41387973afc542fa06785981",
+              "0x2a21f68b60156860615bd27ac958df817df45aa3",
+              "0xc802c127ac01e06610a6a5c12ce5b70ce93924e4"
+            ],
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0021.json",
+              "sha256": "64eeb4848cbf5e8ff51befadb226eed3560b507216231579b382758563af3b45",
+              "requested_at": "2026-11-05T10:30:25.499652+00:00",
+              "received_at": "2026-11-05T10:30:25.748239+00:00"
+            },
+            "batch_response_id": 1
+          },
+          "pt_expiry": {
+            "status": "read",
+            "value": "1801699200",
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0021.json",
+              "sha256": "64eeb4848cbf5e8ff51befadb226eed3560b507216231579b382758563af3b45",
+              "requested_at": "2026-11-05T10:30:25.499652+00:00",
+              "received_at": "2026-11-05T10:30:25.748239+00:00"
+            },
+            "batch_response_id": 2
+          },
+          "sy_yieldToken": {
+            "status": "read",
+            "value": "0x50bd66d59911f5e086ec87ae43c811e0d059dd11",
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0021.json",
+              "sha256": "64eeb4848cbf5e8ff51befadb226eed3560b507216231579b382758563af3b45",
+              "requested_at": "2026-11-05T10:30:25.499652+00:00",
+              "received_at": "2026-11-05T10:30:25.748239+00:00"
+            },
+            "batch_response_id": 3
+          },
+          "sy_assetInfo": {
+            "status": "read",
+            "value": {
+              "asset_type": 0,
+              "address": "0x6440f144b7e50d6a8439336510312d2f54beb01d",
+              "decimals": 18
+            },
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0021.json",
+              "sha256": "64eeb4848cbf5e8ff51befadb226eed3560b507216231579b382758563af3b45",
+              "requested_at": "2026-11-05T10:30:25.499652+00:00",
+              "received_at": "2026-11-05T10:30:25.748239+00:00"
+            },
+            "batch_response_id": 4
+          },
+          "sy_tokensIn": {
+            "status": "read",
+            "value": [
+              "0x6440f144b7e50d6a8439336510312d2f54beb01d",
+              "0x50bd66d59911f5e086ec87ae43c811e0d059dd11"
+            ],
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0021.json",
+              "sha256": "64eeb4848cbf5e8ff51befadb226eed3560b507216231579b382758563af3b45",
+              "requested_at": "2026-11-05T10:30:25.499652+00:00",
+              "received_at": "2026-11-05T10:30:25.748239+00:00"
+            },
+            "batch_response_id": 5
+          },
+          "sy_tokensOut": {
+            "status": "read",
+            "value": [
+              "0x6440f144b7e50d6a8439336510312d2f54beb01d",
+              "0x50bd66d59911f5e086ec87ae43c811e0d059dd11"
+            ],
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0021.json",
+              "sha256": "64eeb4848cbf5e8ff51befadb226eed3560b507216231579b382758563af3b45",
+              "requested_at": "2026-11-05T10:30:25.499652+00:00",
+              "received_at": "2026-11-05T10:30:25.748239+00:00"
+            },
+            "batch_response_id": 6
+          }
+        }
+      },
+      "retirement_status": "not_established; expired is a time classification and does not prove deactivation, closure or absence of exposure",
+      "sy_actual_yield_token": "0x50bd66d59911f5e086ec87ae43c811e0d059dd11",
+      "sy_accounting_observation": {
+        "asset_type": 0,
+        "address": "0x6440f144b7e50d6a8439336510312d2f54beb01d",
+        "decimals": 18
+      },
+      "onchain_deposit_token_identities": [
+        "0x6440f144b7e50d6a8439336510312d2f54beb01d",
+        "0x50bd66d59911f5e086ec87ae43c811e0d059dd11"
+      ],
+      "onchain_output_token_identities": [
+        "0x6440f144b7e50d6a8439336510312d2f54beb01d",
+        "0x50bd66d59911f5e086ec87ae43c811e0d059dd11"
+      ],
+      "risk_assessment_status": "not_assigned; exact risk scope remains RiskAnalyst-owned"
+    },
+    {
+      "chain_id": 1,
+      "market_address": "0xfcf009cb3135da12a6eb1f73f3ee05392a7bc947",
+      "family_label": "trUSD",
+      "is_requested_lead": true,
+      "pt": {
+        "chain_id": 1,
+        "address": "0x7191878f1fe834b28f4d0cead0e4375b814c4abb"
+      },
+      "yt": {
+        "chain_id": 1,
+        "address": "0x1fcdb1e747419bb8d1a029c4d1f83b41e8afe8ce"
+      },
+      "sy": {
+        "chain_id": 1,
+        "address": "0xa09482f2f6cb5f2177b05144bc276d06b8b818eb"
+      },
+      "directory_underlying": {
+        "chain_id": 1,
+        "address": "0xd0580192e98ea6ceb9c7b6191ed2e27560911697"
+      },
+      "accounting_reference": {
+        "chain_id": 1,
+        "address": "0xd0580192e98ea6ceb9c7b6191ed2e27560911697"
+      },
+      "maturity": "2026-11-26T00:00:00+00:00",
+      "expiry_evaluated_at": "2026-11-05T10:29:49.610973+00:00",
+      "expired": false,
+      "availability": "unexpired_directory_listing_operational_status_unverified",
+      "directory_flags": {
+        "isActive": null,
+        "isExpired": null,
+        "isWhitelistedPro": null,
+        "isWhitelistedSimple": null
+      },
+      "directory_page_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0005.json",
+        "sha256": "8e5018f4d8e01774dbdc2400100d14db6a4d20e128a5e85ff9a6e5db4bd9d33c",
+        "requested_at": "2026-11-05T10:29:37.474340+00:00",
+        "received_at": "2026-11-05T10:29:37.799191+00:00"
+      },
+      "prior_inventory_identity": {
+        "id": "pendle_pt:1:0xfcf009cb3135da12a6eb1f73f3ee05392a7bc947",
+        "fetched_at": "2026-11-04T10:07:15.799415+00:00"
+      },
+      "riskAnalyst_discovery_identity_matches": true,
+      "listing_is_trading_enabled": null,
+      "executable_capacity": null,
+      "risk_score": null,
+      "live_detail_status": "exact_identity_verified",
+      "live_detail_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0014.json",
+        "sha256": "4cbd93917f993b3c61598601219222d1a2607197fb327b981724062a105376fd",
+        "requested_at": "2026-11-05T10:30:04.491596+00:00",
+        "received_at": "2026-11-05T10:30:04.587626+00:00"
+      },
+      "pt_metadata": {
+        "id": "1-0x7191878f1fe834b28f4d0cead0e4375b814c4abb",
+        "chainId": 1,
+        "address": "0x7191878f1fe834b28f4d0cead0e4375b814c4abb",
+        "symbol": "PT-trUSD-26NOV2026",
+        "decimals": 18,
+        "expiry": "2026-11-26T00:00:00.000Z",
+        "price": {
+          "usd": 0.9937433981901198
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "PT-trUSD-26NOV2026",
+        "baseType": "PT",
+        "types": [
+          "PT"
+        ],
+        "underlyingPool": "",
+        "proSymbol": "PT trUSD (trUSD)",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/67fd2c86-dccd-4c8a-a648-6672eef2327d.svg",
+        "zappable": false,
+        "simpleName": "PT trUSD (trUSD)",
+        "simpleSymbol": "PT trUSD (trUSD)",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/67fd2c86-dccd-4c8a-a648-6672eef2327d.svg",
+        "proName": "PT trUSD (trUSD)"
+      },
+      "sy_metadata": {
+        "id": "1-0xa09482f2f6cb5f2177b05144bc276d06b8b818eb",
+        "chainId": 1,
+        "address": "0xa09482f2f6cb5f2177b05144bc276d06b8b818eb",
+        "symbol": "SY-trUSD",
+        "decimals": 18,
+        "expiry": null,
+        "price": {
+          "usd": 0.99979617
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "SY-trUSD",
+        "baseType": "SY",
+        "types": [
+          "SY"
+        ],
+        "underlyingPool": "",
+        "proSymbol": "trUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5a43ae25-d014-4d85-9f23-1b640708596b.svg",
+        "zappable": false,
+        "simpleName": "trUSD",
+        "simpleSymbol": "trUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5a43ae25-d014-4d85-9f23-1b640708596b.svg",
+        "proName": "trUSD"
+      },
+      "underlying_metadata": {
+        "id": "1-0xd0580192e98ea6ceb9c7b6191ed2e27560911697",
+        "chainId": 1,
+        "address": "0xd0580192e98ea6ceb9c7b6191ed2e27560911697",
+        "symbol": "trUSD",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 0.99979617
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "trUSD",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "trUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f9c57ab0-d75f-4d37-a705-2caa60a6176c.svg",
+        "zappable": true,
+        "simpleName": "trUSD",
+        "simpleSymbol": "trUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f9c57ab0-d75f-4d37-a705-2caa60a6176c.svg",
+        "proName": "trUSD"
+      },
+      "accounting_metadata": {
+        "id": "1-0xd0580192e98ea6ceb9c7b6191ed2e27560911697",
+        "chainId": 1,
+        "address": "0xd0580192e98ea6ceb9c7b6191ed2e27560911697",
+        "symbol": "trUSD",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 0.99979617
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "trUSD",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "trUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f9c57ab0-d75f-4d37-a705-2caa60a6176c.svg",
+        "zappable": true,
+        "simpleName": "trUSD",
+        "simpleSymbol": "trUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f9c57ab0-d75f-4d37-a705-2caa60a6176c.svg",
+        "proName": "trUSD"
+      },
+      "listing_flags": {
+        "isActive": true,
+        "isWhitelistedPro": true,
+        "isWhitelistedSimple": false,
+        "isWhitelistedLimitOrder": true
+      },
+      "source_market_data_as_of": "2026-11-05T10:29:00.000Z",
+      "identity_observed_at": "2026-11-05T10:30:04.587626+00:00",
+      "onchain": {
+        "status": "exact_pt_sy_maturity_verified",
+        "block": "0x1920a0b",
+        "block_hash": "0x11cdda654caf0d395d97c7929b916fabd852997c8d45bf2c6de806841581d6f3",
+        "block_timestamp": 1793874611,
+        "chain_evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0018.json",
+          "sha256": "6a0512f524d42cd5877a981980668012ffc8157436b2e888b8e2c94df8978be5",
+          "requested_at": "2026-11-05T10:30:16.496598+00:00",
+          "received_at": "2026-11-05T10:30:16.898538+00:00"
+        },
+        "header_evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0020.json",
+          "sha256": "c79b922d1d22b86d62c8e59f5394b52ef482f48efc04ccfb3ca198711a054684",
+          "requested_at": "2026-11-05T10:30:22.499575+00:00",
+          "received_at": "2026-11-05T10:30:22.759089+00:00"
+        },
+        "reads": {
+          "market_tokens": {
+            "status": "read",
+            "value": [
+              "0xa09482f2f6cb5f2177b05144bc276d06b8b818eb",
+              "0x7191878f1fe834b28f4d0cead0e4375b814c4abb",
+              "0x1fcdb1e747419bb8d1a029c4d1f83b41e8afe8ce"
+            ],
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0024.json",
+              "sha256": "160c89153ac58f5d9c0db5961a0ff0036f2a537ac5f016e8e3d0924d3c0c8da7",
+              "requested_at": "2026-11-05T10:30:34.503701+00:00",
+              "received_at": "2026-11-05T10:30:34.748001+00:00"
+            },
+            "batch_response_id": 1
+          },
+          "pt_expiry": {
+            "status": "read",
+            "value": "1795651200",
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0024.json",
+              "sha256": "160c89153ac58f5d9c0db5961a0ff0036f2a537ac5f016e8e3d0924d3c0c8da7",
+              "requested_at": "2026-11-05T10:30:34.503701+00:00",
+              "received_at": "2026-11-05T10:30:34.748001+00:00"
+            },
+            "batch_response_id": 2
+          },
+          "sy_yieldToken": {
+            "status": "read",
+            "value": "0xd0580192e98ea6ceb9c7b6191ed2e27560911697",
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0024.json",
+              "sha256": "160c89153ac58f5d9c0db5961a0ff0036f2a537ac5f016e8e3d0924d3c0c8da7",
+              "requested_at": "2026-11-05T10:30:34.503701+00:00",
+              "received_at": "2026-11-05T10:30:34.748001+00:00"
+            },
+            "batch_response_id": 3
+          },
+          "sy_assetInfo": {
+            "status": "read",
+            "value": {
+              "asset_type": 0,
+              "address": "0xd0580192e98ea6ceb9c7b6191ed2e27560911697",
+              "decimals": 18
+            },
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0024.json",
+              "sha256": "160c89153ac58f5d9c0db5961a0ff0036f2a537ac5f016e8e3d0924d3c0c8da7",
+              "requested_at": "2026-11-05T10:30:34.503701+00:00",
+              "received_at": "2026-11-05T10:30:34.748001+00:00"
+            },
+            "batch_response_id": 4
+          },
+          "sy_tokensIn": {
+            "status": "read",
+            "value": [
+              "0xd0580192e98ea6ceb9c7b6191ed2e27560911697"
+            ],
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0024.json",
+              "sha256": "160c89153ac58f5d9c0db5961a0ff0036f2a537ac5f016e8e3d0924d3c0c8da7",
+              "requested_at": "2026-11-05T10:30:34.503701+00:00",
+              "received_at": "2026-11-05T10:30:34.748001+00:00"
+            },
+            "batch_response_id": 5
+          },
+          "sy_tokensOut": {
+            "status": "read",
+            "value": [
+              "0xd0580192e98ea6ceb9c7b6191ed2e27560911697"
+            ],
+            "block": "0x1920a0b",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0024.json",
+              "sha256": "160c89153ac58f5d9c0db5961a0ff0036f2a537ac5f016e8e3d0924d3c0c8da7",
+              "requested_at": "2026-11-05T10:30:34.503701+00:00",
+              "received_at": "2026-11-05T10:30:34.748001+00:00"
+            },
+            "batch_response_id": 6
+          }
+        }
+      },
+      "retirement_status": "not_established; expired is a time classification and does not prove deactivation, closure or absence of exposure",
+      "sy_actual_yield_token": "0xd0580192e98ea6ceb9c7b6191ed2e27560911697",
+      "sy_accounting_observation": {
+        "asset_type": 0,
+        "address": "0xd0580192e98ea6ceb9c7b6191ed2e27560911697",
+        "decimals": 18
+      },
+      "onchain_deposit_token_identities": [
+        "0xd0580192e98ea6ceb9c7b6191ed2e27560911697"
+      ],
+      "onchain_output_token_identities": [
+        "0xd0580192e98ea6ceb9c7b6191ed2e27560911697"
+      ],
+      "risk_assessment_status": "not_assigned; exact risk scope remains RiskAnalyst-owned"
+    },
+    {
+      "chain_id": 143,
+      "market_address": "0x475b98c83aedbfdd0a0abaa930ec8cb501ac93b1",
+      "family_label": "earnAUSD",
+      "is_requested_lead": false,
+      "pt": {
+        "chain_id": 143,
+        "address": "0xdaf216939826acaba0c2312f7e30a890213845cd"
+      },
+      "yt": {
+        "chain_id": 143,
+        "address": "0x4147a0c89a83faba5d401e644e110a1c5f67bd8b"
+      },
+      "sy": {
+        "chain_id": 143,
+        "address": "0xe24a28fe8ecd859db4280d1291783a10017d6fc4"
+      },
+      "directory_underlying": {
+        "chain_id": 143,
+        "address": "0x103222f020e98bba0ad9809a011fdf8e6f067496"
+      },
+      "accounting_reference": {
+        "chain_id": 143,
+        "address": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a"
+      },
+      "maturity": "2026-10-08T00:00:00+00:00",
+      "expiry_evaluated_at": "2026-11-05T10:29:49.610992+00:00",
+      "expired": true,
+      "availability": "expired_by_time_not_delisted_or_closed",
+      "directory_flags": {
+        "isActive": null,
+        "isExpired": null,
+        "isWhitelistedPro": null,
+        "isWhitelistedSimple": null
+      },
+      "directory_page_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0006.json",
+        "sha256": "ebb280b794ac3f3d0c07137ad8e7d6baa1c77e9e9560d1c325eaf8e55af4f5f8",
+        "requested_at": "2026-11-05T10:29:40.475663+00:00",
+        "received_at": "2026-11-05T10:29:40.748723+00:00"
+      },
+      "prior_inventory_identity": {
+        "id": "pendle_pt:143:0x475b98c83aedbfdd0a0abaa930ec8cb501ac93b1",
+        "fetched_at": "2026-11-04T10:06:24.368844+00:00"
+      },
+      "riskAnalyst_discovery_identity_matches": true,
+      "listing_is_trading_enabled": null,
+      "executable_capacity": null,
+      "risk_score": null,
+      "retirement_status": "not_established; expired is a time classification and does not prove deactivation, closure or absence of exposure",
+      "risk_assessment_status": "not_assigned; exact risk scope remains RiskAnalyst-owned"
+    },
+    {
+      "chain_id": 143,
+      "market_address": "0x6f99cf00ee7290ae78a072bb6910ef72d1129fe7",
+      "family_label": "AUSD",
+      "is_requested_lead": false,
+      "pt": {
+        "chain_id": 143,
+        "address": "0x9fc74f8ed616b5baf52a170caa97d6d3898602d1"
+      },
+      "yt": {
+        "chain_id": 143,
+        "address": "0xeddee9c0b56248d70a9bfdd103f8bd97c35dfd89"
+      },
+      "sy": {
+        "chain_id": 143,
+        "address": "0xba3d60f5000f472aef947fb8020a3e6319f9a0b7"
+      },
+      "directory_underlying": {
+        "chain_id": 143,
+        "address": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a"
+      },
+      "accounting_reference": {
+        "chain_id": 143,
+        "address": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a"
+      },
+      "maturity": "2026-10-08T00:00:00+00:00",
+      "expiry_evaluated_at": "2026-11-05T10:29:49.611019+00:00",
+      "expired": true,
+      "availability": "expired_by_time_not_delisted_or_closed",
+      "directory_flags": {
+        "isActive": null,
+        "isExpired": null,
+        "isWhitelistedPro": null,
+        "isWhitelistedSimple": null
+      },
+      "directory_page_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0006.json",
+        "sha256": "ebb280b794ac3f3d0c07137ad8e7d6baa1c77e9e9560d1c325eaf8e55af4f5f8",
+        "requested_at": "2026-11-05T10:29:40.475663+00:00",
+        "received_at": "2026-11-05T10:29:40.748723+00:00"
+      },
+      "prior_inventory_identity": {
+        "id": "pendle_pt:143:0x6f99cf00ee7290ae78a072bb6910ef72d1129fe7",
+        "fetched_at": "2026-11-04T10:06:24.368844+00:00"
+      },
+      "riskAnalyst_discovery_identity_matches": true,
+      "listing_is_trading_enabled": null,
+      "executable_capacity": null,
+      "risk_score": null,
+      "retirement_status": "not_established; expired is a time classification and does not prove deactivation, closure or absence of exposure",
+      "risk_assessment_status": "not_assigned; exact risk scope remains RiskAnalyst-owned"
+    },
+    {
+      "chain_id": 143,
+      "market_address": "0x9cbc42eff240ad2e43bbdc3c0562a9b4ce842a5a",
+      "family_label": "AUSD",
+      "is_requested_lead": true,
+      "pt": {
+        "chain_id": 143,
+        "address": "0x8b562578b2f9aa8c14ccda3c5d6cbcead3b06a57"
+      },
+      "yt": {
+        "chain_id": 143,
+        "address": "0x211edf350b927c6eae808a63d5f6318bac5a7e5e"
+      },
+      "sy": {
+        "chain_id": 143,
+        "address": "0xe99f124109752f8e62b4fd5c7e3c01c1bbf58b24"
+      },
+      "directory_underlying": {
+        "chain_id": 143,
+        "address": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a"
+      },
+      "accounting_reference": {
+        "chain_id": 143,
+        "address": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a"
+      },
+      "maturity": "2026-12-17T00:00:00+00:00",
+      "expiry_evaluated_at": "2026-11-05T10:29:49.611044+00:00",
+      "expired": false,
+      "availability": "unexpired_directory_listing_operational_status_unverified",
+      "directory_flags": {
+        "isActive": null,
+        "isExpired": null,
+        "isWhitelistedPro": null,
+        "isWhitelistedSimple": null
+      },
+      "directory_page_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0006.json",
+        "sha256": "ebb280b794ac3f3d0c07137ad8e7d6baa1c77e9e9560d1c325eaf8e55af4f5f8",
+        "requested_at": "2026-11-05T10:29:40.475663+00:00",
+        "received_at": "2026-11-05T10:29:40.748723+00:00"
+      },
+      "prior_inventory_identity": {
+        "id": "pendle_pt:143:0x9cbc42eff240ad2e43bbdc3c0562a9b4ce842a5a",
+        "fetched_at": "2026-11-04T10:07:27.906662+00:00"
+      },
+      "riskAnalyst_discovery_identity_matches": true,
+      "listing_is_trading_enabled": null,
+      "executable_capacity": null,
+      "risk_score": null,
+      "live_detail_status": "exact_identity_verified",
+      "live_detail_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0017.json",
+        "sha256": "7024d52c8e76a66e1b8b94e5eb775aa941b6afa20665e077502dddcec9dd45dd",
+        "requested_at": "2026-11-05T10:30:13.495616+00:00",
+        "received_at": "2026-11-05T10:30:13.658988+00:00"
+      },
+      "pt_metadata": {
+        "id": "143-0x8b562578b2f9aa8c14ccda3c5d6cbcead3b06a57",
+        "chainId": 143,
+        "address": "0x8b562578b2f9aa8c14ccda3c5d6cbcead3b06a57",
+        "symbol": "PT-AUSD-17DEC2026",
+        "decimals": 6,
+        "expiry": "2026-12-17T00:00:00.000Z",
+        "price": {
+          "usd": 0.9936853577166407
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:45.026Z",
+        "name": "PT-AUSD-17DEC2026",
+        "baseType": "PT",
+        "types": [
+          "PT"
+        ],
+        "underlyingPool": "",
+        "proSymbol": "PT AUSD (AUSD)",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/dc276caf-4aa7-4ea0-8a32-5bc60d82028f.svg",
+        "zappable": false,
+        "simpleName": "PT AUSD (AUSD)",
+        "simpleSymbol": "PT AUSD (AUSD)",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/dc276caf-4aa7-4ea0-8a32-5bc60d82028f.svg",
+        "proName": "PT AUSD (AUSD)"
+      },
+      "sy_metadata": {
+        "id": "143-0xe99f124109752f8e62b4fd5c7e3c01c1bbf58b24",
+        "chainId": 143,
+        "address": "0xe99f124109752f8e62b4fd5c7e3c01c1bbf58b24",
+        "symbol": "SY-AUSD",
+        "decimals": 6,
+        "expiry": null,
+        "price": {
+          "usd": 0.99975512
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:45.026Z",
+        "name": "SY-AUSD",
+        "baseType": "SY",
+        "types": [
+          "SY"
+        ],
+        "underlyingPool": "",
+        "proSymbol": "AUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/76f6d205-f76b-4a2a-b0d7-656802ecd8d0.svg",
+        "zappable": false,
+        "simpleName": "AUSD",
+        "simpleSymbol": "AUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/76f6d205-f76b-4a2a-b0d7-656802ecd8d0.svg",
+        "proName": "AUSD"
+      },
+      "underlying_metadata": {
+        "id": "143-0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+        "chainId": 143,
+        "address": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+        "symbol": "AUSD",
+        "decimals": 6,
+        "price": {
+          "usd": 0.99975512
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:45.026Z",
+        "name": "AUSD",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "proSymbol": "AUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5659586e-b021-49c9-a42e-9a8d8e485c63.png",
+        "zappable": true,
+        "simpleName": "AUSD",
+        "simpleSymbol": "AUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5659586e-b021-49c9-a42e-9a8d8e485c63.png",
+        "proName": "AUSD"
+      },
+      "accounting_metadata": {
+        "id": "143-0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+        "chainId": 143,
+        "address": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+        "symbol": "AUSD",
+        "decimals": 6,
+        "price": {
+          "usd": 0.99975512
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:45.026Z",
+        "name": "AUSD",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "proSymbol": "AUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5659586e-b021-49c9-a42e-9a8d8e485c63.png",
+        "zappable": true,
+        "simpleName": "AUSD",
+        "simpleSymbol": "AUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5659586e-b021-49c9-a42e-9a8d8e485c63.png",
+        "proName": "AUSD"
+      },
+      "listing_flags": {
+        "isActive": true,
+        "isWhitelistedPro": true,
+        "isWhitelistedSimple": false,
+        "isWhitelistedLimitOrder": true
+      },
+      "source_market_data_as_of": "2026-11-05T10:29:00.000Z",
+      "identity_observed_at": "2026-11-05T10:30:13.658988+00:00",
+      "onchain": {
+        "status": "exact_pt_sy_maturity_verified",
+        "block": "0x720c69c",
+        "block_hash": "0x00caa0e576f2c2e954b71ac521252641fd3e352f6028d4b55bffa295efc67485",
+        "block_timestamp": 1793874647,
+        "chain_evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0026.json",
+          "sha256": "33ebbb609bc7891d0f3f751c9b1751be7fbf1d752a4d1e22e5785a1489ce9fbc",
+          "requested_at": "2026-11-05T10:30:40.507677+00:00",
+          "received_at": "2026-11-05T10:30:40.729169+00:00"
+        },
+        "header_evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0028.json",
+          "sha256": "fc4e94a5ef7875e482b28e673c339cd496f464ce724954fd8941bb123df70b13",
+          "requested_at": "2026-11-05T10:30:46.511634+00:00",
+          "received_at": "2026-11-05T10:30:46.590896+00:00"
+        },
+        "reads": {
+          "market_tokens": {
+            "status": "read",
+            "value": [
+              "0xe99f124109752f8e62b4fd5c7e3c01c1bbf58b24",
+              "0x8b562578b2f9aa8c14ccda3c5d6cbcead3b06a57",
+              "0x211edf350b927c6eae808a63d5f6318bac5a7e5e"
+            ],
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0041.json",
+              "sha256": "4aff29c73de6b3a29148e20bfde8979f458a7da77754701152a696d494c33d66",
+              "requested_at": "2026-11-05T10:31:25.535680+00:00",
+              "received_at": "2026-11-05T10:31:25.608830+00:00"
+            }
+          },
+          "pt_expiry": {
+            "status": "read",
+            "value": "1797465600",
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0042.json",
+              "sha256": "0da708995d67c2ce065da153b4e987ad912c0853ace91a3e7f06e92e7fe4f284",
+              "requested_at": "2026-11-05T10:31:28.538770+00:00",
+              "received_at": "2026-11-05T10:31:28.628778+00:00"
+            }
+          },
+          "sy_yieldToken": {
+            "status": "read",
+            "value": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0043.json",
+              "sha256": "5bea11f755a9cb759ca409026530b9e4dadf3e721cf53a876b96ac5b05a8fdfe",
+              "requested_at": "2026-11-05T10:31:31.540998+00:00",
+              "received_at": "2026-11-05T10:31:31.618144+00:00"
+            }
+          },
+          "sy_assetInfo": {
+            "status": "read",
+            "value": {
+              "asset_type": 0,
+              "address": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+              "decimals": 6
+            },
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0044.json",
+              "sha256": "1aed0e3acfd374bebe925128c394e04ba82fd2954e5945dc5bd20d8d377eca07",
+              "requested_at": "2026-11-05T10:31:34.543699+00:00",
+              "received_at": "2026-11-05T10:31:34.638126+00:00"
+            }
+          },
+          "sy_tokensIn": {
+            "status": "read",
+            "value": [
+              "0x00000000efe302beaa2b3e6e1b18d08d69a9012a"
+            ],
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0045.json",
+              "sha256": "feb59fb5fd47513dba0a8d2db89d8cbbd23199cc037025503b71294034464dab",
+              "requested_at": "2026-11-05T10:31:37.546733+00:00",
+              "received_at": "2026-11-05T10:31:37.648400+00:00"
+            }
+          },
+          "sy_tokensOut": {
+            "status": "read",
+            "value": [
+              "0x00000000efe302beaa2b3e6e1b18d08d69a9012a"
+            ],
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0046.json",
+              "sha256": "554c6e2356400ab2243c0c34171ea9001926ec8d380f838065659b0754e53c04",
+              "requested_at": "2026-11-05T10:31:40.547543+00:00",
+              "received_at": "2026-11-05T10:31:40.658435+00:00"
+            }
+          }
+        }
+      },
+      "retirement_status": "not_established; expired is a time classification and does not prove deactivation, closure or absence of exposure",
+      "sy_actual_yield_token": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+      "sy_accounting_observation": {
+        "asset_type": 0,
+        "address": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+        "decimals": 6
+      },
+      "onchain_deposit_token_identities": [
+        "0x00000000efe302beaa2b3e6e1b18d08d69a9012a"
+      ],
+      "onchain_output_token_identities": [
+        "0x00000000efe302beaa2b3e6e1b18d08d69a9012a"
+      ],
+      "risk_assessment_status": "not_assigned; exact risk scope remains RiskAnalyst-owned"
+    },
+    {
+      "chain_id": 143,
+      "market_address": "0xa9983573da171b910ba48dd5372a0ad60f737096",
+      "family_label": "strUSD",
+      "is_requested_lead": true,
+      "pt": {
+        "chain_id": 143,
+        "address": "0x49a27506a607658956afb03ecbbf803a7075ea83"
+      },
+      "yt": {
+        "chain_id": 143,
+        "address": "0x5dc15e884c80692a2d79becc7edcc380ca466ccf"
+      },
+      "sy": {
+        "chain_id": 143,
+        "address": "0xeb9bfd1c1acfef4f9b4c4630dc1f373631073ef0"
+      },
+      "directory_underlying": {
+        "chain_id": 143,
+        "address": "0x53176cadd446700fa6b89f840357ac586d7e33db"
+      },
+      "accounting_reference": {
+        "chain_id": 143,
+        "address": "0x770a579ea200784723b31b8668b0773ba80393c9"
+      },
+      "maturity": "2027-02-04T00:00:00+00:00",
+      "expiry_evaluated_at": "2026-11-05T10:29:49.611065+00:00",
+      "expired": false,
+      "availability": "unexpired_directory_listing_operational_status_unverified",
+      "directory_flags": {
+        "isActive": null,
+        "isExpired": null,
+        "isWhitelistedPro": null,
+        "isWhitelistedSimple": null
+      },
+      "directory_page_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0006.json",
+        "sha256": "ebb280b794ac3f3d0c07137ad8e7d6baa1c77e9e9560d1c325eaf8e55af4f5f8",
+        "requested_at": "2026-11-05T10:29:40.475663+00:00",
+        "received_at": "2026-11-05T10:29:40.748723+00:00"
+      },
+      "prior_inventory_identity": {
+        "id": "pendle_pt:143:0xa9983573da171b910ba48dd5372a0ad60f737096",
+        "fetched_at": "2026-11-04T10:07:29.047775+00:00"
+      },
+      "riskAnalyst_discovery_identity_matches": true,
+      "listing_is_trading_enabled": null,
+      "executable_capacity": null,
+      "risk_score": null,
+      "live_detail_status": "exact_identity_verified",
+      "live_detail_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0016.json",
+        "sha256": "d885079a9b7467737a3ea458d95f6b03dbd5834fe9f6c74a376a077d1422c76d",
+        "requested_at": "2026-11-05T10:30:10.495559+00:00",
+        "received_at": "2026-11-05T10:30:10.601079+00:00"
+      },
+      "pt_metadata": {
+        "id": "143-0x49a27506a607658956afb03ecbbf803a7075ea83",
+        "chainId": 143,
+        "address": "0x49a27506a607658956afb03ecbbf803a7075ea83",
+        "symbol": "PT-strUSD-4FEB2027",
+        "decimals": 18,
+        "expiry": "2027-02-04T00:00:00.000Z",
+        "price": {
+          "usd": 0.9732598642806305
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:45.026Z",
+        "name": "PT-strUSD-4FEB2027",
+        "baseType": "PT",
+        "types": [
+          "PT"
+        ],
+        "underlyingPool": "",
+        "proSymbol": "PT strUSD (trUSD)",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/d8d89aaf-7eb5-4e61-883d-67611c045525.svg",
+        "zappable": false,
+        "simpleName": "PT strUSD (trUSD)",
+        "simpleSymbol": "PT strUSD (trUSD)",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/d8d89aaf-7eb5-4e61-883d-67611c045525.svg",
+        "proName": "PT strUSD (trUSD)"
+      },
+      "sy_metadata": {
+        "id": "143-0xeb9bfd1c1acfef4f9b4c4630dc1f373631073ef0",
+        "chainId": 143,
+        "address": "0xeb9bfd1c1acfef4f9b4c4630dc1f373631073ef0",
+        "symbol": "SY-strUSD",
+        "decimals": 18,
+        "expiry": null,
+        "price": {
+          "usd": 1.0364271090125068
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:45.026Z",
+        "name": "SY-strUSD",
+        "baseType": "SY",
+        "types": [
+          "SY"
+        ],
+        "underlyingPool": "",
+        "proSymbol": "strUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/116b1b02-736f-4290-ab33-a6986a1e0fc2.svg",
+        "zappable": false,
+        "simpleName": "strUSD",
+        "simpleSymbol": "strUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/116b1b02-736f-4290-ab33-a6986a1e0fc2.svg",
+        "proName": "strUSD"
+      },
+      "underlying_metadata": {
+        "id": "143-0x53176cadd446700fa6b89f840357ac586d7e33db",
+        "chainId": 143,
+        "address": "0x53176cadd446700fa6b89f840357ac586d7e33db",
+        "symbol": "strUSD-scaled18",
+        "decimals": 18,
+        "expiry": null,
+        "price": {
+          "usd": 1.0364271090125068
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:45.026Z",
+        "name": "strUSD-scaled18",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "strUSD-scaled18",
+        "proIcon": "https://storage.googleapis.com/pendle-assets-staging/images/assets/unknown.svg",
+        "zappable": false,
+        "simpleName": "strUSD-scaled18",
+        "simpleSymbol": "strUSD-scaled18",
+        "simpleIcon": "https://storage.googleapis.com/pendle-assets-staging/images/assets/unknown.svg",
+        "proName": "strUSD-scaled18"
+      },
+      "accounting_metadata": {
+        "id": "143-0x770a579ea200784723b31b8668b0773ba80393c9",
+        "chainId": 143,
+        "address": "0x770a579ea200784723b31b8668b0773ba80393c9",
+        "symbol": "trUSD",
+        "decimals": 18,
+        "expiry": null,
+        "price": {
+          "usd": 0.99979432
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:45.026Z",
+        "name": "trUSD",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "proSymbol": "trUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f9c57ab0-d75f-4d37-a705-2caa60a6176c.svg",
+        "zappable": true,
+        "simpleName": "trUSD",
+        "simpleSymbol": "trUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f9c57ab0-d75f-4d37-a705-2caa60a6176c.svg",
+        "proName": "trUSD"
+      },
+      "listing_flags": {
+        "isActive": true,
+        "isWhitelistedPro": true,
+        "isWhitelistedSimple": false,
+        "isWhitelistedLimitOrder": true
+      },
+      "source_market_data_as_of": "2026-11-05T10:29:00.000Z",
+      "identity_observed_at": "2026-11-05T10:30:10.601079+00:00",
+      "onchain": {
+        "status": "exact_pt_sy_maturity_verified",
+        "block": "0x720c69c",
+        "block_hash": "0x00caa0e576f2c2e954b71ac521252641fd3e352f6028d4b55bffa295efc67485",
+        "block_timestamp": 1793874647,
+        "chain_evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0026.json",
+          "sha256": "33ebbb609bc7891d0f3f751c9b1751be7fbf1d752a4d1e22e5785a1489ce9fbc",
+          "requested_at": "2026-11-05T10:30:40.507677+00:00",
+          "received_at": "2026-11-05T10:30:40.729169+00:00"
+        },
+        "header_evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0028.json",
+          "sha256": "fc4e94a5ef7875e482b28e673c339cd496f464ce724954fd8941bb123df70b13",
+          "requested_at": "2026-11-05T10:30:46.511634+00:00",
+          "received_at": "2026-11-05T10:30:46.590896+00:00"
+        },
+        "reads": {
+          "market_tokens": {
+            "status": "read",
+            "value": [
+              "0xeb9bfd1c1acfef4f9b4c4630dc1f373631073ef0",
+              "0x49a27506a607658956afb03ecbbf803a7075ea83",
+              "0x5dc15e884c80692a2d79becc7edcc380ca466ccf"
+            ],
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0035.json",
+              "sha256": "82e721a46c8ad66443e7de64d48ec0093f6c752446d62c83ac4f09653e4ceead",
+              "requested_at": "2026-11-05T10:31:07.524136+00:00",
+              "received_at": "2026-11-05T10:31:07.608023+00:00"
+            }
+          },
+          "pt_expiry": {
+            "status": "read",
+            "value": "1801699200",
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0036.json",
+              "sha256": "ce93f5509bc72f2068b9559a846fe4e4bf9b42254c7aefcf21d768512bd700c6",
+              "requested_at": "2026-11-05T10:31:10.527104+00:00",
+              "received_at": "2026-11-05T10:31:10.596776+00:00"
+            }
+          },
+          "sy_yieldToken": {
+            "status": "read",
+            "value": "0x53176cadd446700fa6b89f840357ac586d7e33db",
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0037.json",
+              "sha256": "75f46fc8a8c4fe8c48dbfa822c29496642a8a56b9de0222b7995c158930ad2a4",
+              "requested_at": "2026-11-05T10:31:13.527674+00:00",
+              "received_at": "2026-11-05T10:31:13.598125+00:00"
+            }
+          },
+          "sy_assetInfo": {
+            "status": "read",
+            "value": {
+              "asset_type": 0,
+              "address": "0x770a579ea200784723b31b8668b0773ba80393c9",
+              "decimals": 18
+            },
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0038.json",
+              "sha256": "61574b9bbf9a037422d25a09540530fa947d36fe2b63767e71178b01fbb35fa4",
+              "requested_at": "2026-11-05T10:31:16.530638+00:00",
+              "received_at": "2026-11-05T10:31:16.618556+00:00"
+            }
+          },
+          "sy_tokensIn": {
+            "status": "read",
+            "value": [
+              "0x683fb58ee77172626d5b49087ddac71ef7825d20"
+            ],
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0039.json",
+              "sha256": "736e644c712a40991a16bc5ce81011950688ef68d60441382d56ecf6fc91fb91",
+              "requested_at": "2026-11-05T10:31:19.531690+00:00",
+              "received_at": "2026-11-05T10:31:19.608056+00:00"
+            }
+          },
+          "sy_tokensOut": {
+            "status": "read",
+            "value": [
+              "0x683fb58ee77172626d5b49087ddac71ef7825d20"
+            ],
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0040.json",
+              "sha256": "affe465cc9b03a0572a480bd983b856f56ca6381cd2f6a9527398489530ce8b3",
+              "requested_at": "2026-11-05T10:31:22.534613+00:00",
+              "received_at": "2026-11-05T10:31:22.637753+00:00"
+            }
+          }
+        }
+      },
+      "retirement_status": "not_established; expired is a time classification and does not prove deactivation, closure or absence of exposure",
+      "sy_actual_yield_token": "0x53176cadd446700fa6b89f840357ac586d7e33db",
+      "sy_accounting_observation": {
+        "asset_type": 0,
+        "address": "0x770a579ea200784723b31b8668b0773ba80393c9",
+        "decimals": 18
+      },
+      "onchain_deposit_token_identities": [
+        "0x683fb58ee77172626d5b49087ddac71ef7825d20"
+      ],
+      "onchain_output_token_identities": [
+        "0x683fb58ee77172626d5b49087ddac71ef7825d20"
+      ],
+      "risk_assessment_status": "not_assigned; exact risk scope remains RiskAnalyst-owned"
+    },
+    {
+      "chain_id": 143,
+      "market_address": "0xdc66fcf20d4e8780ea9eda19d832345a2af69c42",
+      "family_label": "earnAUSD",
+      "is_requested_lead": true,
+      "pt": {
+        "chain_id": 143,
+        "address": "0xa8c8e7fdf0457442eb19bced060017f6998b250f"
+      },
+      "yt": {
+        "chain_id": 143,
+        "address": "0xddb70adb30e61f6c4d36ce70d5a3e3c13d39136f"
+      },
+      "sy": {
+        "chain_id": 143,
+        "address": "0x05938d5d7b7243a27d88b83272ab36f2034168f4"
+      },
+      "directory_underlying": {
+        "chain_id": 143,
+        "address": "0x103222f020e98bba0ad9809a011fdf8e6f067496"
+      },
+      "accounting_reference": {
+        "chain_id": 143,
+        "address": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a"
+      },
+      "maturity": "2027-01-28T00:00:00+00:00",
+      "expiry_evaluated_at": "2026-11-05T10:29:49.611087+00:00",
+      "expired": false,
+      "availability": "unexpired_directory_listing_operational_status_unverified",
+      "directory_flags": {
+        "isActive": null,
+        "isExpired": null,
+        "isWhitelistedPro": null,
+        "isWhitelistedSimple": null
+      },
+      "directory_page_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0006.json",
+        "sha256": "ebb280b794ac3f3d0c07137ad8e7d6baa1c77e9e9560d1c325eaf8e55af4f5f8",
+        "requested_at": "2026-11-05T10:29:40.475663+00:00",
+        "received_at": "2026-11-05T10:29:40.748723+00:00"
+      },
+      "prior_inventory_identity": {
+        "id": "pendle_pt:143:0xdc66fcf20d4e8780ea9eda19d832345a2af69c42",
+        "fetched_at": "2026-11-04T10:07:31.057524+00:00"
+      },
+      "riskAnalyst_discovery_identity_matches": true,
+      "listing_is_trading_enabled": null,
+      "executable_capacity": null,
+      "risk_score": null,
+      "live_detail_status": "exact_identity_verified",
+      "live_detail_evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0010.json",
+        "sha256": "2931dea910bc0f3e546408eee6937f851019817a3e860b0eac4f446452d8e874",
+        "requested_at": "2026-11-05T10:29:52.483686+00:00",
+        "received_at": "2026-11-05T10:29:52.588326+00:00"
+      },
+      "pt_metadata": {
+        "id": "143-0xa8c8e7fdf0457442eb19bced060017f6998b250f",
+        "chainId": 143,
+        "address": "0xa8c8e7fdf0457442eb19bced060017f6998b250f",
+        "symbol": "PT-earnAUSD-28JAN2027",
+        "decimals": 6,
+        "expiry": "2027-01-28T00:00:00.000Z",
+        "price": {
+          "usd": 0.9835757265434469
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "PT-earnAUSD-28JAN2027",
+        "baseType": "PT",
+        "types": [
+          "PT"
+        ],
+        "underlyingPool": "",
+        "proSymbol": "PT earnAUSD (AUSD)",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/409eeb72-990c-4eb4-b990-ae94a2423d08.svg",
+        "zappable": false,
+        "simpleName": "PT earnAUSD (AUSD)",
+        "simpleSymbol": "PT earnAUSD (AUSD)",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/409eeb72-990c-4eb4-b990-ae94a2423d08.svg",
+        "proName": "PT earnAUSD (AUSD)"
+      },
+      "sy_metadata": {
+        "id": "143-0x05938d5d7b7243a27d88b83272ab36f2034168f4",
+        "chainId": 143,
+        "address": "0x05938d5d7b7243a27d88b83272ab36f2034168f4",
+        "symbol": "SY-earnAUSD",
+        "decimals": 6,
+        "expiry": null,
+        "price": {
+          "usd": 1.05088859536752
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "SY-earnAUSD",
+        "baseType": "SY",
+        "types": [
+          "SY"
+        ],
+        "underlyingPool": "",
+        "proSymbol": "earnAUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/79d66825-3644-42d0-85d9-ab509c35f248.svg",
+        "zappable": false,
+        "simpleName": "earnAUSD",
+        "simpleSymbol": "earnAUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/79d66825-3644-42d0-85d9-ab509c35f248.svg",
+        "proName": "earnAUSD"
+      },
+      "underlying_metadata": {
+        "id": "143-0x103222f020e98bba0ad9809a011fdf8e6f067496",
+        "chainId": 143,
+        "address": "0x103222f020e98bba0ad9809a011fdf8e6f067496",
+        "symbol": "earnAUSD",
+        "decimals": 6,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 1.05088859536752
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "earnAUSD",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "earnAUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/c963db4e-ca3c-4c55-bccf-e059d0002f5c.svg",
+        "zappable": true,
+        "simpleName": "earnAUSD",
+        "simpleSymbol": "earnAUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/c963db4e-ca3c-4c55-bccf-e059d0002f5c.svg",
+        "proName": "earnAUSD"
+      },
+      "accounting_metadata": {
+        "id": "143-0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+        "chainId": 143,
+        "address": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+        "symbol": "AUSD",
+        "decimals": 6,
+        "price": {
+          "usd": 0.99975512
+        },
+        "priceUpdatedAt": "2026-11-05T10:29:30.104Z",
+        "name": "AUSD",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "proSymbol": "AUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5659586e-b021-49c9-a42e-9a8d8e485c63.png",
+        "zappable": true,
+        "simpleName": "AUSD",
+        "simpleSymbol": "AUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/5659586e-b021-49c9-a42e-9a8d8e485c63.png",
+        "proName": "AUSD"
+      },
+      "listing_flags": {
+        "isActive": true,
+        "isWhitelistedPro": true,
+        "isWhitelistedSimple": false,
+        "isWhitelistedLimitOrder": true
+      },
+      "source_market_data_as_of": "2026-11-05T10:26:00.000Z",
+      "identity_observed_at": "2026-11-05T10:29:52.588326+00:00",
+      "onchain": {
+        "status": "exact_pt_sy_maturity_verified",
+        "block": "0x720c69c",
+        "block_hash": "0x00caa0e576f2c2e954b71ac521252641fd3e352f6028d4b55bffa295efc67485",
+        "block_timestamp": 1793874647,
+        "chain_evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0026.json",
+          "sha256": "33ebbb609bc7891d0f3f751c9b1751be7fbf1d752a4d1e22e5785a1489ce9fbc",
+          "requested_at": "2026-11-05T10:30:40.507677+00:00",
+          "received_at": "2026-11-05T10:30:40.729169+00:00"
+        },
+        "header_evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0028.json",
+          "sha256": "fc4e94a5ef7875e482b28e673c339cd496f464ce724954fd8941bb123df70b13",
+          "requested_at": "2026-11-05T10:30:46.511634+00:00",
+          "received_at": "2026-11-05T10:30:46.590896+00:00"
+        },
+        "reads": {
+          "market_tokens": {
+            "status": "read",
+            "value": [
+              "0x05938d5d7b7243a27d88b83272ab36f2034168f4",
+              "0xa8c8e7fdf0457442eb19bced060017f6998b250f",
+              "0xddb70adb30e61f6c4d36ce70d5a3e3c13d39136f"
+            ],
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0029.json",
+              "sha256": "0e9713d35e6d4ece5f22595f8df6d3ea88bca950a713df7ad265dfa6b7510292",
+              "requested_at": "2026-11-05T10:30:49.513777+00:00",
+              "received_at": "2026-11-05T10:30:49.600158+00:00"
+            }
+          },
+          "pt_expiry": {
+            "status": "read",
+            "value": "1801094400",
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0030.json",
+              "sha256": "fde74a7d1447bb1e498fbaeee37e4b5ac54d5acc9d8379b37f1f8c0b688f7cba",
+              "requested_at": "2026-11-05T10:30:52.515718+00:00",
+              "received_at": "2026-11-05T10:30:52.597375+00:00"
+            }
+          },
+          "sy_yieldToken": {
+            "status": "read",
+            "value": "0x103222f020e98bba0ad9809a011fdf8e6f067496",
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0031.json",
+              "sha256": "014ed0a5e09e625850c2dc1d842d0955e61b23d27ca5096247381ec13d163ad8",
+              "requested_at": "2026-11-05T10:30:55.516731+00:00",
+              "received_at": "2026-11-05T10:30:55.598710+00:00"
+            }
+          },
+          "sy_assetInfo": {
+            "status": "read",
+            "value": {
+              "asset_type": 0,
+              "address": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+              "decimals": 6
+            },
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0032.json",
+              "sha256": "7192d44cb834ef11caac5ce7727def3aeaad4d5a57f894d65be2026bfb91a070",
+              "requested_at": "2026-11-05T10:30:58.519642+00:00",
+              "received_at": "2026-11-05T10:30:58.596148+00:00"
+            }
+          },
+          "sy_tokensIn": {
+            "status": "read",
+            "value": [
+              "0x103222f020e98bba0ad9809a011fdf8e6f067496",
+              "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+              "0x754704bc059f8c67012fed69bc8a327a5aafb603"
+            ],
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0033.json",
+              "sha256": "d15e677a374b59d882446d3359bd18865ecdb60d1a3d947c326dd782fa8d5974",
+              "requested_at": "2026-11-05T10:31:01.522714+00:00",
+              "received_at": "2026-11-05T10:31:01.608239+00:00"
+            }
+          },
+          "sy_tokensOut": {
+            "status": "read",
+            "value": [
+              "0x103222f020e98bba0ad9809a011fdf8e6f067496",
+              "0x00000000efe302beaa2b3e6e1b18d08d69a9012a"
+            ],
+            "block": "0x720c69c",
+            "evidence": {
+              "path": "data/research/pt-screening-availability-2026-11-05/raw/0034.json",
+              "sha256": "b10d4edb59bc7b8b782b40798e897484d5f508fd752a04841400756c39e6a3c6",
+              "requested_at": "2026-11-05T10:31:04.523531+00:00",
+              "received_at": "2026-11-05T10:31:04.599235+00:00"
+            }
+          }
+        }
+      },
+      "retirement_status": "not_established; expired is a time classification and does not prove deactivation, closure or absence of exposure",
+      "sy_actual_yield_token": "0x103222f020e98bba0ad9809a011fdf8e6f067496",
+      "sy_accounting_observation": {
+        "asset_type": 0,
+        "address": "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+        "decimals": 6
+      },
+      "onchain_deposit_token_identities": [
+        "0x103222f020e98bba0ad9809a011fdf8e6f067496",
+        "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+        "0x754704bc059f8c67012fed69bc8a327a5aafb603"
+      ],
+      "onchain_output_token_identities": [
+        "0x103222f020e98bba0ad9809a011fdf8e6f067496",
+        "0x00000000efe302beaa2b3e6e1b18d08d69a9012a"
+      ],
+      "risk_assessment_status": "not_assigned; exact risk scope remains RiskAnalyst-owned"
+    }
+  ],
+  "missing_requested_leads": [],
+  "monad_strusd_identity_resolution": {
+    "scope": "Monad strUSD metadata identity only; no execution/redemption route simulation",
+    "directory_reference": "0x53176cadd446700fa6b89f840357ac586d7e33db",
+    "canonical_documented_strUSD": "0x683fb58ee77172626d5b49087ddac71ef7825d20",
+    "block": "0x720c69c",
+    "reads": {
+      "0x53176cadd446700fa6b89f840357ac586d7e33db": {
+        "code_present": true,
+        "evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0047.json",
+          "sha256": "ac78b5843d14ba30157cd8e0536b2cda69fce871c9e3af83c367a64a9ad4c02d",
+          "requested_at": "2026-11-05T10:31:43.547637+00:00",
+          "received_at": "2026-11-05T10:31:43.627900+00:00"
+        },
+        "error": null
+      },
+      "0x683fb58ee77172626d5b49087ddac71ef7825d20": {
+        "code_present": true,
+        "evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/raw/0048.json",
+          "sha256": "4c98a40ba35d0b65d2ecd2f1008236652d799731e285e4df17280d075d456e63",
+          "requested_at": "2026-11-05T10:31:46.550701+00:00",
+          "received_at": "2026-11-05T10:31:46.650055+00:00"
+        },
+        "error": null
+      }
+    },
+    "sy_yieldToken": {
+      "status": "read",
+      "value": "0x53176cadd446700fa6b89f840357ac586d7e33db",
+      "block": "0x720c69c",
+      "evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0037.json",
+        "sha256": "75f46fc8a8c4fe8c48dbfa822c29496642a8a56b9de0222b7995c158930ad2a4",
+        "requested_at": "2026-11-05T10:31:13.527674+00:00",
+        "received_at": "2026-11-05T10:31:13.598125+00:00"
+      }
+    },
+    "sy_tokensIn": {
+      "status": "read",
+      "value": [
+        "0x683fb58ee77172626d5b49087ddac71ef7825d20"
+      ],
+      "block": "0x720c69c",
+      "evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0039.json",
+        "sha256": "736e644c712a40991a16bc5ce81011950688ef68d60441382d56ecf6fc91fb91",
+        "requested_at": "2026-11-05T10:31:19.531690+00:00",
+        "received_at": "2026-11-05T10:31:19.608056+00:00"
+      }
+    },
+    "sy_tokensOut": {
+      "status": "read",
+      "value": [
+        "0x683fb58ee77172626d5b49087ddac71ef7825d20"
+      ],
+      "block": "0x720c69c",
+      "evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0040.json",
+        "sha256": "affe465cc9b03a0572a480bd983b856f56ca6381cd2f6a9527398489530ce8b3",
+        "requested_at": "2026-11-05T10:31:22.534613+00:00",
+        "received_at": "2026-11-05T10:31:22.637753+00:00"
+      }
+    },
+    "canonical_decimals": {
+      "status": "read",
+      "value": "18",
+      "block": "0x720c69c",
+      "evidence": {
+        "path": "data/research/pt-screening-availability-2026-11-05/raw/0049.json",
+        "sha256": "cf092aaa250e612a31211eaf6390295735ac35a73e6c42939ac18d058ec403ff",
+        "requested_at": "2026-11-05T10:31:49.551639+00:00",
+        "received_at": "2026-11-05T10:31:49.639008+00:00"
+      }
+    },
+    "status": "resolved_deployed_decimals_wrapper",
+    "finding": "The directory underlying is a deployed strUSD decimals wrapper, not the documented base token. Its rawToken() identifies the exact documented Monad strUSD. The SY yieldToken is the wrapper, while accepted deposit/output token identities are the documented base strUSD. Keep the wrapper, base token and trUSD accounting reference distinct; no Ethereum or parent grade is inherited.",
+    "boundary": "Identity only; no deposit/redeem simulation, sized quote, bridge route, backing verification or risk assessment.",
+    "wrapper_identity_getters": {
+      "rawToken()": {
+        "signature": "rawToken()",
+        "evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/strusd-wrapper-raw/0001.json",
+          "sha256": "062da5bef4eeab0e8823f6a83e21bb9ff79239975950b2cd380eee64eb12ef27",
+          "requested_at": "2026-11-05T10:33:28.266074+00:00",
+          "received_at": "2026-11-05T10:33:28.417981+00:00"
+        },
+        "block": "0x720c69c",
+        "status": "read",
+        "raw_result": "0x000000000000000000000000683fb58ee77172626d5b49087ddac71ef7825d20",
+        "value": "0x683fb58ee77172626d5b49087ddac71ef7825d20"
+      },
+      "rawDecimals()": {
+        "signature": "rawDecimals()",
+        "evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/strusd-wrapper-raw/0002.json",
+          "sha256": "810ebd80b6a54ef2bfde8f5c20999a495179cfbaa01a547a909ce8ae77fd1a9a",
+          "requested_at": "2026-11-05T10:33:31.267696+00:00",
+          "received_at": "2026-11-05T10:33:31.351036+00:00"
+        },
+        "block": "0x720c69c",
+        "status": "read",
+        "raw_result": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value": "18"
+      },
+      "decimals()": {
+        "signature": "decimals()",
+        "evidence": {
+          "path": "data/research/pt-screening-availability-2026-11-05/strusd-wrapper-raw/0003.json",
+          "sha256": "81584498f7f5e05c2c18c6c124d53ce6e4e0063bef5785d3f3fd304af7a2c255",
+          "requested_at": "2026-11-05T10:33:34.270662+00:00",
+          "received_at": "2026-11-05T10:33:34.357011+00:00"
+        },
+        "block": "0x720c69c",
+        "status": "read",
+        "raw_result": "0x0000000000000000000000000000000000000000000000000000000000000012",
+        "value": "18"
+      }
+    }
+  },
+  "generated_at": "2026-11-05T10:31:49.639370+00:00",
+  "summary": {
+    "directory_entries": 836,
+    "directory_pages": 9,
+    "related_family_markets": 14,
+    "requested_leads": 8,
+    "missing_leads": 0,
+    "lead_live_details_verified": 8,
+    "lead_onchain_verified": 8,
+    "related_expired": 6
+  },
+  "tori_official_registry": {
+    "url": "https://docs.tori.finance/resources/contracts",
+    "requested_at": "2026-11-05T10:29:39.728667+00:00",
+    "received_at": "2026-11-05T10:29:40.268830+00:00",
+    "path": "data/research/pt-screening-availability-2026-11-05/tori-official-registry.html",
+    "sha256": "063395c99caa2fd9760d5f3999c764810c248588bb607fe82e73ddc1cde0d0a5",
+    "status": 200,
+    "document_contains": {
+      "0x683fb58ee77172626d5b49087ddac71ef7825d20": true,
+      "0x770a579ea200784723b31b8668b0773ba80393c9": true
+    }
+  },
+  "coordination": {
+    "handoffs": [
+      "/home/danger/riskAnalyst/specs/handoffs/pt-screening-availability-pendletracker-2026-11-05.md",
+      "/home/danger/riskAnalyst/specs/handoffs/pt-underlying-screening-owners-2026-11-05.md"
+    ],
+    "delivery_status": "send_message_to_thread accepted for all three recipients",
+    "recipients": {
+      "DeFiAnalyst": "01a19cd3-e479-7971-bd80-831993516a2c",
+      "BM": "01a19a30-50e1-7bb0-b3cf-6bb2481f3835",
+      "SecurityAnalyst": "01a1911f-0fce-7a73-a48c-00879f9cd0f9"
+    },
+    "scope": "Underlying/wrapper screening only; no routes/quotes/simulations/jobs/publication; no inherited grades. PendleTracker owns mapping and availability.",
+    "mapping_handback_delivery_status": "Follow-up result paths and resolved Monad strUSD wrapper identity accepted by send_message_to_thread for all three recipients."
+  },
+  "validation": {
+    "validated_at": "2026-11-05T10:35:58.952635+00:00",
+    "hash_references_checked": 109,
+    "no_routes_or_quotes_requested": true,
+    "risk_scores_assigned": false,
+    "exact_requested_lead_count": 8
+  },
+  "wrapper_source_references": [
+    {
+      "url": "https://raw.githubusercontent.com/pendle-finance/Pendle-SY-Public/73676d931102a369a978a713abfd0b48e3e34361/contracts/interfaces/IPDecimalsWrapper.sol",
+      "path": "data/research/pt-screening-availability-2026-11-05/IPDecimalsWrapper.sol",
+      "sha256": "8c2b58a1661f668b85f55a112c0d7c58dbe1d6e64b36a537d102c5dc4c9eb7c7",
+      "scope": "Official wrapper interface/source reference; no independent build/runtime/audit equivalence claim"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pendle-finance/Pendle-SY-Public/73676d931102a369a978a713abfd0b48e3e34361/contracts/core/misc/PendleDecimalsWrapper.sol",
+      "path": "data/research/pt-screening-availability-2026-11-05/PendleDecimalsWrapper.sol",
+      "sha256": "a0b2c8cdcd7c2bff302bee3597717750c34a691f17b4984215b710979fa7725a",
+      "scope": "Official wrapper interface/source reference; no independent build/runtime/audit equivalence claim"
+    }
+  ]
+}

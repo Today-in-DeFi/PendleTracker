@@ -1,0 +1,64 @@
+{
+  "requested_at": "2026-11-04T14:20:17.363659+00:00",
+  "method": "POST",
+  "url": "https://arb1.arbitrum.io/rpc",
+  "params": null,
+  "body": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0a1a1a107e45b7ced86833863f482bc5f4ed82ef",
+          "data": "0x313ce567"
+        },
+        "0x1f10d229"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x46850ad61c2b7d64d08c9c754f45254596696984",
+          "data": "0x313ce567"
+        },
+        "0x1f10d229"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xfaf260b16d3fa1609c74799089ad3cedfcd703fc",
+          "data": "0x313ce567"
+        },
+        "0x1f10d229"
+      ]
+    }
+  ],
+  "received_at": "2026-11-04T14:20:17.678668+00:00",
+  "http_status": 200,
+  "rate_headers": {},
+  "response": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000012"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000006"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "result": "0x0000000000000000000000000000000000000000000000000000000000000012"
+    }
+  ]
+}

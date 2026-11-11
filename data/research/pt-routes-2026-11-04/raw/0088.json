@@ -1,0 +1,404 @@
+{
+  "requested_at": "2026-11-04T14:12:49.109562+00:00",
+  "method": "GET",
+  "url": "https://api-v2.pendle.finance/core/v1/1/markets/0x16d3126ee82ee36816499fb9db6f647c6addd09c",
+  "params": null,
+  "body": null,
+  "received_at": "2026-11-04T14:12:49.207415+00:00",
+  "http_status": 200,
+  "rate_headers": {
+    "x-computing-unit": "1",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "147",
+    "x-ratelimit-reset": "1793801580",
+    "x-ratelimit-weekly-limit": "200000",
+    "x-ratelimit-weekly-remaining": "191419",
+    "x-ratelimit-weekly-reset": "1793836800"
+  },
+  "response": {
+    "id": "1-0x16d3126ee82ee36816499fb9db6f647c6addd09c",
+    "chainId": 1,
+    "address": "0x16d3126ee82ee36816499fb9db6f647c6addd09c",
+    "symbol": "PENDLE-LPT",
+    "expiry": "2027-07-22T00:00:00.000Z",
+    "pt": {
+      "id": "1-0x6a0efc272e8dd4fc5affea17376dcf107cbcbc0f",
+      "chainId": 1,
+      "address": "0x6a0efc272e8dd4fc5affea17376dcf107cbcbc0f",
+      "symbol": "PT-sUSN-22JUL2027",
+      "decimals": 18,
+      "expiry": "2027-07-22T00:00:00.000Z",
+      "price": {
+        "usd": 0.9414622269015592
+      },
+      "priceUpdatedAt": "2026-11-04T14:12:30.026Z",
+      "name": "PT-sUSN-22JUL2027",
+      "baseType": "PT",
+      "types": [
+        "PT"
+      ],
+      "proSymbol": "PT sUSN (USN)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/2bd3ee12-e852-4b68-b178-bf643cf1e7b7.svg",
+      "zappable": false,
+      "simpleName": "PT sUSN (USN)",
+      "simpleSymbol": "PT sUSN (USN)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/2bd3ee12-e852-4b68-b178-bf643cf1e7b7.svg",
+      "proName": "PT sUSN (USN)"
+    },
+    "yt": {
+      "id": "1-0xdfaacdd9035febaba7e582f660da3c43fb85e292",
+      "chainId": 1,
+      "address": "0xdfaacdd9035febaba7e582f660da3c43fb85e292",
+      "symbol": "YT-sUSN-22JUL2027",
+      "decimals": 18,
+      "expiry": "2027-07-22T00:00:00.000Z",
+      "price": {
+        "usd": 0.05690138783679946
+      },
+      "priceUpdatedAt": "2026-11-04T14:12:30.026Z",
+      "name": "YT-sUSN-22JUL2027",
+      "baseType": "YT",
+      "types": [
+        "YT"
+      ],
+      "proSymbol": "YT sUSN (USN)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/2dd9746f-a869-4841-a28d-b13494983053.svg",
+      "zappable": false,
+      "simpleName": "YT sUSN (USN)",
+      "simpleSymbol": "YT sUSN (USN)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/2dd9746f-a869-4841-a28d-b13494983053.svg",
+      "proName": "YT sUSN (USN)"
+    },
+    "sy": {
+      "id": "1-0xa0a2c8c94bf30227f84af6e054025945a51d0eff",
+      "chainId": 1,
+      "address": "0xa0a2c8c94bf30227f84af6e054025945a51d0eff",
+      "symbol": "SY-sUSN",
+      "decimals": 18,
+      "expiry": null,
+      "price": {
+        "usd": 1.2323235865426627
+      },
+      "priceUpdatedAt": "2026-11-04T14:12:30.026Z",
+      "name": "SY-sUSN",
+      "baseType": "SY",
+      "types": [
+        "SY"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "sUSN",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/0edbe650-f29d-4bba-8415-e66a746b1b45.svg",
+      "zappable": false,
+      "simpleName": "sUSN",
+      "simpleSymbol": "sUSN",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/0edbe650-f29d-4bba-8415-e66a746b1b45.svg",
+      "proName": "sUSN"
+    },
+    "lp": {
+      "id": "1-0x16d3126ee82ee36816499fb9db6f647c6addd09c",
+      "chainId": 1,
+      "address": "0x16d3126ee82ee36816499fb9db6f647c6addd09c",
+      "symbol": "PLP-sUSN-22JUL2027",
+      "decimals": 18,
+      "expiry": "2027-07-22T00:00:00.000Z",
+      "price": {
+        "usd": 2.154110514251709
+      },
+      "priceUpdatedAt": "2026-11-04T14:12:30.026Z",
+      "name": "PLP-sUSN-22JUL2027",
+      "baseType": "PENDLE_LP",
+      "types": [
+        "PENDLE_LP"
+      ],
+      "proSymbol": "LP sUSN (USN)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/09fedd93-a5fd-4a38-898c-ec1659af6697.svg",
+      "zappable": false,
+      "simpleName": "LP sUSN (USN)",
+      "simpleSymbol": "LP sUSN (USN)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/09fedd93-a5fd-4a38-898c-ec1659af6697.svg",
+      "proName": "LP sUSN (USN)"
+    },
+    "accountingAsset": {
+      "id": "1-0xda67b4284609d2d48e5d10cfac411572727dc1ed",
+      "chainId": 1,
+      "address": "0xda67b4284609d2d48e5d10cfac411572727dc1ed",
+      "symbol": "USN",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "",
+      "price": {
+        "usd": 0.9985350255223999
+      },
+      "priceUpdatedAt": "2026-11-04T14:12:30.026Z",
+      "name": "USN",
+      "baseType": "GENERIC",
+      "types": [
+        "GENERIC"
+      ],
+      "proSymbol": "USN",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/31cf1a6e-1b01-4db8-abf6-e52651b1fd05.svg",
+      "zappable": true,
+      "simpleName": "USN",
+      "simpleSymbol": "USN",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/31cf1a6e-1b01-4db8-abf6-e52651b1fd05.svg",
+      "proName": "USN"
+    },
+    "underlyingAsset": {
+      "id": "1-0xe24a3dc889621612422a64e6388927901608b91d",
+      "chainId": 1,
+      "address": "0xe24a3dc889621612422a64e6388927901608b91d",
+      "symbol": "sUSN",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "",
+      "price": {
+        "usd": 1.2323235865426627
+      },
+      "priceUpdatedAt": "2026-11-04T14:12:30.026Z",
+      "name": "sUSN",
+      "baseType": "IB",
+      "types": [
+        "IB"
+      ],
+      "proSymbol": "sUSN",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/dc424e27-4538-4126-8df6-eb7b432853bf.svg",
+      "zappable": true,
+      "simpleName": "sUSN",
+      "simpleSymbol": "sUSN",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/dc424e27-4538-4126-8df6-eb7b432853bf.svg",
+      "proName": "sUSN"
+    },
+    "basePricingAsset": {
+      "id": "1-0xda67b4284609d2d48e5d10cfac411572727dc1ed",
+      "chainId": 1,
+      "address": "0xda67b4284609d2d48e5d10cfac411572727dc1ed",
+      "symbol": "USN",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "",
+      "price": {
+        "usd": 0.9985350255223999
+      },
+      "priceUpdatedAt": "2026-11-04T14:12:30.026Z",
+      "name": "USN",
+      "baseType": "GENERIC",
+      "types": [
+        "GENERIC"
+      ],
+      "proSymbol": "USN",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/31cf1a6e-1b01-4db8-abf6-e52651b1fd05.svg",
+      "zappable": true,
+      "simpleName": "USN",
+      "simpleSymbol": "USN",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/31cf1a6e-1b01-4db8-abf6-e52651b1fd05.svg",
+      "proName": "USN"
+    },
+    "rewardTokens": [
+      {
+        "id": "1-0x808507121b80c02388fad14726482e061b8da827",
+        "chainId": 1,
+        "address": "0x808507121b80c02388fad14726482e061b8da827",
+        "symbol": "PENDLE",
+        "decimals": 18,
+        "accentColor": null,
+        "price": {
+          "usd": 1.71972933
+        },
+        "priceUpdatedAt": "2026-11-04T14:12:30.026Z",
+        "name": "PENDLE",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "protocol": "Pendle",
+        "proSymbol": "PENDLE",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ea33e392-1876-46a5-b7ce-c8434b5a7e71.svg",
+        "zappable": true,
+        "simpleName": "PENDLE",
+        "simpleSymbol": "PENDLE",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ea33e392-1876-46a5-b7ce-c8434b5a7e71.svg",
+        "proName": "PENDLE"
+      }
+    ],
+    "inputTokens": [
+      {
+        "id": "1-0xda67b4284609d2d48e5d10cfac411572727dc1ed",
+        "chainId": 1,
+        "address": "0xda67b4284609d2d48e5d10cfac411572727dc1ed",
+        "symbol": "USN",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 0.9985350255223999
+        },
+        "priceUpdatedAt": "2026-11-04T14:12:30.026Z",
+        "name": "USN",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "proSymbol": "USN",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/31cf1a6e-1b01-4db8-abf6-e52651b1fd05.svg",
+        "zappable": true,
+        "simpleName": "USN",
+        "simpleSymbol": "USN",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/31cf1a6e-1b01-4db8-abf6-e52651b1fd05.svg",
+        "proName": "USN"
+      },
+      {
+        "id": "1-0xe24a3dc889621612422a64e6388927901608b91d",
+        "chainId": 1,
+        "address": "0xe24a3dc889621612422a64e6388927901608b91d",
+        "symbol": "sUSN",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 1.2323235865426627
+        },
+        "priceUpdatedAt": "2026-11-04T14:12:30.026Z",
+        "name": "sUSN",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "sUSN",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/dc424e27-4538-4126-8df6-eb7b432853bf.svg",
+        "zappable": true,
+        "simpleName": "sUSN",
+        "simpleSymbol": "sUSN",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/dc424e27-4538-4126-8df6-eb7b432853bf.svg",
+        "proName": "sUSN"
+      }
+    ],
+    "outputTokens": [
+      {
+        "id": "1-0xe24a3dc889621612422a64e6388927901608b91d",
+        "chainId": 1,
+        "address": "0xe24a3dc889621612422a64e6388927901608b91d",
+        "symbol": "sUSN",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 1.2323235865426627
+        },
+        "priceUpdatedAt": "2026-11-04T14:12:30.026Z",
+        "name": "sUSN",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "sUSN",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/dc424e27-4538-4126-8df6-eb7b432853bf.svg",
+        "zappable": true,
+        "simpleName": "sUSN",
+        "simpleSymbol": "sUSN",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/dc424e27-4538-4126-8df6-eb7b432853bf.svg",
+        "proName": "sUSN"
+      }
+    ],
+    "protocol": "Noon Capital",
+    "proSymbol": "sUSN",
+    "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/99c2799d-583b-46da-ac06-e33de0c5a7b3.svg",
+    "assetRepresentation": "USN",
+    "isWhitelistedPro": true,
+    "isWhitelistedSimple": false,
+    "votable": false,
+    "isActive": true,
+    "isWhitelistedLimitOrder": true,
+    "accentColor": "#F8A96C",
+    "totalPt": 554624.4886167729,
+    "totalSy": 545293.8241934539,
+    "totalLp": 554352.4528553465,
+    "totalActiveSupply": 554352.4528553465,
+    "liquidity": {
+      "usd": 1194195.5642927561,
+      "acc": 1196093.454502988
+    },
+    "tradingVolume": {
+      "usd": 0
+    },
+    "underlyingInterestApy": 0.0751563525392358,
+    "underlyingRewardApy": 0,
+    "underlyingRewardApyBreakdown": [],
+    "underlyingApy": 0.0751563525392358,
+    "impliedApy": 0.08607505266109872,
+    "ytFloatingApy": -0.16336290511128226,
+    "ptDiscount": 0.056995127105945675,
+    "swapFeeApy": 7.413811959899874e-07,
+    "pendleApy": 0.0019574411731377835,
+    "aggregatedApy": 0.08188893654414117,
+    "maxBoostedApy": 0.08482509830384785,
+    "lpRewardApy": 0,
+    "voterApy": 0,
+    "ytRoi": -0.11905945025484765,
+    "ptRoi": 0.06043934089214953,
+    "estimatedDailyPoolRewards": [
+      {
+        "asset": {
+          "id": "1-0x808507121b80c02388fad14726482e061b8da827",
+          "chainId": 1,
+          "address": "0x808507121b80c02388fad14726482e061b8da827",
+          "symbol": "PENDLE",
+          "decimals": 18,
+          "accentColor": null,
+          "price": {
+            "usd": 1.71972933
+          },
+          "priceUpdatedAt": "2026-11-04T14:12:30.026Z",
+          "name": "PENDLE"
+        },
+        "amount": 3.719665122099379
+      }
+    ],
+    "dataUpdatedAt": "2026-11-04T14:09:00.000Z",
+    "liquidityChange24h": 0.001100498572566029,
+    "underlyingInterestApyChange24h": 0.009622790589459751,
+    "underlyingApyChange24h": 0.009622790589459751,
+    "impliedApyChange24h": 2.2402674490116074e-09,
+    "ytFloatingApyChange24h": -0.059098151214940595,
+    "ptDiscountChange24h": -0.003599530061669363,
+    "swapFeeApyChange24h": -2.864048552642477e-05,
+    "pendleApyChange24h": -0.004145831832990553,
+    "aggregatedApyChange24h": 0.004848653980765494,
+    "categoryIds": [
+      "stables",
+      "points"
+    ],
+    "timestamp": "2026-07-21T14:13:23.000Z",
+    "scalarRoot": 43.940282270180894,
+    "initialAnchor": 1.0901061253703763,
+    "extendedInfo": {
+      "floatingPt": 17339.46753787878,
+      "floatingSy": 11274.154107558075,
+      "pyUnit": "USN staked in Noon Capital",
+      "ptEqualsPyUnit": false,
+      "underlyingAssetWorthMore": "sUSN",
+      "nativeWithdrawalURL": "https://app.noon.capital/stake",
+      "feeRate": 0.0016561769372598345,
+      "yieldRange": {
+        "min": 0.04,
+        "max": 0.14
+      }
+    },
+    "isPopular": false,
+    "tvlThresholdTimestamp": "2026-07-30T12:27:00.000Z",
+    "whitelistedProAt": "2026-07-22T04:01:08.777Z",
+    "isNew": false,
+    "name": "PENDLE-LPT",
+    "simpleName": "sUSN",
+    "simpleSymbol": "sUSN",
+    "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/99c2799d-583b-46da-ac06-e33de0c5a7b3.svg",
+    "proName": "sUSN",
+    "farmName": "sUSN",
+    "farmSymbol": "sUSN",
+    "farmSimpleName": "sUSN",
+    "farmSimpleSymbol": "sUSN",
+    "farmSimpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/99c2799d-583b-46da-ac06-e33de0c5a7b3.svg",
+    "farmProName": "sUSN",
+    "farmProSymbol": "sUSN",
+    "farmProIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/99c2799d-583b-46da-ac06-e33de0c5a7b3.svg"
+  }
+}

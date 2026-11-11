@@ -1,0 +1,1128 @@
+{
+  "schema_version": 1,
+  "collection_started_at": "2026-11-04T14:16:59.310277+00:00",
+  "generated_at": "2026-11-04T14:17:47.540365+00:00",
+  "scope": "read-only research quote pilot; not vetted recommendations or guaranteed execution",
+  "inventory_generated_at": "2026-11-04T10:08:00.101771+00:00",
+  "excluded": [
+    {
+      "chain_id": 143,
+      "market_address": "0x17b8f7373ecd556192abfc85be314e5d4fb6b3fa",
+      "reason": "authorization/backing/bridge linkage gap; no Ethereum inheritance"
+    }
+  ],
+  "benchmark": "same-chain native USDC; does not imply bridge/backing/access verification",
+  "policy": {
+    "notionals_usd": [
+      10000,
+      50000,
+      100000
+    ],
+    "max_markets": 11,
+    "api_interval_seconds": 3,
+    "aggregators_per_request": 1,
+    "limit_orders": false,
+    "quote_validity": "point-in-time only; refresh immediately before any execution",
+    "yield": "PT implied APY alone; underlying yield, points and LP rewards excluded"
+  },
+  "markets": [
+    {
+      "identity": {
+        "name": "PT-srUSDat-14JAN2027",
+        "chain_id": 1,
+        "market_address": "0xdf2e3e0250f679d6284a39a0c1a16a850a9d7aa6",
+        "pt": "0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062",
+        "sy": "0x9d0fc59f88acb85520a8cfb74c7fe141d8563185",
+        "underlying": "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066"
+      },
+      "status": "collected",
+      "quotes": [
+        {
+          "direction": "entry",
+          "notional_usd": 10000,
+          "route_scope": "same_chain_USDC_benchmark",
+          "valuation": {
+            "source": "/v1/prices/assets",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0010.json",
+              "sha256": "0718e7b2df37803afe845ba03daf9e0d557c4938f5f1ba88d217c857780bd099",
+              "requested_at": "2026-11-04T14:17:26.327610+00:00",
+              "received_at": "2026-11-04T14:17:26.551161+00:00"
+            },
+            "input_usd_price": "0.99977435",
+            "source_update_clock": "not provided; HTTP receipt only"
+          },
+          "amount_in_raw": "10002257009",
+          "input_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "output_address": "0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062",
+          "slippage_tolerance_fraction": 0.01,
+          "block_reference_status": "SDK does not bind response to a block; surrounding RPC observation is not quote block",
+          "status": "quoted",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0011.json",
+            "sha256": "84a16962c5cabede0589319210d572540c61b2a6d4763c3848a45d16d5e5b3a4",
+            "requested_at": "2026-11-04T14:17:29.330520+00:00",
+            "received_at": "2026-11-04T14:17:30.160830+00:00"
+          },
+          "routes": [
+            {
+              "input": {
+                "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "decimals": 6,
+                "amount_raw": "10002257009",
+                "amount_native": "10002.257009"
+              },
+              "output": {
+                "address": "0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062",
+                "decimals": 6,
+                "amount_raw": "10175416914",
+                "amount_native": "10175.416914"
+              },
+              "router": "0x888888888889758f76e7103c6cbf23abbf58f946",
+              "method": "swapExactTokenForPt",
+              "price_impact_fraction": -0.0038411386894622425,
+              "price_impact_breakdown": {
+                "internalPriceImpact": -0.00360065765156925,
+                "externalPriceImpact": -0.00024135005682183325
+              },
+              "fee_usd": 3.805930038364603,
+              "fee_status": "SDK reported; attribution retained in raw evidence",
+              "aggregator": "KYBERSWAP",
+              "gas_used_simulated": "1137164",
+              "simulation_status": "SDK simulation gas returned",
+              "min_output_raw": "10073662744",
+              "gas_usd_status": "unknown",
+              "net_yield_status": "unknown",
+              "calldata_sha256": "ed35f8d2296c252d483f3f70cabfbdb6da15735ee935e58866d274ee4df79658"
+            }
+          ]
+        },
+        {
+          "direction": "early_exit",
+          "notional_usd": 10000,
+          "route_scope": "same_chain_USDC_benchmark",
+          "valuation": {
+            "source": "/v1/prices/assets",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0010.json",
+              "sha256": "0718e7b2df37803afe845ba03daf9e0d557c4938f5f1ba88d217c857780bd099",
+              "requested_at": "2026-11-04T14:17:26.327610+00:00",
+              "received_at": "2026-11-04T14:17:26.551161+00:00"
+            },
+            "input_usd_price": "0.978985794587603",
+            "source_update_clock": "not provided; HTTP receipt only"
+          },
+          "amount_in_raw": "10214652812",
+          "input_address": "0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062",
+          "output_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "slippage_tolerance_fraction": 0.01,
+          "block_reference_status": "SDK does not bind response to a block; surrounding RPC observation is not quote block",
+          "status": "quoted",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0012.json",
+            "sha256": "34f89b9f8cad38b5a7194c92152131c5d1e5a24cda6c147d64e7ae529fe700c6",
+            "requested_at": "2026-11-04T14:17:32.331656+00:00",
+            "received_at": "2026-11-04T14:17:33.148980+00:00"
+          },
+          "routes": [
+            {
+              "input": {
+                "address": "0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062",
+                "decimals": 6,
+                "amount_raw": "10214652812",
+                "amount_native": "10214.652812"
+              },
+              "output": {
+                "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "decimals": 6,
+                "amount_raw": "9892342350",
+                "amount_native": "9892.34235"
+              },
+              "router": "0x888888888889758f76e7103c6cbf23abbf58f946",
+              "method": "swapExactPtForToken",
+              "price_impact_fraction": -0.010988985664807103,
+              "price_impact_breakdown": {
+                "internalPriceImpact": -0.007811508194229266,
+                "externalPriceImpact": -0.0032024937769584523
+              },
+              "fee_usd": 3.813574951802044,
+              "fee_status": "SDK reported; attribution retained in raw evidence",
+              "aggregator": "KYBERSWAP",
+              "gas_used_simulated": "1901007",
+              "simulation_status": "SDK simulation gas returned",
+              "min_output_raw": "9793418926",
+              "gas_usd_status": "unknown",
+              "net_yield_status": "unknown",
+              "calldata_sha256": "833b154cee0565c66da4d35bc71a9769bdfb8a1413c210c7c9e9fd34f1a25b21"
+            }
+          ]
+        },
+        {
+          "direction": "entry",
+          "notional_usd": 50000,
+          "route_scope": "same_chain_USDC_benchmark",
+          "valuation": {
+            "source": "/v1/prices/assets",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0010.json",
+              "sha256": "0718e7b2df37803afe845ba03daf9e0d557c4938f5f1ba88d217c857780bd099",
+              "requested_at": "2026-11-04T14:17:26.327610+00:00",
+              "received_at": "2026-11-04T14:17:26.551161+00:00"
+            },
+            "input_usd_price": "0.99977435",
+            "source_update_clock": "not provided; HTTP receipt only"
+          },
+          "amount_in_raw": "50011285046",
+          "input_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "output_address": "0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062",
+          "slippage_tolerance_fraction": 0.01,
+          "block_reference_status": "SDK does not bind response to a block; surrounding RPC observation is not quote block",
+          "status": "quoted",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0013.json",
+            "sha256": "364ab9b717a81b7805cc4f98b9d41ed4235d05c77bf88597486dd4a6fe85b94c",
+            "requested_at": "2026-11-04T14:17:35.333983+00:00",
+            "received_at": "2026-11-04T14:17:37.229637+00:00"
+          },
+          "routes": [
+            {
+              "input": {
+                "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "decimals": 6,
+                "amount_raw": "50011285046",
+                "amount_native": "50011.285046"
+              },
+              "output": {
+                "address": "0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062",
+                "decimals": 6,
+                "amount_raw": "50720109074",
+                "amount_native": "50720.109074"
+              },
+              "router": "0x888888888889758f76e7103c6cbf23abbf58f946",
+              "method": "swapExactTokenForPt",
+              "price_impact_fraction": -0.006914674323056863,
+              "price_impact_breakdown": {
+                "internalPriceImpact": -0.006532599630383329,
+                "externalPriceImpact": -0.00038458704586706534
+              },
+              "fee_usd": 19.026820814555002,
+              "fee_status": "SDK reported; attribution retained in raw evidence",
+              "aggregator": "KYBERSWAP",
+              "gas_used_simulated": "1139789",
+              "simulation_status": "SDK simulation gas returned",
+              "min_output_raw": "50212907983",
+              "gas_usd_status": "unknown",
+              "net_yield_status": "unknown",
+              "calldata_sha256": "8a276b9ae790db7ba1a89c32518cfb4103fd89f2b6a2bdfd7dde21e89d5c7ab6"
+            }
+          ]
+        },
+        {
+          "direction": "early_exit",
+          "notional_usd": 50000,
+          "route_scope": "same_chain_USDC_benchmark",
+          "valuation": {
+            "source": "/v1/prices/assets",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0010.json",
+              "sha256": "0718e7b2df37803afe845ba03daf9e0d557c4938f5f1ba88d217c857780bd099",
+              "requested_at": "2026-11-04T14:17:26.327610+00:00",
+              "received_at": "2026-11-04T14:17:26.551161+00:00"
+            },
+            "input_usd_price": "0.978985794587603",
+            "source_update_clock": "not provided; HTTP receipt only"
+          },
+          "amount_in_raw": "51073264062",
+          "input_address": "0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062",
+          "output_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "slippage_tolerance_fraction": 0.01,
+          "block_reference_status": "SDK does not bind response to a block; surrounding RPC observation is not quote block",
+          "status": "quoted",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0014.json",
+            "sha256": "ad2745c42a3379469d917482f3cec46e1f012a3fe492c4751f0ea721c51c6fea",
+            "requested_at": "2026-11-04T14:17:38.335278+00:00",
+            "received_at": "2026-11-04T14:17:39.885637+00:00"
+          },
+          "routes": [
+            {
+              "input": {
+                "address": "0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062",
+                "decimals": 6,
+                "amount_raw": "51073264062",
+                "amount_native": "51073.264062"
+              },
+              "output": {
+                "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "decimals": 6,
+                "amount_raw": "42234625462",
+                "amount_native": "42234.625462"
+              },
+              "router": "0x888888888889758f76e7103c6cbf23abbf58f946",
+              "method": "swapExactPtForToken",
+              "price_impact_fraction": -0.15549812946168237,
+              "price_impact_breakdown": {
+                "internalPriceImpact": -0.01141408716896053,
+                "externalPriceImpact": -0.1457476183128127
+              },
+              "fee_usd": 18.9981806853597,
+              "fee_status": "SDK reported; attribution retained in raw evidence",
+              "aggregator": "KYBERSWAP",
+              "gas_used_simulated": "2270567",
+              "simulation_status": "SDK simulation gas returned",
+              "min_output_raw": "41812279207",
+              "gas_usd_status": "unknown",
+              "net_yield_status": "unknown",
+              "calldata_sha256": "15ca0387c782ebac317a1b78d33f735cbc03130f0e39ab5a97a97030534904f3"
+            }
+          ]
+        },
+        {
+          "direction": "entry",
+          "notional_usd": 100000,
+          "route_scope": "same_chain_USDC_benchmark",
+          "valuation": {
+            "source": "/v1/prices/assets",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0010.json",
+              "sha256": "0718e7b2df37803afe845ba03daf9e0d557c4938f5f1ba88d217c857780bd099",
+              "requested_at": "2026-11-04T14:17:26.327610+00:00",
+              "received_at": "2026-11-04T14:17:26.551161+00:00"
+            },
+            "input_usd_price": "0.99977435",
+            "source_update_clock": "not provided; HTTP receipt only"
+          },
+          "amount_in_raw": "100022570092",
+          "input_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "output_address": "0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062",
+          "slippage_tolerance_fraction": 0.01,
+          "block_reference_status": "SDK does not bind response to a block; surrounding RPC observation is not quote block",
+          "status": "quoted",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0015.json",
+            "sha256": "fbb0802b0f6338c1936f317440db9d1d3e667de62d6ca3619cee6e2554855a7b",
+            "requested_at": "2026-11-04T14:17:41.335673+00:00",
+            "received_at": "2026-11-04T14:17:42.217252+00:00"
+          },
+          "routes": [
+            {
+              "input": {
+                "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "decimals": 6,
+                "amount_raw": "100022570092",
+                "amount_native": "100022.570092"
+              },
+              "output": {
+                "address": "0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062",
+                "decimals": 6,
+                "amount_raw": "100829921212",
+                "amount_native": "100829.921212"
+              },
+              "router": "0x888888888889758f76e7103c6cbf23abbf58f946",
+              "method": "swapExactTokenForPt",
+              "price_impact_fraction": -0.012889355078838047,
+              "price_impact_breakdown": {
+                "internalPriceImpact": -0.012367987489873888,
+                "externalPriceImpact": -0.0005278966076028358
+              },
+              "fee_usd": 38.04734487455261,
+              "fee_status": "SDK reported; attribution retained in raw evidence",
+              "aggregator": "KYBERSWAP",
+              "gas_used_simulated": "1338412",
+              "simulation_status": "SDK simulation gas returned",
+              "min_output_raw": "99821621999",
+              "gas_usd_status": "unknown",
+              "net_yield_status": "unknown",
+              "calldata_sha256": "64b8f16b4ca3855f3d37b337f0187c8103d64ea7116d2f7bcc54bdd701d31b5e"
+            }
+          ]
+        },
+        {
+          "direction": "early_exit",
+          "notional_usd": 100000,
+          "route_scope": "same_chain_USDC_benchmark",
+          "valuation": {
+            "source": "/v1/prices/assets",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0010.json",
+              "sha256": "0718e7b2df37803afe845ba03daf9e0d557c4938f5f1ba88d217c857780bd099",
+              "requested_at": "2026-11-04T14:17:26.327610+00:00",
+              "received_at": "2026-11-04T14:17:26.551161+00:00"
+            },
+            "input_usd_price": "0.978985794587603",
+            "source_update_clock": "not provided; HTTP receipt only"
+          },
+          "amount_in_raw": "102146528124",
+          "input_address": "0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062",
+          "output_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "slippage_tolerance_fraction": 0.01,
+          "block_reference_status": "SDK does not bind response to a block; surrounding RPC observation is not quote block",
+          "status": "failed",
+          "failure_reason": "HTTP 400: MarketProportionTooHigh. Market liquidity is likely insufficient, please consider placing limit order or try again later.; evidence data/research/pt-routes-2026-11-04/srusdat-retry-raw/0016.json"
+        },
+        {
+          "direction": "early_exit",
+          "notional_usd": 100000,
+          "route_scope": "native_underlying_fallback; not benchmark conversion",
+          "status": "failed",
+          "block_reference_status": "SDK does not bind response to a block; surrounding RPC observation is not quote block",
+          "valuation": {
+            "input_usd_price": "0.978985794587603",
+            "source": "/v1/prices/assets",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0010.json",
+              "sha256": "0718e7b2df37803afe845ba03daf9e0d557c4938f5f1ba88d217c857780bd099",
+              "requested_at": "2026-11-04T14:17:26.327610+00:00",
+              "received_at": "2026-11-04T14:17:26.551161+00:00"
+            }
+          },
+          "amount_in_raw": "102146528124",
+          "failure_reason": "HTTP 400: MarketProportionTooHigh. Market liquidity is likely insufficient, please consider placing limit order or try again later.; evidence data/research/pt-routes-2026-11-04/srusdat-retry-raw/0017.json"
+        }
+      ],
+      "identity_evidence": {
+        "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0001.json",
+        "sha256": "65ba8fd214e233acab0630689e2637ca149784d68d0f1dfdf31fd176ad245bff",
+        "requested_at": "2026-11-04T14:16:59.310555+00:00",
+        "received_at": "2026-11-04T14:17:00.173139+00:00"
+      },
+      "maturity": "2027-01-14T00:00:00.000Z",
+      "accounting_asset": {
+        "id": "1-0x23238f20b894f29041f48d88ee91131c395aaa71",
+        "chainId": 1,
+        "address": "0x23238f20b894f29041f48d88ee91131c395aaa71",
+        "symbol": "USDat",
+        "decimals": 6,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 0.99904928517289
+        },
+        "priceUpdatedAt": "2026-11-04T14:16:45.008Z",
+        "name": "USDat",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "USDat",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/968212e9-fec2-472c-b011-024c836fa155.svg",
+        "zappable": true,
+        "simpleName": "USDat",
+        "simpleSymbol": "USDat",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/968212e9-fec2-472c-b011-024c836fa155.svg",
+        "proName": "USDat"
+      },
+      "underlying_asset": {
+        "id": "1-0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066",
+        "chainId": 1,
+        "address": "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066",
+        "symbol": "srUSDat",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 1.0390735989769222
+        },
+        "priceUpdatedAt": "2026-11-04T14:16:45.008Z",
+        "name": "srUSDat",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "srUSDat",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/8247c0d1-a6d3-481f-8626-cad5dd08e832.svg",
+        "zappable": false,
+        "simpleName": "srUSDat",
+        "simpleSymbol": "srUSDat",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/8247c0d1-a6d3-481f-8626-cad5dd08e832.svg",
+        "proName": "srUSDat"
+      },
+      "pt_implied_apy_fraction": 0.11104549456155066,
+      "reported_market_liquidity_usd": 206593.12295650167,
+      "liquidity_role": "dust screen only; not executable capacity",
+      "sy_tokens": {
+        "tokensMintSy": [
+          "0x23238f20b894f29041f48d88ee91131c395aaa71",
+          "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066"
+        ],
+        "tokensRedeemSy": [
+          "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066",
+          "0xd166337499e176bbc38a1fbd113ab144e5bd2df7"
+        ],
+        "tokensIn": [
+          "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066",
+          "0x9d0fc59f88acb85520a8cfb74c7fe141d8563185",
+          "0x23238f20b894f29041f48d88ee91131c395aaa71",
+          "0x111111111117dc0aa78b770fa6a738034120c302",
+          "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+          "0xe95a203b1a91a908f9b9ce46459d101078c2c3cb",
+          "0x98a878b1cd98131b271883b390f68d2c90674665",
+          "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+          "0xba100000625a3754423978a60c9317c58a424e3d",
+          "0x97ad75064b20fb2b2447fed4fa953bf7f007a706",
+          "0xb8c77482e45f1f44de1745f52c74426c631bdd52",
+          "0x6440f144b7e50d6a8439336510312d2f54beb01d",
+          "0x152649ea73beab28c5b49b26eb48f7ead6d4c898",
+          "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+          "0x72dfb2e44f59c5ad2bafe84314e5b99a7cd5075e",
+          "0xd533a949740bb3306d119cc777fa900ba034cd52",
+          "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
+          "0xad55aebc9b8c03fc43cd9f62260391c13c23e7c0",
+          "0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b",
+          "0x6b175474e89094c44da98b954eedeac495271d0f",
+          "0x865377367054516e17014ccded1e7d814edc9ce4",
+          "0x657e8c867d8b37dcc18fa4caead9c45eb088c642",
+          "0x35fa164735182de50811e8e2e824cfb9b6118ac2",
+          "0x57e114b691db790c35207b2e685d4a43181e6061",
+          "0x0000000000000000000000000000000000000000",
+          "0xfe0c30065b384f05761f15d0cc899d4f9f9cc0eb",
+          "0xa35b1b31ce002fbf2058d22f30f95d405200a15b",
+          "0x1a7e4e63778b4f12a199c062f3efdd288afcbce8",
+          "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "0x90d2af7d622ca3141efa4d8f1f24d86e5974cc8f",
+          "0xbf5495efe5db9ce00f80364c8b423567e58d2110",
+          "0xc96de26018a54d51c097160568752c4e3bd6c364",
+          "0xaea46a60368a7bd060eec7df8cba43b7ef41ad85",
+          "0x6a29a46e21c730dca1d8b23d637c101cec605c5b",
+          "0xcf0c122c6b73ff809c693db761e7baebe62b6a2e",
+          "0x6f40d4a6237c257fff2db00fa0510deeecd303eb",
+          "0x853d955acef822db058eb8505911ed77f175b99e",
+          "0x5e8422345238f34275888049021821e8e08caa1f",
+          "0x9fb7b4477576fe5b32be4c1843afb1e55f251b33",
+          "0x085780639cc2cacd35e474e71f4d000e2405d8f6",
+          "0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f",
+          "0x8236a87084f8b84306f72007f36f2618a5634494",
+          "0x5a98fcbea516cf06857215779fd812ca3bef1b32",
+          "0x514910771af9ca656af840dff83e8264ecf986ca",
+          "0x7c1156e515aa1a2e851674120074968c905aaf37",
+          "0xd5f7838f5c461feff7fe49ea5ebaf7728bb0adfa",
+          "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+          "0x3c3a81e81dc49a522a592e7622a7e711c06bf354",
+          "0x58d97b57bb95320f9a05dc918aef65434969c2b2",
+          "0x64351fc9810adad17a690e4e1717df5e7e085160",
+          "0xab5eb14c09d416f0ac63661e57edb7aecdb9befa",
+          "0x856c4efb76c1d1ae02e20ceb03a2a6a08b0b8dc3",
+          "0xf1c9acdc66974dfb6decb12aa385b9cd01190e38",
+          "0x45804880de22913dafe09f4980848ece6ecbaf78",
+          "0x808507121b80c02388fad14726482e061b8da827",
+          "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+          "0x19ebb35279a16207ec4ba82799cc64715065f7f6",
+          "0xd9a442856c234a39a81a089c06451ebaa4306a72",
+          "0xf469fbd2abcd6b9de8e169d128226c0fc90a012e",
+          "0x6c3ea9036406852006290770bedfcaba0e23a0e8",
+          "0x84631c0d0081fde56deb72f6de77abbbf6a9f93a",
+          "0xae78736cd615f374d3085123a210448e74fc6393",
+          "0x5086bf358635b81d8c47c66d1c8b9e567db70c72",
+          "0x57ab1e0003f623289cd798b1824be09a793e4bec",
+          "0x8292bb45bf1ee4d140127049757c2e0ff06317ed",
+          "0xfae103dc9cf190ed75350761e95403b7b8afa6c0",
+          "0x83f20f44975d03b1b09e64809b757c47f942beea",
+          "0xd1b5651e55d4ceed36251c61c50c889b36f6abb5",
+          "0x8be3460a480c80728a8c4d7a5d5303c85ba7b3b9",
+          "0xac3e018457b222d93114458476f3e3416abbe38f",
+          "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce",
+          "0x6bf7788eaa948d9ffba7e9bb386e2d3c9810e0fc",
+          "0xbceb5f6877d979ec621ae694da1102cb95691ad3",
+          "0x56072c95faa701256059aa122697b133aded9279",
+          "0x7a56e1c57c7475ccf742a1832b028f0456652f97",
+          "0x9559aaa82d9649c7a7b220e7c461d2e74c9a3593",
+          "0x88887be419578051ff9f4eb6c858a951921d8888",
+          "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+          "0xb60acd2057067dc9ed8c083f5aa227a244044fd6",
+          "0xc5d6a7b61d18afa11435a889557b068bb9f29930",
+          "0x9d39a5de30e57443bff2a8307a4256c8797a3497",
+          "0xa3931d71877c0e7a3148cb7eb4463524fec27fbd",
+          "0xe24a3dc889621612422a64e6388927901608b91d",
+          "0x0a6e7ba5042b38349e437ec6db6214aec7b35676",
+          "0xf951e335afb289353dc249e82926178eac7ded78",
+          "0x643c4e15d7d62ad0abec4a9bd4b001aa3ef52d66",
+          "0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b",
+          "0x18084fba666a33d37592fa2633fd49a74dd93a88",
+          "0xd11c452fc99cf405034ee446803b6f6c1f6d5ed8",
+          "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+          "0x004e9c3ef86bc1ca1f0bb5c7662861ee93350568",
+          "0xf1376bcef0f78459c0ed0ba5ddce976f1ddf51f4",
+          "0x73a15fed60bf67631dc6cd7bc5b6e8da8190acf5",
+          "0x35d8949372d46b7a3d5a56006ae77b215fc69bc0",
+          "0x0000206329b97db379d5e1bf586bbdb969c63274",
+          "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "0x4f8e5de400de08b164e7421b3ee387f461becd1a",
+          "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+          "0xfa2b947eec368f42195f24f36d2af29f7c24cec2",
+          "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
+          "0xbdc7c08592ee4aa51d06c27ee23d5087d65adbcd",
+          "0xdc035d45d973e3ec169d2276ddab16f1e407384f",
+          "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "0xc139190f447e929f090edeb554d95abb8b18ac1c",
+          "0xda67b4284609d2d48e5d10cfac411572727dc1ed",
+          "0xc4441c2be5d8fa8126822b9929ca0b81ea0de38e",
+          "0x06b964d96f5dcf7eae9d7c559b09edce244d4b8e",
+          "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+          "0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee",
+          "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "0x4691937a7508860f876c9c0a2a617e7d9e945d4b",
+          "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+          "0x77e06c9eccf2e797fd462a92b6d7642ef85b0a44",
+          "0x68749665ff8d2d112fa859aa293f07a622782f38",
+          "0xd9d920aa40f578ab794426f5c90f6c731d159def",
+          "0xe868084cf08f3c3db11f4b73a95473762d9463f7",
+          "0x4274cd7277c7bb0806bd5fe84b9adae466a8da0a",
+          "0x6985884c4392d348587b19cb9eaaf157f13271cd"
+        ],
+        "tokensOut": [
+          "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066",
+          "0x9d0fc59f88acb85520a8cfb74c7fe141d8563185",
+          "0xd166337499e176bbc38a1fbd113ab144e5bd2df7",
+          "0x23238f20b894f29041f48d88ee91131c395aaa71",
+          "0x111111111117dc0aa78b770fa6a738034120c302",
+          "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+          "0xe95a203b1a91a908f9b9ce46459d101078c2c3cb",
+          "0x98a878b1cd98131b271883b390f68d2c90674665",
+          "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+          "0xba100000625a3754423978a60c9317c58a424e3d",
+          "0x97ad75064b20fb2b2447fed4fa953bf7f007a706",
+          "0xb8c77482e45f1f44de1745f52c74426c631bdd52",
+          "0x6440f144b7e50d6a8439336510312d2f54beb01d",
+          "0x152649ea73beab28c5b49b26eb48f7ead6d4c898",
+          "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+          "0x72dfb2e44f59c5ad2bafe84314e5b99a7cd5075e",
+          "0xd533a949740bb3306d119cc777fa900ba034cd52",
+          "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
+          "0xad55aebc9b8c03fc43cd9f62260391c13c23e7c0",
+          "0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b",
+          "0x6b175474e89094c44da98b954eedeac495271d0f",
+          "0x865377367054516e17014ccded1e7d814edc9ce4",
+          "0x657e8c867d8b37dcc18fa4caead9c45eb088c642",
+          "0x35fa164735182de50811e8e2e824cfb9b6118ac2",
+          "0x57e114b691db790c35207b2e685d4a43181e6061",
+          "0x0000000000000000000000000000000000000000",
+          "0xfe0c30065b384f05761f15d0cc899d4f9f9cc0eb",
+          "0xa35b1b31ce002fbf2058d22f30f95d405200a15b",
+          "0x1a7e4e63778b4f12a199c062f3efdd288afcbce8",
+          "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "0x90d2af7d622ca3141efa4d8f1f24d86e5974cc8f",
+          "0xbf5495efe5db9ce00f80364c8b423567e58d2110",
+          "0xc96de26018a54d51c097160568752c4e3bd6c364",
+          "0xaea46a60368a7bd060eec7df8cba43b7ef41ad85",
+          "0x6a29a46e21c730dca1d8b23d637c101cec605c5b",
+          "0xcf0c122c6b73ff809c693db761e7baebe62b6a2e",
+          "0x6f40d4a6237c257fff2db00fa0510deeecd303eb",
+          "0x853d955acef822db058eb8505911ed77f175b99e",
+          "0x5e8422345238f34275888049021821e8e08caa1f",
+          "0x9fb7b4477576fe5b32be4c1843afb1e55f251b33",
+          "0x085780639cc2cacd35e474e71f4d000e2405d8f6",
+          "0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f",
+          "0x8236a87084f8b84306f72007f36f2618a5634494",
+          "0x5a98fcbea516cf06857215779fd812ca3bef1b32",
+          "0x514910771af9ca656af840dff83e8264ecf986ca",
+          "0x7c1156e515aa1a2e851674120074968c905aaf37",
+          "0xd5f7838f5c461feff7fe49ea5ebaf7728bb0adfa",
+          "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+          "0x3c3a81e81dc49a522a592e7622a7e711c06bf354",
+          "0x58d97b57bb95320f9a05dc918aef65434969c2b2",
+          "0x64351fc9810adad17a690e4e1717df5e7e085160",
+          "0xab5eb14c09d416f0ac63661e57edb7aecdb9befa",
+          "0x856c4efb76c1d1ae02e20ceb03a2a6a08b0b8dc3",
+          "0xf1c9acdc66974dfb6decb12aa385b9cd01190e38",
+          "0x45804880de22913dafe09f4980848ece6ecbaf78",
+          "0x808507121b80c02388fad14726482e061b8da827",
+          "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+          "0x19ebb35279a16207ec4ba82799cc64715065f7f6",
+          "0xd9a442856c234a39a81a089c06451ebaa4306a72",
+          "0xf469fbd2abcd6b9de8e169d128226c0fc90a012e",
+          "0x6c3ea9036406852006290770bedfcaba0e23a0e8",
+          "0x84631c0d0081fde56deb72f6de77abbbf6a9f93a",
+          "0xae78736cd615f374d3085123a210448e74fc6393",
+          "0x5086bf358635b81d8c47c66d1c8b9e567db70c72",
+          "0x57ab1e0003f623289cd798b1824be09a793e4bec",
+          "0x8292bb45bf1ee4d140127049757c2e0ff06317ed",
+          "0xfae103dc9cf190ed75350761e95403b7b8afa6c0",
+          "0x83f20f44975d03b1b09e64809b757c47f942beea",
+          "0xd1b5651e55d4ceed36251c61c50c889b36f6abb5",
+          "0x8be3460a480c80728a8c4d7a5d5303c85ba7b3b9",
+          "0xac3e018457b222d93114458476f3e3416abbe38f",
+          "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce",
+          "0x6bf7788eaa948d9ffba7e9bb386e2d3c9810e0fc",
+          "0xbceb5f6877d979ec621ae694da1102cb95691ad3",
+          "0x56072c95faa701256059aa122697b133aded9279",
+          "0x7a56e1c57c7475ccf742a1832b028f0456652f97",
+          "0x9559aaa82d9649c7a7b220e7c461d2e74c9a3593",
+          "0x88887be419578051ff9f4eb6c858a951921d8888",
+          "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+          "0xb60acd2057067dc9ed8c083f5aa227a244044fd6",
+          "0xc5d6a7b61d18afa11435a889557b068bb9f29930",
+          "0x9d39a5de30e57443bff2a8307a4256c8797a3497",
+          "0xa3931d71877c0e7a3148cb7eb4463524fec27fbd",
+          "0xe24a3dc889621612422a64e6388927901608b91d",
+          "0x0a6e7ba5042b38349e437ec6db6214aec7b35676",
+          "0xf951e335afb289353dc249e82926178eac7ded78",
+          "0x643c4e15d7d62ad0abec4a9bd4b001aa3ef52d66",
+          "0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b",
+          "0x18084fba666a33d37592fa2633fd49a74dd93a88",
+          "0xd11c452fc99cf405034ee446803b6f6c1f6d5ed8",
+          "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+          "0x004e9c3ef86bc1ca1f0bb5c7662861ee93350568",
+          "0xf1376bcef0f78459c0ed0ba5ddce976f1ddf51f4",
+          "0x73a15fed60bf67631dc6cd7bc5b6e8da8190acf5",
+          "0x35d8949372d46b7a3d5a56006ae77b215fc69bc0",
+          "0x0000206329b97db379d5e1bf586bbdb969c63274",
+          "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "0x4f8e5de400de08b164e7421b3ee387f461becd1a",
+          "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+          "0xfa2b947eec368f42195f24f36d2af29f7c24cec2",
+          "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
+          "0xbdc7c08592ee4aa51d06c27ee23d5087d65adbcd",
+          "0xdc035d45d973e3ec169d2276ddab16f1e407384f",
+          "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "0xc139190f447e929f090edeb554d95abb8b18ac1c",
+          "0xda67b4284609d2d48e5d10cfac411572727dc1ed",
+          "0xc4441c2be5d8fa8126822b9929ca0b81ea0de38e",
+          "0x06b964d96f5dcf7eae9d7c559b09edce244d4b8e",
+          "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+          "0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee",
+          "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "0x4691937a7508860f876c9c0a2a617e7d9e945d4b",
+          "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+          "0x77e06c9eccf2e797fd462a92b6d7642ef85b0a44",
+          "0x68749665ff8d2d112fa859aa293f07a622782f38",
+          "0xd9d920aa40f578ab794426f5c90f6c731d159def",
+          "0xe868084cf08f3c3db11f4b73a95473762d9463f7",
+          "0x4274cd7277c7bb0806bd5fe84b9adae466a8da0a",
+          "0x6985884c4392d348587b19cb9eaaf157f13271cd"
+        ]
+      },
+      "sy_tokens_evidence": {
+        "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0002.json",
+        "sha256": "5c83ab1d12436d0e9d6a68555cb55d7391c3cd309b03edf66ebca1de0a2e7146",
+        "requested_at": "2026-11-04T14:17:02.311688+00:00",
+        "received_at": "2026-11-04T14:17:02.561691+00:00"
+      },
+      "onchain_sy": {
+        "block_number": 26341990,
+        "block_hash": "0x41855c6e16f18517cce64f4954c74339e41c1674f567fdd45222e09d91b4479f",
+        "block_timestamp": 1793801819,
+        "block_evidence": {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0005.json",
+          "sha256": "3fbd86f905263ff45e87badf3ca7094bbc11f10e39a2482a7d961ae16eba8bf3",
+          "requested_at": "2026-11-04T14:17:11.318132+00:00",
+          "received_at": "2026-11-04T14:17:11.567219+00:00"
+        },
+        "market_tokens": {
+          "status": "read",
+          "value": [
+            "0x9d0fc59f88acb85520a8cfb74c7fe141d8563185",
+            "0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062",
+            "0xf26e7953bab8b301945bb551b4607dffa8500de0"
+          ],
+          "block": "0x191f266",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0006.json",
+            "sha256": "5707b8fe31fe4c097dfd3f675e76f1ef7f741bd8b3a0f2d2fb60243d25edf177",
+            "requested_at": "2026-11-04T14:17:14.319602+00:00",
+            "received_at": "2026-11-04T14:17:14.599155+00:00"
+          },
+          "batch_response_id": 1
+        },
+        "expiry": {
+          "status": "read",
+          "value": "1799884800",
+          "block": "0x191f266",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0006.json",
+            "sha256": "5707b8fe31fe4c097dfd3f675e76f1ef7f741bd8b3a0f2d2fb60243d25edf177",
+            "requested_at": "2026-11-04T14:17:14.319602+00:00",
+            "received_at": "2026-11-04T14:17:14.599155+00:00"
+          },
+          "batch_response_id": 2
+        },
+        "assetInfo": {
+          "status": "read",
+          "value": {
+            "asset_type": 0,
+            "address": "0x23238f20b894f29041f48d88ee91131c395aaa71",
+            "decimals": 6
+          },
+          "block": "0x191f266",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0006.json",
+            "sha256": "5707b8fe31fe4c097dfd3f675e76f1ef7f741bd8b3a0f2d2fb60243d25edf177",
+            "requested_at": "2026-11-04T14:17:14.319602+00:00",
+            "received_at": "2026-11-04T14:17:14.599155+00:00"
+          },
+          "batch_response_id": 3
+        },
+        "exchangeRate": {
+          "status": "read",
+          "value": "1040062",
+          "block": "0x191f266",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0006.json",
+            "sha256": "5707b8fe31fe4c097dfd3f675e76f1ef7f741bd8b3a0f2d2fb60243d25edf177",
+            "requested_at": "2026-11-04T14:17:14.319602+00:00",
+            "received_at": "2026-11-04T14:17:14.599155+00:00"
+          },
+          "batch_response_id": 4
+        },
+        "getTokensIn": {
+          "status": "read",
+          "value": [
+            "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066",
+            "0x23238f20b894f29041f48d88ee91131c395aaa71",
+            "0xd166337499e176bbc38a1fbd113ab144e5bd2df7"
+          ],
+          "block": "0x191f266",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0006.json",
+            "sha256": "5707b8fe31fe4c097dfd3f675e76f1ef7f741bd8b3a0f2d2fb60243d25edf177",
+            "requested_at": "2026-11-04T14:17:14.319602+00:00",
+            "received_at": "2026-11-04T14:17:14.599155+00:00"
+          },
+          "batch_response_id": 5
+        },
+        "getTokensOut": {
+          "status": "read",
+          "value": [
+            "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066",
+            "0xd166337499e176bbc38a1fbd113ab144e5bd2df7"
+          ],
+          "block": "0x191f266",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0006.json",
+            "sha256": "5707b8fe31fe4c097dfd3f675e76f1ef7f741bd8b3a0f2d2fb60243d25edf177",
+            "requested_at": "2026-11-04T14:17:14.319602+00:00",
+            "received_at": "2026-11-04T14:17:14.599155+00:00"
+          },
+          "batch_response_id": 6
+        },
+        "yieldToken": {
+          "status": "read",
+          "value": "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066",
+          "block": "0x191f266",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0006.json",
+            "sha256": "5707b8fe31fe4c097dfd3f675e76f1ef7f741bd8b3a0f2d2fb60243d25edf177",
+            "requested_at": "2026-11-04T14:17:14.319602+00:00",
+            "received_at": "2026-11-04T14:17:14.599155+00:00"
+          },
+          "batch_response_id": 7
+        },
+        "paused": {
+          "status": "read",
+          "value": "0",
+          "block": "0x191f266",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0006.json",
+            "sha256": "5707b8fe31fe4c097dfd3f675e76f1ef7f741bd8b3a0f2d2fb60243d25edf177",
+            "requested_at": "2026-11-04T14:17:14.319602+00:00",
+            "received_at": "2026-11-04T14:17:14.599155+00:00"
+          },
+          "batch_response_id": 8
+        },
+        "decimals": {
+          "status": "read",
+          "value": "18",
+          "block": "0x191f266",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0006.json",
+            "sha256": "5707b8fe31fe4c097dfd3f675e76f1ef7f741bd8b3a0f2d2fb60243d25edf177",
+            "requested_at": "2026-11-04T14:17:14.319602+00:00",
+            "received_at": "2026-11-04T14:17:14.599155+00:00"
+          },
+          "batch_response_id": 9
+        },
+        "pyIndexStored": {
+          "status": "read",
+          "value": "1039998",
+          "block": "0x191f266",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0006.json",
+            "sha256": "5707b8fe31fe4c097dfd3f675e76f1ef7f741bd8b3a0f2d2fb60243d25edf177",
+            "requested_at": "2026-11-04T14:17:14.319602+00:00",
+            "received_at": "2026-11-04T14:17:14.599155+00:00"
+          },
+          "batch_response_id": 10
+        },
+        "benchmark_decimals": {
+          "status": "read",
+          "value": "6",
+          "block": "0x191f266",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0006.json",
+            "sha256": "5707b8fe31fe4c097dfd3f675e76f1ef7f741bd8b3a0f2d2fb60243d25edf177",
+            "requested_at": "2026-11-04T14:17:14.319602+00:00",
+            "received_at": "2026-11-04T14:17:14.599155+00:00"
+          },
+          "batch_response_id": 11
+        },
+        "token_list_differences": [
+          {
+            "field": "tokensMintSy",
+            "onchain": [
+              "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066",
+              "0x23238f20b894f29041f48d88ee91131c395aaa71",
+              "0xd166337499e176bbc38a1fbd113ab144e5bd2df7"
+            ],
+            "sdk": [
+              "0x23238f20b894f29041f48d88ee91131c395aaa71",
+              "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066"
+            ]
+          }
+        ],
+        "accounting_matches_api": true,
+        "token_metadata": {
+          "0x23238f20b894f29041f48d88ee91131c395aaa71": {
+            "decimals_observation": {
+              "status": "read",
+              "value": "6",
+              "block": "0x191f266",
+              "evidence": {
+                "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0007.json",
+                "sha256": "cf374752fea8814abf00df14fa4751cb2159049a663add0dde2769e99b913dc2",
+                "requested_at": "2026-11-04T14:17:17.322454+00:00",
+                "received_at": "2026-11-04T14:17:17.558241+00:00"
+              },
+              "batch_response_id": 1
+            }
+          },
+          "0xd166337499e176bbc38a1fbd113ab144e5bd2df7": {
+            "decimals_observation": {
+              "status": "read",
+              "value": "18",
+              "block": "0x191f266",
+              "evidence": {
+                "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0007.json",
+                "sha256": "cf374752fea8814abf00df14fa4751cb2159049a663add0dde2769e99b913dc2",
+                "requested_at": "2026-11-04T14:17:17.322454+00:00",
+                "received_at": "2026-11-04T14:17:17.558241+00:00"
+              },
+              "batch_response_id": 2
+            }
+          },
+          "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066": {
+            "decimals_observation": {
+              "status": "read",
+              "value": "18",
+              "block": "0x191f266",
+              "evidence": {
+                "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0007.json",
+                "sha256": "cf374752fea8814abf00df14fa4751cb2159049a663add0dde2769e99b913dc2",
+                "requested_at": "2026-11-04T14:17:17.322454+00:00",
+                "received_at": "2026-11-04T14:17:17.558241+00:00"
+              },
+              "batch_response_id": 3
+            }
+          }
+        },
+        "preview_redeem_one_sy": {
+          "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066": {
+            "status": "read",
+            "value": "1000000000000000000",
+            "block": "0x191f266",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0008.json",
+              "sha256": "f5c22130d78a6bc7aa423371e0d6167c74d7d01c061acd5cec47d94fbd3305b0",
+              "requested_at": "2026-11-04T14:17:20.323681+00:00",
+              "received_at": "2026-11-04T14:17:20.739473+00:00"
+            },
+            "batch_response_id": 1
+          },
+          "0xd166337499e176bbc38a1fbd113ab144e5bd2df7": {
+            "status": "read",
+            "value": "981458940655363696",
+            "block": "0x191f266",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0008.json",
+              "sha256": "f5c22130d78a6bc7aa423371e0d6167c74d7d01c061acd5cec47d94fbd3305b0",
+              "requested_at": "2026-11-04T14:17:20.323681+00:00",
+              "received_at": "2026-11-04T14:17:20.739473+00:00"
+            },
+            "batch_response_id": 2
+          }
+        },
+        "preview_deposit_one_token": {
+          "0x23238f20b894f29041f48d88ee91131c395aaa71": {
+            "status": "read",
+            "value": "959076955308988293",
+            "block": "0x191f266",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0008.json",
+              "sha256": "f5c22130d78a6bc7aa423371e0d6167c74d7d01c061acd5cec47d94fbd3305b0",
+              "requested_at": "2026-11-04T14:17:20.323681+00:00",
+              "received_at": "2026-11-04T14:17:20.739473+00:00"
+            },
+            "batch_response_id": 3
+          },
+          "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066": {
+            "status": "read",
+            "value": "1000000000000000000",
+            "block": "0x191f266",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0008.json",
+              "sha256": "f5c22130d78a6bc7aa423371e0d6167c74d7d01c061acd5cec47d94fbd3305b0",
+              "requested_at": "2026-11-04T14:17:20.323681+00:00",
+              "received_at": "2026-11-04T14:17:20.739473+00:00"
+            },
+            "batch_response_id": 4
+          }
+        },
+        "preview_units": "redeem: 1 whole SY in, raw output units; deposit: 1 whole input token in, raw SY units"
+      },
+      "maturity_redemption": {
+        "status": "current_SY_outputs_verified; future_PT_redemption_amount_not_simulated",
+        "output_addresses": [
+          "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066",
+          "0xd166337499e176bbc38a1fbd113ab144e5bd2df7"
+        ],
+        "output_metadata": [
+          {
+            "address": "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066",
+            "symbol": "srUSDat",
+            "decimals": 18
+          }
+        ],
+        "conversion": "PT accounting raw units -> SY via assetToSy(PY index, PT amount), rounding down; PY index tracks max(SY exchange rate, stored PY index), subject to same-block cache. Post-expiry principal redemption uses the then-current PY index; SY -> output through wrapper preview/redeem. Current preview is not a guaranteed future payout.",
+        "access_restrictions": "unknown for an actual investor; public preview/quote does not prove allowlist, approvals, pause or issuer redemption access",
+        "fees": "future redemption fees unknown; current preview may embed conversion costs",
+        "bridge_dependency": "no bridge requested for same-chain quotes; issuer/backing bridge dependency not verified",
+        "subsequent_benchmark_conversion": "separate from maturity redemption; early exit USDC quote is not a future redemption quote",
+        "source_verification_status": "separate source registry evidence required; not inferred from token lists",
+        "sy_pause_observation": {
+          "status": "read",
+          "value": "0",
+          "block": "0x191f266",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0006.json",
+            "sha256": "5707b8fe31fe4c097dfd3f675e76f1ef7f741bd8b3a0f2d2fb60243d25edf177",
+            "requested_at": "2026-11-04T14:17:14.319602+00:00",
+            "received_at": "2026-11-04T14:17:14.599155+00:00"
+          },
+          "batch_response_id": 8
+        },
+        "token_list_differences": [
+          {
+            "field": "tokensMintSy",
+            "onchain": [
+              "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066",
+              "0x23238f20b894f29041f48d88ee91131c395aaa71",
+              "0xd166337499e176bbc38a1fbd113ab144e5bd2df7"
+            ],
+            "sdk": [
+              "0x23238f20b894f29041f48d88ee91131c395aaa71",
+              "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066"
+            ]
+          }
+        ]
+      },
+      "all_evidence": [
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0001.json",
+          "sha256": "65ba8fd214e233acab0630689e2637ca149784d68d0f1dfdf31fd176ad245bff",
+          "requested_at": "2026-11-04T14:16:59.310555+00:00",
+          "received_at": "2026-11-04T14:17:00.173139+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0002.json",
+          "sha256": "5c83ab1d12436d0e9d6a68555cb55d7391c3cd309b03edf66ebca1de0a2e7146",
+          "requested_at": "2026-11-04T14:17:02.311688+00:00",
+          "received_at": "2026-11-04T14:17:02.561691+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0003.json",
+          "sha256": "4dc87f609b15c67cf030790b19e3ef6a4b1ed93857b3152f3be8e02a85ab3db7",
+          "requested_at": "2026-11-04T14:17:05.314552+00:00",
+          "received_at": "2026-11-04T14:17:05.881515+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0004.json",
+          "sha256": "5452429b078e7511bb5c22dcb4d55fb9ea1d997321a7d11f01f6020b5411086d",
+          "requested_at": "2026-11-04T14:17:08.315669+00:00",
+          "received_at": "2026-11-04T14:17:08.549347+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0005.json",
+          "sha256": "3fbd86f905263ff45e87badf3ca7094bbc11f10e39a2482a7d961ae16eba8bf3",
+          "requested_at": "2026-11-04T14:17:11.318132+00:00",
+          "received_at": "2026-11-04T14:17:11.567219+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0006.json",
+          "sha256": "5707b8fe31fe4c097dfd3f675e76f1ef7f741bd8b3a0f2d2fb60243d25edf177",
+          "requested_at": "2026-11-04T14:17:14.319602+00:00",
+          "received_at": "2026-11-04T14:17:14.599155+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0007.json",
+          "sha256": "cf374752fea8814abf00df14fa4751cb2159049a663add0dde2769e99b913dc2",
+          "requested_at": "2026-11-04T14:17:17.322454+00:00",
+          "received_at": "2026-11-04T14:17:17.558241+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0008.json",
+          "sha256": "f5c22130d78a6bc7aa423371e0d6167c74d7d01c061acd5cec47d94fbd3305b0",
+          "requested_at": "2026-11-04T14:17:20.323681+00:00",
+          "received_at": "2026-11-04T14:17:20.739473+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0009.json",
+          "sha256": "2f6d75b283fa8b0f544c35b3b8982c6aef5e4abd63fb779b91c5e5cbec86984b",
+          "requested_at": "2026-11-04T14:17:23.326323+00:00",
+          "received_at": "2026-11-04T14:17:23.489145+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0010.json",
+          "sha256": "0718e7b2df37803afe845ba03daf9e0d557c4938f5f1ba88d217c857780bd099",
+          "requested_at": "2026-11-04T14:17:26.327610+00:00",
+          "received_at": "2026-11-04T14:17:26.551161+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0011.json",
+          "sha256": "84a16962c5cabede0589319210d572540c61b2a6d4763c3848a45d16d5e5b3a4",
+          "requested_at": "2026-11-04T14:17:29.330520+00:00",
+          "received_at": "2026-11-04T14:17:30.160830+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0012.json",
+          "sha256": "34f89b9f8cad38b5a7194c92152131c5d1e5a24cda6c147d64e7ae529fe700c6",
+          "requested_at": "2026-11-04T14:17:32.331656+00:00",
+          "received_at": "2026-11-04T14:17:33.148980+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0013.json",
+          "sha256": "364ab9b717a81b7805cc4f98b9d41ed4235d05c77bf88597486dd4a6fe85b94c",
+          "requested_at": "2026-11-04T14:17:35.333983+00:00",
+          "received_at": "2026-11-04T14:17:37.229637+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0014.json",
+          "sha256": "ad2745c42a3379469d917482f3cec46e1f012a3fe492c4751f0ea721c51c6fea",
+          "requested_at": "2026-11-04T14:17:38.335278+00:00",
+          "received_at": "2026-11-04T14:17:39.885637+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0015.json",
+          "sha256": "fbb0802b0f6338c1936f317440db9d1d3e667de62d6ca3619cee6e2554855a7b",
+          "requested_at": "2026-11-04T14:17:41.335673+00:00",
+          "received_at": "2026-11-04T14:17:42.217252+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0016.json",
+          "sha256": "3c51c3324dc89ab8df1c615e06386a3a777f6edfff40065aefec96c7b9aab67c",
+          "requested_at": "2026-11-04T14:17:44.337925+00:00",
+          "received_at": "2026-11-04T14:17:44.520884+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/srusdat-retry-raw/0017.json",
+          "sha256": "c2ea3b0b10c134e85b390f3ad7aafef86757f28f7ac73d7d69f4c4cbbe5293a2",
+          "requested_at": "2026-11-04T14:17:47.339705+00:00",
+          "received_at": "2026-11-04T14:17:47.539293+00:00"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "markets": 1,
+    "collected": 1,
+    "quoted": 5,
+    "failed_quotes": 2
+  }
+}

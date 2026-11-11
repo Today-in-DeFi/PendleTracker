@@ -19,7 +19,8 @@ def _parse_time(value):
     if not value:
         return None
     try:
-        return datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+        dt = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+        return dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None else dt
     except (TypeError, ValueError):
         return None
 
@@ -44,7 +45,7 @@ def _is_stale(feed, path, max_age_hours):
     if not ts:
         return True
     age = datetime.now(timezone.utc) - ts
-    return age > timedelta(hours=max_age_hours)
+    return age < timedelta(minutes=-5) or age > timedelta(hours=max_age_hours)
 
 
 def _norm_addr(value):
@@ -185,7 +186,24 @@ def _write_positions(resolved, ts):
         conn.close()
 
 
+DIRECT_CACHE_PATH = os.path.join(os.path.join(os.path.dirname(os.path.dirname(__file__)), "data"),
+                                 "direct_holdings_cache.json")
+
+
+def _save_direct_cache(entries):
+    os.makedirs(os.path.dirname(DIRECT_CACHE_PATH), exist_ok=True)
+    tmp = DIRECT_CACHE_PATH + ".tmp"
+    with open(tmp, "w") as f:
+        json.dump({"entries": entries, "coverage": LAST_COVERAGE}, f, indent=2)
+    os.replace(tmp, DIRECT_CACHE_PATH)
+
+
 def last_known_direct_watchlist():
+    try:
+        with open(DIRECT_CACHE_PATH) as f:
+            return json.load(f)["entries"]
+    except (OSError, ValueError, KeyError):
+        pass
     conn = db.ensure_db()
     try:
         latest_ts = conn.execute("SELECT max(ts) FROM positions").fetchone()[0]
@@ -219,26 +237,57 @@ def last_known_direct_watchlist():
         conn.close()
 
 
+# Updated for every resolver run; copied into the published market snapshot.
+LAST_COVERAGE = {"status": "unknown", "complete": False}
+
+
 def derive_direct_watchlist(
     feed_path=DEFAULT_FEED_PATH,
     max_age_hours=FEED_MAX_AGE_HOURS,
     write_positions=True,
 ):
     """Resolve held PT positions to Pendle markets by exact PT-token address."""
+    global LAST_COVERAGE
+    LAST_COVERAGE = {"status": "unavailable", "complete": False, "source": feed_path,
+                     "resolved_at": db.utc_now()}
+    def retained(reason):
+        LAST_COVERAGE["status"] = reason
+        try:
+            with open(DIRECT_CACHE_PATH) as f:
+                LAST_COVERAGE["retained_source"] = json.load(f).get("coverage")
+        except (OSError, ValueError):
+            pass
+        return last_known_direct_watchlist()
+
     try:
         feed = _load_feed(feed_path)
     except (FileNotFoundError, json.JSONDecodeError, OSError) as exc:
         logger.warning(f"[Pendle portfolio] feed unavailable at {feed_path}: {exc}; using last-known positions")
-        return last_known_direct_watchlist()
+        return retained("unavailable")
 
+    LAST_COVERAGE.update(generated_at=feed.get("generated_at"),
+                         upstream_generated_at=feed.get("upstream_generated_at"))
+    if not _parse_time(feed.get("generated_at")):
+        return retained("missing_source_clock")
     if _is_stale(feed, feed_path, max_age_hours):
         logger.warning(f"[Pendle portfolio] feed stale at {feed_path}; using last-known positions")
-        return last_known_direct_watchlist()
+        return retained("stale_or_future")
+
+    upstream = dict(feed, generated_at=feed.get("upstream_generated_at"))
+    if not _parse_time(upstream["generated_at"]) or _is_stale(upstream, feed_path, max_age_hours):
+        return retained("upstream_clock_invalid")
+    if not isinstance(feed.get("positions"), list) or feed.get("skipped_stale"):
+        return retained("incomplete_source")
+    if not feed["positions"]:
+        LAST_COVERAGE.update(status="verified_empty", complete=True)
+        if write_positions:
+            _save_direct_cache([])
+        return []
 
     index = load_pt_index()
     if not index:
         logger.warning("[Pendle portfolio] no Pendle index available; using last-known positions")
-        return last_known_direct_watchlist()
+        return retained("missing_index")
 
     ts = db.utc_now()
     resolved_rows = []
@@ -284,12 +333,21 @@ def derive_direct_watchlist(
         })
         current["our_notional_usd"] += value_usd
 
+    complete = len(resolved_rows) == len(feed["positions"])
+    LAST_COVERAGE.update(status="fresh" if complete else "partial_resolution", complete=complete,
+                         resolved_count=len(resolved_rows), source_count=len(feed["positions"]))
+    if not complete:
+        # Preserve prior exposure until a complete feed proves its removal.
+        for old in last_known_direct_watchlist():
+            by_market.setdefault(old["market"], old)
     if write_positions:
-        _write_positions(resolved_rows, ts)
+        if complete:
+            _write_positions(resolved_rows, ts)
+        _save_direct_cache(list(by_market.values()))
 
     if not by_market:
         logger.warning("[Pendle portfolio] no feed positions resolved; using last-known positions")
-        return last_known_direct_watchlist()
+        return retained("unresolved")
 
     logger.info(
         f"[Pendle portfolio] resolved {len(resolved_rows)} positions "

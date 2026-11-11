@@ -1,0 +1,39 @@
+{
+  "requested_at": "2026-11-04T14:10:03.999564+00:00",
+  "method": "POST",
+  "url": "https://api-v2.pendle.finance/core/v3/sdk/143/convert",
+  "params": null,
+  "body": {
+    "receiver": "0x000000000000000000000000000000000000dead",
+    "slippage": 0.01,
+    "inputs": [
+      {
+        "token": "0x754704bc059f8c67012fed69bc8a327a5aafb603",
+        "amount": "100021434593"
+      }
+    ],
+    "outputs": [
+      "0xbb0dcdd5f0159c3d51d8bce7d84f1b9fa390ef09"
+    ],
+    "enableAggregator": true,
+    "aggregators": [
+      "kyberswap"
+    ],
+    "useLimitOrder": false
+  },
+  "received_at": "2026-11-04T14:10:04.316323+00:00",
+  "http_status": 400,
+  "rate_headers": {
+    "x-computing-unit": "6",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "188",
+    "x-ratelimit-reset": "1793801460",
+    "x-ratelimit-weekly-limit": "200000",
+    "x-ratelimit-weekly-remaining": "191563",
+    "x-ratelimit-weekly-reset": "1793836800"
+  },
+  "response": {
+    "message": "This token cannot be swapped. Please select a different token.",
+    "error": "Bad Request"
+  }
+}

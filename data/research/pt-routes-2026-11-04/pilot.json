@@ -1,0 +1,1065 @@
+{
+  "schema_version": 1,
+  "collection_started_at": "2026-11-04T14:06:17.296167+00:00",
+  "generated_at": "2026-11-04T14:07:33.347299+00:00",
+  "scope": "read-only research quote pilot; not vetted recommendations or guaranteed execution",
+  "inventory_generated_at": "2026-11-04T10:08:00.101771+00:00",
+  "excluded": [
+    {
+      "chain_id": 143,
+      "market_address": "0x17b8f7373ecd556192abfc85be314e5d4fb6b3fa",
+      "reason": "authorization/backing/bridge linkage gap; no Ethereum inheritance"
+    }
+  ],
+  "benchmark": "same-chain native USDC; does not imply bridge/backing/access verification",
+  "policy": {
+    "notionals_usd": [
+      10000,
+      50000,
+      100000
+    ],
+    "max_markets": 1,
+    "api_interval_seconds": 3,
+    "aggregators_per_request": 1,
+    "limit_orders": false,
+    "quote_validity": "point-in-time only; refresh immediately before any execution",
+    "yield": "PT implied APY alone; underlying yield, points and LP rewards excluded"
+  },
+  "markets": [
+    {
+      "identity": {
+        "name": "PT-apyUSD-11FEB2027",
+        "chain_id": 1,
+        "market_address": "0x313826e7029fdf742f3076741ed220e0e7b4968d",
+        "pt": "0x60b1e75ede859e496c281d308bc94b6965ac4847",
+        "sy": "0x04f8dca7bccd8997ac57ca6fef7c705e17d6bcb6",
+        "underlying": "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a"
+      },
+      "status": "collected",
+      "quotes": [
+        {
+          "direction": "entry",
+          "notional_usd": 10000,
+          "route_scope": "same_chain_USDC_benchmark",
+          "valuation": {
+            "source": "/v1/prices/assets",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/pilot-raw/0020.json",
+              "sha256": "381b4d21c9fc8637c1d9ec731471d5c33f0906749a0041bf3e8dd18eaa607096",
+              "requested_at": "2026-11-04T14:07:14.335637+00:00",
+              "received_at": "2026-11-04T14:07:15.314383+00:00"
+            },
+            "input_usd_price": "0.99978636",
+            "source_update_clock": "not provided; HTTP receipt only"
+          },
+          "amount_in_raw": "10002136856",
+          "input_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "output_address": "0x60b1e75ede859e496c281d308bc94b6965ac4847",
+          "slippage_tolerance_fraction": 0.01,
+          "block_reference_status": "SDK does not bind response to a block; surrounding RPC observation is not quote block",
+          "status": "quoted",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/pilot-raw/0021.json",
+            "sha256": "b85d26d7d1ed769b3935c80a2ffb947b22f058ff5ba4a525af1c6aec28750d2a",
+            "requested_at": "2026-11-04T14:07:17.337789+00:00",
+            "received_at": "2026-11-04T14:07:20.468930+00:00"
+          },
+          "routes": [
+            {
+              "input": {
+                "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "decimals": 6,
+                "amount_raw": "10002136856",
+                "amount_native": "10002.136856"
+              },
+              "output": {
+                "address": "0x60b1e75ede859e496c281d308bc94b6965ac4847",
+                "decimals": 18,
+                "amount_raw": "10607348348227274192128",
+                "amount_native": "10607.348348227274192128"
+              },
+              "router": "0x888888888889758f76e7103c6cbf23abbf58f946",
+              "method": "swapExactTokenForPt",
+              "price_impact_fraction": -0.0071039132075481895,
+              "price_impact_breakdown": {
+                "internalPriceImpact": -0.001121793771950208,
+                "externalPriceImpact": -0.005988837676404579
+              },
+              "fee_usd": 8.047699163785055,
+              "fee_status": "SDK reported; attribution retained in raw evidence",
+              "aggregator": "KYBERSWAP",
+              "gas_used_simulated": "1480541",
+              "simulation_status": "SDK simulation gas returned",
+              "min_output_raw": "10501274864745001450206",
+              "gas_usd_status": "unknown",
+              "net_yield_status": "unknown",
+              "calldata_sha256": "2d671191f798ef6f0a50c0ab12b0bb0994bc9e29c7a0ec98d0d5514aebf4221b"
+            }
+          ]
+        },
+        {
+          "direction": "early_exit",
+          "notional_usd": 10000,
+          "route_scope": "same_chain_USDC_benchmark",
+          "valuation": {
+            "source": "/v1/prices/assets",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/pilot-raw/0020.json",
+              "sha256": "381b4d21c9fc8637c1d9ec731471d5c33f0906749a0041bf3e8dd18eaa607096",
+              "requested_at": "2026-11-04T14:07:14.335637+00:00",
+              "received_at": "2026-11-04T14:07:15.314383+00:00"
+            },
+            "input_usd_price": "0.9360455168863794",
+            "source_update_clock": "not provided; HTTP receipt only"
+          },
+          "amount_in_raw": "10683241166800904908683",
+          "input_address": "0x60b1e75ede859e496c281d308bc94b6965ac4847",
+          "output_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "slippage_tolerance_fraction": 0.01,
+          "block_reference_status": "SDK does not bind response to a block; surrounding RPC observation is not quote block",
+          "status": "quoted",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/pilot-raw/0022.json",
+            "sha256": "177fc72a0ca17b134ada8e6b947ec1e716ae4caba6bdcc17a8f1e80d3eab0b32",
+            "requested_at": "2026-11-04T14:07:20.472562+00:00",
+            "received_at": "2026-11-04T14:07:22.495392+00:00"
+          },
+          "routes": [
+            {
+              "input": {
+                "address": "0x60b1e75ede859e496c281d308bc94b6965ac4847",
+                "decimals": 18,
+                "amount_raw": "10683241166800904908683",
+                "amount_native": "10683.241166800904908683"
+              },
+              "output": {
+                "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "decimals": 6,
+                "amount_raw": "10004683392",
+                "amount_native": "10004.683392"
+              },
+              "router": "0x888888888889758f76e7103c6cbf23abbf58f946",
+              "method": "swapExactPtForToken",
+              "price_impact_fraction": 0.00025459914401326387,
+              "price_impact_breakdown": {
+                "internalPriceImpact": -0.0011203536912641754,
+                "externalPriceImpact": 0.0013764949965278407
+              },
+              "fee_usd": 8.093712988547807,
+              "fee_status": "SDK reported; attribution retained in raw evidence",
+              "aggregator": "KYBERSWAP",
+              "gas_used_simulated": "842660",
+              "simulation_status": "SDK simulation gas returned",
+              "min_output_raw": "9904636558",
+              "gas_usd_status": "unknown",
+              "net_yield_status": "unknown",
+              "calldata_sha256": "f9a09ec917f3444ae977182e1e32e634a4478ebe053e5d0b16011932153b1342"
+            }
+          ]
+        },
+        {
+          "direction": "entry",
+          "notional_usd": 50000,
+          "route_scope": "same_chain_USDC_benchmark",
+          "valuation": {
+            "source": "/v1/prices/assets",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/pilot-raw/0020.json",
+              "sha256": "381b4d21c9fc8637c1d9ec731471d5c33f0906749a0041bf3e8dd18eaa607096",
+              "requested_at": "2026-11-04T14:07:14.335637+00:00",
+              "received_at": "2026-11-04T14:07:15.314383+00:00"
+            },
+            "input_usd_price": "0.99978636",
+            "source_update_clock": "not provided; HTTP receipt only"
+          },
+          "amount_in_raw": "50010684282",
+          "input_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "output_address": "0x60b1e75ede859e496c281d308bc94b6965ac4847",
+          "slippage_tolerance_fraction": 0.01,
+          "block_reference_status": "SDK does not bind response to a block; surrounding RPC observation is not quote block",
+          "status": "quoted",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/pilot-raw/0023.json",
+            "sha256": "1427a50784d7ea9b04f382638100af155153d6592bd90cd7dd87643ea29fa401",
+            "requested_at": "2026-11-04T14:07:23.473706+00:00",
+            "received_at": "2026-11-04T14:07:25.415522+00:00"
+          },
+          "routes": [
+            {
+              "input": {
+                "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "decimals": 6,
+                "amount_raw": "50010684282",
+                "amount_native": "50010.684282"
+              },
+              "output": {
+                "address": "0x60b1e75ede859e496c281d308bc94b6965ac4847",
+                "decimals": 18,
+                "amount_raw": "52947421288830493318045",
+                "amount_native": "52947.421288830493318045"
+              },
+              "router": "0x888888888889758f76e7103c6cbf23abbf58f946",
+              "method": "swapExactTokenForPt",
+              "price_impact_fraction": -0.008775931703678904,
+              "price_impact_breakdown": {
+                "internalPriceImpact": -0.0023326342637361996,
+                "externalPriceImpact": -0.006458362437451924
+              },
+              "fee_usd": 40.219429967017916,
+              "fee_status": "SDK reported; attribution retained in raw evidence",
+              "aggregator": "KYBERSWAP",
+              "gas_used_simulated": "808392",
+              "simulation_status": "SDK simulation gas returned",
+              "min_output_raw": "52417947075942188384864",
+              "gas_usd_status": "unknown",
+              "net_yield_status": "unknown",
+              "calldata_sha256": "85f5d7ecc10336356e62b8fda030ba4e38a286961993ffe5cb248262061112b9"
+            }
+          ]
+        },
+        {
+          "direction": "early_exit",
+          "notional_usd": 50000,
+          "route_scope": "same_chain_USDC_benchmark",
+          "valuation": {
+            "source": "/v1/prices/assets",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/pilot-raw/0020.json",
+              "sha256": "381b4d21c9fc8637c1d9ec731471d5c33f0906749a0041bf3e8dd18eaa607096",
+              "requested_at": "2026-11-04T14:07:14.335637+00:00",
+              "received_at": "2026-11-04T14:07:15.314383+00:00"
+            },
+            "input_usd_price": "0.9360455168863794",
+            "source_update_clock": "not provided; HTTP receipt only"
+          },
+          "amount_in_raw": "53416205834004524543418",
+          "input_address": "0x60b1e75ede859e496c281d308bc94b6965ac4847",
+          "output_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "slippage_tolerance_fraction": 0.01,
+          "block_reference_status": "SDK does not bind response to a block; surrounding RPC observation is not quote block",
+          "status": "quoted",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/pilot-raw/0024.json",
+            "sha256": "e801a3943a4e1019f8b6e0eba8e747310172212df1e8df4fc3c204001dbcab62",
+            "requested_at": "2026-11-04T14:07:26.474005+00:00",
+            "received_at": "2026-11-04T14:07:28.659064+00:00"
+          },
+          "routes": [
+            {
+              "input": {
+                "address": "0x60b1e75ede859e496c281d308bc94b6965ac4847",
+                "decimals": 18,
+                "amount_raw": "53416205834004524543418",
+                "amount_native": "53416.205834004524543418"
+              },
+              "output": {
+                "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "decimals": 6,
+                "amount_raw": "49931487449",
+                "amount_native": "49931.487449"
+              },
+              "router": "0x888888888889758f76e7103c6cbf23abbf58f946",
+              "method": "swapExactPtForToken",
+              "price_impact_fraction": -0.0015837410304525461,
+              "price_impact_breakdown": {
+                "internalPriceImpact": -0.0023880934037948665,
+                "externalPriceImpact": 0.0008062778401338257
+              },
+              "fee_usd": 40.417233352058126,
+              "fee_status": "SDK reported; attribution retained in raw evidence",
+              "aggregator": "KYBERSWAP",
+              "gas_used_simulated": "911953",
+              "simulation_status": "SDK simulation gas returned",
+              "min_output_raw": "49432172574",
+              "gas_usd_status": "unknown",
+              "net_yield_status": "unknown",
+              "calldata_sha256": "4345a2998e5c746ae047d439afbd638de2343b3dfd65d014c31d0d47ea93f1a5"
+            }
+          ]
+        },
+        {
+          "direction": "entry",
+          "notional_usd": 100000,
+          "route_scope": "same_chain_USDC_benchmark",
+          "valuation": {
+            "source": "/v1/prices/assets",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/pilot-raw/0020.json",
+              "sha256": "381b4d21c9fc8637c1d9ec731471d5c33f0906749a0041bf3e8dd18eaa607096",
+              "requested_at": "2026-11-04T14:07:14.335637+00:00",
+              "received_at": "2026-11-04T14:07:15.314383+00:00"
+            },
+            "input_usd_price": "0.99978636",
+            "source_update_clock": "not provided; HTTP receipt only"
+          },
+          "amount_in_raw": "100021368565",
+          "input_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "output_address": "0x60b1e75ede859e496c281d308bc94b6965ac4847",
+          "slippage_tolerance_fraction": 0.01,
+          "block_reference_status": "SDK does not bind response to a block; surrounding RPC observation is not quote block",
+          "status": "quoted",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/pilot-raw/0025.json",
+            "sha256": "e56348b8562c5e5b26e984d436cdd1080a15eb595e39411ebba9598708595424",
+            "requested_at": "2026-11-04T14:07:29.474960+00:00",
+            "received_at": "2026-11-04T14:07:30.497391+00:00"
+          },
+          "routes": [
+            {
+              "input": {
+                "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "decimals": 6,
+                "amount_raw": "100021368565",
+                "amount_native": "100021.368565"
+              },
+              "output": {
+                "address": "0x60b1e75ede859e496c281d308bc94b6965ac4847",
+                "decimals": 18,
+                "amount_raw": "105721720660346179888136",
+                "amount_native": "105721.720660346179888136"
+              },
+              "router": "0x888888888889758f76e7103c6cbf23abbf58f946",
+              "method": "swapExactTokenForPt",
+              "price_impact_fraction": -0.010396431891059519,
+              "price_impact_breakdown": {
+                "internalPriceImpact": -0.00382067887145221,
+                "externalPriceImpact": -0.006600973218514222
+              },
+              "fee_usd": 80.42759702501893,
+              "fee_status": "SDK reported; attribution retained in raw evidence",
+              "aggregator": "KYBERSWAP",
+              "gas_used_simulated": "806489",
+              "simulation_status": "SDK simulation gas returned",
+              "min_output_raw": "104664503453742718089254",
+              "gas_usd_status": "unknown",
+              "net_yield_status": "unknown",
+              "calldata_sha256": "717a7115acd9a39a3f26522bb6e951672dd4ad230912bf88e656a5bc76f76877"
+            }
+          ]
+        },
+        {
+          "direction": "early_exit",
+          "notional_usd": 100000,
+          "route_scope": "same_chain_USDC_benchmark",
+          "valuation": {
+            "source": "/v1/prices/assets",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/pilot-raw/0020.json",
+              "sha256": "381b4d21c9fc8637c1d9ec731471d5c33f0906749a0041bf3e8dd18eaa607096",
+              "requested_at": "2026-11-04T14:07:14.335637+00:00",
+              "received_at": "2026-11-04T14:07:15.314383+00:00"
+            },
+            "input_usd_price": "0.9360455168863794",
+            "source_update_clock": "not provided; HTTP receipt only"
+          },
+          "amount_in_raw": "106832411668009049086836",
+          "input_address": "0x60b1e75ede859e496c281d308bc94b6965ac4847",
+          "output_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "slippage_tolerance_fraction": 0.01,
+          "block_reference_status": "SDK does not bind response to a block; surrounding RPC observation is not quote block",
+          "status": "quoted",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/pilot-raw/0026.json",
+            "sha256": "1826c9b29da9c84464a8b234e3429566b8458e69dc194902b71e481e77f80047",
+            "requested_at": "2026-11-04T14:07:32.475646+00:00",
+            "received_at": "2026-11-04T14:07:33.345753+00:00"
+          },
+          "routes": [
+            {
+              "input": {
+                "address": "0x60b1e75ede859e496c281d308bc94b6965ac4847",
+                "decimals": 18,
+                "amount_raw": "106832411668009049086836",
+                "amount_native": "106832.411668009049086836"
+              },
+              "output": {
+                "address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+                "decimals": 6,
+                "amount_raw": "99676978257",
+                "amount_native": "99676.978257"
+              },
+              "router": "0x888888888889758f76e7103c6cbf23abbf58f946",
+              "method": "swapExactPtForToken",
+              "price_impact_fraction": -0.003443309811352519,
+              "price_impact_breakdown": {
+                "internalPriceImpact": -0.0040537111681406834,
+                "externalPriceImpact": 0.000612885818876969
+              },
+              "fee_usd": 80.69950402129231,
+              "fee_status": "SDK reported; attribution retained in raw evidence",
+              "aggregator": "KYBERSWAP",
+              "gas_used_simulated": "912000",
+              "simulation_status": "SDK simulation gas returned",
+              "min_output_raw": "98680208474",
+              "gas_usd_status": "unknown",
+              "net_yield_status": "unknown",
+              "calldata_sha256": "6e9483d64c924ca498a073a39b43399c442fa1feb91c98a5f9d193b54bed844b"
+            }
+          ]
+        }
+      ],
+      "identity_evidence": {
+        "path": "data/research/pt-routes-2026-11-04/pilot-raw/0001.json",
+        "sha256": "417fd06bfffce9b6729b9181b21d7f1efcd988fb8dfba3dd556790dad09f00e2",
+        "requested_at": "2026-11-04T14:06:17.296438+00:00",
+        "received_at": "2026-11-04T14:06:18.265647+00:00"
+      },
+      "maturity": "2027-02-11T00:00:00.000Z",
+      "accounting_asset": {
+        "id": "1-0x98a878b1cd98131b271883b390f68d2c90674665",
+        "chainId": 1,
+        "address": "0x98a878b1cd98131b271883b390f68d2c90674665",
+        "symbol": "apxUSD",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 0.99316679853375
+        },
+        "priceUpdatedAt": "2026-11-04T14:06:15.028Z",
+        "name": "apxUSD",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "apxUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/4cad89ae-991c-4e83-a30f-cc418c4d8b16.svg",
+        "zappable": true,
+        "simpleName": "apxUSD",
+        "simpleSymbol": "apxUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/4cad89ae-991c-4e83-a30f-cc418c4d8b16.svg",
+        "proName": "apxUSD"
+      },
+      "underlying_asset": {
+        "id": "1-0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a",
+        "chainId": 1,
+        "address": "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a",
+        "symbol": "apyUSD",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 1.4152712806073946
+        },
+        "priceUpdatedAt": "2026-11-04T14:06:15.028Z",
+        "name": "apyUSD",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "apyUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/a48376d0-b564-4013-85b6-ccb62c4d3694.svg",
+        "zappable": true,
+        "simpleName": "apyUSD",
+        "simpleSymbol": "apyUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/a48376d0-b564-4013-85b6-ccb62c4d3694.svg",
+        "proName": "apyUSD"
+      },
+      "pt_implied_apy_fraction": 0.15934282956130175,
+      "reported_market_liquidity_usd": 1013856.411111141,
+      "liquidity_role": "dust screen only; not executable capacity",
+      "sy_tokens": {
+        "tokensMintSy": [
+          "0x98a878b1cd98131b271883b390f68d2c90674665",
+          "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a"
+        ],
+        "tokensRedeemSy": [
+          "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a"
+        ],
+        "tokensIn": [
+          "0x98a878b1cd98131b271883b390f68d2c90674665",
+          "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a",
+          "0x04f8dca7bccd8997ac57ca6fef7c705e17d6bcb6",
+          "0x111111111117dc0aa78b770fa6a738034120c302",
+          "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+          "0xe95a203b1a91a908f9b9ce46459d101078c2c3cb",
+          "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+          "0xba100000625a3754423978a60c9317c58a424e3d",
+          "0x97ad75064b20fb2b2447fed4fa953bf7f007a706",
+          "0xb8c77482e45f1f44de1745f52c74426c631bdd52",
+          "0x6440f144b7e50d6a8439336510312d2f54beb01d",
+          "0x152649ea73beab28c5b49b26eb48f7ead6d4c898",
+          "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+          "0x72dfb2e44f59c5ad2bafe84314e5b99a7cd5075e",
+          "0xd533a949740bb3306d119cc777fa900ba034cd52",
+          "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
+          "0xad55aebc9b8c03fc43cd9f62260391c13c23e7c0",
+          "0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b",
+          "0x6b175474e89094c44da98b954eedeac495271d0f",
+          "0x865377367054516e17014ccded1e7d814edc9ce4",
+          "0x657e8c867d8b37dcc18fa4caead9c45eb088c642",
+          "0x35fa164735182de50811e8e2e824cfb9b6118ac2",
+          "0x57e114b691db790c35207b2e685d4a43181e6061",
+          "0x0000000000000000000000000000000000000000",
+          "0xfe0c30065b384f05761f15d0cc899d4f9f9cc0eb",
+          "0xa35b1b31ce002fbf2058d22f30f95d405200a15b",
+          "0x1a7e4e63778b4f12a199c062f3efdd288afcbce8",
+          "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "0x90d2af7d622ca3141efa4d8f1f24d86e5974cc8f",
+          "0xbf5495efe5db9ce00f80364c8b423567e58d2110",
+          "0xc96de26018a54d51c097160568752c4e3bd6c364",
+          "0xaea46a60368a7bd060eec7df8cba43b7ef41ad85",
+          "0x6a29a46e21c730dca1d8b23d637c101cec605c5b",
+          "0xcf0c122c6b73ff809c693db761e7baebe62b6a2e",
+          "0x6f40d4a6237c257fff2db00fa0510deeecd303eb",
+          "0x853d955acef822db058eb8505911ed77f175b99e",
+          "0x5e8422345238f34275888049021821e8e08caa1f",
+          "0x9fb7b4477576fe5b32be4c1843afb1e55f251b33",
+          "0x085780639cc2cacd35e474e71f4d000e2405d8f6",
+          "0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f",
+          "0x8236a87084f8b84306f72007f36f2618a5634494",
+          "0x5a98fcbea516cf06857215779fd812ca3bef1b32",
+          "0x514910771af9ca656af840dff83e8264ecf986ca",
+          "0x7c1156e515aa1a2e851674120074968c905aaf37",
+          "0xd5f7838f5c461feff7fe49ea5ebaf7728bb0adfa",
+          "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+          "0x3c3a81e81dc49a522a592e7622a7e711c06bf354",
+          "0x58d97b57bb95320f9a05dc918aef65434969c2b2",
+          "0x64351fc9810adad17a690e4e1717df5e7e085160",
+          "0xab5eb14c09d416f0ac63661e57edb7aecdb9befa",
+          "0x856c4efb76c1d1ae02e20ceb03a2a6a08b0b8dc3",
+          "0xf1c9acdc66974dfb6decb12aa385b9cd01190e38",
+          "0x45804880de22913dafe09f4980848ece6ecbaf78",
+          "0x808507121b80c02388fad14726482e061b8da827",
+          "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+          "0x19ebb35279a16207ec4ba82799cc64715065f7f6",
+          "0xd9a442856c234a39a81a089c06451ebaa4306a72",
+          "0xf469fbd2abcd6b9de8e169d128226c0fc90a012e",
+          "0x6c3ea9036406852006290770bedfcaba0e23a0e8",
+          "0x84631c0d0081fde56deb72f6de77abbbf6a9f93a",
+          "0xae78736cd615f374d3085123a210448e74fc6393",
+          "0x5086bf358635b81d8c47c66d1c8b9e567db70c72",
+          "0x57ab1e0003f623289cd798b1824be09a793e4bec",
+          "0x8292bb45bf1ee4d140127049757c2e0ff06317ed",
+          "0xfae103dc9cf190ed75350761e95403b7b8afa6c0",
+          "0x83f20f44975d03b1b09e64809b757c47f942beea",
+          "0xd1b5651e55d4ceed36251c61c50c889b36f6abb5",
+          "0x8be3460a480c80728a8c4d7a5d5303c85ba7b3b9",
+          "0xac3e018457b222d93114458476f3e3416abbe38f",
+          "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce",
+          "0x6bf7788eaa948d9ffba7e9bb386e2d3c9810e0fc",
+          "0xbceb5f6877d979ec621ae694da1102cb95691ad3",
+          "0x56072c95faa701256059aa122697b133aded9279",
+          "0x7a56e1c57c7475ccf742a1832b028f0456652f97",
+          "0x9559aaa82d9649c7a7b220e7c461d2e74c9a3593",
+          "0x88887be419578051ff9f4eb6c858a951921d8888",
+          "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+          "0xb60acd2057067dc9ed8c083f5aa227a244044fd6",
+          "0xc5d6a7b61d18afa11435a889557b068bb9f29930",
+          "0x9d39a5de30e57443bff2a8307a4256c8797a3497",
+          "0xa3931d71877c0e7a3148cb7eb4463524fec27fbd",
+          "0xe24a3dc889621612422a64e6388927901608b91d",
+          "0x0a6e7ba5042b38349e437ec6db6214aec7b35676",
+          "0xf951e335afb289353dc249e82926178eac7ded78",
+          "0x643c4e15d7d62ad0abec4a9bd4b001aa3ef52d66",
+          "0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b",
+          "0x18084fba666a33d37592fa2633fd49a74dd93a88",
+          "0xd11c452fc99cf405034ee446803b6f6c1f6d5ed8",
+          "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+          "0x004e9c3ef86bc1ca1f0bb5c7662861ee93350568",
+          "0xf1376bcef0f78459c0ed0ba5ddce976f1ddf51f4",
+          "0x73a15fed60bf67631dc6cd7bc5b6e8da8190acf5",
+          "0x35d8949372d46b7a3d5a56006ae77b215fc69bc0",
+          "0x0000206329b97db379d5e1bf586bbdb969c63274",
+          "0x23238f20b894f29041f48d88ee91131c395aaa71",
+          "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "0x4f8e5de400de08b164e7421b3ee387f461becd1a",
+          "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+          "0xfa2b947eec368f42195f24f36d2af29f7c24cec2",
+          "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
+          "0xbdc7c08592ee4aa51d06c27ee23d5087d65adbcd",
+          "0xdc035d45d973e3ec169d2276ddab16f1e407384f",
+          "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "0xc139190f447e929f090edeb554d95abb8b18ac1c",
+          "0xda67b4284609d2d48e5d10cfac411572727dc1ed",
+          "0xc4441c2be5d8fa8126822b9929ca0b81ea0de38e",
+          "0x06b964d96f5dcf7eae9d7c559b09edce244d4b8e",
+          "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+          "0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee",
+          "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "0x4691937a7508860f876c9c0a2a617e7d9e945d4b",
+          "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+          "0x77e06c9eccf2e797fd462a92b6d7642ef85b0a44",
+          "0x68749665ff8d2d112fa859aa293f07a622782f38",
+          "0xd9d920aa40f578ab794426f5c90f6c731d159def",
+          "0xe868084cf08f3c3db11f4b73a95473762d9463f7",
+          "0x4274cd7277c7bb0806bd5fe84b9adae466a8da0a",
+          "0x6985884c4392d348587b19cb9eaaf157f13271cd"
+        ],
+        "tokensOut": [
+          "0x98a878b1cd98131b271883b390f68d2c90674665",
+          "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a",
+          "0x04f8dca7bccd8997ac57ca6fef7c705e17d6bcb6",
+          "0x111111111117dc0aa78b770fa6a738034120c302",
+          "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+          "0xe95a203b1a91a908f9b9ce46459d101078c2c3cb",
+          "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+          "0xba100000625a3754423978a60c9317c58a424e3d",
+          "0x97ad75064b20fb2b2447fed4fa953bf7f007a706",
+          "0xb8c77482e45f1f44de1745f52c74426c631bdd52",
+          "0x6440f144b7e50d6a8439336510312d2f54beb01d",
+          "0x152649ea73beab28c5b49b26eb48f7ead6d4c898",
+          "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+          "0x72dfb2e44f59c5ad2bafe84314e5b99a7cd5075e",
+          "0xd533a949740bb3306d119cc777fa900ba034cd52",
+          "0xf939e0a03fb07f59a73314e73794be0e57ac1b4e",
+          "0xad55aebc9b8c03fc43cd9f62260391c13c23e7c0",
+          "0x4e3fbd56cd56c3e72c1403e103b45db9da5b9d2b",
+          "0x6b175474e89094c44da98b954eedeac495271d0f",
+          "0x865377367054516e17014ccded1e7d814edc9ce4",
+          "0x657e8c867d8b37dcc18fa4caead9c45eb088c642",
+          "0x35fa164735182de50811e8e2e824cfb9b6118ac2",
+          "0x57e114b691db790c35207b2e685d4a43181e6061",
+          "0x0000000000000000000000000000000000000000",
+          "0xfe0c30065b384f05761f15d0cc899d4f9f9cc0eb",
+          "0xa35b1b31ce002fbf2058d22f30f95d405200a15b",
+          "0x1a7e4e63778b4f12a199c062f3efdd288afcbce8",
+          "0x1abaea1f7c830bd89acc67ec4af516284b1bc33c",
+          "0x90d2af7d622ca3141efa4d8f1f24d86e5974cc8f",
+          "0xbf5495efe5db9ce00f80364c8b423567e58d2110",
+          "0xc96de26018a54d51c097160568752c4e3bd6c364",
+          "0xaea46a60368a7bd060eec7df8cba43b7ef41ad85",
+          "0x6a29a46e21c730dca1d8b23d637c101cec605c5b",
+          "0xcf0c122c6b73ff809c693db761e7baebe62b6a2e",
+          "0x6f40d4a6237c257fff2db00fa0510deeecd303eb",
+          "0x853d955acef822db058eb8505911ed77f175b99e",
+          "0x5e8422345238f34275888049021821e8e08caa1f",
+          "0x9fb7b4477576fe5b32be4c1843afb1e55f251b33",
+          "0x085780639cc2cacd35e474e71f4d000e2405d8f6",
+          "0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f",
+          "0x8236a87084f8b84306f72007f36f2618a5634494",
+          "0x5a98fcbea516cf06857215779fd812ca3bef1b32",
+          "0x514910771af9ca656af840dff83e8264ecf986ca",
+          "0x7c1156e515aa1a2e851674120074968c905aaf37",
+          "0xd5f7838f5c461feff7fe49ea5ebaf7728bb0adfa",
+          "0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2",
+          "0x3c3a81e81dc49a522a592e7622a7e711c06bf354",
+          "0x58d97b57bb95320f9a05dc918aef65434969c2b2",
+          "0x64351fc9810adad17a690e4e1717df5e7e085160",
+          "0xab5eb14c09d416f0ac63661e57edb7aecdb9befa",
+          "0x856c4efb76c1d1ae02e20ceb03a2a6a08b0b8dc3",
+          "0xf1c9acdc66974dfb6decb12aa385b9cd01190e38",
+          "0x45804880de22913dafe09f4980848ece6ecbaf78",
+          "0x808507121b80c02388fad14726482e061b8da827",
+          "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+          "0x19ebb35279a16207ec4ba82799cc64715065f7f6",
+          "0xd9a442856c234a39a81a089c06451ebaa4306a72",
+          "0xf469fbd2abcd6b9de8e169d128226c0fc90a012e",
+          "0x6c3ea9036406852006290770bedfcaba0e23a0e8",
+          "0x84631c0d0081fde56deb72f6de77abbbf6a9f93a",
+          "0xae78736cd615f374d3085123a210448e74fc6393",
+          "0x5086bf358635b81d8c47c66d1c8b9e567db70c72",
+          "0x57ab1e0003f623289cd798b1824be09a793e4bec",
+          "0x8292bb45bf1ee4d140127049757c2e0ff06317ed",
+          "0xfae103dc9cf190ed75350761e95403b7b8afa6c0",
+          "0x83f20f44975d03b1b09e64809b757c47f942beea",
+          "0xd1b5651e55d4ceed36251c61c50c889b36f6abb5",
+          "0x8be3460a480c80728a8c4d7a5d5303c85ba7b3b9",
+          "0xac3e018457b222d93114458476f3e3416abbe38f",
+          "0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce",
+          "0x6bf7788eaa948d9ffba7e9bb386e2d3c9810e0fc",
+          "0xbceb5f6877d979ec621ae694da1102cb95691ad3",
+          "0x56072c95faa701256059aa122697b133aded9279",
+          "0x7a56e1c57c7475ccf742a1832b028f0456652f97",
+          "0x9559aaa82d9649c7a7b220e7c461d2e74c9a3593",
+          "0x88887be419578051ff9f4eb6c858a951921d8888",
+          "0xae7ab96520de3a18e5e111b5eaab095312d7fe84",
+          "0xb60acd2057067dc9ed8c083f5aa227a244044fd6",
+          "0xc5d6a7b61d18afa11435a889557b068bb9f29930",
+          "0x9d39a5de30e57443bff2a8307a4256c8797a3497",
+          "0xa3931d71877c0e7a3148cb7eb4463524fec27fbd",
+          "0xe24a3dc889621612422a64e6388927901608b91d",
+          "0x0a6e7ba5042b38349e437ec6db6214aec7b35676",
+          "0xf951e335afb289353dc249e82926178eac7ded78",
+          "0x643c4e15d7d62ad0abec4a9bd4b001aa3ef52d66",
+          "0x80ac24aa929eaf5013f6436cda2a7ba190f5cc0b",
+          "0x18084fba666a33d37592fa2633fd49a74dd93a88",
+          "0xd11c452fc99cf405034ee446803b6f6c1f6d5ed8",
+          "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+          "0x004e9c3ef86bc1ca1f0bb5c7662861ee93350568",
+          "0xf1376bcef0f78459c0ed0ba5ddce976f1ddf51f4",
+          "0x73a15fed60bf67631dc6cd7bc5b6e8da8190acf5",
+          "0x35d8949372d46b7a3d5a56006ae77b215fc69bc0",
+          "0x0000206329b97db379d5e1bf586bbdb969c63274",
+          "0x23238f20b894f29041f48d88ee91131c395aaa71",
+          "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+          "0x4f8e5de400de08b164e7421b3ee387f461becd1a",
+          "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+          "0xfa2b947eec368f42195f24f36d2af29f7c24cec2",
+          "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
+          "0xbdc7c08592ee4aa51d06c27ee23d5087d65adbcd",
+          "0xdc035d45d973e3ec169d2276ddab16f1e407384f",
+          "0xdac17f958d2ee523a2206206994597c13d831ec7",
+          "0xc139190f447e929f090edeb554d95abb8b18ac1c",
+          "0xda67b4284609d2d48e5d10cfac411572727dc1ed",
+          "0xc4441c2be5d8fa8126822b9929ca0b81ea0de38e",
+          "0x06b964d96f5dcf7eae9d7c559b09edce244d4b8e",
+          "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+          "0xcd5fe23c85820f7b72d0926fc9b05b43e359b7ee",
+          "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+          "0x4691937a7508860f876c9c0a2a617e7d9e945d4b",
+          "0x7f39c581f595b53c5cb19bd0b3f8da6c935e2ca0",
+          "0x77e06c9eccf2e797fd462a92b6d7642ef85b0a44",
+          "0x68749665ff8d2d112fa859aa293f07a622782f38",
+          "0xd9d920aa40f578ab794426f5c90f6c731d159def",
+          "0xe868084cf08f3c3db11f4b73a95473762d9463f7",
+          "0x4274cd7277c7bb0806bd5fe84b9adae466a8da0a",
+          "0x6985884c4392d348587b19cb9eaaf157f13271cd"
+        ]
+      },
+      "sy_tokens_evidence": {
+        "path": "data/research/pt-routes-2026-11-04/pilot-raw/0002.json",
+        "sha256": "a268efa5721fd7cec7cb48f0699db550c42272473ce2b98c401b3cbf0570f11e",
+        "requested_at": "2026-11-04T14:06:20.298623+00:00",
+        "received_at": "2026-11-04T14:06:20.727801+00:00"
+      },
+      "onchain_sy": {
+        "block_number": 26341937,
+        "block_hash": "0xa71b57b0c84a9dc1ef46ca0d497fc16ac0119be08376164b511b77f27a97cfc9",
+        "block_timestamp": 1793801183,
+        "block_evidence": {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0005.json",
+          "sha256": "bf9b9d7f39718cd5a41a82e9cae1bc046d53e55cf9b3c16f1b046ec217cae307",
+          "requested_at": "2026-11-04T14:06:29.303640+00:00",
+          "received_at": "2026-11-04T14:06:29.804221+00:00"
+        },
+        "market_tokens": {
+          "status": "read",
+          "value": [
+            "0x04f8dca7bccd8997ac57ca6fef7c705e17d6bcb6",
+            "0x60b1e75ede859e496c281d308bc94b6965ac4847",
+            "0x4829d6c7f40eac2642e269d4198321891ee4449f"
+          ],
+          "block": "0x191f231",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/pilot-raw/0006.json",
+            "sha256": "4aee0660ad8a942d776a26fef6032fdf3d0cbc111d505e0fc3efb588dbbc8edc",
+            "requested_at": "2026-11-04T14:06:32.306269+00:00",
+            "received_at": "2026-11-04T14:06:32.642698+00:00"
+          }
+        },
+        "expiry": {
+          "status": "read",
+          "value": "1802304000",
+          "block": "0x191f231",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/pilot-raw/0007.json",
+            "sha256": "0bb680f8e00e07ea1ab70d2eb716b006e398b217d74ede4b1f422a5262219df7",
+            "requested_at": "2026-11-04T14:06:35.309086+00:00",
+            "received_at": "2026-11-04T14:06:35.616044+00:00"
+          }
+        },
+        "assetInfo": {
+          "status": "read",
+          "value": {
+            "asset_type": 0,
+            "address": "0x98a878b1cd98131b271883b390f68d2c90674665",
+            "decimals": 18
+          },
+          "block": "0x191f231",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/pilot-raw/0008.json",
+            "sha256": "92980a3b9881c387bff92a4d92f7e2fa9b7237382499085105d38883665136e5",
+            "requested_at": "2026-11-04T14:06:38.311675+00:00",
+            "received_at": "2026-11-04T14:06:38.586361+00:00"
+          }
+        },
+        "exchangeRate": {
+          "status": "read",
+          "value": "1452874371163853691",
+          "block": "0x191f231",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/pilot-raw/0009.json",
+            "sha256": "1f386596ef599ec79c4e8424751d2b8570fa94c24f0c98aa20afc3a82d5ecfdd",
+            "requested_at": "2026-11-04T14:06:41.314561+00:00",
+            "received_at": "2026-11-04T14:06:41.556880+00:00"
+          }
+        },
+        "getTokensIn": {
+          "status": "read",
+          "value": [
+            "0x98a878b1cd98131b271883b390f68d2c90674665",
+            "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a"
+          ],
+          "block": "0x191f231",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/pilot-raw/0010.json",
+            "sha256": "7eec87e5400e0bc5588585fec52efa89372156863daccf5ba41193f739f747d1",
+            "requested_at": "2026-11-04T14:06:44.315680+00:00",
+            "received_at": "2026-11-04T14:06:44.574717+00:00"
+          }
+        },
+        "getTokensOut": {
+          "status": "read",
+          "value": [
+            "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a"
+          ],
+          "block": "0x191f231",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/pilot-raw/0011.json",
+            "sha256": "bd46be492e661d9133b02799391cab6d966b662013c84b419c44d800b5901376",
+            "requested_at": "2026-11-04T14:06:47.318580+00:00",
+            "received_at": "2026-11-04T14:06:47.597286+00:00"
+          }
+        },
+        "yieldToken": {
+          "status": "read",
+          "value": "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a",
+          "block": "0x191f231",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/pilot-raw/0012.json",
+            "sha256": "4f2cc568b0729b6241dc7ccfad2a1fcd857042a82100f4ca2d452c9e5dd38d35",
+            "requested_at": "2026-11-04T14:06:50.319672+00:00",
+            "received_at": "2026-11-04T14:06:50.552571+00:00"
+          }
+        },
+        "paused": {
+          "status": "read",
+          "value": "0",
+          "block": "0x191f231",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/pilot-raw/0013.json",
+            "sha256": "7ebbe22de46f0e0879010f6b5544e3c3482da5732689faa896bdfe211fcb8d80",
+            "requested_at": "2026-11-04T14:06:53.322504+00:00",
+            "received_at": "2026-11-04T14:06:53.634977+00:00"
+          }
+        },
+        "decimals": {
+          "status": "read",
+          "value": "18",
+          "block": "0x191f231",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/pilot-raw/0014.json",
+            "sha256": "254ea6775d7e91c9c91b268f6047aa7cb1ab641bece77e5b2523556e4be507b2",
+            "requested_at": "2026-11-04T14:06:56.323678+00:00",
+            "received_at": "2026-11-04T14:06:56.604249+00:00"
+          }
+        },
+        "pyIndexStored": {
+          "status": "read",
+          "value": "1452865678093170078",
+          "block": "0x191f231",
+          "evidence": {
+            "path": "data/research/pt-routes-2026-11-04/pilot-raw/0015.json",
+            "sha256": "cbfcf6a20a9234f29cebfee9b64c9571472dcecc89661e3a4f0ce0f7f2dbea36",
+            "requested_at": "2026-11-04T14:06:59.326515+00:00",
+            "received_at": "2026-11-04T14:06:59.746952+00:00"
+          }
+        },
+        "accounting_matches_api": true,
+        "preview_redeem_one_sy": {
+          "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a": {
+            "status": "read",
+            "value": "1000000000000000000",
+            "block": "0x191f231",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/pilot-raw/0016.json",
+              "sha256": "0822124f0ece98e3015f3b686c6f025e660df7654a4aefdb2673aa8eac0cf649",
+              "requested_at": "2026-11-04T14:07:02.327407+00:00",
+              "received_at": "2026-11-04T14:07:03.085167+00:00"
+            }
+          }
+        },
+        "preview_deposit_one_token": {
+          "0x98a878b1cd98131b271883b390f68d2c90674665": {
+            "status": "read",
+            "value": "688290756480844425",
+            "block": "0x191f231",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/pilot-raw/0017.json",
+              "sha256": "3704b7aaa28641bdb933254f2415a3d2d65d419288b6b91424f00f67377dd515",
+              "requested_at": "2026-11-04T14:07:05.329789+00:00",
+              "received_at": "2026-11-04T14:07:06.500225+00:00"
+            }
+          },
+          "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a": {
+            "status": "read",
+            "value": "1000000000000000000",
+            "block": "0x191f231",
+            "evidence": {
+              "path": "data/research/pt-routes-2026-11-04/pilot-raw/0018.json",
+              "sha256": "43dfe0088722460ee13e2b37f7d523d2718dcb46bb55ac50262647a3a944f71a",
+              "requested_at": "2026-11-04T14:07:08.331673+00:00",
+              "received_at": "2026-11-04T14:07:09.476339+00:00"
+            }
+          }
+        }
+      },
+      "maturity_redemption": {
+        "status": "current_SY_outputs_verified; future_PT_redemption_amount_not_simulated",
+        "output_addresses": [
+          "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a"
+        ],
+        "conversion": "PT accounting units -> SY using PY index (max SY exchange rate / stored PY index); SY -> output through wrapper preview/redeem. Current preview is not a guaranteed future payout.",
+        "access_restrictions": "unknown for an actual investor; public preview/quote does not prove allowlist, approvals, pause or issuer redemption access",
+        "fees": "future redemption fees unknown; current preview may embed conversion costs",
+        "bridge_dependency": "no bridge requested for same-chain quotes; issuer/backing bridge dependency not verified",
+        "subsequent_benchmark_conversion": "separate from maturity redemption; early exit USDC quote is not a future redemption quote"
+      },
+      "all_evidence": [
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0001.json",
+          "sha256": "417fd06bfffce9b6729b9181b21d7f1efcd988fb8dfba3dd556790dad09f00e2",
+          "requested_at": "2026-11-04T14:06:17.296438+00:00",
+          "received_at": "2026-11-04T14:06:18.265647+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0002.json",
+          "sha256": "a268efa5721fd7cec7cb48f0699db550c42272473ce2b98c401b3cbf0570f11e",
+          "requested_at": "2026-11-04T14:06:20.298623+00:00",
+          "received_at": "2026-11-04T14:06:20.727801+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0003.json",
+          "sha256": "407c4d3b26fa3e6fc0cabd739f4e90ac8056c764aaf5b1f85182c3c5e1cb0c78",
+          "requested_at": "2026-11-04T14:06:23.299680+00:00",
+          "received_at": "2026-11-04T14:06:23.734838+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0004.json",
+          "sha256": "4b11c38412c2e51b8e60cb4b17123f33c40e863e2bdad44e40da23cc1cd6b319",
+          "requested_at": "2026-11-04T14:06:26.302289+00:00",
+          "received_at": "2026-11-04T14:06:26.544297+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0005.json",
+          "sha256": "bf9b9d7f39718cd5a41a82e9cae1bc046d53e55cf9b3c16f1b046ec217cae307",
+          "requested_at": "2026-11-04T14:06:29.303640+00:00",
+          "received_at": "2026-11-04T14:06:29.804221+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0006.json",
+          "sha256": "4aee0660ad8a942d776a26fef6032fdf3d0cbc111d505e0fc3efb588dbbc8edc",
+          "requested_at": "2026-11-04T14:06:32.306269+00:00",
+          "received_at": "2026-11-04T14:06:32.642698+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0007.json",
+          "sha256": "0bb680f8e00e07ea1ab70d2eb716b006e398b217d74ede4b1f422a5262219df7",
+          "requested_at": "2026-11-04T14:06:35.309086+00:00",
+          "received_at": "2026-11-04T14:06:35.616044+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0008.json",
+          "sha256": "92980a3b9881c387bff92a4d92f7e2fa9b7237382499085105d38883665136e5",
+          "requested_at": "2026-11-04T14:06:38.311675+00:00",
+          "received_at": "2026-11-04T14:06:38.586361+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0009.json",
+          "sha256": "1f386596ef599ec79c4e8424751d2b8570fa94c24f0c98aa20afc3a82d5ecfdd",
+          "requested_at": "2026-11-04T14:06:41.314561+00:00",
+          "received_at": "2026-11-04T14:06:41.556880+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0010.json",
+          "sha256": "7eec87e5400e0bc5588585fec52efa89372156863daccf5ba41193f739f747d1",
+          "requested_at": "2026-11-04T14:06:44.315680+00:00",
+          "received_at": "2026-11-04T14:06:44.574717+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0011.json",
+          "sha256": "bd46be492e661d9133b02799391cab6d966b662013c84b419c44d800b5901376",
+          "requested_at": "2026-11-04T14:06:47.318580+00:00",
+          "received_at": "2026-11-04T14:06:47.597286+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0012.json",
+          "sha256": "4f2cc568b0729b6241dc7ccfad2a1fcd857042a82100f4ca2d452c9e5dd38d35",
+          "requested_at": "2026-11-04T14:06:50.319672+00:00",
+          "received_at": "2026-11-04T14:06:50.552571+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0013.json",
+          "sha256": "7ebbe22de46f0e0879010f6b5544e3c3482da5732689faa896bdfe211fcb8d80",
+          "requested_at": "2026-11-04T14:06:53.322504+00:00",
+          "received_at": "2026-11-04T14:06:53.634977+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0014.json",
+          "sha256": "254ea6775d7e91c9c91b268f6047aa7cb1ab641bece77e5b2523556e4be507b2",
+          "requested_at": "2026-11-04T14:06:56.323678+00:00",
+          "received_at": "2026-11-04T14:06:56.604249+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0015.json",
+          "sha256": "cbfcf6a20a9234f29cebfee9b64c9571472dcecc89661e3a4f0ce0f7f2dbea36",
+          "requested_at": "2026-11-04T14:06:59.326515+00:00",
+          "received_at": "2026-11-04T14:06:59.746952+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0016.json",
+          "sha256": "0822124f0ece98e3015f3b686c6f025e660df7654a4aefdb2673aa8eac0cf649",
+          "requested_at": "2026-11-04T14:07:02.327407+00:00",
+          "received_at": "2026-11-04T14:07:03.085167+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0017.json",
+          "sha256": "3704b7aaa28641bdb933254f2415a3d2d65d419288b6b91424f00f67377dd515",
+          "requested_at": "2026-11-04T14:07:05.329789+00:00",
+          "received_at": "2026-11-04T14:07:06.500225+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0018.json",
+          "sha256": "43dfe0088722460ee13e2b37f7d523d2718dcb46bb55ac50262647a3a944f71a",
+          "requested_at": "2026-11-04T14:07:08.331673+00:00",
+          "received_at": "2026-11-04T14:07:09.476339+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0019.json",
+          "sha256": "9daf734b6afd7a3774d89ea4c669605688e40182202c03cb6f4d466224b0cffb",
+          "requested_at": "2026-11-04T14:07:11.333580+00:00",
+          "received_at": "2026-11-04T14:07:12.105679+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0020.json",
+          "sha256": "381b4d21c9fc8637c1d9ec731471d5c33f0906749a0041bf3e8dd18eaa607096",
+          "requested_at": "2026-11-04T14:07:14.335637+00:00",
+          "received_at": "2026-11-04T14:07:15.314383+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0021.json",
+          "sha256": "b85d26d7d1ed769b3935c80a2ffb947b22f058ff5ba4a525af1c6aec28750d2a",
+          "requested_at": "2026-11-04T14:07:17.337789+00:00",
+          "received_at": "2026-11-04T14:07:20.468930+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0022.json",
+          "sha256": "177fc72a0ca17b134ada8e6b947ec1e716ae4caba6bdcc17a8f1e80d3eab0b32",
+          "requested_at": "2026-11-04T14:07:20.472562+00:00",
+          "received_at": "2026-11-04T14:07:22.495392+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0023.json",
+          "sha256": "1427a50784d7ea9b04f382638100af155153d6592bd90cd7dd87643ea29fa401",
+          "requested_at": "2026-11-04T14:07:23.473706+00:00",
+          "received_at": "2026-11-04T14:07:25.415522+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0024.json",
+          "sha256": "e801a3943a4e1019f8b6e0eba8e747310172212df1e8df4fc3c204001dbcab62",
+          "requested_at": "2026-11-04T14:07:26.474005+00:00",
+          "received_at": "2026-11-04T14:07:28.659064+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0025.json",
+          "sha256": "e56348b8562c5e5b26e984d436cdd1080a15eb595e39411ebba9598708595424",
+          "requested_at": "2026-11-04T14:07:29.474960+00:00",
+          "received_at": "2026-11-04T14:07:30.497391+00:00"
+        },
+        {
+          "path": "data/research/pt-routes-2026-11-04/pilot-raw/0026.json",
+          "sha256": "1826c9b29da9c84464a8b234e3429566b8458e69dc194902b71e481e77f80047",
+          "requested_at": "2026-11-04T14:07:32.475646+00:00",
+          "received_at": "2026-11-04T14:07:33.345753+00:00"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "markets": 1,
+    "collected": 1,
+    "quoted": 6,
+    "failed_quotes": 0
+  }
+}

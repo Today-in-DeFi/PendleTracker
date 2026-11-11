@@ -6,13 +6,10 @@ Reads data/pendle_markets.json (written hourly by `python3 -m pendle_tracker`)
 and routes per-market state transitions to Telegram —
 single fire on trip, single fire on recovery. Watches three signals per market:
 
-1. NEAR MATURITY (roll-decision countdown)
-   days_to_maturity <= NEAR_MATURITY_TRIP_DAYS. A dated PT must be rolled or
-   exited before maturity; this is the reminder to act. Because the countdown
-   only decreases for a given market, "recovery" happens when the position rolls
-   (the watchlist key changes → old key disappears, handled as a clear) — so a
-   STILL-ACTIVE reminder re-fires every NEAR_MATURITY_REMINDER_DAYS while tripped.
-   An expired market escalates to EXPIRED once.
+1. NEAR MATURITY (owner review countdown)
+   Maturity supports market-specific redemption, not a mandatory trade deadline.
+   PY-index/SY conversion determines settlement units; no universal 1:1 vault
+   share or USDC assumption. Reminders request review, including after maturity.
 
 2. EXIT-SLIPPAGE STRESS (can-we-get-out, at our size)
    exit_slippage_bps_at_notional (SDK swap sim of selling our notional — or the
@@ -95,7 +92,7 @@ def save_state(state):
 def load_telegram_creds():
     with open(TELEGRAM_CONFIG) as f:
         cfg = json.load(f)
-    tg = cfg.get("usd_reporter", {}).get("telegram", {})
+    tg = cfg.get("pendle_reporter", {}).get("telegram", {})
     return tg.get("bot_token"), tg.get("chat_id")
 
 
@@ -113,7 +110,8 @@ def send_telegram(text):
     }).encode("utf-8")
     try:
         with urlopen(Request(url, data=body, method="POST"), timeout=FETCH_TIMEOUT) as resp:
-            resp.read()
+            result = json.loads(resp.read())
+            return result.get("ok") is True
         return True
     except (URLError, HTTPError) as e:
         print(f"ERROR: telegram send failed: {e}", file=sys.stderr)
@@ -124,7 +122,8 @@ def _parse_ts(ts):
     if not ts:
         return None
     try:
-        return datetime.fromisoformat(str(ts).replace("Z", "+00:00"))
+        dt = datetime.fromisoformat(str(ts).replace("Z", "+00:00"))
+        return dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None else dt
     except (ValueError, AttributeError):
         return None
 
@@ -242,20 +241,23 @@ def format_message(transitions):
         lines.append(f"\n<b>{_esc(market)}</b>{tag}")
         for t in ts:
             sig, kind = t["signal"], t["kind"]
-            if sig == "near_maturity":
+            if sig == "coverage":
+                icon = "✅" if t.get("complete") else "⚠️"
+                lines.append(icon + " <b>HOLDINGS COVERAGE</b> — " + _esc(t["status"]))
+            elif sig == "near_maturity":
                 if kind == "expired":
-                    lines.append(f"🚨 <b>EXPIRED</b> — PT redeemable 1:1; roll the watchlist entry")
+                    lines.append(f"🚨 <b>EXPIRED</b> — matured; redemption subject to market PY-index/SY settlement conversion; owner review")
                 elif kind == "tripped":
                     lines.append(f"⏳ <b>NEAR MATURITY</b> — {t['days']:.1f}d left "
-                                 f"(≤ {NEAR_MATURITY_TRIP_DAYS:.0f}d) — roll/exit decision")
+                                 f"(≤ {NEAR_MATURITY_TRIP_DAYS:.0f}d) — owner review of settlement options")
                 elif kind == "reminder":
                     lines.append(f"⏳ <b>STILL NEAR MATURITY</b> — {t['days']:.1f}d left")
                 else:
                     d = t.get("days")
                     if d is None or d != d:  # None or NaN → key left the watchlist
-                        lines.append("✅ <b>ALERTS CLEARED</b> — position rolled or closed")
+                        lines.append("✅ <b>ALERTS CLEARED</b> — watch removed; closure not established")
                     else:
-                        lines.append(f"✅ <b>MATURITY CLEARED</b> — {d:.1f}d left (rolled)")
+                        lines.append(f"✅ <b>MATURITY CLEARED</b> — {d:.1f}d left (maturity condition cleared)")
             elif sig == "exit_slippage":
                 slip = t["slippage_bps"]
                 notion = t.get("notional_usd")
@@ -281,6 +283,22 @@ def format_message(transitions):
     return "\n".join(lines)
 
 
+def deliver_pending(state):
+    """Checkpoint each acknowledged part; leave failed parts queued across runs.
+
+    A server-accepted request whose response is lost can still duplicate on retry.
+    Telegram sendMessage offers no client idempotency key.
+    """
+    pending = state["pending_delivery"]
+    while pending["next"] < len(pending["messages"]):
+        if not send_telegram(pending["messages"][pending["next"]]):
+            return 1
+        pending["next"] += 1
+        save_state(state)
+    save_state(pending["target_state"])
+    return 0
+
+
 def main():
     parser = argparse.ArgumentParser(description="Pendle PT risk alerter (maturity + liquidity)")
     parser.add_argument("--verbose", action="store_true", help="Print decision trace")
@@ -290,21 +308,51 @@ def main():
 
     now = datetime.now(timezone.utc)
     state = load_state()
+    pending = state.get("pending_delivery")
+    if pending:
+        created = _parse_ts(pending.get("created_at") or state.get("last_run_at"))
+        age_h = (now - created).total_seconds() / 3600 if created else None
+        # Re-evaluate an entirely unsent old queue from acknowledged state.
+        # Partially acknowledged batches retain their cursor to avoid duplicates.
+        stale_unsent = pending.get("next", 0) == 0 and (
+            age_h is None or age_h < -5 / 60 or age_h > SNAPSHOT_MAX_AGE_HOURS)
+        if stale_unsent:
+            print("WARN: unsent alert queue is stale; recomputing from current snapshot", file=sys.stderr)
+            del state["pending_delivery"]
+        else:
+            if args.dry_run:
+                print("\n\n".join(pending["messages"][pending["next"]:]))
+                return 0
+            return deliver_pending(state)
+    acknowledged = json.loads(json.dumps(state))
     snap = read_snapshot()
     if not snap:
         return 0
 
     gen = _parse_ts(snap.get("generated_at"))
+    if gen is None:
+        print("WARN: missing snapshot clock; not alerting", file=sys.stderr)
+        return 1
     if gen is not None:
         age_h = (now - gen).total_seconds() / 3600
-        if age_h > SNAPSHOT_MAX_AGE_HOURS:
+        if age_h < -5 / 60 or age_h > SNAPSHOT_MAX_AGE_HOURS:
             print(f"WARN: snapshot stale ({age_h:.1f}h > {SNAPSHOT_MAX_AGE_HOURS}h); not alerting",
                   file=sys.stderr)
             return 0
 
     history = read_history()
-    markets = {m["key"]: m for m in snap.get("markets", [])}
+    coverage = snap.get("holdings_coverage", {})
+    markets = {m["key"]: m for m in snap.get("markets", [])
+               if m.get("exposure") != "dependency_review"}
+    if not coverage.get("complete"):
+        print("WARN: holdings coverage incomplete: " + json.dumps(coverage), file=sys.stderr)
     transitions = []
+    coverage_status = coverage.get("status", "unknown")
+    if state.get("coverage_status") != coverage_status:
+        if state.get("coverage_status") is not None or not coverage.get("complete"):
+            transitions.append({"market": "Portfolio coverage", "signal": "coverage",
+                                "kind": "changed", "status": coverage_status, "complete": bool(coverage.get("complete"))})
+        state["coverage_status"] = coverage_status
 
     for key, m in markets.items():
         ms = state["markets"].setdefault(key, {})
@@ -358,9 +406,16 @@ def main():
                   f"states={{m:{ms.get('near_maturity_status')},s:{ms.get('exit_slippage_status')},"
                   f"l:{ms.get('liquidity_status')}}}")
 
-    # Clear keys that left the watchlist (rolled / closed): emit one resolution if
+    # A configured dependency-review watch is no longer an owner risk alert.
+    # Deregister its alert state without implying closure of collateral exposure.
+    for market in snap.get("markets", []):
+        if market.get("exposure") == "dependency_review":
+            state["markets"].pop(market["key"], None)
+
+    # Clear keys that left the watchlist: emit one resolution if
     # any signal was active, then drop from state.
-    for key in [k for k in state["markets"] if k not in markets]:
+    for key in [k for k in state["markets"] if k not in markets
+                and coverage.get("complete") and not snap.get("errors")]:
         ms = state["markets"][key]
         was_active = any(ms.get(s) in ("TRIPPED", "EXPIRED")
                          for s in ("near_maturity_status", "exit_slippage_status", "liquidity_status"))
@@ -369,20 +424,27 @@ def main():
                                 "signal": "near_maturity", "kind": "recovered", "days": float("nan")})
         del state["markets"][key]
 
-    msg = format_message(transitions)
+    messages = []
+    for transition in transitions:
+        msg = format_message([transition])
+        msg += "\nHoldings coverage: " + _esc(json.dumps(coverage, sort_keys=True))
+        msg += "\nPT sale liquidity covers the quoted output only; share redemption, queues, bridges and underlying pool depth are separate."
+        if len(msg) > 4096:
+            print("ERROR: alert exceeds Telegram limit; state retained", file=sys.stderr)
+            return 1
+        messages.append(msg)
 
     if args.dry_run:
-        print(msg if msg else "(no transitions; nothing would be sent)")
+        print("\n\n".join(messages) if messages else "(no transitions; nothing would be sent)")
         return 0
 
-    save_state(state)
-
-    if msg is None:
-        if args.verbose:
-            print("No transitions; no alert sent.")
+    if not messages:
+        save_state(state)
         return 0
 
-    return 0 if send_telegram(msg) else 1
+    acknowledged["pending_delivery"] = {"messages": messages, "next": 0, "target_state": state, "created_at": now.isoformat()}
+    save_state(acknowledged)
+    return deliver_pending(acknowledged)
 
 
 if __name__ == "__main__":

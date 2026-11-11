@@ -1,0 +1,684 @@
+[
+  {
+    "chain_id": 1,
+    "sy": "0x04f8dca7bccd8997ac57ca6fef7c705e17d6bcb6",
+    "source_basis": "Sourcify verification and proxy resolution at HTTP retrieval; not pinned to quote block",
+    "observed_at": "2026-11-04T14:10:37.343318+00:00",
+    "contracts": [
+      {
+        "address": "0x04f8dca7bccd8997ac57ca6fef7c705e17d6bcb6",
+        "url": "https://sourcify.dev/server/v2/contract/1/0x04f8dca7bccd8997ac57ca6fef7c705e17d6bcb6?fields=compilation,sources,proxyResolution,abi",
+        "path": "data/research/pt-routes-2026-11-04/sources/1-0x04f8dca7bccd8997ac57ca6fef7c705e17d6bcb6.json",
+        "sha256": "a1bbd57c3577d40d25423ddf9f82361e88f231a271c2fcbd2c9bf0ba8a1e6e0d",
+        "match": "exact_match",
+        "runtime_match": "exact_match",
+        "compilation": {
+          "language": "Solidity",
+          "compiler": "solc",
+          "compilerVersion": "0.8.24+commit.e11b9ed9",
+          "compilerSettings": {
+            "viaIR": true,
+            "metadata": {
+              "bytecodeHash": "ipfs"
+            },
+            "libraries": {},
+            "optimizer": {
+              "runs": 1000000,
+              "enabled": true
+            },
+            "evmVersion": "shanghai",
+            "remappings": []
+          },
+          "name": "TransparentUpgradeableProxy",
+          "fullyQualifiedName": "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol:TransparentUpgradeableProxy"
+        },
+        "proxy_resolution": {
+          "isProxy": true,
+          "proxyType": "EIP1967Proxy",
+          "implementations": [
+            {
+              "address": "0x446e404b52c1dB5c99e1Bda5eE80D73c10DFFe90",
+              "name": "PendleERC4626NoRedeemWithAdapterSY"
+            }
+          ]
+        }
+      },
+      {
+        "address": "0x446e404b52c1dB5c99e1Bda5eE80D73c10DFFe90",
+        "url": "https://sourcify.dev/server/v2/contract/1/0x446e404b52c1dB5c99e1Bda5eE80D73c10DFFe90?fields=compilation,sources,proxyResolution,abi",
+        "path": "data/research/pt-routes-2026-11-04/sources/1-0x446e404b52c1db5c99e1bda5ee80d73c10dffe90.json",
+        "sha256": "763fefeb60c0480acabb18dee6d44126733c1a35151d20e8f571fb5a47cd5363",
+        "match": "match",
+        "runtime_match": "match",
+        "compilation": {
+          "language": "Solidity",
+          "compiler": "solc",
+          "compilerVersion": "0.8.24+commit.e11b9ed9",
+          "compilerSettings": {
+            "viaIR": true,
+            "optimizer": {
+              "runs": 1000000,
+              "enabled": true
+            },
+            "evmVersion": "shanghai"
+          },
+          "name": "PendleERC4626NoRedeemWithAdapterSY",
+          "fullyQualifiedName": "contracts/sy/contracts/core/StandardizedYield/implementations/Adapter/extensions/PendleERC4626NoRedeemWithAdapterSY.sol:PendleERC4626NoRedeemWithAdapterSY"
+        },
+        "proxy_resolution": {
+          "isProxy": false,
+          "proxyType": null,
+          "implementations": []
+        }
+      }
+    ]
+  },
+  {
+    "chain_id": 143,
+    "sy": "0x8c0ee449b8babc933047541249952d5084a7d99d",
+    "source_basis": "Sourcify verification and proxy resolution at HTTP retrieval; not pinned to quote block",
+    "observed_at": "2026-11-04T14:10:40.382203+00:00",
+    "contracts": [
+      {
+        "address": "0x8c0ee449b8babc933047541249952d5084a7d99d",
+        "url": "https://sourcify.dev/server/v2/contract/143/0x8c0ee449b8babc933047541249952d5084a7d99d?fields=compilation,sources,proxyResolution,abi",
+        "status": "unavailable",
+        "error_type": "HTTPError"
+      }
+    ]
+  },
+  {
+    "chain_id": 1,
+    "sy": "0x9487bd5a3b16ecb5f3184453e3ee75b800141648",
+    "source_basis": "Sourcify verification and proxy resolution at HTTP retrieval; not pinned to quote block",
+    "observed_at": "2026-11-04T14:10:42.607287+00:00",
+    "contracts": [
+      {
+        "address": "0x9487bd5a3b16ecb5f3184453e3ee75b800141648",
+        "url": "https://sourcify.dev/server/v2/contract/1/0x9487bd5a3b16ecb5f3184453e3ee75b800141648?fields=compilation,sources,proxyResolution,abi",
+        "path": "data/research/pt-routes-2026-11-04/sources/1-0x9487bd5a3b16ecb5f3184453e3ee75b800141648.json",
+        "sha256": "b40f2f9b70ca5bad58efd577a4ef5fa545e3807eb7d794fccf24abf1c1d2c0c6",
+        "match": "match",
+        "runtime_match": "match",
+        "compilation": {
+          "language": "Solidity",
+          "compiler": "solc",
+          "compilerVersion": "0.8.28+commit.7893614a",
+          "compilerSettings": {
+            "libraries": {},
+            "optimizer": {
+              "runs": 1000000,
+              "enabled": true
+            }
+          },
+          "name": "TransparentUpgradeableProxy",
+          "fullyQualifiedName": "TransparentUpgradeableProxy.sol:TransparentUpgradeableProxy"
+        },
+        "proxy_resolution": {
+          "isProxy": true,
+          "proxyType": "EIP1967Proxy",
+          "implementations": [
+            {
+              "address": "0xBA923d186156E48baAb7E3c749e10F06E0B25067",
+              "name": "PendleREUSDSY"
+            }
+          ]
+        }
+      },
+      {
+        "address": "0xBA923d186156E48baAb7E3c749e10F06E0B25067",
+        "url": "https://sourcify.dev/server/v2/contract/1/0xBA923d186156E48baAb7E3c749e10F06E0B25067?fields=compilation,sources,proxyResolution,abi",
+        "path": "data/research/pt-routes-2026-11-04/sources/1-0xba923d186156e48baab7e3c749e10f06e0b25067.json",
+        "sha256": "08017c8d1c90a3f645fc71ac57d3e33f7ad25b7854eed914dc7470e04835be94",
+        "match": "exact_match",
+        "runtime_match": "exact_match",
+        "compilation": {
+          "language": "Solidity",
+          "compiler": "solc",
+          "compilerVersion": "0.8.28+commit.7893614a",
+          "compilerSettings": {
+            "viaIR": false,
+            "metadata": {
+              "appendCBOR": true,
+              "bytecodeHash": "ipfs",
+              "useLiteralContent": false
+            },
+            "optimizer": {
+              "runs": 1000000,
+              "enabled": true
+            },
+            "evmVersion": "cancun",
+            "remappings": [
+              "forge-std/=lib/forge-std/src/",
+              "pendle-core/=lib/pendle-core/contracts/",
+              "pendle-sy/=lib/pendle-sy/contracts/",
+              "@openzeppelin/contracts/=node_modules/@openzeppelin/contracts/",
+              "@openzeppelin/contracts-upgradeable/=node_modules/@openzeppelin/contracts-upgradeable/",
+              "openzeppelin-foundry-upgrades/=lib/openzeppelin-foundry-upgrades/src/"
+            ]
+          },
+          "name": "PendleREUSDSY",
+          "fullyQualifiedName": "src/PendleREUSDSY.sol:PendleREUSDSY"
+        },
+        "proxy_resolution": {
+          "isProxy": false,
+          "proxyType": null,
+          "implementations": []
+        }
+      }
+    ]
+  },
+  {
+    "chain_id": 1,
+    "sy": "0x9d0fc59f88acb85520a8cfb74c7fe141d8563185",
+    "source_basis": "Sourcify verification and proxy resolution at HTTP retrieval; not pinned to quote block",
+    "observed_at": "2026-11-04T14:10:47.314052+00:00",
+    "contracts": [
+      {
+        "address": "0x9d0fc59f88acb85520a8cfb74c7fe141d8563185",
+        "url": "https://sourcify.dev/server/v2/contract/1/0x9d0fc59f88acb85520a8cfb74c7fe141d8563185?fields=compilation,sources,proxyResolution,abi",
+        "path": "data/research/pt-routes-2026-11-04/sources/1-0x9d0fc59f88acb85520a8cfb74c7fe141d8563185.json",
+        "sha256": "e5a23926eb2035f13c3c8e8d803ac9e76ad3e9ab5993d34f34ca50fbe50babcd",
+        "match": "match",
+        "runtime_match": "match",
+        "compilation": {
+          "language": "Solidity",
+          "compiler": "solc",
+          "compilerVersion": "0.8.29+commit.ab55807c",
+          "compilerSettings": {
+            "viaIR": true,
+            "metadata": {
+              "appendCBOR": true,
+              "bytecodeHash": "ipfs",
+              "useLiteralContent": false
+            },
+            "optimizer": {
+              "runs": 20000,
+              "enabled": true
+            },
+            "evmVersion": "cancun",
+            "remappings": [
+              "@openzeppelin/contracts/=lib/openzeppelin/contracts/",
+              "ds-test/=lib/openzeppelin-v4/lib/forge-std/lib/ds-test/src/",
+              "erc4626-tests/=lib/openzeppelin-v4/lib/erc4626-tests/",
+              "forge-std/=lib/forge-std/src/",
+              "halmos-cheatcodes/=lib/openzeppelin/lib/halmos-cheatcodes/src/",
+              "openzeppelin-foundry-upgrades/=lib/openzeppelin-foundry-upgrades/src/",
+              "openzeppelin-v4/=lib/openzeppelin-v4/",
+              "openzeppelin/=lib/openzeppelin/"
+            ]
+          },
+          "name": "TransparentUpgradeableProxy",
+          "fullyQualifiedName": "lib/openzeppelin-v4/contracts/proxy/transparent/TransparentUpgradeableProxy.sol:TransparentUpgradeableProxy"
+        },
+        "proxy_resolution": {
+          "isProxy": true,
+          "proxyType": "EIP1967Proxy",
+          "implementations": [
+            {
+              "address": "0x29ba0e1F0CF842224fd7Fb9457E94A757059CFFb"
+            }
+          ]
+        }
+      },
+      {
+        "address": "0x29ba0e1F0CF842224fd7Fb9457E94A757059CFFb",
+        "url": "https://sourcify.dev/server/v2/contract/1/0x29ba0e1F0CF842224fd7Fb9457E94A757059CFFb?fields=compilation,sources,proxyResolution,abi",
+        "status": "unavailable",
+        "error_type": "HTTPError"
+      }
+    ]
+  },
+  {
+    "chain_id": 42161,
+    "sy": "0x30ccf4bbee313fcd19f3e295b3ba2920a24e2f62",
+    "source_basis": "Sourcify verification and proxy resolution at HTTP retrieval; not pinned to quote block",
+    "observed_at": "2026-11-04T14:10:51.040217+00:00",
+    "contracts": [
+      {
+        "address": "0x30ccf4bbee313fcd19f3e295b3ba2920a24e2f62",
+        "url": "https://sourcify.dev/server/v2/contract/42161/0x30ccf4bbee313fcd19f3e295b3ba2920a24e2f62?fields=compilation,sources,proxyResolution,abi",
+        "path": "data/research/pt-routes-2026-11-04/sources/42161-0x30ccf4bbee313fcd19f3e295b3ba2920a24e2f62.json",
+        "sha256": "740a892021aa6abb085a363011f7132e2cf6426c15d65cb60abf44a07e00abf5",
+        "match": "match",
+        "runtime_match": "match",
+        "compilation": {
+          "language": "Solidity",
+          "compiler": "solc",
+          "compilerVersion": "0.8.22+commit.4fc1097e",
+          "compilerSettings": {
+            "viaIR": true,
+            "metadata": {
+              "bytecodeHash": "ipfs"
+            },
+            "libraries": {},
+            "optimizer": {
+              "runs": 999999,
+              "enabled": true
+            },
+            "evmVersion": "shanghai",
+            "remappings": [
+              ":@arbitrum/=../node_modules/@arbitrum/",
+              ":@eth-optimism/=../node_modules/@eth-optimism/",
+              ":@layerzerolabs/=../node_modules/@layerzerolabs/",
+              ":@openzeppelin/=../node_modules/@openzeppelin/",
+              ":ds-test/=lib/forge-std/lib/ds-test/src/",
+              ":forge-std/=lib/forge-std/src/",
+              ":fx-portal/=lib/fx-portal/",
+              ":hardhat/=node_modules/hardhat/",
+              ":karak-onchain-sdk/=../node_modules/karak-onchain-sdk/"
+            ]
+          },
+          "name": "TransparentUpgradeableProxy",
+          "fullyQualifiedName": "../node_modules/@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol:TransparentUpgradeableProxy"
+        },
+        "proxy_resolution": {
+          "isProxy": true,
+          "proxyType": "EIP1967Proxy",
+          "implementations": [
+            {
+              "address": "0x9fFacbC8fcDeBfc878eFDBC2e2884EE1E038AC92",
+              "name": "PendleERC4626NoRedeemWithAdapterSY"
+            }
+          ]
+        }
+      },
+      {
+        "address": "0x9fFacbC8fcDeBfc878eFDBC2e2884EE1E038AC92",
+        "url": "https://sourcify.dev/server/v2/contract/42161/0x9fFacbC8fcDeBfc878eFDBC2e2884EE1E038AC92?fields=compilation,sources,proxyResolution,abi",
+        "path": "data/research/pt-routes-2026-11-04/sources/42161-0x9ffacbc8fcdebfc878efdbc2e2884ee1e038ac92.json",
+        "sha256": "585c17ae2ebb9898f4179db3309b6e6dca95bd22b1ef89344f849292f752610d",
+        "match": "match",
+        "runtime_match": "match",
+        "compilation": {
+          "language": "Solidity",
+          "compiler": "solc",
+          "compilerVersion": "0.8.24+commit.e11b9ed9",
+          "compilerSettings": {
+            "viaIR": true,
+            "optimizer": {
+              "runs": 1000000,
+              "enabled": true
+            },
+            "evmVersion": "shanghai"
+          },
+          "name": "PendleERC4626NoRedeemWithAdapterSY",
+          "fullyQualifiedName": "contracts/sy/contracts/core/StandardizedYield/implementations/Adapter/extensions/PendleERC4626NoRedeemWithAdapterSY.sol:PendleERC4626NoRedeemWithAdapterSY"
+        },
+        "proxy_resolution": {
+          "isProxy": false,
+          "proxyType": null,
+          "implementations": []
+        }
+      }
+    ]
+  },
+  {
+    "chain_id": 1,
+    "sy": "0x9f30507c264cc6eb5be35b18ff9ad7b4539aa920",
+    "source_basis": "Sourcify verification and proxy resolution at HTTP retrieval; not pinned to quote block",
+    "observed_at": "2026-11-04T14:10:55.817357+00:00",
+    "contracts": [
+      {
+        "address": "0x9f30507c264cc6eb5be35b18ff9ad7b4539aa920",
+        "url": "https://sourcify.dev/server/v2/contract/1/0x9f30507c264cc6eb5be35b18ff9ad7b4539aa920?fields=compilation,sources,proxyResolution,abi",
+        "path": "data/research/pt-routes-2026-11-04/sources/1-0x9f30507c264cc6eb5be35b18ff9ad7b4539aa920.json",
+        "sha256": "240c5a8affe52bd698023057a3ccba19cc28519c4d8e51c589d9e511f803ad20",
+        "match": "match",
+        "runtime_match": "match",
+        "compilation": {
+          "language": "Solidity",
+          "compiler": "solc",
+          "compilerVersion": "0.8.28+commit.7893614a",
+          "compilerSettings": {
+            "libraries": {},
+            "optimizer": {
+              "runs": 400,
+              "enabled": true
+            }
+          },
+          "name": "TransparentUpgradeableProxy",
+          "fullyQualifiedName": "TransparentUpgradeableProxy.sol:TransparentUpgradeableProxy"
+        },
+        "proxy_resolution": {
+          "isProxy": true,
+          "proxyType": "EIP1967Proxy",
+          "implementations": [
+            {
+              "address": "0x0a99B6F01284Be43D798C03a8834a6363511ac04",
+              "name": "PendleInfinifiSIUSD"
+            }
+          ]
+        }
+      },
+      {
+        "address": "0x0a99B6F01284Be43D798C03a8834a6363511ac04",
+        "url": "https://sourcify.dev/server/v2/contract/1/0x0a99B6F01284Be43D798C03a8834a6363511ac04?fields=compilation,sources,proxyResolution,abi",
+        "path": "data/research/pt-routes-2026-11-04/sources/1-0x0a99b6f01284be43d798c03a8834a6363511ac04.json",
+        "sha256": "e4d5fb6be1c700c0c1017766e07370af9da64ef790ea2c03d776424186989264",
+        "match": "exact_match",
+        "runtime_match": "exact_match",
+        "compilation": {
+          "language": "Solidity",
+          "compiler": "solc",
+          "compilerVersion": "0.8.28+commit.7893614a",
+          "compilerSettings": {
+            "viaIR": false,
+            "metadata": {
+              "appendCBOR": true,
+              "bytecodeHash": "ipfs",
+              "useLiteralContent": false
+            },
+            "optimizer": {
+              "runs": 400,
+              "enabled": true
+            },
+            "evmVersion": "cancun",
+            "remappings": [
+              "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+              "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+              "forge-std/=lib/forge-std/src/",
+              "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/",
+              "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+              "openzeppelin/=lib/openzeppelin-contracts/contracts/"
+            ]
+          },
+          "name": "PendleInfinifiSIUSD",
+          "fullyQualifiedName": "contracts/core/StandardizedYield/implementations/InfiniFi/PendleInfiniFisiUSD.sol:PendleInfinifiSIUSD"
+        },
+        "proxy_resolution": {
+          "isProxy": false,
+          "proxyType": null,
+          "implementations": []
+        }
+      }
+    ]
+  },
+  {
+    "chain_id": 1,
+    "sy": "0xa0a2c8c94bf30227f84af6e054025945a51d0eff",
+    "source_basis": "Sourcify verification and proxy resolution at HTTP retrieval; not pinned to quote block",
+    "observed_at": "2026-11-04T14:11:00.539722+00:00",
+    "contracts": [
+      {
+        "address": "0xa0a2c8c94bf30227f84af6e054025945a51d0eff",
+        "url": "https://sourcify.dev/server/v2/contract/1/0xa0a2c8c94bf30227f84af6e054025945a51d0eff?fields=compilation,sources,proxyResolution,abi",
+        "path": "data/research/pt-routes-2026-11-04/sources/1-0xa0a2c8c94bf30227f84af6e054025945a51d0eff.json",
+        "sha256": "83d9bde9bd8e4691c3f3c2da2212eae6c0533c95344b7d3d7bdb09f75b721712",
+        "match": "exact_match",
+        "runtime_match": "exact_match",
+        "compilation": {
+          "language": "Solidity",
+          "compiler": "solc",
+          "compilerVersion": "0.8.24+commit.e11b9ed9",
+          "compilerSettings": {
+            "viaIR": true,
+            "metadata": {
+              "bytecodeHash": "ipfs"
+            },
+            "libraries": {},
+            "optimizer": {
+              "runs": 1000000,
+              "enabled": true
+            },
+            "evmVersion": "shanghai",
+            "remappings": []
+          },
+          "name": "PendleERC4626NotRedeemableToAssetSYV2",
+          "fullyQualifiedName": "contracts/sy/contracts/core/StandardizedYield/implementations/PendleERC4626NotRedeemableToAssetSYV2.sol:PendleERC4626NotRedeemableToAssetSYV2"
+        },
+        "proxy_resolution": {
+          "isProxy": false,
+          "proxyType": null,
+          "implementations": []
+        }
+      }
+    ]
+  },
+  {
+    "chain_id": 143,
+    "sy": "0x0898c3346275e79db4892feb1c18875ec154f274",
+    "source_basis": "Sourcify verification and proxy resolution at HTTP retrieval; not pinned to quote block",
+    "observed_at": "2026-11-04T14:11:02.885869+00:00",
+    "contracts": [
+      {
+        "address": "0x0898c3346275e79db4892feb1c18875ec154f274",
+        "url": "https://sourcify.dev/server/v2/contract/143/0x0898c3346275e79db4892feb1c18875ec154f274?fields=compilation,sources,proxyResolution,abi",
+        "status": "unavailable",
+        "error_type": "HTTPError"
+      }
+    ]
+  },
+  {
+    "chain_id": 42161,
+    "sy": "0x5edcbc20cac67adc2e724d4348ff85132b085b82",
+    "source_basis": "Sourcify verification and proxy resolution at HTTP retrieval; not pinned to quote block",
+    "observed_at": "2026-11-04T14:11:05.142292+00:00",
+    "contracts": [
+      {
+        "address": "0x5edcbc20cac67adc2e724d4348ff85132b085b82",
+        "url": "https://sourcify.dev/server/v2/contract/42161/0x5edcbc20cac67adc2e724d4348ff85132b085b82?fields=compilation,sources,proxyResolution,abi",
+        "path": "data/research/pt-routes-2026-11-04/sources/42161-0x5edcbc20cac67adc2e724d4348ff85132b085b82.json",
+        "sha256": "1b1ef5036261bc0cb023a3c6f8fcdc599cbd58c350687d592bf1cab0cbe00b41",
+        "match": "exact_match",
+        "runtime_match": "exact_match",
+        "compilation": {
+          "language": "Solidity",
+          "compiler": "solc",
+          "compilerVersion": "0.8.24+commit.e11b9ed9",
+          "compilerSettings": {
+            "viaIR": true,
+            "metadata": {
+              "bytecodeHash": "ipfs"
+            },
+            "libraries": {},
+            "optimizer": {
+              "runs": 1000000,
+              "enabled": true
+            },
+            "evmVersion": "shanghai",
+            "remappings": []
+          },
+          "name": "TransparentUpgradeableProxy",
+          "fullyQualifiedName": "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol:TransparentUpgradeableProxy"
+        },
+        "proxy_resolution": {
+          "isProxy": true,
+          "proxyType": "EIP1967Proxy",
+          "implementations": [
+            {
+              "address": "0x06bE51F3Af48296f0F0e068294C4d7059b1B9cE2",
+              "name": "PendleERC20WithAdapterSY"
+            }
+          ]
+        }
+      },
+      {
+        "address": "0x06bE51F3Af48296f0F0e068294C4d7059b1B9cE2",
+        "url": "https://sourcify.dev/server/v2/contract/42161/0x06bE51F3Af48296f0F0e068294C4d7059b1B9cE2?fields=compilation,sources,proxyResolution,abi",
+        "path": "data/research/pt-routes-2026-11-04/sources/42161-0x06be51f3af48296f0f0e068294c4d7059b1b9ce2.json",
+        "sha256": "945fd4ff5fe87ad6dfac7a3575f37acb683247d41fd6130ab0cf0a348f7b0526",
+        "match": "match",
+        "runtime_match": "match",
+        "compilation": {
+          "language": "Solidity",
+          "compiler": "solc",
+          "compilerVersion": "0.8.24+commit.e11b9ed9",
+          "compilerSettings": {
+            "viaIR": true,
+            "optimizer": {
+              "runs": 1000000,
+              "enabled": true
+            },
+            "evmVersion": "shanghai"
+          },
+          "name": "PendleERC20WithAdapterSY",
+          "fullyQualifiedName": "contracts/sy/contracts/core/StandardizedYield/implementations/Adapter/extensions/PendleERC20WithAdapterSY.sol:PendleERC20WithAdapterSY"
+        },
+        "proxy_resolution": {
+          "isProxy": false,
+          "proxyType": null,
+          "implementations": []
+        }
+      }
+    ]
+  },
+  {
+    "chain_id": 1,
+    "sy": "0x7a7de491e1be5287874904e2b7c8488249a4d0a9",
+    "source_basis": "Sourcify verification and proxy resolution at HTTP retrieval; not pinned to quote block",
+    "observed_at": "2026-11-04T14:11:09.725051+00:00",
+    "contracts": [
+      {
+        "address": "0x7a7de491e1be5287874904e2b7c8488249a4d0a9",
+        "url": "https://sourcify.dev/server/v2/contract/1/0x7a7de491e1be5287874904e2b7c8488249a4d0a9?fields=compilation,sources,proxyResolution,abi",
+        "path": "data/research/pt-routes-2026-11-04/sources/1-0x7a7de491e1be5287874904e2b7c8488249a4d0a9.json",
+        "sha256": "415072b2931ce6f89c214613c0f19b7eec4547ff9a50652d0f17eaa987366402",
+        "match": "exact_match",
+        "runtime_match": "exact_match",
+        "compilation": {
+          "language": "Solidity",
+          "compiler": "solc",
+          "compilerVersion": "0.8.24+commit.e11b9ed9",
+          "compilerSettings": {
+            "viaIR": true,
+            "metadata": {
+              "bytecodeHash": "ipfs"
+            },
+            "libraries": {},
+            "optimizer": {
+              "runs": 1000000,
+              "enabled": true
+            },
+            "evmVersion": "shanghai",
+            "remappings": []
+          },
+          "name": "TransparentUpgradeableProxy",
+          "fullyQualifiedName": "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol:TransparentUpgradeableProxy"
+        },
+        "proxy_resolution": {
+          "isProxy": true,
+          "proxyType": "EIP1967Proxy",
+          "implementations": [
+            {
+              "address": "0x47eDe9E7f367B332BBa225e12Fdb33ab9a6AfC4D"
+            }
+          ]
+        }
+      },
+      {
+        "address": "0x47eDe9E7f367B332BBa225e12Fdb33ab9a6AfC4D",
+        "url": "https://sourcify.dev/server/v2/contract/1/0x47eDe9E7f367B332BBa225e12Fdb33ab9a6AfC4D?fields=compilation,sources,proxyResolution,abi",
+        "status": "unavailable",
+        "error_type": "HTTPError"
+      }
+    ]
+  },
+  {
+    "chain_id": 1,
+    "sy": "0x7ca334286e9519de99703ab49d4eff6e5559499f",
+    "source_basis": "Sourcify verification and proxy resolution at HTTP retrieval; not pinned to quote block",
+    "observed_at": "2026-11-04T14:11:13.452016+00:00",
+    "contracts": [
+      {
+        "address": "0x7ca334286e9519de99703ab49d4eff6e5559499f",
+        "url": "https://sourcify.dev/server/v2/contract/1/0x7ca334286e9519de99703ab49d4eff6e5559499f?fields=compilation,sources,proxyResolution,abi",
+        "path": "data/research/pt-routes-2026-11-04/sources/1-0x7ca334286e9519de99703ab49d4eff6e5559499f.json",
+        "sha256": "289d04d13d7060f11366ba572bb913bceb59b1330a623b648053e412a1ad19d9",
+        "match": "match",
+        "runtime_match": "match",
+        "compilation": {
+          "language": "Solidity",
+          "compiler": "solc",
+          "compilerVersion": "0.8.30+commit.73712a01",
+          "compilerSettings": {
+            "viaIR": true,
+            "metadata": {
+              "appendCBOR": true,
+              "bytecodeHash": "ipfs",
+              "useLiteralContent": false
+            },
+            "libraries": {},
+            "optimizer": {
+              "runs": 10000000,
+              "enabled": true
+            },
+            "evmVersion": "prague",
+            "remappings": [
+              "@superfluid-finance/ethereum-contracts/=lib/protocol-monorepo/packages/ethereum-contracts/",
+              "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+              "@openzeppelin/contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+              "ds-test/=lib/forge-std/lib/ds-test/src/",
+              "forge-std/=lib/forge-std/src/",
+              "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+              "openzeppelin/=lib/openzeppelin-contracts/contracts/",
+              "@superfluid-finance/solidity-semantic-money/=lib/protocol-monorepo/packages/solidity-semantic-money/",
+              "openzeppelin-contracts-upgradeable/=lib/openzeppelin-contracts-upgradeable/contracts/",
+              "erc4626-tests/=lib/openzeppelin-contracts-upgradeable/lib/erc4626-tests/",
+              "halmos-cheatcodes/=lib/openzeppelin-contracts-upgradeable/lib/halmos-cheatcodes/src/",
+              "protocol-monorepo/=lib/protocol-monorepo/packages/solidity-semantic-money/src/"
+            ]
+          },
+          "name": "TransparentUpgradeableProxy",
+          "fullyQualifiedName": "lib/openzeppelin-contracts/contracts/proxy/transparent/TransparentUpgradeableProxy.sol:TransparentUpgradeableProxy"
+        },
+        "proxy_resolution": {
+          "isProxy": true,
+          "proxyType": "EIP1967Proxy",
+          "implementations": [
+            {
+              "address": "0xB99F2BFBBf3Ffe8BC871F953146ea3Dd306D067F",
+              "name": "PendleFXSaveSY"
+            }
+          ]
+        }
+      },
+      {
+        "address": "0xB99F2BFBBf3Ffe8BC871F953146ea3Dd306D067F",
+        "url": "https://sourcify.dev/server/v2/contract/1/0xB99F2BFBBf3Ffe8BC871F953146ea3Dd306D067F?fields=compilation,sources,proxyResolution,abi",
+        "path": "data/research/pt-routes-2026-11-04/sources/1-0xb99f2bfbbf3ffe8bc871f953146ea3dd306d067f.json",
+        "sha256": "aa7ef6032679874fe17cc5eda9411ac440ec8345864810d30550af08c427b0df",
+        "match": "exact_match",
+        "runtime_match": "exact_match",
+        "compilation": {
+          "language": "Solidity",
+          "compiler": "solc",
+          "compilerVersion": "0.8.30+commit.73712a01",
+          "compilerSettings": {
+            "viaIR": true,
+            "metadata": {
+              "appendCBOR": true,
+              "bytecodeHash": "ipfs",
+              "useLiteralContent": false
+            },
+            "optimizer": {
+              "runs": 50000,
+              "enabled": true
+            },
+            "evmVersion": "cancun",
+            "remappings": [
+              "@pendle/core-v2/=lib/pendle-core-v2/",
+              "@pendle/sy/=lib/pendle-sy/",
+              "forge-std/=lib/forge-std/",
+              "vendor/=vendor/",
+              "vendor-locked/=vendor-locked/",
+              "@chainlink/=node_modules/@chainlink/",
+              "@eth-optimism/=node_modules/@eth-optimism/",
+              "@layerzerolabs/=node_modules/@layerzerolabs/",
+              "@openzeppelin/=node_modules/@openzeppelin/",
+              "hardhat/=node_modules/hardhat/",
+              "solidity-bytes-utils/=node_modules/solidity-bytes-utils/"
+            ]
+          },
+          "name": "PendleFXSaveSY",
+          "fullyQualifiedName": "lib/pendle-sy/contracts/core/StandardizedYield/implementations/FX/PendleFXSaveSY.sol:PendleFXSaveSY"
+        },
+        "proxy_resolution": {
+          "isProxy": false,
+          "proxyType": null,
+          "implementations": []
+        }
+      }
+    ]
+  }
+]

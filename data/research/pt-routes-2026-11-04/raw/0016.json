@@ -1,0 +1,398 @@
+{
+  "requested_at": "2026-11-04T14:09:12.964908+00:00",
+  "method": "GET",
+  "url": "https://api-v2.pendle.finance/core/v1/143/markets/0xea492a66e98a46426f03f5c3505ee89d96520813",
+  "params": null,
+  "body": null,
+  "received_at": "2026-11-04T14:09:13.179849+00:00",
+  "http_status": 200,
+  "rate_headers": {
+    "x-computing-unit": "1",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "169",
+    "x-ratelimit-reset": "1793801400",
+    "x-ratelimit-weekly-limit": "200000",
+    "x-ratelimit-weekly-remaining": "191611",
+    "x-ratelimit-weekly-reset": "1793836800"
+  },
+  "response": {
+    "id": "143-0xea492a66e98a46426f03f5c3505ee89d96520813",
+    "chainId": 143,
+    "address": "0xea492a66e98a46426f03f5c3505ee89d96520813",
+    "symbol": "PENDLE-LPT",
+    "expiry": "2026-12-10T00:00:00.000Z",
+    "pt": {
+      "id": "143-0xbb0dcdd5f0159c3d51d8bce7d84f1b9fa390ef09",
+      "chainId": 143,
+      "address": "0xbb0dcdd5f0159c3d51d8bce7d84f1b9fa390ef09",
+      "symbol": "PT-reUSD-10DEC2026",
+      "decimals": 6,
+      "expiry": "2026-12-10T00:00:00.000Z",
+      "price": {
+        "usd": 0.9877662136446822
+      },
+      "priceUpdatedAt": "2026-11-04T14:08:45.007Z",
+      "name": "PT-reUSD-10DEC2026",
+      "baseType": "PT",
+      "types": [
+        "PT"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "PT reUSD (USDC)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/359682d7-49a8-43d0-8799-1be18bea116a.svg",
+      "zappable": false,
+      "simpleName": "PT reUSD (USDC)",
+      "simpleSymbol": "PT reUSD (USDC)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/359682d7-49a8-43d0-8799-1be18bea116a.svg",
+      "proName": "PT reUSD (USDC)"
+    },
+    "yt": {
+      "id": "143-0x00e2a1a388fb871b0cbcc73e55b9b7dde8dc1518",
+      "chainId": 143,
+      "address": "0x00e2a1a388fb871b0cbcc73e55b9b7dde8dc1518",
+      "symbol": "YT-reUSD-10DEC2026",
+      "decimals": 6,
+      "expiry": "2026-12-10T00:00:00.000Z",
+      "price": {
+        "usd": 0.011195503477211783
+      },
+      "priceUpdatedAt": "2026-11-04T14:08:45.007Z",
+      "name": "YT-reUSD-10DEC2026",
+      "baseType": "YT",
+      "types": [
+        "YT"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "YT reUSD (USDC)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/a070509c-6e39-4f58-9ac6-e58ea9c2e064.svg",
+      "zappable": false,
+      "simpleName": "YT reUSD (USDC)",
+      "simpleSymbol": "YT reUSD (USDC)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/a070509c-6e39-4f58-9ac6-e58ea9c2e064.svg",
+      "proName": "YT reUSD (USDC)"
+    },
+    "sy": {
+      "id": "143-0x8c0ee449b8babc933047541249952d5084a7d99d",
+      "chainId": 143,
+      "address": "0x8c0ee449b8babc933047541249952d5084a7d99d",
+      "symbol": "SY-reUSD",
+      "decimals": 18,
+      "expiry": null,
+      "price": {
+        "usd": 1.11018811262968
+      },
+      "priceUpdatedAt": "2026-11-04T14:08:45.007Z",
+      "name": "SY-reUSD",
+      "baseType": "SY",
+      "types": [
+        "SY"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "reUSD",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/157e1d4c-56ca-432d-9b93-2e66f35995ca.svg",
+      "zappable": false,
+      "simpleName": "reUSD",
+      "simpleSymbol": "reUSD",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/157e1d4c-56ca-432d-9b93-2e66f35995ca.svg",
+      "proName": "reUSD"
+    },
+    "lp": {
+      "id": "143-0xea492a66e98a46426f03f5c3505ee89d96520813",
+      "chainId": 143,
+      "address": "0xea492a66e98a46426f03f5c3505ee89d96520813",
+      "symbol": "PLP-reUSD-10DEC2026",
+      "decimals": 18,
+      "expiry": "2026-12-10T00:00:00.000Z",
+      "price": {
+        "usd": 2095935.237895518
+      },
+      "priceUpdatedAt": "2026-11-04T14:08:45.007Z",
+      "name": "PLP-reUSD-10DEC2026",
+      "baseType": "PENDLE_LP",
+      "types": [
+        "PENDLE_LP"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "LP reUSD (USDC)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/dfbee17d-e9c7-4ed0-949a-f4f2028767f0.svg",
+      "zappable": false,
+      "simpleName": "LP reUSD (USDC)",
+      "simpleSymbol": "LP reUSD (USDC)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/dfbee17d-e9c7-4ed0-949a-f4f2028767f0.svg",
+      "proName": "LP reUSD (USDC)"
+    },
+    "accountingAsset": {
+      "id": "143-0x754704bc059f8c67012fed69bc8a327a5aafb603",
+      "chainId": 143,
+      "address": "0x754704bc059f8c67012fed69bc8a327a5aafb603",
+      "symbol": "USDC",
+      "decimals": 6,
+      "accentColor": "",
+      "price": {
+        "usd": 0.99978757
+      },
+      "priceUpdatedAt": "2026-11-04T14:08:45.007Z",
+      "name": "USDC",
+      "baseType": "GENERIC",
+      "types": [
+        "GENERIC"
+      ],
+      "proSymbol": "USDC",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e647c7d9-486d-4634-856a-e89edc136505.png",
+      "zappable": true,
+      "simpleName": "USDC",
+      "simpleSymbol": "USDC",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e647c7d9-486d-4634-856a-e89edc136505.png",
+      "proName": "USDC"
+    },
+    "underlyingAsset": {
+      "id": "143-0xd25f563e12ff616262f8c947fec108db934f8059",
+      "chainId": 143,
+      "address": "0xd25f563e12ff616262f8c947fec108db934f8059",
+      "symbol": "reUSD",
+      "decimals": 18,
+      "expiry": null,
+      "price": {
+        "usd": 1.11018811262968
+      },
+      "priceUpdatedAt": "2026-11-04T14:08:45.007Z",
+      "name": "reUSD",
+      "baseType": "IB",
+      "types": [
+        "IB"
+      ],
+      "proSymbol": "reUSD",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/157e1d4c-56ca-432d-9b93-2e66f35995ca.svg",
+      "zappable": false,
+      "simpleName": "reUSD",
+      "simpleSymbol": "reUSD",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/157e1d4c-56ca-432d-9b93-2e66f35995ca.svg",
+      "proName": "reUSD"
+    },
+    "basePricingAsset": {
+      "id": "143-0x754704bc059f8c67012fed69bc8a327a5aafb603",
+      "chainId": 143,
+      "address": "0x754704bc059f8c67012fed69bc8a327a5aafb603",
+      "symbol": "USDC",
+      "decimals": 6,
+      "accentColor": "",
+      "price": {
+        "usd": 0.99978757
+      },
+      "priceUpdatedAt": "2026-11-04T14:08:45.007Z",
+      "name": "USDC",
+      "baseType": "GENERIC",
+      "types": [
+        "GENERIC"
+      ],
+      "proSymbol": "USDC",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e647c7d9-486d-4634-856a-e89edc136505.png",
+      "zappable": true,
+      "simpleName": "USDC",
+      "simpleSymbol": "USDC",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e647c7d9-486d-4634-856a-e89edc136505.png",
+      "proName": "USDC"
+    },
+    "rewardTokens": [
+      {
+        "id": "143-0x5e49e1f85813f2b65858860a3fa231b4186f2e0e",
+        "chainId": 143,
+        "address": "0x5e49e1f85813f2b65858860a3fa231b4186f2e0e",
+        "symbol": "PENDLE",
+        "decimals": 18,
+        "price": {
+          "usd": 1.72173959
+        },
+        "priceUpdatedAt": "2026-11-04T14:08:45.007Z",
+        "name": "PENDLE",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "proSymbol": "PENDLE",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ea33e392-1876-46a5-b7ce-c8434b5a7e71.svg",
+        "zappable": false,
+        "simpleName": "PENDLE",
+        "simpleSymbol": "PENDLE",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ea33e392-1876-46a5-b7ce-c8434b5a7e71.svg",
+        "proName": "PENDLE"
+      }
+    ],
+    "inputTokens": [
+      {
+        "id": "143-0xd25f563e12ff616262f8c947fec108db934f8059",
+        "chainId": 143,
+        "address": "0xd25f563e12ff616262f8c947fec108db934f8059",
+        "symbol": "reUSD",
+        "decimals": 18,
+        "expiry": null,
+        "price": {
+          "usd": 1.11018811262968
+        },
+        "priceUpdatedAt": "2026-11-04T14:08:45.007Z",
+        "name": "reUSD",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "reUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/157e1d4c-56ca-432d-9b93-2e66f35995ca.svg",
+        "zappable": false,
+        "simpleName": "reUSD",
+        "simpleSymbol": "reUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/157e1d4c-56ca-432d-9b93-2e66f35995ca.svg",
+        "proName": "reUSD"
+      }
+    ],
+    "outputTokens": [
+      {
+        "id": "143-0xd25f563e12ff616262f8c947fec108db934f8059",
+        "chainId": 143,
+        "address": "0xd25f563e12ff616262f8c947fec108db934f8059",
+        "symbol": "reUSD",
+        "decimals": 18,
+        "expiry": null,
+        "price": {
+          "usd": 1.11018811262968
+        },
+        "priceUpdatedAt": "2026-11-04T14:08:45.007Z",
+        "name": "reUSD",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "proSymbol": "reUSD",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/157e1d4c-56ca-432d-9b93-2e66f35995ca.svg",
+        "zappable": false,
+        "simpleName": "reUSD",
+        "simpleSymbol": "reUSD",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/157e1d4c-56ca-432d-9b93-2e66f35995ca.svg",
+        "proName": "reUSD"
+      }
+    ],
+    "protocol": "re.xyz",
+    "underlyingPool": "",
+    "proSymbol": "reUSD",
+    "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/954e01d1-2913-40f6-96ad-32b5cd8ac140.svg",
+    "assetRepresentation": "USDC",
+    "isWhitelistedPro": true,
+    "isWhitelistedSimple": false,
+    "votable": false,
+    "isActive": true,
+    "isWhitelistedLimitOrder": true,
+    "accentColor": "#00f7eb",
+    "totalPt": 364181.205232,
+    "totalSy": 180767.51259580298,
+    "totalLp": 0.2673803196174911,
+    "totalActiveSupply": 0.2673803196174911,
+    "liquidity": {
+      "usd": 560409.8023781681,
+      "acc": 560993.9543874019
+    },
+    "tradingVolume": {
+      "usd": 0
+    },
+    "underlyingInterestApy": 0.07140336138220982,
+    "underlyingRewardApy": 0,
+    "underlyingRewardApyBreakdown": [
+      {
+        "asset": {
+          "id": "143-0x0000000000000000000000000000000000000000",
+          "chainId": 143,
+          "address": "0x0000000000000000000000000000000000000000",
+          "symbol": "MON",
+          "decimals": 18,
+          "accentColor": "",
+          "price": {
+            "usd": 0.01827382
+          },
+          "priceUpdatedAt": "2026-11-04T14:08:45.007Z",
+          "name": "MON"
+        },
+        "absoluteApy": 0.005710217668581231,
+        "relativeApy": 0,
+        "ytExclusive": true,
+        "source": "DYNAMIC_INCENTIVE"
+      }
+    ],
+    "underlyingApy": 0.07140336138220982,
+    "impliedApy": 0.12318769243040295,
+    "ytFloatingApy": -0.9929309534686644,
+    "ptDiscount": 0.011208101267177417,
+    "swapFeeApy": 7.735781649942375e-05,
+    "pendleApy": 0.0020190339856614547,
+    "aggregatedApy": 0.10673988820991659,
+    "maxBoostedApy": 0.10976843918840877,
+    "lpRewardApy": 0,
+    "voterApy": 0,
+    "ytRoi": -0.3814781264974717,
+    "ptRoi": 0.01133409614950276,
+    "estimatedDailyPoolRewards": [
+      {
+        "asset": {
+          "id": "143-0x5e49e1f85813f2b65858860a3fa231b4186f2e0e",
+          "chainId": 143,
+          "address": "0x5e49e1f85813f2b65858860a3fa231b4186f2e0e",
+          "symbol": "PENDLE",
+          "decimals": 18,
+          "price": {
+            "usd": 1.72173959
+          },
+          "priceUpdatedAt": "2026-11-04T14:08:45.007Z",
+          "name": "PENDLE"
+        },
+        "amount": 1.8009383528914846
+      }
+    ],
+    "dataUpdatedAt": "2026-11-04T14:04:00.000Z",
+    "liquidityChange24h": 0.0007403554604299606,
+    "underlyingInterestApyChange24h": 0.0005096118008045768,
+    "underlyingApyChange24h": 0.0004718575239623149,
+    "impliedApyChange24h": 3.661255140476127e-08,
+    "ytFloatingApyChange24h": 0.0004906588587951146,
+    "ptDiscountChange24h": -0.026292111258496672,
+    "swapFeeApyChange24h": -7.519043871619874e-05,
+    "pendleApyChange24h": -0.010346521701147048,
+    "aggregatedApyChange24h": -6.268921194844447e-05,
+    "categoryIds": [
+      "stables",
+      "rwa",
+      "rexyz",
+      "pt-looping"
+    ],
+    "timestamp": "2026-09-07T19:59:56.000Z",
+    "scalarRoot": 47.47529559262638,
+    "initialAnchor": 1.0267977630877774,
+    "extendedInfo": {
+      "floatingPt": 2562112.602105,
+      "floatingSy": 5091.9881031978875,
+      "sySupplyCap": 10000000,
+      "syCurrentSupply": 2823486.6242756885,
+      "pyUnit": "USDC staked in re.xyz",
+      "ptEqualsPyUnit": false,
+      "underlyingAssetWorthMore": "reUSD",
+      "feeRate": 0.002270131558091526,
+      "yieldRange": {
+        "min": 0.06,
+        "max": 0.15999999999999998
+      }
+    },
+    "isPopular": false,
+    "tvlThresholdTimestamp": "2026-09-19T17:01:00.000Z",
+    "whitelistedProAt": "2026-09-09T06:12:56.081Z",
+    "isNew": false,
+    "name": "PENDLE-LPT",
+    "simpleName": "reUSD",
+    "simpleSymbol": "reUSD",
+    "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/954e01d1-2913-40f6-96ad-32b5cd8ac140.svg",
+    "proName": "reUSD",
+    "farmName": "reUSD",
+    "farmSymbol": "reUSD",
+    "farmSimpleName": "reUSD",
+    "farmSimpleSymbol": "reUSD",
+    "farmSimpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/954e01d1-2913-40f6-96ad-32b5cd8ac140.svg",
+    "farmProName": "reUSD",
+    "farmProSymbol": "reUSD",
+    "farmProIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/954e01d1-2913-40f6-96ad-32b5cd8ac140.svg"
+  }
+}

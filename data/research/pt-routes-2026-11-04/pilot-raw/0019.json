@@ -1,0 +1,38 @@
+{
+  "requested_at": "2026-11-04T14:07:11.333580+00:00",
+  "method": "GET",
+  "url": "https://api-v2.pendle.finance/core/v1/sdk/1/supported-aggregators",
+  "params": null,
+  "body": null,
+  "received_at": "2026-11-04T14:07:12.105679+00:00",
+  "http_status": 200,
+  "rate_headers": {
+    "x-computing-unit": "1",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "199",
+    "x-ratelimit-reset": "1793682540",
+    "x-ratelimit-weekly-limit": "200000",
+    "x-ratelimit-weekly-remaining": "199959",
+    "x-ratelimit-weekly-reset": "1793836800"
+  },
+  "response": {
+    "aggregators": [
+      {
+        "name": "kyberswap",
+        "computingUnit": 1
+      },
+      {
+        "name": "okx",
+        "computingUnit": 1
+      },
+      {
+        "name": "paraswap",
+        "computingUnit": 15
+      },
+      {
+        "name": "0x",
+        "computingUnit": 5
+      }
+    ]
+  }
+}

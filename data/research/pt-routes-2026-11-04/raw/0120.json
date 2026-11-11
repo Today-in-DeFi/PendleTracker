@@ -1,0 +1,20 @@
+{
+  "requested_at": "2026-11-04T14:14:25.171682+00:00",
+  "method": "POST",
+  "url": "https://arbitrum-one-rpc.publicnode.com",
+  "params": null,
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "eth_chainId",
+    "params": []
+  },
+  "received_at": "2026-11-04T14:14:25.398426+00:00",
+  "http_status": 200,
+  "rate_headers": {},
+  "response": {
+    "jsonrpc": "2.0",
+    "result": "0xa4b1",
+    "id": 1
+  }
+}

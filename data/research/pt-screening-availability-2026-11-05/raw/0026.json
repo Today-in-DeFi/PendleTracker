@@ -1,0 +1,20 @@
+{
+  "requested_at": "2026-11-05T10:30:40.507677+00:00",
+  "method": "POST",
+  "url": "https://rpc.monad.xyz",
+  "params": null,
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "eth_chainId",
+    "params": []
+  },
+  "received_at": "2026-11-05T10:30:40.729169+00:00",
+  "http_status": 200,
+  "rate_headers": {},
+  "response": {
+    "id": 1,
+    "result": "0x8f",
+    "jsonrpc": "2.0"
+  }
+}

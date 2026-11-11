@@ -1,305 +1,238 @@
 {
-  "generated_at": "2026-08-21T08:43:36Z",
+  "generated_at": "2026-11-11T01:05:08Z",
   "chain": 1,
   "markets": [
     {
-      "key": "PT-srUSDat-14JAN2027",
-      "exposure": "direct",
-      "chain": 143,
-      "market_address": "0xc945210f85b55946eb970f427e4b9150fff600de",
-      "underlier": "srUSDat",
-      "maturity": "2027-01-14T00:00:00.000Z",
-      "days_to_maturity": 145.64,
-      "expired": false,
-      "our_notional_usd": 52991.56573295994,
-      "pt_address": "0x355e82c60d51d6942bdfd0f2b95a204acd068963",
-      "yt_address": "0x0435a599e3fcf2e53028760060499350e25c3dd2",
-      "sy_address": "0xa544d9b7961d1db86ab81e9e3fa5659838c28b51",
-      "underlying_address": "0x17b8f7373ecd556192abfc85be314e5d4fb6b3fa",
-      "pt_implied_apy": 14.3112,
-      "underlying_apy": 8.2249,
-      "yt_floating_apy": 140.7437,
-      "pt_vs_underlying_spread": 6.0863,
-      "aggregated_lp_apy": 24.2363,
-      "yt_breakeven_days": 225.38,
-      "yt_underwater": true,
-      "yt_implied_vs_realized": 132.5188,
-      "yt_theoretical_decay_usd_per_day": 0.0003569,
-      "lp_swap_fee_apy": 1.6616,
-      "lp_incentive_apy": 8.5664,
-      "lp_max_boosted_apy": 37.0859,
-      "pt_sy_ratio": 20.601452,
-      "composition_drift": 0.0,
-      "pt_price_usd": 0.9481966061778879,
-      "yt_price_usd": 0.05197923476379157,
-      "sy_price_usd": 1.0234759373322568,
-      "underlying_price_usd": 1.0234759373322568,
-      "pt_discount": 5.197,
-      "liquidity_usd": 115959.13719382469,
-      "total_tvl_usd": 1462725.6176306775,
-      "trading_volume_usd": 78356.7228855657,
-      "total_pt": 116203.831034,
-      "total_sy": 5640.565205209129,
-      "exit_slippage_ladder": [
-        {
-          "notional_usd": 10000,
-          "is_our_notional": false,
-          "price_impact_bps": 27.357
-        },
-        {
-          "notional_usd": 50000,
-          "is_our_notional": false,
-          "price_impact_bps": 52.298
-        },
-        {
-          "notional_usd": 52991.56573295994,
-          "is_our_notional": true,
-          "price_impact_bps": 53.117
-        },
-        {
-          "notional_usd": 100000,
-          "is_our_notional": false,
-          "price_impact_bps": 144.01
-        }
-      ],
-      "exit_slippage_bps_at_notional": 53.117,
-      "fetched_at": "2026-08-21T08:43:28Z",
-      "flags": [
-        {
-          "code": "low_liquidity",
-          "severity": "warning",
-          "msg": "exit slippage 53bps at notional (>50bps)"
-        },
-        {
-          "code": "yt_underwater",
-          "severity": "info",
-          "msg": "YT breakeven 225d > 146d to maturity at current underlying yield"
-        }
-      ]
-    },
-    {
       "key": "PT-reUSD-10DEC2026",
+      "dependency_review": null,
       "exposure": "direct",
       "chain": 1,
       "market_address": "0x13285bcbc27f92b47b4edb99d744c07b48c977c0",
       "underlier": "reUSD",
       "maturity": "2026-12-10T00:00:00.000Z",
-      "days_to_maturity": 110.64,
+      "days_to_maturity": 28.95,
       "expired": false,
-      "our_notional_usd": 40000.16452187952,
+      "our_notional_usd": 101365.8430716025,
       "pt_address": "0xecfafdc7741323a945a163ed068b5a3c43483957",
       "yt_address": "0xa8bd3b21291ace53927b35563fc80615919e63d7",
       "sy_address": "0x9487bd5a3b16ecb5f3184453e3ee75b800141648",
       "underlying_address": "0x5086bf358635b81d8c47c66d1c8b9e567db70c72",
-      "pt_implied_apy": 10.7766,
-      "underlying_apy": 6.5715,
-      "yt_floating_apy": -80.8603,
-      "pt_vs_underlying_spread": 4.2051,
-      "aggregated_lp_apy": 9.2472,
-      "yt_breakeven_days": 154.8,
+      "pt_implied_apy": 11.5452,
+      "underlying_apy": 7.1908,
+      "yt_floating_apy": -99.8109,
+      "pt_vs_underlying_spread": 4.3544,
+      "aggregated_lp_apy": 9.3922,
+      "yt_breakeven_days": 39.36,
       "yt_underwater": true,
-      "yt_implied_vs_realized": -87.4318,
-      "yt_theoretical_decay_usd_per_day": 0.00027602,
-      "lp_swap_fee_apy": 0.2869,
-      "lp_incentive_apy": 0.8986,
-      "lp_max_boosted_apy": 10.5952,
-      "pt_sy_ratio": 0.620582,
-      "composition_drift": 0.068987,
-      "pt_price_usd": 0.9692181464038744,
-      "yt_price_usd": 0.030538734860524414,
-      "sy_price_usd": 1.09575653627405,
-      "underlying_price_usd": 1.09575653627405,
-      "pt_discount": 3.0547,
-      "liquidity_usd": 8692194.015788553,
-      "total_tvl_usd": 128562088.17823085,
-      "trading_volume_usd": 1080735.5751365076,
-      "total_pt": 3178179.476243,
-      "total_sy": 5121290.722123247,
+      "yt_implied_vs_realized": -107.0017,
+      "yt_theoretical_decay_usd_per_day": 0.00029774,
+      "lp_swap_fee_apy": 0.0956,
+      "lp_incentive_apy": 0.2921,
+      "lp_max_boosted_apy": 9.8304,
+      "pt_sy_ratio": 0.801323,
+      "composition_drift": -0.071549,
+      "pt_price_usd": 0.9901569961025765,
+      "yt_price_usd": 0.008619503878337062,
+      "sy_price_usd": 1.11146146103826,
+      "underlying_price_usd": 1.11146146103826,
+      "pt_discount": 0.863,
+      "liquidity_usd": 12731682.208577376,
+      "total_tvl_usd": 301730721.8195208,
+      "trading_volume_usd": 669558.506611187,
+      "total_pt": 5355895.568361,
+      "total_sy": 6683815.465228393,
       "exit_slippage_ladder": [
         {
           "notional_usd": 10000,
           "is_our_notional": false,
-          "price_impact_bps": 6.74
-        },
-        {
-          "notional_usd": 40000.16452187952,
-          "is_our_notional": true,
-          "price_impact_bps": 7.986
+          "price_impact_bps": 2.698
         },
         {
           "notional_usd": 50000,
           "is_our_notional": false,
-          "price_impact_bps": 8.401
+          "price_impact_bps": 2.91
         },
         {
           "notional_usd": 100000,
           "is_our_notional": false,
-          "price_impact_bps": 10.13
+          "price_impact_bps": 2.963
+        },
+        {
+          "notional_usd": 101365.8430716025,
+          "is_our_notional": true,
+          "price_impact_bps": 2.964
         }
       ],
-      "exit_slippage_bps_at_notional": 7.986,
-      "fetched_at": "2026-08-21T08:43:30Z",
+      "exit_slippage_bps_at_notional": 2.964,
+      "fetched_at": "2026-11-11T01:05:04Z",
       "flags": [
         {
           "code": "yt_underwater",
           "severity": "info",
-          "msg": "YT breakeven 155d > 111d to maturity at current underlying yield"
+          "msg": "YT breakeven 39d > 29d to maturity at current underlying yield"
         }
       ]
     },
     {
-      "key": "PT-apyUSD-27AUG2026",
+      "key": "PT-srUSDat-14JAN2027",
+      "dependency_review": null,
       "exposure": "direct",
-      "chain": 1,
-      "market_address": "0x30bb9ee8dc6aab322dc3a0d36063cbf06a9e5952",
-      "underlier": "apyUSD",
-      "maturity": "2026-08-27T00:00:00.000Z",
-      "days_to_maturity": 5.64,
+      "chain": 143,
+      "market_address": "0xc945210f85b55946eb970f427e4b9150fff600de",
+      "underlier": "srUSDat",
+      "maturity": "2027-01-14T00:00:00.000Z",
+      "days_to_maturity": 63.95,
       "expired": false,
-      "our_notional_usd": 39616.61027910262,
-      "pt_address": "0xee5c7cda577484b70b65c21235ecbd302bb290e2",
-      "yt_address": "0x67553fb2ab2a411029387e1c53c0a3e55f8d10c9",
-      "sy_address": "0x04f8dca7bccd8997ac57ca6fef7c705e17d6bcb6",
-      "underlying_address": "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a",
-      "pt_implied_apy": 16.7895,
-      "underlying_apy": 13.572,
-      "yt_floating_apy": -100.0,
-      "pt_vs_underlying_spread": 3.2175,
-      "aggregated_lp_apy": 15.5439,
-      "yt_breakeven_days": 4.55,
-      "yt_underwater": false,
-      "yt_implied_vs_realized": -113.572,
-      "yt_theoretical_decay_usd_per_day": 0.0003967,
-      "lp_swap_fee_apy": 0.0752,
-      "lp_incentive_apy": 0.2003,
-      "lp_max_boosted_apy": 15.8444,
-      "pt_sy_ratio": 1.582064,
-      "composition_drift": -0.353752,
-      "pt_price_usd": 0.932341386777851,
-      "yt_price_usd": 0.002237360440554281,
-      "sy_price_usd": 1.3225899921773354,
-      "underlying_price_usd": 1.3225899921773354,
-      "pt_discount": 0.2395,
-      "liquidity_usd": 8209232.203289358,
-      "total_tvl_usd": 43364536.39685147,
-      "trading_volume_usd": 741156.802206802,
-      "total_pt": 4642277.833684018,
-      "total_sy": 2934318.133029438,
+      "our_notional_usd": 55087.39069448873,
+      "pt_address": "0x355e82c60d51d6942bdfd0f2b95a204acd068963",
+      "yt_address": "0x0435a599e3fcf2e53028760060499350e25c3dd2",
+      "sy_address": "0xa544d9b7961d1db86ab81e9e3fa5659838c28b51",
+      "underlying_address": "0x17b8f7373ecd556192abfc85be314e5d4fb6b3fa",
+      "pt_implied_apy": 11.0404,
+      "underlying_apy": 8.1745,
+      "yt_floating_apy": -84.1276,
+      "pt_vs_underlying_spread": 2.8659,
+      "aggregated_lp_apy": 10.6441,
+      "yt_breakeven_days": 77.97,
+      "yt_underwater": true,
+      "yt_implied_vs_realized": -92.3021,
+      "yt_theoretical_decay_usd_per_day": 0.00028409,
+      "lp_swap_fee_apy": 0.1253,
+      "lp_incentive_apy": 0.2801,
+      "lp_max_boosted_apy": 11.0643,
+      "pt_sy_ratio": 2.730716,
+      "composition_drift": -0.206669,
+      "pt_price_usd": 0.9810027910966161,
+      "yt_price_usd": 0.018167353655800557,
+      "sy_price_usd": 1.040445863432139,
+      "underlying_price_usd": 1.040445863432139,
+      "pt_discount": 1.8183,
+      "liquidity_usd": 323458.32505551045,
+      "total_tvl_usd": 733284.1386717332,
+      "trading_volume_usd": 1025.2197544373882,
+      "total_pt": 237490.13049,
+      "total_sy": 86969.91156714788,
       "exit_slippage_ladder": [
         {
           "notional_usd": 10000,
           "is_our_notional": false,
-          "price_impact_bps": 0.537
-        },
-        {
-          "notional_usd": 39616.61027910262,
-          "is_our_notional": true,
-          "price_impact_bps": 0.596
+          "price_impact_bps": 6.771
         },
         {
           "notional_usd": 50000,
           "is_our_notional": false,
-          "price_impact_bps": 0.617
+          "price_impact_bps": 24.295
+        },
+        {
+          "notional_usd": 55087.39069448873,
+          "is_our_notional": true,
+          "price_impact_bps": 26.54
         },
         {
           "notional_usd": 100000,
           "is_our_notional": false,
-          "price_impact_bps": 0.567
+          "price_impact_bps": 48.333
         }
       ],
-      "exit_slippage_bps_at_notional": 0.596,
-      "fetched_at": "2026-08-21T08:43:33Z",
+      "exit_slippage_bps_at_notional": 26.54,
+      "fetched_at": "2026-11-11T01:05:06Z",
       "flags": [
         {
-          "code": "near_maturity",
-          "severity": "warning",
-          "msg": "5.6d to maturity (<14d) \u2014 roll/exit decision"
+          "code": "yt_underwater",
+          "severity": "info",
+          "msg": "YT breakeven 78d > 64d to maturity at current underlying yield"
         },
         {
           "code": "composition_drift",
           "severity": "info",
-          "msg": "PT/SY ratio moved -35% over 7d (>15%) \u2014 LP leg-exposure shifting"
+          "msg": "PT/SY ratio moved -21% over 7d (>15%) \u2014 LP leg-exposure shifting"
         }
       ]
     },
     {
-      "key": "PT-USDat-27AUG2026",
+      "key": "PT-superWETH-26NOV2026",
+      "dependency_review": null,
       "exposure": "direct",
-      "chain": 56,
-      "market_address": "0x9757834d0b31aa820b85f68705117691207152d9",
-      "underlier": "USDat",
-      "maturity": "2026-08-27T00:00:00.000Z",
-      "days_to_maturity": 5.64,
+      "chain": 1,
+      "market_address": "0x384509537ce5daa5740baeb6d1ee0eb2847ea8a8",
+      "underlier": "superWETH",
+      "maturity": "2026-11-26T00:00:00.000Z",
+      "days_to_maturity": 14.95,
       "expired": false,
-      "our_notional_usd": 10224.164544990334,
-      "pt_address": "0x3519f72144daae5ae933fac1bf91f8da57664d24",
-      "yt_address": "0xb977399b1e25d5885831af34769ff47f94d391a6",
-      "sy_address": "0x81a77db87618d51bc12c9eabe08cc298764b8277",
-      "underlying_address": "0x0bb150dfa86ea5d7742f07fefcd8e8eda81d64ef",
-      "pt_implied_apy": 6.0845,
-      "underlying_apy": 0.0,
-      "yt_floating_apy": -100.0,
-      "pt_vs_underlying_spread": 6.0845,
-      "aggregated_lp_apy": 1.052,
-      "yt_breakeven_days": null,
-      "yt_underwater": null,
-      "yt_implied_vs_realized": -100.0,
-      "yt_theoretical_decay_usd_per_day": 0.00016166,
-      "lp_swap_fee_apy": 0.1919,
-      "lp_incentive_apy": 0.0,
-      "lp_max_boosted_apy": 1.052,
-      "pt_sy_ratio": 0.164767,
-      "composition_drift": 0.025193,
-      "pt_price_usd": 0.9991197508462393,
-      "yt_price_usd": 0.000911784948560755,
-      "sy_price_usd": 1.0000315357948,
-      "underlying_price_usd": 1.0000315357948,
-      "pt_discount": 0.0912,
-      "liquidity_usd": 485976.4895333985,
-      "total_tvl_usd": 6681441.293951153,
-      "trading_volume_usd": 30128.704917408984,
-      "total_pt": 68751.202934,
-      "total_sy": 417263.815945,
+      "our_notional_usd": 41359.38,
+      "pt_address": "0x1cfaed2df5ee27b078e96fafa10709c5548fc1b7",
+      "yt_address": "0x775f0f7690c2ceed13d20f9a302d1e8069d56b3b",
+      "sy_address": "0x3aecaedfb92efbbac95e5c458c56e94070cb9179",
+      "underlying_address": "0xa036823b9a24f63c32553367bf181ee04229c3ac",
+      "pt_implied_apy": 4.7288,
+      "underlying_apy": 3.8237,
+      "yt_floating_apy": -99.7286,
+      "pt_vs_underlying_spread": 0.9051,
+      "aggregated_lp_apy": 4.0497,
+      "yt_breakeven_days": 17.77,
+      "yt_underwater": true,
+      "yt_implied_vs_realized": -103.5523,
+      "yt_theoretical_decay_usd_per_day": 0.25891335,
+      "lp_swap_fee_apy": 0.0,
+      "lp_incentive_apy": 1.8005,
+      "lp_max_boosted_apy": 6.7504,
+      "pt_sy_ratio": 0.338544,
+      "composition_drift": 0.0,
+      "pt_price_usd": 2042.6908187028505,
+      "yt_price_usd": 3.8707545671498247,
+      "sy_price_usd": 2078.9775484390952,
+      "underlying_price_usd": 2078.9775484390952,
+      "pt_discount": 0.1891,
+      "liquidity_usd": 283962.73607482435,
+      "total_tvl_usd": 568627.4787365482,
+      "trading_volume_usd": 0.0,
+      "total_pt": 34.680919213638624,
+      "total_sy": 102.44141468588052,
       "exit_slippage_ladder": [
         {
           "notional_usd": 10000,
           "is_our_notional": false,
-          "price_impact_bps": 0.507
+          "price_impact_bps": 2.357
         },
         {
-          "notional_usd": 10224.164544990334,
+          "notional_usd": 41359.38,
           "is_our_notional": true,
-          "price_impact_bps": 0.508
+          "price_impact_bps": 7.279
         },
         {
           "notional_usd": 50000,
           "is_our_notional": false,
-          "price_impact_bps": 0.545
+          "price_impact_bps": 8.529
         },
         {
           "notional_usd": 100000,
           "is_our_notional": false,
-          "price_impact_bps": 0.55
+          "price_impact_bps": 15.603
         }
       ],
-      "exit_slippage_bps_at_notional": 0.508,
-      "fetched_at": "2026-08-21T08:43:36Z",
+      "exit_slippage_bps_at_notional": 7.279,
+      "fetched_at": "2026-11-11T01:05:07Z",
       "flags": [
         {
-          "code": "near_maturity",
-          "severity": "warning",
-          "msg": "5.6d to maturity (<14d) \u2014 roll/exit decision"
+          "code": "yt_underwater",
+          "severity": "info",
+          "msg": "YT breakeven 18d > 15d to maturity at current underlying yield"
         }
       ]
     },
     {
       "key": "PT-sUSDE-13AUG2026",
-      "exposure": "collateral",
+      "dependency_review": {
+        "status": "unverified_current_exposure",
+        "review_by": "2026-11-09",
+        "scope": "Legacy borrower collateral rationale; current exposure unproven. Retire only on complete current zero exposure evidence."
+      },
+      "exposure": "dependency_review",
       "chain": 1,
       "market_address": "0x177768caf9d0e036725a51d3f60d7e20f2d4d194",
       "underlier": "sUSDe",
       "maturity": "2026-08-13T00:00:00.000Z",
-      "days_to_maturity": -8.36,
+      "days_to_maturity": -90.05,
       "expired": true,
       "our_notional_usd": null,
       "pt_address": "0x5a19fa369f2895dcd8d2cee62e4ceae58ef92bbb",
@@ -320,40 +253,24 @@
       "lp_max_boosted_apy": -83.2645,
       "pt_sy_ratio": 29.696081,
       "composition_drift": 0.0,
-      "pt_price_usd": 0.9982174576648524,
+      "pt_price_usd": 0.9991576186342219,
       "yt_price_usd": 0.0,
-      "sy_price_usd": 1.24214596,
-      "underlying_price_usd": 1.24214596,
+      "sy_price_usd": 1.25655373,
+      "underlying_price_usd": 1.25655373,
       "pt_discount": -0.0004,
       "liquidity_usd": 7008412.590446678,
       "total_tvl_usd": 32966955.97501191,
       "trading_volume_usd": 5782726.797061167,
       "total_pt": 6743824.728075795,
       "total_sy": 227094.76947952792,
-      "exit_slippage_ladder": [
-        {
-          "notional_usd": 10000,
-          "is_our_notional": false,
-          "price_impact_bps": null
-        },
-        {
-          "notional_usd": 50000,
-          "is_our_notional": false,
-          "price_impact_bps": null
-        },
-        {
-          "notional_usd": 100000,
-          "is_our_notional": false,
-          "price_impact_bps": null
-        }
-      ],
+      "exit_slippage_ladder": [],
       "exit_slippage_bps_at_notional": null,
-      "fetched_at": "2026-08-21T08:43:36Z",
+      "fetched_at": "2026-11-11T01:05:08Z",
       "flags": [
         {
           "code": "expired",
           "severity": "warning",
-          "msg": "market past maturity \u2014 PT redeemable 1:1, watchlist entry should roll"
+          "msg": "market past maturity \u2014 redemption subject to market PY-index/SY settlement conversion; owner review"
         },
         {
           "code": "discount_anomaly",
@@ -363,18 +280,23 @@
         {
           "code": "yt_underwater",
           "severity": "info",
-          "msg": "YT breakeven 0d > -8d to maturity at current underlying yield"
+          "msg": "YT breakeven 0d > -90d to maturity at current underlying yield"
         }
       ]
     },
     {
       "key": "PT-USDE-13AUG2026",
-      "exposure": "collateral",
+      "dependency_review": {
+        "status": "unverified_current_exposure",
+        "review_by": "2026-11-09",
+        "scope": "Legacy borrower collateral rationale; current exposure unproven. Retire only on complete current zero exposure evidence."
+      },
+      "exposure": "dependency_review",
       "chain": 1,
       "market_address": "0x43c97094da0e894d3af2fda6f507d59a29888251",
       "underlier": "USDe",
       "maturity": "2026-08-13T00:00:00.000Z",
-      "days_to_maturity": -8.36,
+      "days_to_maturity": -90.05,
       "expired": true,
       "our_notional_usd": null,
       "pt_address": "0x3ec43f4158d51df0928979c09eaf33cad287065c",
@@ -395,48 +317,37 @@
       "lp_max_boosted_apy": 15.7935,
       "pt_sy_ratio": 23.743056,
       "composition_drift": 0.0,
-      "pt_price_usd": 0.99983615,
+      "pt_price_usd": 0.9997369,
       "yt_price_usd": 0.0,
-      "sy_price_usd": 0.99983615,
-      "underlying_price_usd": 0.99983615,
+      "sy_price_usd": 0.9997369,
+      "underlying_price_usd": 0.9997369,
       "pt_discount": 0.0,
       "liquidity_usd": 383436.51225356717,
       "total_tvl_usd": 705518.169688403,
       "trading_volume_usd": 97611.19690274104,
       "total_pt": 368024.81844799244,
       "total_sy": 15500.313817415295,
-      "exit_slippage_ladder": [
-        {
-          "notional_usd": 10000,
-          "is_our_notional": false,
-          "price_impact_bps": null
-        },
-        {
-          "notional_usd": 50000,
-          "is_our_notional": false,
-          "price_impact_bps": null
-        },
-        {
-          "notional_usd": 100000,
-          "is_our_notional": false,
-          "price_impact_bps": null
-        }
-      ],
+      "exit_slippage_ladder": [],
       "exit_slippage_bps_at_notional": null,
-      "fetched_at": "2026-08-21T08:35:44Z",
+      "fetched_at": "2026-11-11T01:05:08Z",
       "flags": [
         {
           "code": "expired",
           "severity": "warning",
-          "msg": "market past maturity \u2014 PT redeemable 1:1, watchlist entry should roll"
+          "msg": "market past maturity \u2014 redemption subject to market PY-index/SY settlement conversion; owner review"
         }
       ]
     }
   ],
-  "errors": [
-    {
-      "key": "PT-USDE-13AUG2026",
-      "error": "429 https://api-v2.pendle.finance/core/v2/1/markets/0x43c97094da0e894d3af2fda6f507d59a29888251/data :: {\"statusCode\":429,\"error\":\"too many requests\",\"message\":\"too many requests\"}"
-    }
-  ]
+  "errors": [],
+  "holdings_coverage": {
+    "status": "fresh",
+    "complete": true,
+    "source": "/home/danger/riskAnalyst/data/portfolio/pendle_positions.json",
+    "resolved_at": "2026-11-11T01:05:01Z",
+    "generated_at": "2026-11-11T00:56:13.301303+00:00",
+    "upstream_generated_at": "2026-11-11T00:10:38.447530+00:00",
+    "resolved_count": 4,
+    "source_count": 4
+  }
 }

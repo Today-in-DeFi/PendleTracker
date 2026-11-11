@@ -1,0 +1,93 @@
+{
+  "requested_at": "2026-11-04T14:18:38.787610+00:00",
+  "method": "POST",
+  "url": "https://arbitrum-one-rpc.publicnode.com",
+  "params": null,
+  "body": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0a1a1a107e45b7ced86833863f482bc5f4ed82ef",
+          "data": "0x313ce567"
+        },
+        "0x1f10cf79"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x0b2b2b2076d95dda7817e785989fe353fe955ef9",
+          "data": "0x313ce567"
+        },
+        "0x1f10cf79"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0x46850ad61c2b7d64d08c9c754f45254596696984",
+          "data": "0x313ce567"
+        },
+        "0x1f10cf79"
+      ]
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "method": "eth_call",
+      "params": [
+        {
+          "to": "0xe9d07c2a3588b9a25edd55664be44ecfe5f92fce",
+          "data": "0x313ce567"
+        },
+        "0x1f10cf79"
+      ]
+    }
+  ],
+  "received_at": "2026-11-04T14:18:39.279275+00:00",
+  "http_status": 403,
+  "rate_headers": {},
+  "response": [
+    {
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32602,
+        "message": "Archive requests require a personal token. Get one at: https://www.allnodes.com/publicnode"
+      },
+      "id": 1
+    },
+    {
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32602,
+        "message": "Archive requests require a personal token. Get one at: https://www.allnodes.com/publicnode"
+      },
+      "id": 4
+    },
+    {
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32602,
+        "message": "Archive requests require a personal token. Get one at: https://www.allnodes.com/publicnode"
+      },
+      "id": 2
+    },
+    {
+      "jsonrpc": "2.0",
+      "error": {
+        "code": -32602,
+        "message": "Archive requests require a personal token. Get one at: https://www.allnodes.com/publicnode"
+      },
+      "id": 3
+    }
+  ]
+}

@@ -185,7 +185,9 @@ def build_market_record(entry, client=None):
     spread = (round(pt_implied - underlying_apy, 4)
               if pt_implied is not None and underlying_apy is not None else None)
 
-    ladder = _exit_slippage_ladder(client, entry, pt, underlying)
+    days = _days_to_maturity(expiry)
+    # Expired markets reject swap simulation; redemption is a separate operation.
+    ladder = [] if days is not None and days <= 0 else _exit_slippage_ladder(client, entry, pt, underlying)
     our_rung = next((r for r in ladder if r["is_our_notional"]), None)
     slip_at_notional = (our_rung or (ladder[-1] if ladder else {})).get("price_impact_bps")
 
@@ -195,6 +197,7 @@ def build_market_record(entry, client=None):
     record = {
         "key": entry["key"],
         "exposure": entry.get("exposure"),
+        "dependency_review": entry.get("dependency_review"),
         "chain": entry["chain"],
         "market_address": entry["market"],
         "underlier": entry.get("underlier"),
@@ -251,10 +254,10 @@ def _flags(r):
     d = r.get("days_to_maturity")
     if d is not None and 0 < d < NEAR_MATURITY_DAYS:
         flags.append({"code": "near_maturity", "severity": "warning",
-                      "msg": f"{d:.1f}d to maturity (<{NEAR_MATURITY_DAYS}d) — roll/exit decision"})
+                      "msg": f"{d:.1f}d to maturity (<{NEAR_MATURITY_DAYS}d) — owner review of settlement options"})
     if r.get("expired"):
         flags.append({"code": "expired", "severity": "warning",
-                      "msg": "market past maturity — PT redeemable 1:1, watchlist entry should roll"})
+                      "msg": "market past maturity — redemption subject to market PY-index/SY settlement conversion; owner review"})
     slip = r.get("exit_slippage_bps_at_notional")
     if slip is not None and slip > LOW_LIQUIDITY_SLIPPAGE_BPS:
         flags.append({"code": "low_liquidity", "severity": "warning",

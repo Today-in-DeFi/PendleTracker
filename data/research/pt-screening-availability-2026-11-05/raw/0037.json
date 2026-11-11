@@ -1,0 +1,26 @@
+{
+  "requested_at": "2026-11-05T10:31:13.527674+00:00",
+  "method": "POST",
+  "url": "https://rpc.monad.xyz",
+  "params": null,
+  "body": {
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "eth_call",
+    "params": [
+      {
+        "to": "0xeb9bfd1c1acfef4f9b4c4630dc1f373631073ef0",
+        "data": "0x76d5de85"
+      },
+      "0x720c69c"
+    ]
+  },
+  "received_at": "2026-11-05T10:31:13.598125+00:00",
+  "http_status": 200,
+  "rate_headers": {},
+  "response": {
+    "jsonrpc": "2.0",
+    "result": "0x00000000000000000000000053176cadd446700fa6b89f840357ac586d7e33db",
+    "id": 1
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "requested_at": "2026-11-04T14:13:37.142618+00:00",
+  "method": "GET",
+  "url": "https://api-v2.pendle.finance/core/v1/sdk/143/markets/0x88c5d8a908834e44b421cb67aec9a931782f9538/tokens",
+  "params": null,
+  "body": null,
+  "received_at": "2026-11-04T14:13:37.607591+00:00",
+  "http_status": 200,
+  "rate_headers": {
+    "x-computing-unit": "1",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "161",
+    "x-ratelimit-reset": "1793801640",
+    "x-ratelimit-weekly-limit": "200000",
+    "x-ratelimit-weekly-remaining": "191379",
+    "x-ratelimit-weekly-reset": "1793836800"
+  },
+  "response": {
+    "tokensMintSy": [
+      "0x0bb150dfa86ea5d7742f07fefcd8e8eda81d64ef"
+    ],
+    "tokensRedeemSy": [
+      "0x0bb150dfa86ea5d7742f07fefcd8e8eda81d64ef"
+    ],
+    "tokensIn": [
+      "0x0bb150dfa86ea5d7742f07fefcd8e8eda81d64ef",
+      "0x0898c3346275e79db4892feb1c18875ec154f274",
+      "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+      "0xfc421ad3c883bf9e7c4f42de845c4e4405799e73",
+      "0x0000000000000000000000000000000000000000",
+      "0x211cc4dd073734da055fbf44a2b4667d5e5fe5d2",
+      "0x754704bc059f8c67012fed69bc8a327a5aafb603",
+      "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34",
+      "0xe7cd86e13ac4309349f30b3435a9d337750fc82d",
+      "0x0555e30da8f98308edb960aa94c0db47230d2b9c",
+      "0xee8c0e9f1bffb4eb878d8f15f368a02a35481242",
+      "0x3bd359c1119da7da1d913d1c4d2b7c461115433a"
+    ],
+    "tokensOut": [
+      "0x0bb150dfa86ea5d7742f07fefcd8e8eda81d64ef",
+      "0x0898c3346275e79db4892feb1c18875ec154f274",
+      "0x00000000efe302beaa2b3e6e1b18d08d69a9012a",
+      "0xfc421ad3c883bf9e7c4f42de845c4e4405799e73",
+      "0x0000000000000000000000000000000000000000",
+      "0x211cc4dd073734da055fbf44a2b4667d5e5fe5d2",
+      "0x754704bc059f8c67012fed69bc8a327a5aafb603",
+      "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34",
+      "0xe7cd86e13ac4309349f30b3435a9d337750fc82d",
+      "0x0555e30da8f98308edb960aa94c0db47230d2b9c",
+      "0xee8c0e9f1bffb4eb878d8f15f368a02a35481242",
+      "0x3bd359c1119da7da1d913d1c4d2b7c461115433a"
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "source": "/home/danger/farmAnalyst/specs/handoffs/pendletracker-pt-route-quotes-2026-11-04.txt",
+  "excluded": [
+    {
+      "chain_id": 143,
+      "market_address": "0x17b8f7373ecd556192abfc85be314e5d4fb6b3fa",
+      "reason": "authorization/backing/bridge linkage gap; no Ethereum inheritance"
+    }
+  ],
+  "candidates": [
+    {
+      "name": "PT-apyUSD-11FEB2027",
+      "chain_id": 1,
+      "market_address": "0x313826e7029fdf742f3076741ed220e0e7b4968d",
+      "pt": "0x60b1e75ede859e496c281d308bc94b6965ac4847",
+      "sy": "0x04f8dca7bccd8997ac57ca6fef7c705e17d6bcb6",
+      "underlying": "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a"
+    },
+    {
+      "name": "PT-reUSD-10DEC2026",
+      "chain_id": 143,
+      "market_address": "0xea492a66e98a46426f03f5c3505ee89d96520813",
+      "pt": "0xbb0dcdd5f0159c3d51d8bce7d84f1b9fa390ef09",
+      "sy": "0x8c0ee449b8babc933047541249952d5084a7d99d",
+      "underlying": "0xd25f563e12ff616262f8c947fec108db934f8059"
+    },
+    {
+      "name": "PT-reUSD-10DEC2026",
+      "chain_id": 1,
+      "market_address": "0x13285bcbc27f92b47b4edb99d744c07b48c977c0",
+      "pt": "0xecfafdc7741323a945a163ed068b5a3c43483957",
+      "sy": "0x9487bd5a3b16ecb5f3184453e3ee75b800141648",
+      "underlying": "0x5086bf358635b81d8c47c66d1c8b9e567db70c72"
+    },
+    {
+      "name": "PT-srUSDat-14JAN2027",
+      "chain_id": 1,
+      "market_address": "0xdf2e3e0250f679d6284a39a0c1a16a850a9d7aa6",
+      "pt": "0x2c3e7c0fab3d546ea0715d2a96fbdf598711a062",
+      "sy": "0x9d0fc59f88acb85520a8cfb74c7fe141d8563185",
+      "underlying": "0xfaa9a0e1db9e22ae3a20b2b58a68dc24d053d066"
+    },
+    {
+      "name": "PT-sUSDai-25FEB2027",
+      "chain_id": 42161,
+      "market_address": "0xf86119a39f8654f38acbbd5488bd83f3f51983c8",
+      "pt": "0xe9d07c2a3588b9a25edd55664be44ecfe5f92fce",
+      "sy": "0x30ccf4bbee313fcd19f3e295b3ba2920a24e2f62",
+      "underlying": "0x0b2b2b2076d95dda7817e785989fe353fe955ef9"
+    },
+    {
+      "name": "PT-siUSD-7JAN2027",
+      "chain_id": 1,
+      "market_address": "0xd44f2630260ff3805d7cb317d4f6740b0044c408",
+      "pt": "0x76543ac61ba84c6feeee76c6a918127bf0ca5fd1",
+      "sy": "0x9f30507c264cc6eb5be35b18ff9ad7b4539aa920",
+      "underlying": "0xdbdc1ef57537e34680b898e1febd3d68c7389bcb"
+    },
+    {
+      "name": "PT-sUSN-22JUL2027",
+      "chain_id": 1,
+      "market_address": "0x16d3126ee82ee36816499fb9db6f647c6addd09c",
+      "pt": "0x6a0efc272e8dd4fc5affea17376dcf107cbcbc0f",
+      "sy": "0xa0a2c8c94bf30227f84af6e054025945a51d0eff",
+      "underlying": "0xe24a3dc889621612422a64e6388927901608b91d"
+    },
+    {
+      "name": "PT-USDat-14JAN2027",
+      "chain_id": 143,
+      "market_address": "0x88c5d8a908834e44b421cb67aec9a931782f9538",
+      "pt": "0xa08a69ab9dd3b04d0992bc7afb2c0b907bbdc147",
+      "sy": "0x0898c3346275e79db4892feb1c18875ec154f274",
+      "underlying": "0x0bb150dfa86ea5d7742f07fefcd8e8eda81d64ef"
+    },
+    {
+      "name": "PT-USDai-25FEB2027",
+      "chain_id": 42161,
+      "market_address": "0x46f545683d8494ef4c54b7ea40ca762c620846ef",
+      "pt": "0xfaf260b16d3fa1609c74799089ad3cedfcd703fc",
+      "sy": "0x5edcbc20cac67adc2e724d4348ff85132b085b82",
+      "underlying": "0x0a1a1a107e45b7ced86833863f482bc5f4ed82ef"
+    },
+    {
+      "name": "PT-USDat-14JAN2027",
+      "chain_id": 1,
+      "market_address": "0x4ccf6deb3d1895373f604b418ff55d8adae8b846",
+      "pt": "0xba96292ee7673e3b546cc90db6d97111cd9a314f",
+      "sy": "0x7a7de491e1be5287874904e2b7c8488249a4d0a9",
+      "underlying": "0x23238f20b894f29041f48d88ee91131c395aaa71"
+    },
+    {
+      "name": "PT-fxSAVE-29APR2027",
+      "chain_id": 1,
+      "market_address": "0x9df10b8c99dc1a48dd7048a9a524bff9b54a0a30",
+      "pt": "0xc1ea9419dd1dab4dd54aa13b13a766e4de22ebc3",
+      "sy": "0x7ca334286e9519de99703ab49d4eff6e5559499f",
+      "underlying": "0x7743e50f534a7f9f1791dde7dcd89f7783eefc39"
+    }
+  ]
+}

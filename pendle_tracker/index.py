@@ -7,6 +7,7 @@ import time
 from datetime import datetime, timezone
 
 from .client import PendleClient, PendleAPIError
+from .pt_inventory import expiry_utc
 from . import db
 from .collector import compute_yt_analytics, compute_lp_analytics
 
@@ -95,15 +96,15 @@ def _pct(value):
     return round(value * 100, 4) if value is not None else None
 
 
-def _days_to_maturity(expiry_iso):
+def _days_to_maturity(expiry_iso, now=None):
     if not expiry_iso:
         return None
     try:
-        exp = datetime.fromisoformat(expiry_iso.replace("Z", "+00:00"))
-    except (AttributeError, ValueError):
+        exp = expiry_utc(expiry_iso)
+    except (AttributeError, ValueError, TypeError, OverflowError, OSError):
         return None
-    delta = exp - datetime.now(timezone.utc)
-    return round(delta.total_seconds() / 86400, 2)
+    delta = exp - (now or datetime.now(timezone.utc))
+    return delta.total_seconds() / 86400
 
 
 def _usd(obj):
@@ -253,12 +254,24 @@ def _db_chains():
         conn.close()
 
 
-def _project_chain_markets(chain):
+def _project_chain_markets(chain, now=None):
+    now = now or datetime.now(timezone.utc)
     rows = _latest_index_rows(chain=chain)
     markets = {}
     latest_ts = None
     for row in rows:
         address = row["market_address"]
+        # Cached rows can survive months after they stop appearing in the
+        # active directory. Their old days/expired fields describe collection
+        # time, not projection time. Never revive them with a fresh envelope.
+        days = _days_to_maturity(row["maturity"], now=now)
+        stamp = row.get("ts")
+        try:
+            age = (now-expiry_utc(stamp)).total_seconds()/3600
+            freshness = "snapshot_recent" if -5/60 <= age <= 24 else "snapshot_stale_or_future"
+        except (ValueError, TypeError, OverflowError, OSError):
+            age = None
+            freshness = "snapshot_timestamp_invalid"
         item = {
             "name": row["name"],
             "pt_address": row["pt_address"],
@@ -267,8 +280,14 @@ def _project_chain_markets(chain):
             "underlying_address": row["underlying_address"],
             "underlier": row["underlier"],
             "maturity": row["maturity"],
-            "days_to_maturity": row["days_to_maturity"],
-            "expired": bool(row["expired"]),
+            "days_to_maturity": days,
+            "expired": None if days is None else days <= 0,
+            "maturity_state": "invalid_expiry" if days is None else "expired" if days <= 0 else "near_maturity" if days < 7 else "unexpired_ge_7d",
+            "fetched_at": stamp,
+            "source_data_as_of": None,
+            "freshness_status": freshness,
+            "snapshot_age_hours_at_projection": age,
+            "freshness_basis": "Stored collection timestamp; upstream quote-update clock was not retained by the legacy index",
             "pt_implied_apy": row["pt_implied_apy"],
             "underlying_apy": row["underlying_apy"],
             "yt_floating_apy": row["yt_floating_apy"],
@@ -305,13 +324,15 @@ def project_index(chains=None):
     elif isinstance(chains, int):
         chains = [chains]
     out_chains = {}
+    now = datetime.now(timezone.utc)
     latest_ts = None
     for chain in chains:
-        markets, chain_ts = _project_chain_markets(chain)
+        markets, chain_ts = _project_chain_markets(chain, now=now)
         out_chains[str(chain)] = {"markets": markets}
         if chain_ts:
             latest_ts = max(latest_ts, chain_ts) if latest_ts else chain_ts
     return {
+        "projected_at": now.isoformat(),
         "generated_at": latest_ts or db.utc_now(),
         "chains": out_chains,
     }

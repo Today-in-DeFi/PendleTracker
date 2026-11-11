@@ -1,0 +1,161 @@
+[
+  {
+    "chain_id": 1,
+    "market_address": "0x313826e7029fdf742f3076741ed220e0e7b4968d",
+    "block": "0x191f23c",
+    "token_metadata": {
+      "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f23c",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0001.json",
+          "sha256": "8fa8e4a1d1b021d63c9a3263f41a1d948be67adacacabdd1e94753c4afd4a74a",
+          "requested_at": "2026-11-04T14:18:20.776643+00:00",
+          "received_at": "2026-11-04T14:18:21.254730+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0x60b1e75ede859e496c281d308bc94b6965ac4847": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f23c",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0001.json",
+          "sha256": "8fa8e4a1d1b021d63c9a3263f41a1d948be67adacacabdd1e94753c4afd4a74a",
+          "requested_at": "2026-11-04T14:18:20.776643+00:00",
+          "received_at": "2026-11-04T14:18:21.254730+00:00"
+        },
+        "batch_response_id": 2
+      },
+      "0x98a878b1cd98131b271883b390f68d2c90674665": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f23c",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0001.json",
+          "sha256": "8fa8e4a1d1b021d63c9a3263f41a1d948be67adacacabdd1e94753c4afd4a74a",
+          "requested_at": "2026-11-04T14:18:20.776643+00:00",
+          "received_at": "2026-11-04T14:18:21.254730+00:00"
+        },
+        "batch_response_id": 3
+      }
+    },
+    "preview_deposit_one_token": {
+      "0x98a878b1cd98131b271883b390f68d2c90674665": {
+        "status": "read",
+        "value": "688290369291238415",
+        "block": "0x191f23c",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0002.json",
+          "sha256": "1ef94ccb75786797786209a5c4855271c340c451fdc20e33b262ebacf8efca90",
+          "requested_at": "2026-11-04T14:18:23.778138+00:00",
+          "received_at": "2026-11-04T14:18:24.019170+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0x38eeb52f0771140d10c4e9a9a72349a329fe8a6a": {
+        "status": "read",
+        "value": "1000000000000000000",
+        "block": "0x191f23c",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0002.json",
+          "sha256": "1ef94ccb75786797786209a5c4855271c340c451fdc20e33b262ebacf8efca90",
+          "requested_at": "2026-11-04T14:18:23.778138+00:00",
+          "received_at": "2026-11-04T14:18:24.019170+00:00"
+        },
+        "batch_response_id": 2
+      }
+    }
+  },
+  {
+    "chain_id": 143,
+    "market_address": "0xea492a66e98a46426f03f5c3505ee89d96520813",
+    "block": "0x71d15f0",
+    "token_metadata": {
+      "0xbb0dcdd5f0159c3d51d8bce7d84f1b9fa390ef09": {
+        "status": "read",
+        "value": "6",
+        "block": "0x71d15f0",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0003.json",
+          "sha256": "4309eba79dd9b03ff76408febc59d07150f5a465cffea305b982cf6c85a5a950",
+          "requested_at": "2026-11-04T14:18:26.779664+00:00",
+          "received_at": "2026-11-04T14:18:27.018724+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0xd25f563e12ff616262f8c947fec108db934f8059": {
+        "status": "read",
+        "value": "18",
+        "block": "0x71d15f0",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0003.json",
+          "sha256": "4309eba79dd9b03ff76408febc59d07150f5a465cffea305b982cf6c85a5a950",
+          "requested_at": "2026-11-04T14:18:26.779664+00:00",
+          "received_at": "2026-11-04T14:18:27.018724+00:00"
+        },
+        "batch_response_id": 2
+      }
+    },
+    "preview_deposit_one_token": {
+      "0xd25f563e12ff616262f8c947fec108db934f8059": {
+        "status": "read",
+        "value": "1000000000000000000",
+        "block": "0x71d15f0",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0004.json",
+          "sha256": "4831c94fb5abdabc7d3bd7db26a3026a97746d5b7932e61a69d92809feb9855d",
+          "requested_at": "2026-11-04T14:18:29.782598+00:00",
+          "received_at": "2026-11-04T14:18:29.848382+00:00"
+        },
+        "batch_response_id": 1
+      }
+    }
+  },
+  {
+    "chain_id": 1,
+    "market_address": "0x13285bcbc27f92b47b4edb99d744c07b48c977c0",
+    "block": "0x191f245",
+    "token_metadata": {
+      "0x5086bf358635b81d8c47c66d1c8b9e567db70c72": {
+        "status": "read",
+        "value": "18",
+        "block": "0x191f245",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0005.json",
+          "sha256": "48a5e98411af6a39f2794e2ef0ceabd9f04ce4c5736f2216fcc7b339140a39cd",
+          "requested_at": "2026-11-04T14:18:32.783640+00:00",
+          "received_at": "2026-11-04T14:18:33.139278+00:00"
+        },
+        "batch_response_id": 1
+      },
+      "0xecfafdc7741323a945a163ed068b5a3c43483957": {
+        "status": "read",
+        "value": "6",
+        "block": "0x191f245",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0005.json",
+          "sha256": "48a5e98411af6a39f2794e2ef0ceabd9f04ce4c5736f2216fcc7b339140a39cd",
+          "requested_at": "2026-11-04T14:18:32.783640+00:00",
+          "received_at": "2026-11-04T14:18:33.139278+00:00"
+        },
+        "batch_response_id": 2
+      }
+    },
+    "preview_deposit_one_token": {
+      "0x5086bf358635b81d8c47c66d1c8b9e567db70c72": {
+        "status": "read",
+        "value": "1000000000000000000",
+        "block": "0x191f245",
+        "evidence": {
+          "path": "data/research/pt-routes-2026-11-04/units-raw/0006.json",
+          "sha256": "70eebd38ef5a938ae4749520c3a8152f223a70863ebb7af240cd59cafa9095fb",
+          "requested_at": "2026-11-04T14:18:35.786419+00:00",
+          "received_at": "2026-11-04T14:18:36.048798+00:00"
+        },
+        "batch_response_id": 1
+      }
+    }
+  }
+]

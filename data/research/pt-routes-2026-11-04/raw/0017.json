@@ -1,0 +1,34 @@
+{
+  "requested_at": "2026-11-04T14:09:15.967700+00:00",
+  "method": "GET",
+  "url": "https://api-v2.pendle.finance/core/v1/sdk/143/markets/0xea492a66e98a46426f03f5c3505ee89d96520813/tokens",
+  "params": null,
+  "body": null,
+  "received_at": "2026-11-04T14:09:16.146325+00:00",
+  "http_status": 200,
+  "rate_headers": {
+    "x-computing-unit": "1",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "199",
+    "x-ratelimit-reset": "1793608740",
+    "x-ratelimit-weekly-limit": "200000",
+    "x-ratelimit-weekly-remaining": "197990",
+    "x-ratelimit-weekly-reset": "1793836800"
+  },
+  "response": {
+    "tokensMintSy": [
+      "0xd25f563e12ff616262f8c947fec108db934f8059"
+    ],
+    "tokensRedeemSy": [
+      "0xd25f563e12ff616262f8c947fec108db934f8059"
+    ],
+    "tokensIn": [
+      "0xd25f563e12ff616262f8c947fec108db934f8059",
+      "0x8c0ee449b8babc933047541249952d5084a7d99d"
+    ],
+    "tokensOut": [
+      "0xd25f563e12ff616262f8c947fec108db934f8059",
+      "0x8c0ee449b8babc933047541249952d5084a7d99d"
+    ]
+  }
+}

@@ -415,12 +415,13 @@ def project_snapshot(errors=None, flag_func=None, watchlist_entries=None, db_pat
             if not market or not snap:
                 continue
             pos = _latest_position_summary(conn, market_address)
-            notional = pos["notional_usd"] if pos and pos["notional_usd"] is not None else entry.get("our_notional_usd")
+            notional = entry.get("our_notional_usd")
             exposure = pos["exposure"] if pos and pos["exposure"] is not None else entry.get("exposure")
             ladder = json.loads(snap["exit_slippage_ladder_json"] or "[]")
             rec = {
                 "key": entry["key"],
-                "exposure": exposure,
+                "dependency_review": entry.get("dependency_review"),
+                "exposure": entry.get("exposure", exposure),
                 "chain": market["chain"],
                 "market_address": market["market_address"],
                 "underlier": entry.get("underlier") or market["underlier"],
@@ -480,6 +481,8 @@ def write_snapshot_json(snapshot_path, errors=None, flag_func=None, watchlist_en
         watchlist_entries=watchlist_entries,
         db_path=db_path,
     )
+    from .portfolio import LAST_COVERAGE
+    snap["holdings_coverage"] = dict(LAST_COVERAGE)
     os.makedirs(os.path.dirname(snapshot_path), exist_ok=True)
     tmp = snapshot_path + ".tmp"
     with open(tmp, "w") as f:

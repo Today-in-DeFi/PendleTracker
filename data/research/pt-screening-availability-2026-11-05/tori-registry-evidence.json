@@ -1,0 +1,12 @@
+{
+  "url": "https://docs.tori.finance/resources/contracts",
+  "requested_at": "2026-11-05T10:29:39.728667+00:00",
+  "received_at": "2026-11-05T10:29:40.268830+00:00",
+  "path": "data/research/pt-screening-availability-2026-11-05/tori-official-registry.html",
+  "sha256": "063395c99caa2fd9760d5f3999c764810c248588bb607fe82e73ddc1cde0d0a5",
+  "status": 200,
+  "document_contains": {
+    "0x683fb58ee77172626d5b49087ddac71ef7825d20": true,
+    "0x770a579ea200784723b31b8668b0773ba80393c9": true
+  }
+}

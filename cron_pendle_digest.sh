@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Daily Pendle positions digest (by wallet) -> "TID Pendle Tracking" channel.
+# Schedule is managed in the user crontab. The digest reports the actual
+# upstream/sync clocks; producer schedules may change independently.
 # Reads the latest data/pendle_markets.json (refreshed hourly by
 # cron_pendle_tracker.sh) + the riskAnalyst holdings feed, renders, and sends.
 
