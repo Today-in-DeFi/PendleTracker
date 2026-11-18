@@ -1,0 +1,384 @@
+{
+  "requested_at": "2026-11-18T07:01:15.514613+00:00",
+  "method": "GET",
+  "url": "https://api-v2.pendle.finance/core/v1/1/markets/0x3f714e7623c33cd9bf1f30c6f1326a4ea933d45b",
+  "params": null,
+  "body": null,
+  "received_at": "2026-11-18T07:01:15.802422+00:00",
+  "http_status": 200,
+  "rate_headers": {
+    "x-computing-unit": "1",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "193",
+    "x-ratelimit-reset": "1794985320",
+    "x-ratelimit-weekly-limit": "200000",
+    "x-ratelimit-weekly-remaining": "194577",
+    "x-ratelimit-weekly-reset": "1795046400"
+  },
+  "response": {
+    "id": "1-0x3f714e7623c33cd9bf1f30c6f1326a4ea933d45b",
+    "chainId": 1,
+    "address": "0x3f714e7623c33cd9bf1f30c6f1326a4ea933d45b",
+    "symbol": "PENDLE-LPT",
+    "expiry": "2027-11-30T00:00:00.000Z",
+    "pt": {
+      "id": "1-0x247934a535e4a37b95c13feb7efef778e39dc7e5",
+      "chainId": 1,
+      "address": "0x247934a535e4a37b95c13feb7efef778e39dc7e5",
+      "symbol": "PT-USDe-30NOV2027",
+      "decimals": 18,
+      "expiry": "2027-11-30T00:00:00.000Z",
+      "price": {
+        "usd": 0.9411158081267347
+      },
+      "priceUpdatedAt": "2026-11-18T07:01:15.030Z",
+      "name": "PT-USDe-30NOV2027",
+      "baseType": "PT",
+      "types": [
+        "PT"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "PT USDe (USDe)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f4871114-f555-4801-8e67-7996543fe373.svg",
+      "zappable": false,
+      "simpleName": "PT USDe (USDe)",
+      "simpleSymbol": "PT USDe (USDe)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/f4871114-f555-4801-8e67-7996543fe373.svg",
+      "proName": "PT USDe (USDe)"
+    },
+    "yt": {
+      "id": "1-0x4fe7edd2aab0b82dae6885d2a2612b84aa77b0dd",
+      "chainId": 1,
+      "address": "0x4fe7edd2aab0b82dae6885d2a2612b84aa77b0dd",
+      "symbol": "YT-USDe-30NOV2027",
+      "decimals": 18,
+      "expiry": "2027-11-30T00:00:00.000Z",
+      "price": {
+        "usd": 0.05831753187326527
+      },
+      "priceUpdatedAt": "2026-11-18T07:01:15.030Z",
+      "name": "YT-USDe-30NOV2027",
+      "baseType": "YT",
+      "types": [
+        "YT"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "YT USDe (USDe)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e2112b79-366c-4bf9-91f2-331d7f4496b6.svg",
+      "zappable": false,
+      "simpleName": "YT USDe (USDe)",
+      "simpleSymbol": "YT USDe (USDe)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/e2112b79-366c-4bf9-91f2-331d7f4496b6.svg",
+      "proName": "YT USDe (USDe)"
+    },
+    "sy": {
+      "id": "1-0x1593d2b64365bed60caf54ecb7448171214e33c1",
+      "chainId": 1,
+      "address": "0x1593d2b64365bed60caf54ecb7448171214e33c1",
+      "symbol": "SY-USDe",
+      "decimals": 18,
+      "expiry": null,
+      "price": {
+        "usd": 0.99943334
+      },
+      "priceUpdatedAt": "2026-11-18T07:01:15.030Z",
+      "name": "SY-USDe",
+      "baseType": "SY",
+      "types": [
+        "SY"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "USDe",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/494c9f93-3620-4c2d-9cd1-f332e9d7edd9.svg",
+      "zappable": false,
+      "simpleName": "USDe",
+      "simpleSymbol": "USDe",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/494c9f93-3620-4c2d-9cd1-f332e9d7edd9.svg",
+      "proName": "USDe"
+    },
+    "lp": {
+      "id": "1-0x3f714e7623c33cd9bf1f30c6f1326a4ea933d45b",
+      "chainId": 1,
+      "address": "0x3f714e7623c33cd9bf1f30c6f1326a4ea933d45b",
+      "symbol": "PLP-USDe-30NOV2027",
+      "decimals": 18,
+      "expiry": "2027-11-30T00:00:00.000Z",
+      "price": {
+        "usd": 2.058618163410001
+      },
+      "priceUpdatedAt": "2026-11-18T07:01:15.030Z",
+      "name": "PLP-USDe-30NOV2027",
+      "baseType": "PENDLE_LP",
+      "types": [
+        "PENDLE_LP"
+      ],
+      "underlyingPool": "",
+      "proSymbol": "LP USDe (USDe)",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/66e02147-f103-4669-b643-60462b387647.svg",
+      "zappable": false,
+      "simpleName": "LP USDe (USDe)",
+      "simpleSymbol": "LP USDe (USDe)",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/66e02147-f103-4669-b643-60462b387647.svg",
+      "proName": "LP USDe (USDe)"
+    },
+    "accountingAsset": {
+      "id": "1-0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+      "chainId": 1,
+      "address": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+      "symbol": "USDe",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "",
+      "price": {
+        "usd": 0.99943334
+      },
+      "priceUpdatedAt": "2026-11-18T07:01:15.030Z",
+      "name": "USDe",
+      "baseType": "IB",
+      "types": [
+        "IB"
+      ],
+      "protocol": "Ethena",
+      "proSymbol": "USDe",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/28853118-3ea9-4372-9867-2ea0ebe9442e.svg",
+      "zappable": true,
+      "simpleName": "USDe",
+      "simpleSymbol": "USDe",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/28853118-3ea9-4372-9867-2ea0ebe9442e.svg",
+      "proName": "USDe"
+    },
+    "underlyingAsset": {
+      "id": "1-0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+      "chainId": 1,
+      "address": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+      "symbol": "USDe",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "",
+      "price": {
+        "usd": 0.99943334
+      },
+      "priceUpdatedAt": "2026-11-18T07:01:15.030Z",
+      "name": "USDe",
+      "baseType": "IB",
+      "types": [
+        "IB"
+      ],
+      "protocol": "Ethena",
+      "proSymbol": "USDe",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/28853118-3ea9-4372-9867-2ea0ebe9442e.svg",
+      "zappable": true,
+      "simpleName": "USDe",
+      "simpleSymbol": "USDe",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/28853118-3ea9-4372-9867-2ea0ebe9442e.svg",
+      "proName": "USDe"
+    },
+    "basePricingAsset": {
+      "id": "1-0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+      "chainId": 1,
+      "address": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+      "symbol": "USDe",
+      "decimals": 18,
+      "expiry": null,
+      "accentColor": "",
+      "price": {
+        "usd": 0.99943334
+      },
+      "priceUpdatedAt": "2026-11-18T07:01:15.030Z",
+      "name": "USDe",
+      "baseType": "IB",
+      "types": [
+        "IB"
+      ],
+      "protocol": "Ethena",
+      "proSymbol": "USDe",
+      "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/28853118-3ea9-4372-9867-2ea0ebe9442e.svg",
+      "zappable": true,
+      "simpleName": "USDe",
+      "simpleSymbol": "USDe",
+      "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/28853118-3ea9-4372-9867-2ea0ebe9442e.svg",
+      "proName": "USDe"
+    },
+    "rewardTokens": [
+      {
+        "id": "1-0x808507121b80c02388fad14726482e061b8da827",
+        "chainId": 1,
+        "address": "0x808507121b80c02388fad14726482e061b8da827",
+        "symbol": "PENDLE",
+        "decimals": 18,
+        "accentColor": null,
+        "price": {
+          "usd": 1.42682141
+        },
+        "priceUpdatedAt": "2026-11-18T07:01:15.030Z",
+        "name": "PENDLE",
+        "baseType": "GENERIC",
+        "types": [
+          "GENERIC"
+        ],
+        "protocol": "Pendle",
+        "proSymbol": "PENDLE",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ea33e392-1876-46a5-b7ce-c8434b5a7e71.svg",
+        "zappable": true,
+        "simpleName": "PENDLE",
+        "simpleSymbol": "PENDLE",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/assets/pro/ea33e392-1876-46a5-b7ce-c8434b5a7e71.svg",
+        "proName": "PENDLE"
+      }
+    ],
+    "inputTokens": [
+      {
+        "id": "1-0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+        "chainId": 1,
+        "address": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+        "symbol": "USDe",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 0.99943334
+        },
+        "priceUpdatedAt": "2026-11-18T07:01:15.030Z",
+        "name": "USDe",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "protocol": "Ethena",
+        "proSymbol": "USDe",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/28853118-3ea9-4372-9867-2ea0ebe9442e.svg",
+        "zappable": true,
+        "simpleName": "USDe",
+        "simpleSymbol": "USDe",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/28853118-3ea9-4372-9867-2ea0ebe9442e.svg",
+        "proName": "USDe"
+      }
+    ],
+    "outputTokens": [
+      {
+        "id": "1-0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+        "chainId": 1,
+        "address": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+        "symbol": "USDe",
+        "decimals": 18,
+        "expiry": null,
+        "accentColor": "",
+        "price": {
+          "usd": 0.99943334
+        },
+        "priceUpdatedAt": "2026-11-18T07:01:15.030Z",
+        "name": "USDe",
+        "baseType": "IB",
+        "types": [
+          "IB"
+        ],
+        "protocol": "Ethena",
+        "proSymbol": "USDe",
+        "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/28853118-3ea9-4372-9867-2ea0ebe9442e.svg",
+        "zappable": true,
+        "simpleName": "USDe",
+        "simpleSymbol": "USDe",
+        "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/28853118-3ea9-4372-9867-2ea0ebe9442e.svg",
+        "proName": "USDe"
+      }
+    ],
+    "protocol": "Ethena",
+    "proSymbol": "USDe",
+    "proIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/75c88b3e-45f0-4727-930b-cff03d98c86d.svg",
+    "assetRepresentation": "USDe",
+    "isWhitelistedPro": true,
+    "isWhitelistedSimple": false,
+    "votable": false,
+    "isActive": true,
+    "isWhitelistedLimitOrder": true,
+    "accentColor": "#DEDEDE",
+    "totalPt": 23817.468873873284,
+    "totalSy": 44837.585913509974,
+    "totalLp": 32656.456602173508,
+    "totalActiveSupply": 32656.456602173508,
+    "liquidity": {
+      "usd": 67215.18767968635,
+      "acc": 67251.84329687532
+    },
+    "tradingVolume": {
+      "usd": 70004.14900736215
+    },
+    "underlyingInterestApy": 0,
+    "underlyingRewardApy": 0,
+    "underlyingRewardApyBreakdown": [],
+    "underlyingApy": 0,
+    "impliedApy": 0.06060009969445268,
+    "ytFloatingApy": -1,
+    "ptDiscount": 0.05891522302133445,
+    "swapFeeApy": 0.010763317747940038,
+    "pendleApy": 0.07736423095745541,
+    "aggregatedApy": 0.10832485729087138,
+    "maxBoostedApy": 0.22437120372705452,
+    "lpRewardApy": 0,
+    "voterApy": 0,
+    "ytRoi": -1,
+    "ptRoi": 0.0626035235746567,
+    "estimatedDailyPoolRewards": [
+      {
+        "asset": {
+          "id": "1-0x808507121b80c02388fad14726482e061b8da827",
+          "chainId": 1,
+          "address": "0x808507121b80c02388fad14726482e061b8da827",
+          "symbol": "PENDLE",
+          "decimals": 18,
+          "accentColor": null,
+          "price": {
+            "usd": 1.42682141
+          },
+          "priceUpdatedAt": "2026-11-18T07:01:15.030Z",
+          "name": "PENDLE"
+        },
+        "amount": 9.999999999999936
+      }
+    ],
+    "dataUpdatedAt": "2026-11-18T07:01:00.000Z",
+    "liquidityChange24h": -0.00021976826089725762,
+    "tradingVolumeChange24h": 18.71616367421086,
+    "impliedApyChange24h": 0.009280046288751212,
+    "ytFloatingApyChange24h": 0,
+    "ptDiscountChange24h": 0.006249052037920847,
+    "swapFeeApyChange24h": 0.0033109441526887502,
+    "pendleApyChange24h": -0.011579174588528925,
+    "aggregatedApyChange24h": -0.008891752727633043,
+    "categoryIds": [
+      "stables",
+      "ethena",
+      "usde"
+    ],
+    "timestamp": "2026-11-06T08:50:11.000Z",
+    "scalarRoot": 31.234215686667227,
+    "initialAnchor": 1.08555272984594,
+    "extendedInfo": {
+      "floatingPt": 2202168.630952671,
+      "floatingSy": 67447.05634783953,
+      "pyUnit": "USDe on Ethena",
+      "ptEqualsPyUnit": true,
+      "feeRate": 5.8269077887196374e-06,
+      "yieldRange": {
+        "min": 0.010000516885411447,
+        "max": 0.15000058547236675
+      }
+    },
+    "isPopular": false,
+    "whitelistedProAt": "2026-11-10T13:44:46.949Z",
+    "isNew": true,
+    "name": "PENDLE-LPT",
+    "simpleName": "USDe",
+    "simpleSymbol": "USDe",
+    "simpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/75c88b3e-45f0-4727-930b-cff03d98c86d.svg",
+    "proName": "USDe",
+    "farmName": "USDe",
+    "farmSymbol": "USDe",
+    "farmSimpleName": "USDe",
+    "farmSimpleSymbol": "USDe",
+    "farmSimpleIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/75c88b3e-45f0-4727-930b-cff03d98c86d.svg",
+    "farmProName": "USDe",
+    "farmProSymbol": "USDe",
+    "farmProIcon": "https://storage.googleapis.com/prod-pendle-bucket-a/images/uploads/75c88b3e-45f0-4727-930b-cff03d98c86d.svg"
+  }
+}

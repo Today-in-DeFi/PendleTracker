@@ -1,0 +1,67 @@
+{
+  "requested_at": "2026-11-18T07:01:27.523574+00:00",
+  "method": "GET",
+  "url": "https://api-v2.pendle.finance/core/v2/1/markets/0xf1f53912c156a8c06927746cb20ba11ecec526ce/data",
+  "params": null,
+  "body": null,
+  "received_at": "2026-11-18T07:01:27.828205+00:00",
+  "http_status": 200,
+  "rate_headers": {
+    "x-computing-unit": "1",
+    "x-ratelimit-limit": "200",
+    "x-ratelimit-remaining": "189",
+    "x-ratelimit-reset": "1794985320",
+    "x-ratelimit-weekly-limit": "200000",
+    "x-ratelimit-weekly-remaining": "194573",
+    "x-ratelimit-weekly-reset": "1795046400"
+  },
+  "response": {
+    "timestamp": "2026-11-18T06:00:00.000Z",
+    "liquidity": {
+      "usd": 39908.60314475784,
+      "acc": 39930.36719139551
+    },
+    "tradingVolume": {
+      "usd": 2933.966666185214
+    },
+    "totalTvl": {
+      "usd": 155542.90911081812
+    },
+    "underlyingInterestApy": 0,
+    "underlyingRewardApy": 0,
+    "underlyingApy": 0,
+    "impliedApy": 0.05271642732630988,
+    "ytFloatingApy": -1,
+    "swapFeeApy": 0.01020070414202312,
+    "voterApy": 0,
+    "ptDiscount": 0.01421360585730802,
+    "pendleApy": 0.07074469528005872,
+    "arbApy": 0,
+    "lpRewardApy": 0,
+    "aggregatedApy": 0.09756766447981682,
+    "maxBoostedApy": 0.2036847073999049,
+    "estimatedDailyPoolRewards": [
+      {
+        "asset": {
+          "id": "1-0x808507121b80c02388fad14726482e061b8da827",
+          "chainId": 1,
+          "address": "0x808507121b80c02388fad14726482e061b8da827",
+          "symbol": "PENDLE",
+          "decimals": 18,
+          "accentColor": null,
+          "price": {
+            "usd": 1.42646996
+          },
+          "priceUpdatedAt": "2026-11-18T07:01:30.070Z",
+          "name": "PENDLE"
+        },
+        "amount": 5.4213487528508635
+      }
+    ],
+    "totalPt": 12772.170800649154,
+    "totalSy": 27339.734992449004,
+    "totalLp": 18466.82039717771,
+    "totalActiveSupply": 18466.82039717771,
+    "assetPriceUsd": 0.99945495
+  }
+}
